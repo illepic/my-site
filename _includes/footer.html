@@ -1,20 +1,8 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains footer content and the closing of the
- * #main and #page div elements.
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-?>
 	</div><!-- #main .wrapper -->
 	<footer id="footer" class="content-bg row-fluid" role="contentinfo">
     <aside class="span4">
       <h4 class="title">Latest Instagram</h4>
-      <?php echo do_shortcode('[instapress userid="self" piccount="1" size="400"]'); ?>
+
       <br>
       <a href="http://instagram.com/evanlovely" class="btn btn-small btn-block">More Instagram Photos <i class="icon-camera-retro"></i></a>
     </aside>
@@ -26,12 +14,7 @@
     </aside>
     <aside class="span4">
       <h4 class="title">Public Notes</h4>
-      <?php wp_nav_menu( array(
-        'menu'            => 'Secondary Menu', 
-        'container'       => 'nav', 
-        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>'
-        ));     
-      ?>
+      
       </aside>
 		<div class="site-info">
         © Evan Lovely ~ 2013 ~ EvanLovely.com v 4.0
@@ -47,6 +30,6 @@
 <script type="text/javascript" src="/tricky-name/wp-content/themes/guru/js/tinynav.min.js"></script>
 <script type="text/javascript" src="/tricky-name/wp-content/themes/guru/js/ss-social.js"></script>
 <script type="text/javascript" src="/tricky-name/wp-content/themes/guru/js/script.js"></script>
-<?php wp_footer(); ?>
+
 </body>
 </html>
