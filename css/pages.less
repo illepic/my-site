@@ -1,0 +1,25 @@
+.home {
+  .entry-title {display: none;}
+}
+#main-photo-page {
+  img {//All images
+    .border-radius(@radius / 2);
+    width: 100%;
+  }
+  >a {//Full wide panorama
+    clear: both;
+    border-bottom: 0;
+    margin: .5%;
+    padding-top: .5%;
+    position: relative;
+    z-index: 10;
+    >img {
+      width: 98.6%;
+    }
+  }
+}
+.contact-form {
+  textarea {
+    height: 140px;
+  }
+}
