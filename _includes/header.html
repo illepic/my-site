@@ -39,7 +39,9 @@
 	<!-- <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image"><img src="<?php echo esc_url( $header_image ); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+			<a href="/" class="header-image">
+        <img src="/img/headers/current.jpg" />
+      </a>
 		<?php endif; ?>
 
 		<nav class="my-social-sites">		
