@@ -1,0 +1,73 @@
+---
+layout: post
+title: Better management of IE & Media Query CSS Styles using LESS CSS
+categories:
+- Technology
+tags:
+- CSS
+- CSS preprocessors
+- LESS CSS
+- Responsive Web Design
+- Web Design
+status: publish
+type: post
+published: true
+meta:
+  _rawhtml_settings: '0,0,0,0'
+  _cws_is_markdown: '1'
+  _edit_last: '1'
+  dsq_thread_id: '1023936043'
+  _wpbitly: http://bit.ly/VIVuH3
+  _su_title: ''
+---
+<strong>Wow!</strong> I just <a href="http://alwaystwisted.com/post.php?s=2012-06-05-another-approach-to-mobile-first-css-whilst-supporting-internet-explorer">found out</a> that you can do this awesomeness with LESS:
+
+<h2>Inline Media Queries</h2>
+
+<pre><code>header {
+  background-color: red;
+    @media screen only and (min-width: 20em) {
+      background-color: blue;
+    }
+}
+</code></pre>
+
+<p><!--more-->
+Which when compiled into CSS returns us with this.</p>
+
+<pre><code>header {
+  background-color: red;
+}
+
+@media screen only and (min-width: 20em) {
+  header {
+    background-color: blue;
+  }
+}
+</code></pre>
+
+<h2>Using <code>&amp;</code> to put a class before instead of after</h2>
+
+You can use the  <code>&amp;</code>  <strong>after</strong> (normally <em>before</em> to combine selector strings) which takes the preceding element and then puts the .ie8 class in front of it. So for example writing this LESS.
+
+<pre><code>header {
+  background-color: red;
+  .ie8&amp; {
+    background-color: blue;
+  }
+}
+</code></pre>
+
+Which gives us this CSS.
+
+<pre><code>header {
+  background-color: red;
+}
+.ie8 header {
+  background-color: blue;
+}
+</code></pre>
+
+<h2>Why this is cool</h2>
+
+This really helps prevent fragmentation of styles. Before learning these techniques, I'd often put IE styles in their own <code>ie.less</code> sheet and media queries in <code>media-queries.less</code>, but with these new techniques, I can keep styles bundled with their other relevant rules.
