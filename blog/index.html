@@ -19,3 +19,35 @@ layout: default
 <div class="archive-meta"><p>Covering Web Design, Front End Web Development, Macs, iPhones, software, and more.</p>
 </div>
 </header>
+
+{% for post in site.posts %}
+  <article class="type-post l--teaser content-bg post">
+    
+    <header class="entry-header">
+      <h2 class="entry-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    </header>
+
+    <aside class="post-info">
+      <div class="taxonomy">
+        <i class="icon-folder-open-alt"></i>
+        <a href="http://www.evanlovely.com/blog/personal/" title="View all posts in Personal" rel="category tag">Personal</a> 
+        <hr class="invisible">
+        <a href="http://www.evanlovely.com/tag/travel/" rel="tag">travel</a> 
+        <time datetime="2013-07-20T14:01:16+00:00">
+          <i class="icon-calendar"></i>
+          <span class="day"> 20 </span>
+          <span class="month"> Jul</span>
+          <span class="year"> 2013</span>
+          <!-- <div>{{ post.date | date_to_string }}</div> -->
+        </time> 
+      </div>
+    </aside>
+
+    <div class="entry-summary">
+
+      {{post.content}}
+
+    </div>
+
+  </article>
+{% endfor %}
