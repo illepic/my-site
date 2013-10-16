@@ -1,6 +1,7 @@
 ---
 title: My Recommended Productivity Reading
 layout: default
+draft: true
 ---
 
 ## Vital Productivity Knowledge
