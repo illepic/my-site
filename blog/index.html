@@ -51,6 +51,15 @@ layout: default
 
     <div class="entry-summary">
 
+      {% if post.quote %}
+        <blockquote>
+          <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+          <p>{{ post.quote }}</p>
+          <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
+          {% if post.quote-author %}<cite>{{ post.quote-author }}</cite>{% endif %}
+        </blockquote>
+      {% endif %}
+
       {{post.content}}
 
     </div>

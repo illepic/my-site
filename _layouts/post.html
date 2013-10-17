@@ -1,9 +1,17 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
 <p class="meta">{{ page.date | date_to_string }}</p>
 
 <div class="post">
+{% if page.quote %}
+  <blockquote>
+    <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+    <p>{{ page.quote }}</p>
+    <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
+    {% if page.quote-author %}<cite>{{ page.quote-author }}</cite>{% endif %}
+  </blockquote>
+{% endif %}
+
 {{ content }}
 </div>
