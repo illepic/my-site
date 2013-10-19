@@ -3,7 +3,12 @@ title: My Travel Packing List
 layout: default
 ---
 
+- Total weight: 23lbs
+- Total volume: ~40L
+
 ## Clothes 
+
+- Weight: 8 lbs
 
 ![Clothes](clothes.jpg)
 
