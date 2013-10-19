@@ -5,6 +5,8 @@ layout: default
 
 ## Clothes 
 
+![Clothes](clothes.jpg)
+
 ### Shoes 
 
 - Chaco Flips
@@ -32,6 +34,8 @@ layout: default
 
 
 ## Supplies
+
+![Supplies](supplies.jpg)
 
 - Manduka Travel Yoga Mat
 - Laundry soap
