@@ -1,11 +1,7 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Home
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    
-  </ul>
-</div>
+{% assign pages_list = site.pages %}
+{% include JB/pages_list %}
