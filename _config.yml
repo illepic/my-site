@@ -2,7 +2,7 @@ name: Your New Jekyll Site
 pygments: true
 destination: ../../Sites/my-jekyll-site-html
 permalink: /blog/:categories/:title
-paginate: 5
+paginate: 10
 paginate_path: "/blog/:num"
 markdown: redcarpet
 
@@ -18,15 +18,34 @@ picture:
         itemprop: "image"
       source_huge:
         media: "(min-width: 1025px)"
-        width: "1400"
+        width: "1368"
+      source_big:
+        media: "(min-width: 896px)"
+        width: "1025"
+      source_large:
+        media: "(min-width: 600px)"
+        width: "642"
+      source_medium:
+        media: "(min-width: 340px)"
+        width: "568"
+      source_default: 
+        width: "300"
+    blog:
+      ppi: [1, 2]
+      attr:
+        class: "picture--blog"
+        itemprop: "image"
+      source_huge:
+        media: "(min-width: 1388px)"
+        width: "821"
       source_big:
         media: "(min-width: 750px)"
-        width: "1025"
+        width: "630"
       source_medium:
-        media: "(min-width: 500px)"
-        width: "750"
+        media: "(min-width: 340px)"
+        width: "568"
       source_default: 
-        width: "480"
+        width: "300"
 
 asset_bundler:
   compress:
