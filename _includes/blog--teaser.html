@@ -1,4 +1,4 @@
-<article class="type-post l--teaser content-bg post">
+<article class="type--post l--teaser content-bg post">
   
   <header class="entry-header">
     <h2 class="entry-title">
@@ -12,10 +12,8 @@
 
   <aside class="post-info">
     <div class="taxonomy">
-      <i class="icon-folder-open-alt"></i>
-      {% for category in post.categories %}
-        <span class="category">{{ category | capitalize }}</span>
-      {% endfor %}
+      {% assign categories_list = post.categories %}  
+      {% include categories_inline %}
       <hr class="invisible">
       {% assign tags_list = post.tags %}  
       {% include tags_inline %}

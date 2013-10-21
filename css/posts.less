@@ -164,13 +164,6 @@
 
 /*Blog
 *****/
-.blog-post-teaser {
-	+.blog-post-teaser {
-		margin-top: @baseLineHeight;
-	}
-	.more-link {display: none;}
-	.yarpp-related {display: none;}
-}
 .blog-list {
 	position: relative;
 	.rss {
@@ -179,9 +172,10 @@
 		right: 0;
 	}
 }
-.type-post {
+.type--post {
 	position: relative;
 	.post-info {
+		margin-bottom: (@baseLineHeight / 2);
 		&.affix {position: static;}
 		hr {display: none;}
 		.social-share {
@@ -249,6 +243,15 @@
 			}
 		}
 	}
+
+	&.l--teaser {
+		+.l--teaser {
+			margin-top: @baseLineHeight;
+		}
+		.more-link {display: none;}
+		.yarpp-related {display: none;}
+	}
+
 }
 
 // Photos 

@@ -109,6 +109,49 @@ div.messages {
     }
   }
 }
+.category {
+  font-size: 1.1em;
+  border-bottom: 0;
+  color: @linkColor;
+  text-transform: titlecase;
+  text-decoration: none;
+}
+.tag {
+  padding: 2px 4px;
+  font-size: .9em;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: baseline;
+  border: 0;
+  text-transform: capitalize;
+  margin-right: 4px;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: @blue-light;
+  .border-radius(3px);
+  .transition(linear .2s all);
+  &:hover {
+    background-color: @linkColor;
+    &:before {
+
+    }
+  }
+  &:before {
+    .transition(linear .2s all);
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+    content: "\f02b"; 
+    margin-right: .2em;
+    font-size: .8em;
+    // position: relative;
+    // top: 1px;
+  }
+}
 .taxonomy {
   >i:first-child:before {
     color: @linkColor;
@@ -120,48 +163,6 @@ div.messages {
       list-style-type: none;
       line-height: inherit;
       display: inline-block;
-    }
-  }
-  .category {
-    font-size: 1.1em;
-    border-bottom: 0;
-    color: @linkColor;
-    text-transform: titlecase;
-  }
-  .tag {
-    padding: 2px 4px;
-    font-size: .9em;
-    line-height: 1;
-    white-space: nowrap;
-    display: inline-block;
-    vertical-align: baseline;
-    border: 0;
-    text-transform: capitalize;
-    margin-right: 4px;
-    color: white;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: @blue-light;
-    .border-radius(3px);
-    .transition(linear .2s all);
-    &:hover {
-      background-color: @linkColor;
-      &:before {
-
-      }
-    }
-    &:before {
-      .transition(linear .2s all);
-      font-family: FontAwesome;
-      font-weight: normal;
-      font-style: normal;
-      text-decoration: inherit;
-      -webkit-font-smoothing: antialiased;
-      color: white;
-      content: "\f02b"; 
-      margin-right: .2em;
-      font-size: .8em;
-      // position: relative;
-      // top: 1px;
     }
   }
 }
