@@ -43,7 +43,14 @@
   </div>
 
   <footer class="entry-meta">
-    <a href="{{ post.url }}" class="btn read-more">Read the Full Article <i class="icon-circle-arrow-right"></i></a>
+    <a href="{{ post.url }}" class="btn read-more">
+      {% if post.title-url %}
+          Comment
+        {% else %}
+          Read the Full Article 
+      {% endif %}
+      <i class="icon-circle-arrow-right"></i>
+    </a>
   </footer>
 
 </article>
