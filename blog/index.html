@@ -1,9 +1,10 @@
 ---
-title: Technology Blog
+title: Blog
 layout: default
-alias: [/blog, /blog/tech]
+alias: [/blog/technology, /blog/personal, /blog/ashtanga-vinyasa-yoga, /blog/photography]
 ---
 <section>
+{% comment %}
   <header class="archive-header">
     <!-- {% include subscribe.html %} -->
     <h2 class="archive-title"><i class="icon-folder-open-alt"></i>Category: </h2>
@@ -21,9 +22,31 @@ alias: [/blog, /blog/tech]
       Covering Web Design, Front End Web Development, Macs, iPhones, software, and more.
     </p>
   </header>
+  {% endcomment %}
 
-  {% for post in site.categories.technology %}
+  {% for post in paginator.posts %}
     {% include blog--teaser.html %}
   {% endfor %}
+
+  <ul class="pager">
+  {% if paginator.previous_page %}
+    <li class="previous">
+      {% if paginator.previous_page == 1 %}
+        <a href="/blog">← Previous</a>
+      {% else %}
+        <a href="/blog/{{ paginator.previous_page_path }}">← Previous</a>
+      {% endif %}
+    </li>
+  {% else %}
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <li class="next">
+      <a href="{{ paginator.next_page_path }}">Next →</a>
+    </li>
+  {% else %}
+  {% endif %}
+
+</div>
 
 </section>
