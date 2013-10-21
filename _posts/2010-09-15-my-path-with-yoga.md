@@ -11,12 +11,8 @@ status: publish
 type: post
 published: true
 meta:
-  _edit_last: '1'
-  _thumbnail_id: '242'
   _rawhtml_settings: '0,0,0,0'
   dsq_thread_id: '1024082797'
-  _wpbitly: http://bit.ly/XWbvUu
-  _su_title: ''
 ---
 I don't remember exactly what compelled me to walk into my first yoga studio sometime in February 2000 and sign up for my first Hatha class, but it is something I'll be eternally grateful for. I was hooked from the start, attending as much as I could. My tendency to share what I love with others I love lead to me bringing friend after friend down to the studio so they could experience how wonderful it made me feel. I brought so many friends with me to the studio that my teacher offered to teach a private free class to me and as many friends as I could bring one enjoyable night. I think we had a class of 12-15.
 
