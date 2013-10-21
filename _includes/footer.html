@@ -21,17 +21,20 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div></div></div><!-- #wrapper, #container, .inner -->
-<script type="text/javascript" src="/css/bootstrap/docs/assets/js/jquery.js"></script>
-<script type="text/javascript" src="/css/bootstrap/js/bootstrap-carousel.js"></script>
-<script type="text/javascript" src="/css/bootstrap/js/bootstrap-transition.js"></script>
-<script type="text/javascript" src="/css/bootstrap/js/bootstrap-tooltip.js"></script>
-<script type="text/javascript" src="/css/bootstrap/js/bootstrap-tab.js"></script>
-<script type="text/javascript" src="/js/jquery.masonry.min.js"></script>
-<script type="text/javascript" src="/js/tinynav.min.js"></script>
-<script type="text/javascript" src="/js/ss-social.js"></script>
-<script type="text/javascript" src="/js/matchMedia/matchMedia.js"></script>
-<script type="text/javascript" src="/js/picturefill/picturefill.js"></script>
-<script type="text/javascript" src="/js/script.js"></script>
+
+{% bundle %}
+- /css/bootstrap/docs/assets/js/jquery.js
+- /css/bootstrap/js/bootstrap-carousel.js
+- /css/bootstrap/js/bootstrap-transition.js
+- /css/bootstrap/js/bootstrap-tooltip.js
+- /css/bootstrap/js/bootstrap-tab.js
+- /js/jquery.masonry.min.js
+- /js/tinynav.min.js
+- /js/ss-social.js
+- /js/matchMedia/matchMedia.js
+- /js/picturefill/picturefill.js
+- /js/script.js
+{% endbundle %}
 
 </body>
 </html>
