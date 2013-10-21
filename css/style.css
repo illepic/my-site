@@ -3437,7 +3437,7 @@ ul.icons li [class*=" icon-"] {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  padding: .5% 1%;
+  padding: 1%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -5360,7 +5360,7 @@ blockquote [class*='icon']:before {
   display: none;
 }
 .post > .entry-header > .entry-title {
-  margin-bottom: 0;
+  margin: 0;
   line-height: 1.3;
 }
 .post > .entry-header > .taxonomy {
@@ -5585,7 +5585,7 @@ blockquote [class*='icon']:before {
     width: 36%;
     background: url(img/bg-trans-.3.png);
     background: rgba(0, 0, 0, 0.3);
-    padding: .5% 1%;
+    padding: 1%;
     line-height: 1.6;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
