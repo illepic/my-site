@@ -4,6 +4,29 @@ destination: ../../Sites/my-jekyll-site-html
 permalink: /:categories/:title
 paginate: 5
 paginate_path: "/blog/:num"
+markdown: redcarpet
+
+picture:
+  source: ""
+  output: "generated"
+  markup: "picturefill"
+  presets:
+    default:
+      ppi: [1, 2]
+      attr:
+        class: "picture--default"
+        itemprop: "image"
+      source_huge:
+        media: "(min-width: 1025px)"
+        width: "1400"
+      source_big:
+        media: "(min-width: 750px)"
+        width: "1025"
+      source_medium:
+        media: "(min-width: 500px)"
+        width: "750"
+      source_default: 
+        width: "480"
 
 JB:
   BASE_PATH : /

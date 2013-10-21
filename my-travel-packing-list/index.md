@@ -10,7 +10,7 @@ layout: default
 
 - Weight: 8 lbs
 
-![Clothes](clothes.jpg)
+{% picture {{ page.url | remove:'index.html' }}_clothes.jpg %}
 
 ### Shoes 
 
@@ -40,7 +40,7 @@ layout: default
 
 ## Supplies
 
-![Supplies](supplies.jpg)
+{% picture {{ page.url | remove:'index.html' }}_supplies.jpg %}
 
 - Manduka Travel Yoga Mat
 - Laundry soap
@@ -91,6 +91,5 @@ layout: default
 
 - North Face Router 41L
 
-![Backpack](backpack.jpg)
-
+{% picture {{ page.url | remove:'index.html' }}_backpack.jpg %}
 
