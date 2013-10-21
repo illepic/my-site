@@ -17,9 +17,8 @@
         <span class="category">{{ category | capitalize }}</span>
       {% endfor %}
       <hr class="invisible">
-      {% for tag in post.tags %}
-        <span class="tag">{{ tag }}</span>
-      {% endfor %}
+      {% assign tags_list = post.tags %}  
+      {% include tags_inline %}
       <time datetime="2013-07-20T14:01:16+00:00">
         <i class="icon-calendar"></i>
         <span class="day">{{ post.date | date: "%d" }}</span>
