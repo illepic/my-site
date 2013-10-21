@@ -13,9 +13,13 @@
   <aside class="post-info">
     <div class="taxonomy">
       <i class="icon-folder-open-alt"></i>
-      <a href="http://www.evanlovely.com/blog/personal/" title="View all posts in Personal" rel="category tag">Personal</a> 
+      {% for category in post.categories %}
+        <span class="category">{{ category | capitalize }}</span>
+      {% endfor %}
       <hr class="invisible">
-      <a href="http://www.evanlovely.com/tag/travel/" rel="tag">travel</a> 
+      {% for tag in post.tags %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %}
       <time datetime="2013-07-20T14:01:16+00:00">
         <i class="icon-calendar"></i>
         <span class="day">{{ post.date | date: "%d" }}</span>

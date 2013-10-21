@@ -3668,7 +3668,7 @@ html:hover [class^="ss-"] {
 }
 .ss-like:before,
 .ss-like.right:after {
-  content: '👍';
+  content: '�';
 }
 .ss-rss:before,
 .ss-rss.right:after {
@@ -4847,11 +4847,13 @@ div.messages {
   line-height: inherit;
   display: inline-block;
 }
-.taxonomy a[rel='category tag'] {
+.taxonomy .category {
   font-size: 1.1em;
   border-bottom: 0;
+  color: #80bd57;
+  text-transform: titlecase;
 }
-.taxonomy a[rel='tag'] {
+.taxonomy .tag {
   padding: 2px 4px;
   font-size: .9em;
   line-height: 1;
@@ -4872,10 +4874,10 @@ div.messages {
   -o-transition: linear 0.2s all;
   transition: linear 0.2s all;
 }
-.taxonomy a[rel='tag']:hover {
+.taxonomy .tag:hover {
   background-color: #80bd57;
 }
-.taxonomy a[rel='tag']:before {
+.taxonomy .tag:before {
   -webkit-transition: linear 0.2s all;
   -moz-transition: linear 0.2s all;
   -o-transition: linear 0.2s all;
