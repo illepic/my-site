@@ -5776,3 +5776,6 @@ blockquote [class*='icon']:before {
 .clear {
   clear: both;
 }
+.hide {
+  display: none;
+}

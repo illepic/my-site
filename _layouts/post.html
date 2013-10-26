@@ -28,8 +28,14 @@ layout: default
       <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
       <p>{{ page.quote }}</p>
       <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
-      {% if page.quote-author %}<cite>{{ page.quote-author }}</cite>{% endif %}
+      {% if page.quote_author %}<cite>{{ page.quote_author }}</cite>{% endif %}
     </blockquote>
+  {% endif %}
+
+
+  {% if page.img %}
+    <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
+    {% picture {{ page.img }} %}
   {% endif %}
 
   {{ content }}
