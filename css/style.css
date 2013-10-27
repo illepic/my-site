@@ -4842,6 +4842,14 @@ section article + article {
   margin-right: .2em;
   font-size: .8em;
 }
+figure {
+  margin: 0;
+  padding: 0;
+}
+figure > figcaption {
+  margin: 0;
+  padding: 0;
+}
 div.messages {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
