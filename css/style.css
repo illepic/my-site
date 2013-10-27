@@ -4756,7 +4756,7 @@ section article + article {
   border-radius: 3px 3px 0 0;
   position: relative;
   bottom: -1px;
-  behavior: url(/sites/all/themes/guru/css/PIE.php);
+  behavior: url(/css/PIE.php);
 }
 .terms ul.links {
   padding: 4px 0;
