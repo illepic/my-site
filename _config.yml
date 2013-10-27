@@ -47,6 +47,15 @@ picture:
       source_default: 
         width: "300"
 
+flickr_set:
+  gallery_tag:   'aside'
+  gallery_class: 'flickr-gallery'
+  a_href:        'b'
+  a_target:      '_blank'
+  image_rel:     ''
+  image_size:    'b'
+  api_key:       'a368e36d3b36009ed1a651817be9c702'
+
 asset_bundler:
   compress:
     js: yui
