@@ -1,4 +1,5 @@
-name: Your New Jekyll Site
+name: Evan Lovely's Site
+url: http://evanlovely.com
 pygments: true
 destination: ../../Sites/my-jekyll-site-html
 permalink: /blog/:categories/:title

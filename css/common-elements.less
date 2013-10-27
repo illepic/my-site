@@ -544,4 +544,14 @@ blockquote {
     }
   }
 }
-#infinite-footer {display: none;}// the footer when in 'infinite scroll' mode. has call-out to WordPress
+.social-share-title {
+  display: inline-block;
+}
+.social-share-list {
+  list-style-type: none;
+  >li {
+    display: inline-block;
+    margin-left: .3em;
+    &:first-child {margin-left: 0;}
+  }
+}

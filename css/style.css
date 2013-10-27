@@ -3820,13 +3820,9 @@ h4 {
 h5 {
   font-size: 1.15em;
   font-weight: normal;
-  font-variant: small-caps;
-  text-transform: uppercase;
 }
 h6 {
-  font-size: 1.1em;
-  font-variant: small-caps;
-  text-transform: uppercase;
+  font-size: 1em;
   font-weight: normal;
 }
 p {
@@ -5364,8 +5360,18 @@ blockquote [class*='icon']:before {
     max-width: 100%;
   }
 }
-#infinite-footer {
-  display: none;
+.social-share-title {
+  display: inline-block;
+}
+.social-share-list {
+  list-style-type: none;
+}
+.social-share-list > li {
+  display: inline-block;
+  margin-left: .3em;
+}
+.social-share-list > li:first-child {
+  margin-left: 0;
 }
 .post > .entry-header > .entry-title {
   margin: 0;
@@ -5561,26 +5567,6 @@ blockquote [class*='icon']:before {
 .type--post .post-info hr {
   display: none;
 }
-.type--post .post-info .social-share {
-  line-height: 1;
-}
-.type--post .post-info .fb-like-wrapper {
-  overflow: hidden;
-  width: 51px;
-  height: 20px;
-  display: inline-block;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.type--post .post-info .fb-like-wrapper > .fb-like {
-  position: relative;
-  top: -3px;
-}
-.type--post .post-info .pin-it-button {
-  position: relative;
-  top: -6px;
-}
 .type--post .full-post .taxonomy {
   margin-bottom: 9px;
 }
@@ -5610,6 +5596,13 @@ blockquote [class*='icon']:before {
     right: 13.7%;
     top: 47px;
     width: 26%;
+  }
+  .type--post.format-standard .post-info.full-post .social-share-title {
+    display: block;
+  }
+  .type--post.format-standard .post-info.full-post .social-share-list > li {
+    margin-left: 0;
+    display: block;
   }
   .type--post.format-standard .post-info.full-post .post-categories + hr {
     margin-bottom: -3px;

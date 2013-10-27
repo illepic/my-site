@@ -178,24 +178,6 @@
 		margin-bottom: (@baseLineHeight / 2);
 		&.affix {position: static;}
 		hr {display: none;}
-		.social-share {
-			line-height: 1;
-		}
-		.fb-like-wrapper {
-			overflow: hidden;
-			width: 51px;
-			height: 20px;
-			display: inline-block;
-			.border-radius(4px);
-			>.fb-like {
-				position: relative;
-				top: -3px;
-			}
-		}
-		.pin-it-button {
-			position: relative;
-			top: -6px;
-		}
 	}
 	.full-post .taxonomy {
 		margin-bottom: @baseLineHeight / 2;
@@ -219,6 +201,13 @@
 					right: 13.7%;
 					top: 47px;
 					width: 26%;
+				}
+				.social-share-title {display: block;}
+				.social-share-list {
+					>li {
+						margin-left: 0;
+						display: block;
+					}
 				}
 				.post-categories + hr {margin-bottom: -3px;}
 				.taxonomy {
