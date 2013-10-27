@@ -1,0 +1,6 @@
+{% for img in page.imgs %}
+<figure>
+{% picture blog {{ include.path }}-{{ img }}.jpg %}
+<figcaption class="hide">{{ img }}</figcaption>
+</figure>
+{% endfor %}
