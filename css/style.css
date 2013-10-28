@@ -5574,6 +5574,10 @@ blockquote [class*='icon']:before {
   white-space: nowrap;
 }
 @media only screen and (min-width: 896px) {
+  .type--post .picture--aside {
+    float: right;
+    width: 38%;
+  }
   .type--post.format-standard .post-info.full-post {
     float: right;
     width: 36%;

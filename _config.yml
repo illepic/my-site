@@ -47,6 +47,22 @@ picture:
         width: "568"
       source_default: 
         width: "300"
+    aside:
+      ppi: [1, 2]
+      attr:
+        class: "picture--aside"
+        itemprop: "image"
+      source_huge:
+        media: "(min-width: 1388px)"
+        width: "521"
+      source_big:
+        media: "(min-width: 750px)"
+        width: "430"
+      source_medium:
+        media: "(min-width: 340px)"
+        width: "568"
+      source_default: 
+        width: "300"
 
 flickr_set:
   gallery_tag:   'aside'

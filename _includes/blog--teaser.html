@@ -38,9 +38,18 @@
       </blockquote>
     {% endif %}
 
-    {% if post.img %}
-      <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
-      {% picture {{ post.img }} %}
+    {% if post.img and post.category == 'Photography' %}
+
+        <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
+        {% picture {{ post.img }} %}
+
+      {% endif %}
+
+    {% if post.img and post.category != 'Photography' %}
+
+        <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
+        {% picture aside {{ post.img }} class="picture--aside alignright" %}
+        
     {% endif %}
 
     {{ post.excerpt }}

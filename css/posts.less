@@ -183,13 +183,22 @@
 		margin-bottom: @baseLineHeight / 2;
 	}
 	time {white-space: nowrap;}
+
 	@media @mq-tablets-and-up {
+
+		.picture--aside {
+			float: right;
+			width: 38%;
+		}
+
 		&.format-standard {
 			@w-content: 62%;
 			@m:2%;
+
 			.post-info.full-post {
 				float: right;
 				width: 100 - @w-content - @m;
+
 				.content-bg;
 				padding: 1%;
 				line-height: 1.6;
@@ -204,10 +213,12 @@
 				}
 				.social-share-title {display: block;}
 				.social-share-list {
+
 					>li {
 						margin-left: 0;
 						display: block;
 					}
+
 				}
 				.post-categories + hr {margin-bottom: -3px;}
 				.taxonomy {
@@ -231,6 +242,7 @@
 				}
 			}
 		}
+
 	}
 
 	&.l--teaser {
