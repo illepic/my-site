@@ -33,7 +33,7 @@ Oh boy, this could be a lot; however being a Front End Web Developer is my trade
 * [Alfred](http://www.alfredapp.com) - The ultimate productivity utility. I used to be a big [LaunchBar](http://www.obdev.at/products/launchbar/index.html) fan, but have recently crossed over to the Alfred camp. I can already see the benefits. I highly suggest people moving from using Spotlight as an application launcher to using one of these amazing swiss-army utilities. Version 2's workflow are out of this world.
 * [Moving the arrow keys to the home row](http://www.evanlovely.com/technology/improving-custom-home-row-arrow-keys-mac-hyper/) - Holy crap what a time saver; just like using keyboard shortcuts saves you time by not moving your hand off the home row, having your arrow keys in a place that doesn't require you to move your hands off the home row saves you **so** much time.
 * [TotalFinder](http://totalfinder.binaryage.com/) - Gives Finder tabs, why the hell are they not there now? Tabs are *everywhere*, hell: IE7 has tabs! 
-* [Divvy](http://mizage.com/divvy/) - Effortless window management
+* [Moom](http://manytricks.com/moom/) - Effortless window management. Here's all my [keyboard shortcuts for window management](moom-window-management-shortcuts.png).
 * [Flux](http://stereopsis.com/flux/) - Save your eyesight at night by tinting your monitor at sunset. Helps you sleep better too; seriously.
 
 ### Without These Apps, I'd Be an Organizational Mess ###
