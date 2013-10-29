@@ -1,4 +1,9 @@
 name: Evan Lovely's Site
+description: "The blog of Front End Drupal Developer, Photographer, Traveler and Nature Enthusiast Evan Lovely."
+author: 
+  name: Evan Lovely
+  email: evan@evanlovely.com
+
 url: http://evanlovely.com
 pygments: true
 destination: ../../Sites/my-jekyll-site-html
@@ -63,6 +68,9 @@ picture:
         width: "568"
       source_default: 
         width: "300"
+    rss:
+      source_default:
+        width: "768"
 
 flickr_set:
   gallery_tag:   'aside'

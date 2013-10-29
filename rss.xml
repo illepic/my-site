@@ -1,0 +1,53 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>{{ site.name }}</title>
+		<description>{{ site.description }}</description>
+		<link>{{ site.url }}</link>
+		<atom:link href="{{ site.url }}/rss.xml" rel="self" type="application/rss+xml" />
+
+		{% for post in site.posts limit:10 %}
+			<item>
+				<title>{{ post.title | xml_escape }}{% if post.title-url %} →{% endif %}</title>
+				<description>
+
+			    {% if post.quote %}
+			      <blockquote>
+			        {{ post.quote }}
+			        {% if post.quote_author %}<cite>{{ post.quote_author }}</cite>{% endif %}
+			      </blockquote>
+			    {% endif %}
+					
+			    {% comment %}
+						@todo Get photos working. Currently is using root relative links.
+				    {% if post.img %}
+				    	Photo:
+							{% picture rss {{ post.img }} %}
+						{% endif %}
+
+					{% endcomment %}
+
+					{{ post.excerpt | xml_escape }}
+
+					{% if post.title-url %}
+						<a href="{{ post.title-url }}">Check It Out →</a>
+					{% endif %}
+
+				</description>
+				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+
+				{% if post.title-url %}
+					<link>{{ post.title-url | escape }}</link>
+				{% else %}
+					<link>{{ site.url }}{{ post.url }}</link>
+				{% endif %}
+
+				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+			</item>
+		{% endfor %}
+
+	</channel>
+</rss>
