@@ -20,3 +20,12 @@ imgs:
 
 {% include imgs.html path="/photos/india/_full/Bylakupee-Namdroling-Monastery" %}
 ```
+
+## Setup
+
+### Prerequisites
+
+- [Jekyll](http://jekyllrb.com)
+- [ImageMagick](http://www.imagemagick.org/script/index.php)
+- [MiniMagick](https://github.com/minimagick/minimagick)
+- [redcarpet](https://github.com/vmg/redcarpet)
