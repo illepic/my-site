@@ -68,9 +68,6 @@ picture:
         width: "568"
       source_default: 
         width: "300"
-    rss:
-      source_default:
-        width: "768"
 
 flickr_set:
   gallery_tag:   'aside'

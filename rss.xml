@@ -9,7 +9,7 @@ layout: none
 		<link>{{ site.url }}</link>
 		<atom:link href="{{ site.url }}/rss.xml" rel="self" type="application/rss+xml" />
 
-		{% for post in site.posts limit:10 %}
+		{% for post in site.posts %}
 			<item>
 				<title>{{ post.title | xml_escape }}{% if post.title-url %} →{% endif %}</title>
 				<description>
@@ -21,16 +21,11 @@ layout: none
 			      </blockquote>
 			    {% endif %}
 					
-			    {% comment %}
-						@todo Get photos working. Currently is using root relative links.
-				    {% if post.img %}
-				    	Photo:
-							{% picture rss {{ post.img }} %}
-						{% endif %}
-
-					{% endcomment %}
-
 					{{ post.excerpt | xml_escape }}
+
+			    {% if post.img and post.category == "Photography" %}
+						<a href="{{ site.url }}{{ post.url }}">See the Photo →</a>
+					{% endif %}
 
 					{% if post.title-url %}
 						<a href="{{ post.title-url }}">Check It Out →</a>
