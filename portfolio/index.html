@@ -1,12 +1,63 @@
 ---
 layout: default
 title: Portfolio
+menu: main
 ---
-
 <article class="portfolio-featured carousel slide" id="portfolio-carousel">
-<div class="carousel-inner">
-<div class="item active"><div class="content">
-<div class="text">
+  <div class="carousel-inner">
+    {% for weight in (1..10) limit:1 %}
+      {% for node in site.pages %}
+        {% if node.weight == weight and node.layout == "portfolio" and node.featured == true %}
+            <div class="item active">
+              {% include portfolio--teaser--featured.html %}
+            </div><!-- /.item -->
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% for weight in (1..10) offset:1 %}
+      {% for node in site.pages %}
+        {% if node.weight == weight and node.layout == "portfolio" and node.featured == true %}
+            <div class="item">
+              {% include portfolio--teaser--featured.html %}
+            </div><!-- /.item -->
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div><!-- /.carousel-inner -->
+  <a href="#portfolio-carousel" class="carousel-control left" data-slide="prev">‹</a>
+  <a href="#portfolio-carousel" class="carousel-control right" data-slide="next">›</a>
+</article>
+
+<hr class="clear">
+
+<aside class="portfolio-list">
+  {% for weight in (1..10) %}
+    {% for node in site.pages %}
+      {% if node.weight == weight and node.layout == "portfolio" %}
+        {% capture folder %}{{ node.url | replace:'index.html','' }}{% endcapture %}
+        <figure>
+          {% for img in node.imgs limit:1 %}
+            {% picture third {{ folder }}{{ img }} %}
+            <figcaption>
+              <h2><a href="{{ folder }}">{{ node.title }}</a></h2>
+              <p>{{ node.teaser }}</p>
+              <ul class="terms services">
+                {% for term in node.services %}
+                  <li class="{{ term | downcase | replace:' ','-' }}">
+                    <i class="icon-circle-blank"></i>
+                  </li>
+                {% endfor %}
+              </ul>
+              <a href="{{ folder }}" class="btn btn-mini read-more">Read More</a>
+            </figcaption>
+          {% endfor %}
+        </figure>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</aside>
+<!-- 
 <h2>United Nations ~ Stand Against Poverty</h2>
 <p>One of the biggest website projects I was ever on was one I was the Lead Front End Developer and Developer Manager while at freeStyle Media when we developed,&nbsp;Stand Against Poverty, for the United Nations&nbsp;Millennium Development Goals Campaign, which hosts the world wide event. The website hosted nearly 4,000 events which were created on the site from users that signed up all over the world.</p>
 </div>
@@ -51,11 +102,11 @@ title: Portfolio
 </div>
 <a href="#portfolio-carousel" class="carousel-control left" data-slide="prev">‹</a>
 <a href="#portfolio-carousel" class="carousel-control right" data-slide="next">›</a>
-</article>
+</article> -->
 
 
+{% comment %}
 <hr class="clear">
-
 
 <aside class="portfolio-list">
 <figure>
@@ -107,3 +158,5 @@ title: Portfolio
 </figcaption>
 </figure>
 </aside>
+{% endcomment %}
+

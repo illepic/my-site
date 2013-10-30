@@ -4864,6 +4864,7 @@ div.messages {
   line-height: 1.5;
 }
 .terms i:before {
+  color: #80bd57;
   -webkit-transition: 0.62s ease-in color;
   -moz-transition: 0.62s ease-in color;
   -o-transition: 0.62s ease-in color;
@@ -5497,8 +5498,11 @@ blockquote [class*='icon']:before {
     margin: 0;
     float: left;
     width: 33%;
+    height: 0;
+    padding-bottom: 33%;
     position: relative;
     overflow: hidden;
+    top: 0;
   }
   .portfolio-list > figure:hover > figcaption {
     opacity: 1;

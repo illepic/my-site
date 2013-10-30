@@ -14,14 +14,14 @@ layout: default
 
       {% for img in page.imgs limit:1 %}
         <figure class="item active">
-          {% picture blog {{ folder }}{{ img }}.jpg %}
+          {% picture blog {{ folder }}{{ img }} %}
           <figcaption class="hide">{{ img }}</figcaption>
         </figure>
       {% endfor %}
 
       {% for img in page.imgs offset:1 %}
         <figure class="item">
-          {% picture blog {{ folder }}{{ img }}.jpg %}
+          {% picture blog {{ folder }}{{ img }} %}
           <figcaption class="hide">{{ img }}</figcaption>
         </figure>
       {% endfor %}
@@ -30,6 +30,10 @@ layout: default
     <a href="#image-carousel" class="carousel-control left" data-slide="prev">‹</a>
     <a href="#image-carousel" class="carousel-control right" data-slide="next">›</a>
   </aside>
+
+  {% if page.live-site-url %}
+    <a href="{{ page.live-site-url }}" class="visit-site btn btn-small btn-primary floatRight clear" target="_blank">Visit Site</a>
+  {% endif %}
 
   <div class="taxonomies">
     <div>
