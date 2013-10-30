@@ -106,7 +106,6 @@ div.messages {
     top: 0;
     line-height: 1.5;
     &:before {
-      color: @linkColor;
       .transition(@transition-time @transition-style color);
     }
   }
@@ -177,11 +176,11 @@ div.messages {
 .icon-folder-open-alt:before {color: @linkColor;} //category icon
 a[rel*='category'] {border-bottom-width: 0;}
 .services {
-  [href*="cms"] + i:before { content: "\f044"; }
-  [href*="front-end"] + i:before { content: "\f0ad"; }
-  [href*="web-design"] + i:before { content: "\f040"; }
-  [href*="information-architecture"] + i:before { content: "\f0e8"; }
-  [href*="mobile"] + i {
+  .cms-integration i:before { content: "\f044"; }
+  .front-end-web-development i:before { content: "\f0ad"; }
+  .web-design i:before { content: "\f040"; }
+  .information-architecture i:before { content: "\f0e8"; }
+  .mobile i {
     top: -8px;      
     .portfolio-list & {top: 0;}
     &:before { 
@@ -189,21 +188,21 @@ a[rel*='category'] {border-bottom-width: 0;}
       font-size: 28px;
     }
   }
-  [href*="responsive"] + i:before { content: "\f065"; }
+  .responsive i:before { content: "\f065"; }
 }
 .tech {
   i:before { content: "\f085"; }
-  // [href*="drupal"] + i:before {content: "\f0c0";}
-  // [href*="wordpress"] + i:before {content: "\f0c0";}
-  // [href*="perch"] + i:before {content: "\f0c0";}
-  // [href*="static"] + i:before {content: "\f0c0";}
+  // .drupal i:before {content: "\f0c0";}
+  // .wordpress i:before {content: "\f0c0";}
+  // .perch i:before {content: "\f0c0";}
+  // .static i:before {content: "\f0c0";}
 }
 .features {
-  [href*="image-gallery"] + i:before { content: "\f03e"; }
-  [href*="modular-design"] + i:before { content: "\f009"; }
-  [href*="social-plumbing"] + i:before {content: "\f0c0";}
-  [href*="user-generated-content"] + i:before { content: "\f007"; }
-  [href*="custom-content"] + i:before { content: "\f0c9"; }
+  .image-gallery i:before { content: "\f03e"; }
+  .modular-design i:before { content: "\f009"; }
+  .social-plumbing i:before {content: "\f0c0";}
+  .user-generated-content i:before { content: "\f007"; }
+  .custom-content i:before { content: "\f0c9"; }
 }
 
 .pager {

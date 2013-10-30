@@ -1,0 +1,70 @@
+---
+layout: default
+---
+<article class="type--portfolio l--full">
+
+  <div id="content">
+    {{ content }}
+  </div>
+
+  <aside class="carousel slide" id="image-carousel">
+    <div class="carousel-inner">
+
+      {% capture folder %}{{ page.url | replace:'index.html','' }}{% endcapture %}
+
+      {% for img in page.imgs limit:1 %}
+        <figure class="item active">
+          {% picture blog {{ folder }}{{ img }}.jpg %}
+          <figcaption class="hide">{{ img }}</figcaption>
+        </figure>
+      {% endfor %}
+
+      {% for img in page.imgs offset:1 %}
+        <figure class="item">
+          {% picture blog {{ folder }}{{ img }}.jpg %}
+          <figcaption class="hide">{{ img }}</figcaption>
+        </figure>
+      {% endfor %}
+
+    </div>
+    <a href="#image-carousel" class="carousel-control left" data-slide="prev">‹</a>
+    <a href="#image-carousel" class="carousel-control right" data-slide="next">›</a>
+  </aside>
+
+  <div class="taxonomies">
+    <div>
+      <h3>Features</h3>
+      <ul class="terms features">
+        {% for term in page.features %}
+          <li class="{{ term | downcase | replace:' ','-' }}">
+            {{ term }}
+            <i class="icon-circle-blank"></i>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Services</h3>
+      <ul class="terms services">
+        {% for term in page.services %}
+          <li class="{{ term | downcase | replace:' ','-' }}">
+            {{ term }}
+            <i class="icon-circle-blank"></i>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div>
+      <h3>Technologies</h3>
+      <ul class="terms tech">
+        {% for term in page.tech %}
+          <li class="{{ term | downcase | replace:' ','-' }}">
+            {{ term }}
+            <i class="icon-circle-blank"></i>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</article>
