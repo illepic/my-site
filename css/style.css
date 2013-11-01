@@ -3432,7 +3432,7 @@ ul.icons li [class*=" icon-"] {
 }
 /*Hat tip: http://www.colourlovers.com/palette/2154411/Earthy_touch*/
 .content-bg {
-  background: url(img/bg-trans-.3.png);
+  background: url(/css/img/bg-trans-.3.png);
   background: rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -4186,7 +4186,7 @@ blockquote {
   font-style: normal;
 }
 body {
-  background: #f7b448 url(img/body-bg.jpg) no-repeat center -58px;
+  background: #f7b448 url(/css/img/body-bg.jpg) no-repeat center -58px;
   background-size: 100% auto;
   padding-bottom: 50px;
   margin: 0;
@@ -4227,12 +4227,12 @@ body.home.js-ran #site-name {
   -ms-transition: 0.62s ease-in all;
   -o-transition: 0.62s ease-in all;
   transition: 0.62s ease-in all;
-  background: transparent url(img/header-top.png) no-repeat center top;
+  background: transparent url(/css/img/header-top.png) no-repeat center top;
   background-size: 100% auto;
   padding-top: 6.5%;
 }
 #wrapper #header-trees {
-  background: transparent url(img/header-trees.png) no-repeat center top;
+  background: transparent url(/css/img/header-trees.png) no-repeat center top;
   position: absolute;
   top: 0;
   left: 5%;
@@ -4242,7 +4242,7 @@ body.home.js-ran #site-name {
 }
 #wrapper #container {
   padding: 18px;
-  background: #523f30 url(img/wood.jpg) repeat;
+  background: #523f30 url(/css/img/wood.jpg) repeat;
   position: relative;
   z-index: 10;
   -webkit-border-radius: 8px;
@@ -4282,7 +4282,7 @@ body.home.js-ran #site-name {
   width: 15%;
   z-index: 10;
   padding: 18px 1.1% 1.1%;
-  background: url(img/wood.jpg) repeat;
+  background: url(/css/img/wood.jpg) repeat;
   -webkit-border-radius: 0 0 24px 24px;
   -moz-border-radius: 0 0 24px 24px;
   border-radius: 0 0 24px 24px;
@@ -4446,7 +4446,7 @@ nav#primary-nav > ul > li {
 }
 nav#primary-nav > ul > li > a {
   padding: .3em .6em .3em .6em;
-  background: url(img/wood.jpg) repeat;
+  background: url(/css/img/wood.jpg) repeat;
   border: solid 1px rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 8px 0 0 8px;
   -moz-border-radius: 8px 0 0 8px;
@@ -4501,7 +4501,7 @@ nav#primary-clone select {
   width: 5.2%;
   top: 43%;
   z-index: 10;
-  background: url(img/wood.jpg) repeat center center;
+  background: url(/css/img/wood.jpg) repeat center center;
   padding: 0.4em;
   -webkit-border-radius: 0 8px 8px 0;
   -moz-border-radius: 0 8px 8px 0;
@@ -4793,7 +4793,7 @@ section article + article {
 }
 .terms ul.links a {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ bWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6 eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEz NDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNl SUQ9InhtcC5paWQ6NTIyMTg1Q0M4RTUwMTFFMTg4NDVBMEQzRDk1Q0UzNDciIHhtcE1NOkRvY3Vt ZW50SUQ9InhtcC5kaWQ6NTIyMTg1Q0Q4RTUwMTFFMTg4NDVBMEQzRDk1Q0UzNDciPiA8eG1wTU06 RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGMjMzNTRFQjhFNEExMUUxODg0 NUEwRDNEOTVDRTM0NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGMjMzNTRFQzhFNEExMUUx ODg0NUEwRDNEOTVDRTM0NyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1w bWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiTnrUgAAAJfSURBVHjajFNNaBNBFH47G9tYFSIkB1Mp IgG1rRUPKipVNKknj+JBLSKIl5LiIYfkUBEvDQHBHloQERRBBUEvPdXWgy1Kawv+EMSSxFJN0mxi GprETXZ3Jr6ZxrAbq/hgmZ3d933z3vu+kWq1GphjYil3eLNNHiaStF8CcOmMQVmnWdVgn6qUhi7s c8+Z8yUzwUxydcouk9PpchVKGgVW/4dEIBNJrCplry53tXubCezzK2vLa5ruSpeq8K+gmI/VZJVy tWPomKdC6ieP/w+YhyxJgCDXtlbbuKhg+nu+F8t+/SVfFgkXO91/gN6mCpAo/LR8421qlJ0g2GeE b8wRDAbB7/c39kfdDtjtaLPkbN0k8yVCWmTi4QNrjkwmA4qiQPrxGEycPQjdrGAh2YIERY16bKiS kzVJGQ6HxZp78QDitwYghQW+D/RD79Np8Z23gzJjC9RJuM4bhfLsHnwOXcGhAexpBYjPzsB86Kql HY3WgKAkOckEHHgZFateUaGInVUYCBIPkiw8uS9IuHQGq/EnR9BlMW6Shkz4zkna+wfhwI0RKLF1 kpZ6JemvCbj5JgY/VA3QsTHeQsBcwZEdjr+SGL7zMHYuApdQ6jjOoagbAeHEh9HkJJJ4uUl+x2y6 ABTLHO3rgtjQNYghYOTkdQFeRM/kVH1qtK/TJwjufvhmR8wyd1jbur4WkuM7t8OjaKoBTpaq2eeL Kx35QV/FcpnuLCxN4mC83CRcZy4VJ+GgM7ucomw0rzh5w9sorDWXOITyDFcM1qMahotLhZFFso82 IoVun9r7zpz/S4ABAGvzQDM19BC2AAAAAElFTkSuQmCC");
-  *background-image: url(img/base64src/tag.png);
+  *background-image: url(/css/img/base64src/tag.png);
   padding: 2px 4px;
   font-size: .9em;
   line-height: 1;
@@ -5584,7 +5584,7 @@ blockquote [class*='icon']:before {
   .type--post.format-standard .post-info.full-post {
     float: right;
     width: 36%;
-    background: url(img/bg-trans-.3.png);
+    background: url(/css/img/bg-trans-.3.png);
     background: rgba(0, 0, 0, 0.3);
     padding: 1%;
     line-height: 1.6;
