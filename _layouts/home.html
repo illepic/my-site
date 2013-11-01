@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{{ content }}
+<hr>
+<h3>Recent Posts</h3>
+
+{% for post in site.posts limit:3 %}
+  {% include blog--teaser.html %}
+{% endfor %}
+
+<br>
+
+<a href="/blog" class="floatRight btn btn-small">More Posts →</a>
