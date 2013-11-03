@@ -2415,8 +2415,8 @@ a.badge:hover {
  */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('css/font-awesome/font/fontawesome-webfont.eot?v=3.0.1');
-  src: url('css/font-awesome/font/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'), url('css/font-awesome/font/fontawesome-webfont.woff?v=3.0.1') format('woff'), url('css/font-awesome/font/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  src: url('/css/fonts/fontawesome-webfont.eot?v=3.0.1');
+  src: url('/css/fonts/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'), url('/css/fonts/fontawesome-webfont.woff?v=3.0.1') format('woff'), url('/css/fonts/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -5378,6 +5378,7 @@ blockquote [class*='icon']:before {
   display: inline-block;
 }
 .social-share-list {
+  display: inline-block;
   list-style-type: none;
 }
 .social-share-list > li {
