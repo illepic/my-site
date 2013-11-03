@@ -1,2 +1,112 @@
-name: Your New Jekyll Site
+name: Evan Lovely's Site
+description: "The blog of Front End Drupal Developer, Photographer, Traveler and Nature Enthusiast Evan Lovely."
+author: 
+  name: Evan Lovely
+  email: evan@evanlovely.com
+header_img: glacier
+url: http://evanlovely.com
 pygments: true
+destination: ../../Sites/my-jekyll-site-html
+permalink: /blog/:categories/:title
+paginate: 10
+paginate_path: "/blog/page/:num"
+markdown: redcarpet
+
+picture:
+  source: ""
+  output: "generated"
+  markup: "picturefill"
+  presets:
+    default:
+      ppi: [1, 2]
+      attr:
+        class: "picture--default"
+        itemprop: "image"
+      source_huge:
+        media: "(min-width: 1025px)"
+        width: "1368"
+      source_big:
+        media: "(min-width: 896px)"
+        width: "1025"
+      source_large:
+        media: "(min-width: 600px)"
+        width: "642"
+      source_medium:
+        media: "(min-width: 340px)"
+        width: "568"
+      source_default: 
+        width: "300"
+    blog:
+      ppi: [1, 2]
+      attr:
+        class: "picture--blog"
+        itemprop: "image"
+      source_huge:
+        media: "(min-width: 1388px)"
+        width: "821"
+      source_big:
+        media: "(min-width: 750px)"
+        width: "630"
+      source_medium:
+        media: "(min-width: 340px)"
+        width: "568"
+      source_default: 
+        width: "300"
+    aside:
+      ppi: [1, 2]
+      attr:
+        class: "picture--aside"
+        itemprop: "image"
+      source_huge:
+        media: "(min-width: 1388px)"
+        width: "521"
+      source_big:
+        media: "(min-width: 750px)"
+        width: "430"
+      source_medium:
+        media: "(min-width: 340px)"
+        width: "568"
+      source_default: 
+        width: "300"
+    third:
+      ppi: [1, 2]
+      attr:
+        class: "picture--third"
+        itemprop: "image"
+      source_huge:
+        media: "(min-width: 1388px)"
+        width: "521"
+      source_big:
+        media: "(min-width: 600px)"
+        width: "430"
+      source_medium:
+        media: "(min-width: 440px)"
+        width: "568"
+      source_default: 
+        width: "300"
+
+flickr_set:
+  gallery_tag:   'aside'
+  gallery_class: 'flickr-gallery'
+  a_href:        'b'
+  a_target:      '_blank'
+  image_rel:     ''
+  image_size:    'b'
+  api_key:       'a368e36d3b36009ed1a651817be9c702'
+
+asset_bundler:
+  compress:
+    js: yui
+    css: yui
+  base_path: /bundles/
+  server_url:
+  remove_bundled: true
+  dev: false
+  markup_templates:
+    js: "<script type='text/javascript' src='{{url}}'></script>\n"
+    css: "<link rel='stylesheet' type='text/css' href='{{url}}' />\n"
+
+JB:
+  BASE_PATH : /
+  categories_path : /blog/categories.html
+  tags_path : /blog/tags.html

@@ -1,9 +1,51 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+<article class="type--post l--full format-standard">
 
-<div class="post">
-{{ content }}
-</div>
+  <aside class="post-info full-post">
+
+    {% assign categories_list = page.categories %}  
+    {% include categories_inline %}
+    <hr class="invisible">
+
+    {% assign tags_list = page.tags %}  
+    {% include tags_inline %}
+
+    <time datetime="2013-07-20T14:01:16+00:00">
+      <i class="icon-calendar"></i>
+      <span class="day">{{ page.date | date: "%d" }}</span>
+      <span class="month">{{ page.date | date: "%b" }}</span>
+      <span class="year">{{ page.date | date: "%Y" }}</span>
+      <!-- <div>{{ page.date | date_to_string }}</div> -->
+    </time> 
+
+    {% include social-share.html %}
+    
+  </aside>
+
+  <div class="entry-content content-bg">
+  {% if page.quote %}
+    <blockquote>
+      <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+      <p>{{ page.quote }}</p>
+      <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
+      {% if page.quote_author %}<cite>{{ page.quote_author }}</cite>{% endif %}
+    </blockquote>
+  {% endif %}
+
+
+  {% if page.img %}
+    <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
+    {% picture {{ page.img }} %}
+  {% endif %}
+
+  {{ content }}
+
+  </div>
+
+  <footer class="entry-meta">
+    <div id="disqus_thread"></div>
+  </footer>
+
+</article>

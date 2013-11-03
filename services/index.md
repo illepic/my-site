@@ -1,6 +1,7 @@
 ---
 title: Services
 layout: default
+menu: main
 ---
 
 <h2>My Skills</h2>

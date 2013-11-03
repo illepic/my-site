@@ -1,0 +1,42 @@
+{% capture folder %}{{ node.url | replace:'index.html','' }}{% endcapture %}
+<div class="content">
+  <div class="text">
+    <h2><a href="{{ folder }}">{{ node.title }}</a></h2>
+    {{ node.content | markdownify }}
+  </div>
+  <a href="{{ folder }}" class="screenshot">
+    {% for img in node.imgs limit:1 %}
+      {% picture blog {{ folder }}{{ img }} %}
+      <span class="hide">{{ img }}</span>
+    {% endfor %}
+  </a>
+</div><!-- /.content -->
+<div class="meta">
+  <ul class="terms features">
+    {% for term in node.features %}
+      <li class="{{ term | downcase | replace:' ','-' }}">
+        {{ term }}
+        <i class="icon-circle-blank"></i>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="terms services">
+    {% for term in node.services %}
+      <li class="{{ term | downcase | replace:' ','-' }}">
+        {{ term }}
+        <i class="icon-circle-blank"></i>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <ul class="terms tech">
+    {% for term in node.tech %}
+      <li class="{{ term | downcase | replace:' ','-' }}">
+        {{ term }}
+        <i class="icon-circle-blank"></i>
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{{ folder }}" class="read-more btn btn-primary btn-large">View Project</a>
+</div>

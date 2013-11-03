@@ -1,0 +1,24 @@
+---
+title: Notes
+layout: default
+---
+<p class="intro">Welcome to my notes section! I try to maintain and constantly update the information on these pages. Think of them as my personal wiki of information that I want to share – enjoy!</p>
+
+<section>
+{% for weight in (1..10) %}{% for page in site.pages %}
+  {% if page.layout == "note" and page.weight == weight and page.published != "false" %}
+    <article class="type--note l--teaser">
+      <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+        {% if page.tags %}
+        <ul>
+          {% assign tags_list = page.tags %}  
+          {% include tags_inline %}
+        </ul>
+        {% endif %}
+        {% if page.teaser_text %}
+          <p>{{ page.teaser_text }}</p>
+        {% endif %}
+    </article>
+  {% endif %}
+{% endfor %}{% endfor %}
+</section>
