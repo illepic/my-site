@@ -1,6 +1,10 @@
 ---
 layout: note
 title: My Sublime Text Setup
+tags: 
+  - tech
+  - mac
+  - web-development
 weight: 4
 alias: "my-sublime-text-setup"
 ---

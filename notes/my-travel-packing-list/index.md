@@ -1,6 +1,9 @@
 ---
 title: My Travel Packing List
 weight: 2
+tags: 
+  - travel
+  - gear
 layout: note
 ---
 

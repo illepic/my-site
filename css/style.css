@@ -5722,6 +5722,9 @@ blockquote [class*='icon']:before {
   display: block;
   margin: 0 auto;
 }
+.type--note.l--teaser {
+  margin-bottom: 18px;
+}
 #comments {
   clear: both;
 }

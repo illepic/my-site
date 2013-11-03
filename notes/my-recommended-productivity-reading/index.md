@@ -2,7 +2,9 @@
 title: My Recommended Productivity Reading
 layout: note
 weight: 8
-draft: true
+tags: 
+  - productivity
+published: false
 ---
 
 ## Vital Productivity Knowledge

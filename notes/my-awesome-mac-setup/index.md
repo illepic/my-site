@@ -2,6 +2,10 @@
 layout: note
 title: My Awesome Mac Setup
 weight: 1
+tags: 
+  - mac
+  - tech
+  - gear
 teaser_text: "This is a continually updated list of what I currently have installed for Mac Software, along with the hardware and desk setup."
 alias: "/my-awesome-mac-setup"
 ---
