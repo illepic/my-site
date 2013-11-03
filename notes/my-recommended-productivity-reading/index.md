@@ -1,6 +1,7 @@
 ---
 title: My Recommended Productivity Reading
-layout: default
+layout: note
+weight: 8
 draft: true
 ---
 

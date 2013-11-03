@@ -1,6 +1,7 @@
 ---
 title: Sutter Home Winery
 layout: portfolio
+featured: true
 weight: 3
 imgs:
     - Landing-Page.png

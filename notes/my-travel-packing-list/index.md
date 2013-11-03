@@ -1,6 +1,7 @@
 ---
 title: My Travel Packing List
-layout: default
+weight: 2
+layout: note
 ---
 
 - Total weight: 23lbs
@@ -89,7 +90,5 @@ layout: default
 
 # Backpack
 
-- North Face Router 41L
-
-{% picture {{ page.url | remove:'index.html' }}_backpack.jpg %}
-
+- Big bag: Osprey Porter 46L
+- Day pack: Osprey Ozone Daypack 24L

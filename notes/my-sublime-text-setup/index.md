@@ -1,6 +1,8 @@
 ---
-layout: default
+layout: note
 title: My Sublime Text Setup
+weight: 4
+alias: "my-sublime-text-setup"
 ---
 
 Here's an ongoing list of my [Sublime Text](http://sublimetext.com) Setup. 

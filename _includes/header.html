@@ -33,12 +33,7 @@
 <!-- <div id="search"> <?php get_search_form() ?> </div> -->
 
 <nav id="primary-nav">
-  <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/portfolio">Portfolio</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/services">Services</a></li>
-  </ul>
+{% include menu--main.html %}
 </nav>
 
 <div id="wrapper" class="hfeed site">
@@ -48,14 +43,8 @@
     <img src="/css/img/logo.png" alt="Evan Lovely Design">
   </a></h1>
 	<header id="masthead" class="site-header" role="banner">
-	<!-- <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
-		<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
-			<a href="/" class="header-image">
-        <img src="/img/headers/current.jpg" />
-      </a>
-		<?php endif; ?>
-
+    {% picture /img/headers/{{ site.header_img }}.jpg class="header-image" %}
+    <nav id="primary-clone">{% include menu--main.html %}</nav>
 		<nav class="my-social-sites">		
       <ul id="menu-my-social-sites-1" class="menu">
         <li>

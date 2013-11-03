@@ -1,19 +1,21 @@
 ---
-layout: default
+layout: note
 title: My Awesome Mac Setup
+weight: 1
+teaser_text: "This is a continually updated list of what I currently have installed for Mac Software, along with the hardware and desk setup."
+alias: "/my-awesome-mac-setup"
 ---
 
 This is a continually updated list of what I'm currently using.
 
 ## Workspace
 
-<img src="my-workspace.jpg" data-src-old="http://www.evanlovely.com/tricky-name/wp-content/uploads/2013/03/1362295702.jpg" title="My Workspace" alt="A standing desk in front of a window" class="alignright size-full" width="449" height="600" />
+![](my-workspace.jpg)
 
 * [Cheap minimal standing desk](http://www.amazon.com/gp/product/B0050S7CK8/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B0050S7CK8&linkCode=as2&tag=evalov-20) from IKEA.
 * [Stool](http://www.amazon.com/gp/product/B001FB5KA8/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B001FB5KA8&linkCode=as2&tag=evalov-20) for when standing gets old.
 * [Nada Chair](http://loveatfirstsit.com/) for correct lumber alignment while on said stool — better back support than **any** chair I've used.
-* West facing window that overlooks a nice scene and allows me to focus far away and not close at my computer all the time. Bonus: sunny afternoons soak me in sun and leave my monitors glare-free. *Love* those days.
-* Sunlamp for keeping energy high when said sun is not around.
+* Sunlamp for keeping energy high.
 * Awesome [cat](http://www.flickr.com/photos/footfun/3838719190/) that thinks he's cooler than my keyboard.
 * Yerba Maté for caffeine (but I still love coffee). [Here's why I love it.](http://www.evanlovely.com/personal/why-i-love-yerba-mate-and-its-benefits/)
 
