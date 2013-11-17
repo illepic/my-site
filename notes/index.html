@@ -8,7 +8,7 @@ layout: default
 {% for weight in (1..10) %}{% for page in site.pages %}
   {% if page.layout == "note" and page.weight == weight and page.published != "false" %}
     <article class="type--note l--teaser">
-      <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+      <h2><a href="{{ page.url | replace:'index.html','' }}">{{ page.title }}</a></h2>
         {% if page.tags %}
         <ul>
           {% assign tags_list = page.tags %}  
