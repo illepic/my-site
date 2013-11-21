@@ -15,7 +15,7 @@ Here's all my keyboard shortcuts I have set up for window management using Moom,
 
 ## My Mac Window Management Keyboard Shortcuts
 
-![Mac Window Management Keyboard Shortcuts](/my-awesome-mac-setup/moom-window-management-shortcuts.png)
+![Mac Window Management Keyboard Shortcuts](/notes/my-awesome-mac-setup/moom-window-management-shortcuts.png)
 
 
 ## Changes to my software setup
