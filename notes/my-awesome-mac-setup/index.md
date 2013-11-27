@@ -88,5 +88,5 @@ Oh boy, this could be a lot; however being a Front End Web Developer is my trade
 ### Miscellaneous
 
 * [Reeder](http://reederapp.com/mac/) - Excellent RSS Reader that syncs with Google Reader.
-* [TweetBoot](http://tapbots.com/software/tweetbot/mac/) - Phenomenal Twitter App
+* [TweetBot](http://tapbots.com/software/tweetbot/mac/) - Phenomenal Twitter App
 
