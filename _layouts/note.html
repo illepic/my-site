@@ -4,6 +4,8 @@ layout: default
 <article class="type--note l--full">
   {% include social-share.html %}
   {{ content }}
+  <hr />
+  <p class="history"><a href="https://github.com/EvanLovely/my-jekyll-site/commits/master{{ page.url | replace:".html",".md" }}" target="_blank">View historical changes to this note.</a></p>
   {% include social-share.html %}
   <div id="disqus_thread"></div>
 </article>
