@@ -4,7 +4,7 @@ img:
 title-url: 
 quote: ""
 quote_author: 
-quote-source-url: 
+quote_source_url: 
 layout: post
 alias: 
 category: 
