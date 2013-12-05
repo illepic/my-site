@@ -5,6 +5,7 @@ author:
   email: evan@evanlovely.com
 header_img: glacier
 url: http://evanlovely.com
+github: https://github.com/EvanLovely/my-jekyll-site/commits/master
 pygments: true
 destination: ../../Sites/my-jekyll-site-html
 permalink: /blog/:categories/:title
