@@ -57,8 +57,6 @@ You'll of certainly put a lot of time and money to get you on your international
 
 Give yourself a list of the major experience you *need* to have and then a list of the experiences you *want* to have and allow yourself the space to have experiences you have no idea you'll love to have. It's about a balance between planned and spontaneous here; try not to go too far in either direction and you'll have a wonderful time.
 
-Another good way to approach this, as [Sean Ogle](http://www.seanogle.com/) points out in the comments below, is to intentionally just **go** with no itinerary in mind and let the trip happen. This can lead to an unexpectedly wonderful experience that you could of never planned for if you tried. I think that it's important to make sure that is your intention though: to have no intention.
-
 {% comment %}
 
 ## Staying Healthy
@@ -71,5 +69,6 @@ Careful handwashing, most conveniently achieved with packaged wipes or waterless
 ## Other People's Travel Tips
 
 - [Chris Guillebeau's Useful Travel Skills](http://chrisguillebeau.com/3x5/useful-travel-skills/) ~ The man has [traveled to *every* country in the world](http://chrisguillebeau.com/places-ive-been/); surely he knows what he's talking about!
+- [Tynan's "Why Travel" Post](http://tynan.com/whytravel)
 
 {% endcomment %}
