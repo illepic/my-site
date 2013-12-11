@@ -27,8 +27,8 @@ layout: none
 						<a href="{{ site.url }}{{ post.url }}">See the Photo →</a>
 					{% endif %}
 
-					{% if post.title-url %}
-						<a href="{{ post.title-url }}">Check It Out →</a>
+					{% if post.title_url %}
+						<a href="{{ post.title_url }}">Check It Out →</a>
 					{% endif %}
 
 				</description>
