@@ -28,7 +28,7 @@ layout: default
   {% if page.quote %}
     <blockquote>
       <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
-      <p>{{ page.quote }}</p>
+      <p>{{ page.quote | markdownify }}</p>
       <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
 	  {% if page.quote_author %}<cite>{% if page.quote_source_url %}<a href="{{ page.quote_source_url }}">{% endif %}{{ page.quote_author }}{% if page.quote_source_url %}</a>{% endif %}</cite>{% endif %}
     </blockquote>
@@ -41,6 +41,11 @@ layout: default
   {% endif %}
 
   {{ content }}
+  
+  {% if post.title_url %}
+    <br />
+    <a href="{{ post.title_url }}" class="btn read-more">Check It Out <i class="icon-circle-arrow-right"></i></a>
+  {% endif %}
 
   </div>
 

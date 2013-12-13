@@ -51,8 +51,11 @@
         {% picture aside {{ post.img }} class="picture--aside alignright" %}
         
     {% endif %}
-
-    {{ post.excerpt }}
+    {% if post.title_url %}
+      {{ content }}
+      {% else %}
+      {{ post.excerpt }}
+    {% endif %}
 
   </div>
 
