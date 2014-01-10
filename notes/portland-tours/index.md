@@ -40,7 +40,7 @@ Can walk under the falls, optional to go on to Triple Falls. 1/2 mile hike up to
 - Green Dragon
 - Hair of the Dog Brewery
 - Horse Brass - 46th & SE Belmont
-- John's Market - HUGE bottle selection
+- John's Market - **Huge** bottle selection
 
 
 # Shopping
