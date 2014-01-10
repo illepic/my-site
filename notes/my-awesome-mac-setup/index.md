@@ -69,7 +69,7 @@ Oh boy, this could be a lot; however being a Front End Web Developer is my trade
 * [Pixa](http://www.pixa-app.com/) - Stock Images & Vector organization. This app is so sweet I almost want to write a blog post about just it. Can scan an external folder, uses OpenMeta (native) tags, can search by color… it's just sweet.
 * [Skitch](http://evernote.com/skitch/) - Screenshots with arrows and text just explains things *so* much better. They've also fixed a lot of things that people didn't like about the 2.0 update.
 * [Patterns](http://krillapps.com/patterns/) - **Finally** allowed me to understand Regular Expressions.
-* [TextExpander](http://smilesoftware.com/TextExpander/index.html) - Code Snippet & frequently used text management. I used to use and love [CodeBox], but it seems to of dropped off in active development and I'm seeing more features I like with TextExpander.
+* [TextExpander](http://smilesoftware.com/TextExpander/index.html) - Code Snippet & frequently used text management. I used to use and love [CodeBox](http://www.shpakovski.com/codebox/), but it seems to of dropped off in active development and I'm seeing more features I like with TextExpander.
 
 ### Photo Management ###
 
