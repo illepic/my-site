@@ -55,7 +55,8 @@ Need some extra help with a lot of front-end web development work? Need some des
 
 - [Aten Design Group](http://atendesigngroup.com)
 - [OMBU Web](http://ombuweb.com)
-- [SuperStar Media](http://superstarmedia.com/site/)
+- [The New Group](http://thenewgroup.com/)
+- [SuperStar Media](http://superstarmedia.com/site/) - Now acquired by [Phase2](http://www.phase2technology.com/blog/expanding-with-the-superstar-media-team/)
 
 ## My Approach
 
