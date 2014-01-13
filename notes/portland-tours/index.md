@@ -35,10 +35,14 @@ Can walk under the falls, optional to go on to Triple Falls. 1/2 mile hike up to
 
 # Beer Spots
 
-- APEX
+- [Apex Bar](http://www.yelp.com/biz/apex-bar-portland#query:beer)
+- [The Beermongers](http://www.yelp.com/biz/the-beermongers-portland#query:beer)
+- [Base Camp Brewing](http://www.yelp.com/biz/base-camp-brewing-portland#query:beer)
+- [Hopworks Urban Brewery](http://www.yelp.com/biz/hopworks-urban-brewery-portland#query:beer)
+- [Burnside Brewing Co](http://www.yelp.com/biz/burnside-brewing-co-portland#query:beer)
+- [Hair of the Dog Brewery and Tasting Room](http://www.yelp.com/biz/hair-of-the-dog-brewery-and-tasting-room-portland#query:beer)
 - Beer - 14th & SE Yamhill
 - Green Dragon
-- Hair of the Dog Brewery
 - Horse Brass - 46th & SE Belmont
 - John's Market - **Huge** bottle selection
 
