@@ -32,5 +32,5 @@ Here's an ongoing list of my [Sublime Text](http://sublimetext.com) Setup.
 
 ## Theme
 
-I'm currently using the dark variant of the [Soda Theme](https://github.com/buymeasoda/soda-theme). Looks gorgeous on my retina screen.
+I'm currently using the dark variant of the [Space Gray](http://kkga.github.io/spacegray/). Thanks for the tip [Chris Bloom](https://plus.google.com/+ChristopherBloom/)!
 
