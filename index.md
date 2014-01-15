@@ -8,4 +8,4 @@ I am a front end web developer &amp; designer who crafts websites that are easy 
 
 **Thanks for stopping by!**
 
-<p><a class="btn btn-primary btn-large" href="/portfolio">Portfolio</a> <a class="btn btn-large" href="/contact">Contact</a></p>
+<p><a class="btn btn-primary btn-large" href="/portfolio">Portfolio</a> <a class="btn btn-primary btn-large" href="/services">Services</a> <a class="btn btn-large" href="/contact">Contact</a></p>
