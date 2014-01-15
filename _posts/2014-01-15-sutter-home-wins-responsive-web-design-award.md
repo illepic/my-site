@@ -1,6 +1,6 @@
 ---
 title: A Project I Worked On Won a Responsive Web Design Award!
-title-url: "http://www.pinterest.com/pin/525654587728414673/"
+title_url: "http://www.pinterest.com/pin/525654587728414673/"
 img: "/portfolio/sutter-home-winery/phone-tablet.jpg"
 layout: post
 category: Technology

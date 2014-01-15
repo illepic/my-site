@@ -1,7 +1,7 @@
 ---
 title: 
 img: 
-title-url: 
+title_url: 
 quote: ""
 quote_author: 
 quote_source_url: 

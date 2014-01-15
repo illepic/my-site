@@ -1,6 +1,6 @@
 ---
 title: Grunt for People Who Think Things Like Grunt are Weird and Hard
-title-url: http://24ways.org/2013/grunt-is-not-weird-and-hard
+title_url: http://24ways.org/2013/grunt-is-not-weird-and-hard
 layout: post 
 category: Technology
 tags:

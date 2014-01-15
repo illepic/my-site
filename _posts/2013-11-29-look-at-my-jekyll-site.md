@@ -1,6 +1,6 @@
 ---
 title: "A Look Under the Hood of My Jekyll Site"
-title-url: /notes/about-this-jekyll-site
+title_url: /notes/about-this-jekyll-site
 layout: post
 category: Technology
 tags:

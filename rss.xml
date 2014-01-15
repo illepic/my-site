@@ -11,7 +11,7 @@ layout: none
 
 		{% for post in site.posts %}
 			<item>
-				<title>{{ post.title | xml_escape }}{% if post.title-url %} →{% endif %}</title>
+				<title>{{ post.title | xml_escape }}{% if post.title_url %} →{% endif %}</title>
 				<description>
 
 			    {% if post.quote %}
@@ -34,8 +34,8 @@ layout: none
 				</description>
 				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
 
-				{% if post.title-url %}
-					<link>{{ post.title-url | escape }}</link>
+				{% if post.title_url %}
+					<link>{{ post.title_url | escape }}</link>
 				{% else %}
 					<link>{{ site.url }}{{ post.url }}</link>
 				{% endif %}
