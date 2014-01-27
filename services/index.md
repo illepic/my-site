@@ -96,6 +96,9 @@ If you want a complete Drupal solution, then I can help with the project from st
 - Email Templates
 - Blackberry Compatibility
 - IE6 Compatibility
+- White Label work (also known as [Silent Subcontracting](http://alistapart.com/column/the-silent-subcontractor)) - basically I want to be able to my work on my portfolio (with due credit given where deserved to other team members of course)
+- Ongoing website maintenance
+- Hosting and domain names
 
 [3]: http://drupal.org 
 [4]: http://whitehouse.gov 
