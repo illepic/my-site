@@ -24,6 +24,7 @@ Here's an ongoing list of my [Sublime Text](http://sublimetext.com) Setup.
 * [Side Bar Enhancements](https://github.com/titoBouzout/SideBarEnhancements)
 * [SideBarGit](https://github.com/SublimeText/SideBarGit)
 * [Easy Motion](https://github.com/tednaleid/sublime-EasyMotion)
+* [List stylesheet variables](https://github.com/MaciekBaron/sublime-list-stylesheet-vars) - Sublime Text plugin for listing and inserting stylesheet preprocessor variables (LESS, SASS, Stylus)
 
 #### Checking these out
 
