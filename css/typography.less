@@ -117,6 +117,15 @@ pre {
   font-family: Courier, monospace;
   overflow: auto;
 }
+code {
+	border: solid 1px @gray-light;
+	padding: 0 5px 2px;
+	background-clip: padding-box;
+	.border-radius(3px);
+	a & {
+		border-color: @linkColor;
+	}
+}
 #container blockquote {
 	border-left: 3px solid @gray-light;
 	padding-left: @baseLineHeight/2;

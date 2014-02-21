@@ -3885,6 +3885,17 @@ pre {
   font-family: Courier, monospace;
   overflow: auto;
 }
+code {
+  border: solid 1px #9d9d9d;
+  padding: 0 5px 2px;
+  background-clip: padding-box;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+a code {
+  border-color: #80bd57;
+}
 #container blockquote {
   border-left: 3px solid #9d9d9d;
   padding-left: 9px;
