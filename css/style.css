@@ -3895,6 +3895,11 @@ code {
 }
 a code {
   border-color: #80bd57;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+pre code {
+  border: 0;
 }
 #container blockquote {
   border-left: 3px solid #9d9d9d;
