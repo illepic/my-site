@@ -3,6 +3,8 @@ title: Services
 layout: default
 menu: main
 ---
+**I currently cannot offer any of these services as I am employed full time by an [epic Drupal company](http://phase2technology.com). Thanks for looking!**
+
 I am a Front End Web Designer & Developer that has been working with the Drupal Content Management System since 2007. I'm extremely proficient with the latest trends in tech and actively incorporate them to improve my methods. I've taught myself my skill set, continue to add to it, and love self-education. Possessing a degree in Psychology and being a natural people-person allows me to engage productively with the members of my team and bring out the best ideas in all of us. The opportunities I'm looking for include Front End Web Development while working closely and iteratively with a designer; Developer Management, though I still want to code; or Teaching Tech, which is what I'd ultimately like to do.
 
 ## My Skills

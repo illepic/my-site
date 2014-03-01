@@ -5814,3 +5814,6 @@ blockquote [class*='icon']:before {
 .hide {
   display: none;
 }
+.inline-list > li {
+  display: inline-block;
+}
