@@ -4,7 +4,10 @@ layout: "default"
 ---
 Here is a list of my favorite gear. If it's on this list, I like it; if I find something better I'll take the old one off this list. Also, I'm not hired by them and only recommend them out of my own love of the product – however, I will use an [affiliate link](http://en.wikipedia.org/wiki/Affiliate_link) if easily available. 
 
-__I have my [Mac Software Recommendations here](/notes/my-awesome-mac-setup/).__
+#### Not on this page, but elsewhere on the site:
+
+- I have my [Mac Software Recommendations here](/notes/my-awesome-mac-setup/)
+- Here's my [International Traveling Packing List](/notes/my-travel-packing-list)
 
 
 ## Drinks
@@ -20,14 +23,19 @@ __I have my [Mac Software Recommendations here](/notes/my-awesome-mac-setup/).__
 
 ## Outdoor Gear
 
-- [Osprey Hiking Bags](http://www.ospreypacks.com/en/segmentation/backpackinghiking)
+- [Osprey Hiking Bags](http://www.ospreypacks.com/en/segmentation/backpackinghiking) in General - Make the best backpacks for outdoor and travel. My bags:
+    - [Osprey Atmos 65L Backpack](https://www.amazon.com/Osprey-Packs-Atmos-65-Backpack/dp/B006V6ZKA2/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B006V6ZKA2) - For Backcountry Camping. I LOVE the vented back on this bag.
+    - [Osprey Manta 36L Hydration Pack](https://www.amazon.com/Osprey-Mens-Manta-Hydration-Pack/dp/B00AOICHRC/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B00AOICHRC) - Perfect Day Hiking bag - I could easily do all I wanted to do with ~24L, but having the ability to add more stuff is super nice. 3L of water is excellent, the hip pockets rock, but the best is the vented back with an **internal frame** (yes, on a day pack) – it makes all the weight in the bag *disappear*. 
+    - [Osprey Ozone 24L Daypack](https://www.amazon.com/Osprey-Ozone-Daypack-Light-Green/dp/B008RBJDC0/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B008RBJDC0) - Urban Transport - Holds all my digital goods, water bottle & coffee mug, organizational bliss without going overboard, and a comfortable back. 
 - [Icebreaker Merino Wool Clothing](http://www.icebreaker.com/) - Simply the best. Comfortable, warm when cold, cool when hot, and very stink resistant - phenomenal travel clothing. 
 
 
 ## Tech 
 
 - [Olympus PEN Lite E-PL5](http://www.olympus.co.uk/site/en/c/cameras/pen_cameras/pen_lite/e_pl5/) mirrorless camera - Fabulous camera
-- [Panasonic 20mm f1.7](http://www.amazon.com/Panasonic-Aspherical-Pancake-Interchangeable-Cameras/dp/B002IKLJVE) fixed lens - Will elevate your shots incredibly if you're just using the kit lens.
+    - [Panasonic 20mm f1.7](http://www.amazon.com/Panasonic-Aspherical-Pancake-Interchangeable-Cameras/dp/B002IKLJVE) fixed lens - Will elevate your shots incredibly if you're just using the kit lens.
+- [Bose AE2 headphones](https://www.amazon.com/Bose®-AE2-audio-headphones-Black/dp/B00478O0JI/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B00478O0JI) - Such phenomenal sound; surprised I waited so long.
+- [NewTrent Powerpack USB Battery](http://www.amazon.com/New-Trent-Powerpak-10000mAh-Smartphones/dp/B00EB1BY36/ref=pd_sim_pc_5) for charging electronics. Has two USB charging ports & enough juice to recharge an iPhone about 5 times; such an epic accessory. Highly recommended. 
 
 
 ## Misc
