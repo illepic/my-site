@@ -44,7 +44,7 @@ Oh boy, this could be a lot; however being a Front End Web Developer is my trade
 ### Without These Apps, I'd Be an Organizational Mess ###
 
 * [OmniFocus](http://www.omnigroup.com/products/omnifocus/) - I have a love/hate relationship with this application: I love it because my life would be a mess without knowing what I need to do and I hate it because it reminds me of how much stuff I need to do. I am a self-admitted app junky and I have tried all the to do apps, and this is hands down the best one. Learning it takes a lit bit more work than your average app, but the return is far greater, and OmniFocus 2 for the Mac looks to of improved the usability hurtles that the initial version had. I love the syncing with my iPhone app which is robust and powerful as well. For those that are curious: I had my start with OmniOutliner + Kinkless to handle tasks before OmniFocus.
-* [Dropbox](http://db.tt/50dRrVC) - Truly safe storage & syncing of files. We rely on it's multi-user file sharing heavily for our location-distributed web development work at OMBU Web and with other clients, and it provides versioned backups *every time you save a file*. Also, I keep a lot of plain text files in Markdown format for my notes on projects or anything else that is frequently referenced and edited heavily and bounce between [nvAlt](http://brettterpstra.com/projects/nvalt/), [Byword](http://bywordapp.com/), and [MultiMarkdown Composer](http://multimarkdown.com/) for editing, and  for just about everything else it heads to the next item.
+* [Dropbox](http://db.tt/50dRrVC) - Truly safe storage & syncing of files. It provides versioned backups *every time you save a file*. Also, I keep a lot of plain text files in Markdown format for my notes on projects or anything else that is frequently referenced and edited heavily and bounce between [nvAlt](http://brettterpstra.com/projects/nvalt/), [Byword](http://bywordapp.com/), and [MultiMarkdown Composer](http://multimarkdown.com/) for editing, and  for just about everything else it heads to the next item.
 * [Evernote](http://evernote.com) - If it makes it into Evernote, I **know** it'll be safe and more importantly: that I can find it within two minutes. I've been using Evernote since April 17, 2008 (got in during private beta) and currently have 3,472 notes; and I can find anything that's in there in about two minutes, even from my phone. And since I can add to it from my phone, it gives me a super important thing: ubiquitous capture and retrieval i.e. I can add to it and get stuff from it and anyplace and anytime (yea, there are a few exceptions, but it's a lot of places!). And that means I trust it! 
 * [1Password](https://agilebits.com/onepassword) - There are a few things that don't make it into Evernote or Dropbox: passwords, credit card numbers, and other things that belong in a digital safe. The app is [super secure](http://help.agilebits.com/1Password3/security.html) too. 
 * Calendar - I subscribe to GTD's approach to calendaring: it is the immovable landscape. However I have other calendars as well for optional events: Fun for anytime I see a concert flyer or cool thing to do, and I set a two day heads-up alarm so I can act on going with enough time to plan. My favorite way to interact with my calendar is easily [Fantastical](http://flexibits.com/fantastical); I love that it's  always up in my menu bar and putting events into it is not only easy but a joy. That's right: I just said that it can make calendaring a joy, therefore the app must be awesome :)
@@ -55,6 +55,7 @@ Oh boy, this could be a lot; however being a Front End Web Developer is my trade
   * [Emmet](http://docs.emmet.io/) - rapid CSS & HTML expansion
   * Git - Commit, push, pull & more quickly from within Sublime Text
   * Sidebar Enhancements - Should really be baked into the core app functionality
+* [TextExpander](http://smilesoftware.com/TextExpander/index.html) - Code Snippet & frequently used text management. I used to use and love [CodeBox](http://www.shpakovski.com/codebox/), but it seems to of dropped off in active development and I'm seeing more features I like with TextExpander.
 * [SourceTree](http://www.sourcetreeapp.com/) - Great visual version control app for Git, Mercurial, and Subversion.
 * [Xscope](http://iconfactory.com/software/xscope) - My indispensable digital ruler; I particular love the "Loupe".
 * [CodeKit](http://incident57.com/codekit/) - Slick code assistant for all your SASS & LESS CSS processing needs. Web Development feels wrong without live reload as well.
@@ -69,7 +70,7 @@ Oh boy, this could be a lot; however being a Front End Web Developer is my trade
 * [Pixa](http://www.pixa-app.com/) - Stock Images & Vector organization. This app is so sweet I almost want to write a blog post about just it. Can scan an external folder, uses OpenMeta (native) tags, can search by color… it's just sweet.
 * [Skitch](http://evernote.com/skitch/) - Screenshots with arrows and text just explains things *so* much better. They've also fixed a lot of things that people didn't like about the 2.0 update.
 * [Patterns](http://krillapps.com/patterns/) - **Finally** allowed me to understand Regular Expressions.
-* [TextExpander](http://smilesoftware.com/TextExpander/index.html) - Code Snippet & frequently used text management. I used to use and love [CodeBox](http://www.shpakovski.com/codebox/), but it seems to of dropped off in active development and I'm seeing more features I like with TextExpander.
+* [CodeRunner](http://krillapps.com/coderunner/) - Run code in AppleScript, C, C++, Java, JavaScript (Node.js), Lua, Objective-C, Perl, PHP, Python, Ruby, Shell or any other language you've installed on your system. Great for testing and getting code ready for my Alfred Workflows.
 
 ### Photo Management ###
 
@@ -81,11 +82,9 @@ Oh boy, this could be a lot; however being a Front End Web Developer is my trade
 
 * [Yoink](http://www.eternalstorms.at/yoink/Yoink_-_Draggings_a_drag_no_more/Yoink_-_Draggings_a_drag_no_more%21.html) - Finder drag 'n drop zone (the best part of PathFinder)
 * [Droplr](https://droplr.com/hello) - Super helpful for sending files across the web without email. Gives you a nice little share link. Tip: Append '+' to them to get a direct link (helpful for embeds!).
-* [Mint.com Menu Bar Helper](https://itunes.apple.com/us/app/mint-quickview/id533491939?mt=12) - Quick view into your financial overview.
 * [Hazel](http://www.noodlesoft.com/hazel.php) - Powerful automated organization. I'm just starting to get into this, already see the benefit, and am sure I'll blog about some really cool uses soon!
 
 ### Miscellaneous
 
-* [Reeder](http://reederapp.com/mac/) - Excellent RSS Reader that syncs with Google Reader.
 * [TweetBot](http://tapbots.com/software/tweetbot/mac/) - Phenomenal Twitter App
 

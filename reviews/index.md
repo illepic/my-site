@@ -28,6 +28,7 @@ Here is a list of my favorite gear. If it's on this list, I like it; if I find s
     - [Osprey Manta 36L Hydration Pack](https://www.amazon.com/Osprey-Mens-Manta-Hydration-Pack/dp/B00AOICHRC/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B00AOICHRC) - Perfect Day Hiking bag - I could easily do all I wanted to do with ~24L, but having the ability to add more stuff is super nice. 3L of water is excellent, the hip pockets rock, but the best is the vented back with an **internal frame** (yes, on a day pack) – it makes all the weight in the bag *disappear*. 
     - [Osprey Ozone 24L Daypack](https://www.amazon.com/Osprey-Ozone-Daypack-Light-Green/dp/B008RBJDC0/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B008RBJDC0) - Urban Transport - Holds all my digital goods, water bottle & coffee mug, organizational bliss without going overboard, and a comfortable back. 
 - [Icebreaker Merino Wool Clothing](http://www.icebreaker.com/) - Simply the best. Comfortable, warm when cold, cool when hot, and very stink resistant - phenomenal travel clothing. 
+- [Reelight SL120 Flashing Compact Bicycle Headlight and Tail Light Set](https://www.amazon.com/Reelight-Flashing-Compact-Bicycle-Headlight/dp/B001PLEIBU/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B001PLEIBU) - These bike lights sit  next to your spinning wheel, which has a magnet on it that charges up the light as the tire spins. You never have to worry about turning on or off your light or it running out of batteries. This model has a capacitor, so it charges it up to run without the magnet for an extra two minutes or so – that way, when you stop, your lights don't turn off. 
 
 
 ## Tech 
@@ -41,3 +42,4 @@ Here is a list of my favorite gear. If it's on this list, I like it; if I find s
 ## Misc
 
 - [Nada Chair](http://www.nadachair.com/) - Fabulous back support in a tiny package, you can take this to coffee shops for work. Silly site; excellent product
+- [Utili-Key](https://www.amazon.com/Swiss-Tech-ST66676-Utili-Key-Multi-Function/dp/B0001EFSTI/ref=as_li_ss_til?tag=evalov-20&linkCode=w01&creativeASIN=B0001EFSTI) - It hooks on your keyring and looks like a key, but when you unhook it, it's a knife, a phillips and flathead screwdriver (with a few sizes), and a can opener. Super basic, but super useful as the most useful tool is the tool you have with you – and you'll always have this with you.

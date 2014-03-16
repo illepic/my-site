@@ -85,8 +85,7 @@ layout: note
 - iPhone (preferably unlocked)
 - [My camera setup](/notes/my-photography-gear/): a mirrorless camera w/ extra battery & lenses: wide, low aperture,& a zoom
 - Kindle
-- iPad Mini with keyboard
-- SD card connector to iPad for backup, preview, & sharing 
+- 11" MacBook Air
 - [NewTrent Powerpack USB Battery](http://www.amazon.com/New-Trent-Powerpak-10000mAh-Smartphones/dp/B00EB1BY36/ref=pd_sim_pc_5) for charging electronics. Has two USB charging ports & enough juice to recharge an iPhone about 5 times; such an epic accessory. Highly recommended. 
 
 
