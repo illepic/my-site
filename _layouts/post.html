@@ -37,7 +37,8 @@ layout: default
 
   {% if page.img %}
     <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
-    {% picture {{ page.img }} %}
+    {% picture aside {{ page.img }} class="picture--aside alignright" %}
+
   {% endif %}
 
   {{ content }}

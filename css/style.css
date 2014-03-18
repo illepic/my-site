@@ -4912,6 +4912,10 @@ div.messages {
   text-transform: titlecase;
   text-decoration: none;
 }
+.tag-list.inline {
+  display: inline-block;
+  margin-left: 0;
+}
 .tag {
   padding: 2px 4px;
   font-size: .9em;
@@ -5395,6 +5399,7 @@ blockquote [class*='icon']:before {
 .social-share-list {
   display: inline-block;
   list-style-type: none;
+  margin-left: 0;
 }
 .social-share-list > li {
   display: inline-block;

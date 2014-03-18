@@ -1,0 +1,39 @@
+---
+---
+{% include header.html %}
+  <div id="primary" class="site-content">
+    <div id="content" role="main">
+
+        <div class="breadcrumbs">
+          <a href="/">Home</a>
+          <span class="separator"> &gt; </span>
+          <a href="/utilities">Utilities</a>
+          <span class="separator"> &gt; </span>
+        </div>
+
+        <h1 class="entry-title">{{ page.title }}</h1>
+        <article class="type--utility l--full">
+        {% if page.tags %}
+        <ul class="tag-list inline">
+          {% assign tags_list = page.tags %}  
+          {% include tags_inline %}
+        </ul>
+        {% endif %}
+          {% include social-share.html %}
+          <hr>
+            {% if page.img %}
+              <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
+              {% picture aside {{ page.img }} class="picture--aside alignright" %}
+
+            {% endif %}
+          {{ content }}
+          <hr />
+          <p class="history"><a href="https://github.com/EvanLovely/my-jekyll-site/commits/master{{ page.url | replace:".html",".md" }}" target="_blank">View historical changes to this utility.</a></p>
+          {% include social-share.html %}
+          <div id="disqus_thread"></div>
+        </article>
+
+    </div><!-- #content -->
+  </div><!-- #primary -->
+
+{% include footer.html %}
