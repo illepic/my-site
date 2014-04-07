@@ -58,6 +58,8 @@ Can walk under the falls, optional to go on to Triple Falls. 1/2 mile hike up to
 
 - [Tasty n Sons](http://www.yelp.com/biz/tasty-n-sons-portland) - Awesome Breakfast 
 - ¿Por que no? - Favorite Mexican in town
+- [Bollywood Theatre](http://www.yelp.com/biz/bollywood-theater-portland) - Excellent Indian style food interpreted in a local manner. Fabulous decor in a great neighbor: Alberta St. 
+- [Coava Coffee Roasters](http://www.yelp.com/biz/coava-coffee-roasters-portland) - Excellent coffee. 
 
 
 # More Places

@@ -17,3 +17,4 @@ Here's a list of my favorite [Alfred](http://alfredapp.com) Workflows (basically
 - [TerminalFinder](https://github.com/LeEnno/alfred-terminalfinder) - Bounce current directory between Finder and Terminal/iTerm
 - [Send URL](http://www.alfredforum.com/topic/538-send-url/) - Sends the current browsers URL to another browser
 - [Reminders](http://www.alfredforum.com/topic/917-reminders/) - I don't use the Reminders app for task management, but they work great for quick "reminders". Especially useful is the `r this` command which creates a reminder with a link back to what you are on: email or web page are two used frequently by me.
+- [StackOverflow Search with Auto-Complete](http://www.alfredforum.com/topic/1524-stackoverflow-workflow/) - I search for help all the time and usually the info that's formatted the best is here; love the auto completion as well!
