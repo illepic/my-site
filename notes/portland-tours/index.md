@@ -28,10 +28,10 @@ Can walk under the falls, optional to go on to Triple Falls. 1/2 mile hike up to
 
 # In-town parks
 
-- Laurelhurst Park - flat and open with a pond. Lots of people chilling.
-- Mt Tabor - best for views
-- Forest Park - long hikes through dense old growth forest. Amazing.
-- Pittock Mansion - Best views of Portland, Mt Hood, and Mt St Helen's. Can drive up. 
+- [Laurelhurst Park](http://www.yelp.com/biz/laurelhurst-park-portland) - flat and open with a pond. Lots of people chilling.
+- [Mt Tabor](http://www.yelp.com/biz/mount-tabor-park-portland) - best for views
+- [Forest Park](http://www.yelp.com/biz/forest-park-portland) - long hikes through dense old growth forest. Amazing. [Start your hike from here!](https://www.google.com/maps?q=Lower+Macleay+Park+%4045.536085,-122.712436&hl=en&sll=45.554989,-122.715483&sspn=0.060822,0.059996&t=p&hnear=Lower+Macleay+Trail,+Portland,+Oregon+97210&z=15)
+- [Pittock Mansion](http://www.yelp.com/biz/pittock-mansion-portland) - Best views of Portland, Mt Hood, and Mt St Helen's. Can drive up. 
 
 
 # Beer Spots

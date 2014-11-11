@@ -57,18 +57,19 @@ You'll of certainly put a lot of time and money to get you on your international
 
 Give yourself a list of the major experience you *need* to have and then a list of the experiences you *want* to have and allow yourself the space to have experiences you have no idea you'll love to have. It's about a balance between planned and spontaneous here; try not to go too far in either direction and you'll have a wonderful time.
 
-{% comment %}
-
 ## Staying Healthy
 
 Helpful maxims to keep in mind include **"boil it, cook it, peel it or forget it"** and the “rule of P's”: **food is safe if it is peelable, packaged, purified or piping hot**.
 
 Careful handwashing, most conveniently achieved with packaged wipes or waterless hand soap, is essential.
 
+## Misc Tips
+
+- When paying, constantly be breaking bigger bills; it can be difficult to get the smaller change later sometimes. 
+- Always carry a pen and paper, even if you prefer digital notes (you can move it to digital later). 
 
 ## Other People's Travel Tips
 
 - [Chris Guillebeau's Useful Travel Skills](http://chrisguillebeau.com/3x5/useful-travel-skills/) ~ The man has [traveled to *every* country in the world](http://chrisguillebeau.com/places-ive-been/); surely he knows what he's talking about!
 - [Tynan's "Why Travel" Post](http://tynan.com/whytravel)
 
-{% endcomment %}

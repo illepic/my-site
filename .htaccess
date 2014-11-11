@@ -1,6 +1,0 @@
-# BEGIN FEEDPRESS
-RewriteEngine On
-RewriteCond %{HTTP_USER_AGENT} !FeedValidator [NC]
-RewriteCond %{HTTP_USER_AGENT} !FeedPress [NC]
-RewriteRule ^feed/?$ http://feedpress.me/EvanLovely [R=302,NC,L]
-# END FEEDPRESS
