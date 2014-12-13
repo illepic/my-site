@@ -2,10 +2,5 @@ default:
   - build
   - parallel:watch
   
-build:
-  - shell:css
-  - qa
-
 qa: 
   - jshint
-  - scsslint

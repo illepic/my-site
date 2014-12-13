@@ -3,8 +3,9 @@ module.exports = function(grunt, options) {
   var files = [
     'Gruntfile.js',
     'grunt/*.js',
-    '<%= theme %>js/*.js',
-    '!<%= theme %>js/*.min.js'
+    'source/js/*.js',
+    '!source/js/*.min.js',
+    '!source/js/vendor/*.js'
   ];
   return {
     "jshint": {
