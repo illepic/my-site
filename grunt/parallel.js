@@ -4,6 +4,11 @@ module.exports = {
       {
         grunt: true,
         stream: true,
+        args: ['watch:css']
+      },
+      {
+        grunt: true,
+        stream: true,
         args: ['watch:js']
       }
     ]

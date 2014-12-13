@@ -1,5 +1,6 @@
 $(document).ready(function() {
-
+  "use strict";
+  
   $("#primary-clone > ul").tinyNav({
       active: 'active' // Set the "active" class
   });
