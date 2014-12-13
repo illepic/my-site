@@ -1,0 +1,37 @@
+{
+  "name": "my-site",
+  "version": "6.0.0",
+  "description": "Evan Lovely's Site",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EvanLovely/my-site.git"
+  },
+  "keywords": [
+    "website",
+    "grunt",
+    "assemble",
+    "blog"
+  ],
+  "author": "Evan Lovely",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvanLovely/my-site/issues"
+  },
+  "homepage": "http://evanlovely.com",
+  "devDependencies": {
+    "grunt-newer": "^0.8.0",
+    "grunt-shell": "^1.1.1",
+    "grunt": "^0.4.5",
+    "load-grunt-tasks": "^1.0.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-parallel": "^0.3.1",
+    "grunt-scss-lint": "^0.3.4",
+    "time-grunt": "^1.0.0",
+    "load-grunt-config": "^0.16.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
