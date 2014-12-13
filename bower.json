@@ -1,0 +1,26 @@
+{
+  "name": "my-site",
+  "version": "6.0.0",
+  "homepage": "http://evanlovely.com",
+  "authors": [
+    "Evan Lovely <evan@evanlovely.com>"
+  ],
+  "description": "Evan Lovely's Site",
+  "main": "Gruntfile.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "website",
+    "assemble"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
