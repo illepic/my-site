@@ -2,3 +2,4 @@ rsync-log.txt
 source/_drafts
 node_modules
 source/bower_components
+source/css
