@@ -1,4 +1,2 @@
-_site
-_asset_bundler_cache
 rsync-log.txt
-_drafts
+source/_drafts
