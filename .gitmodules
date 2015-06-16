@@ -7,6 +7,3 @@
 [submodule "js/matchMedia"]
 	path = js/matchMedia
 	url = https://github.com/paulirish/matchMedia.js.git
-[submodule "_plugins/jekyll_flickr_set_tag"]
-	path = _plugins/jekyll_flickr_set_tag
-	url = https://github.com/tsmango/jekyll_flickr_set_tag.git
