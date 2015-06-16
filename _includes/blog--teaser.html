@@ -41,14 +41,14 @@
     {% if post.img and post.category == 'Photography' %}
 
         <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
-        {% picture {{ post.img }} %}
+        <img src="{{ post.img }}" alt=""/> 
 
       {% endif %}
 
     {% if post.img and post.category != 'Photography' %}
 
         <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
-        {% picture aside {{ post.img }} class="picture--aside alignright" %}
+        <img src="{{ post.img }}" class="picture--aside alignright" />
         
     {% endif %}
     {% if post.title_url %}
