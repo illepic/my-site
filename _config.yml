@@ -7,7 +7,7 @@ header_img: glacier
 url: http://evanlovely.com
 github: https://github.com/EvanLovely/my-jekyll-site/commits/master
 highlighter: pygments
-destination: ../../Sites/my-jekyll-site-html
+destination: ../my-jekyll-site-html
 permalink: /blog/:categories/:title
 paginate: 10
 paginate_path: "/blog/page/:num"

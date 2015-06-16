@@ -4,38 +4,38 @@ $(document).ready(function() {
       active: 'active' // Set the "active" class
   });
   $('.no-touch .archive-header >.nav-pills >li >a:not(.current-cat)').tooltip();
-  var $masonryContainer2 = $(".masonry-list.col-2");
-  $masonryContainer2.imagesLoaded(function(){
-    $masonryContainer2.masonry({
-      itemSelector : '.masonry-list > li',
-      isResizable : true,
-      columnWidth : function( containerWidth ) {
-        return containerWidth / 2;
-      },
-      isAnimated: !Modernizr.csstransitions,
-      animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-      }
-    });
-  });
-  var $masonryContainer3 = $(".masonry-list.col-3");
-  $masonryContainer3.imagesLoaded(function(){
-    $masonryContainer3.masonry({
-      itemSelector : '.masonry-list > li',
-      isResizable : true,
-      columnWidth : function( containerWidth ) {
-        return containerWidth / 3;
-      },
-      isAnimated: !Modernizr.csstransitions,
-      animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-      }
-    });
-  });
+  //var $masonryContainer2 = $(".masonry-list.col-2");
+  //$masonryContainer2.imagesLoaded(function(){
+  //  $masonryContainer2.masonry({
+  //    itemSelector : '.masonry-list > li',
+  //    isResizable : true,
+  //    columnWidth : function( containerWidth ) {
+  //      return containerWidth / 2;
+  //    },
+  //    isAnimated: !Modernizr.csstransitions,
+  //    animationOptions: {
+  //      duration: 750,
+  //      easing: 'linear',
+  //      queue: false
+  //    }
+  //  });
+  //});
+  //var $masonryContainer3 = $(".masonry-list.col-3");
+  //$masonryContainer3.imagesLoaded(function(){
+  //  $masonryContainer3.masonry({
+  //    itemSelector : '.masonry-list > li',
+  //    isResizable : true,
+  //    columnWidth : function( containerWidth ) {
+  //      return containerWidth / 3;
+  //    },
+  //    isAnimated: !Modernizr.csstransitions,
+  //    animationOptions: {
+  //      duration: 750,
+  //      easing: 'linear',
+  //      queue: false
+  //    }
+  //  });
+  //});
     // $masonryContainer.masonry({
     //   itemSelector : '.masonry-list > li',
     //   // isResizable : true,
