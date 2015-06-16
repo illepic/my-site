@@ -15,7 +15,6 @@ node_modules
 
 # Generated files
 *.sass-cache/
-/css/
 scss/99-imports/*
 !scss/99-imports/README.md
 
