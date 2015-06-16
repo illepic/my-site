@@ -6,7 +6,7 @@
   </div>
   <a href="{{ folder }}" class="screenshot">
     {% for img in node.imgs limit:1 %}
-      {% picture blog {{ folder }}{{ img }} %}
+      <img src="{{ folder }}{{ img }}" class="picture--blog" />
       <span class="hide">{{ img }}</span>
     {% endfor %}
   </a>

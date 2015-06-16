@@ -14,14 +14,14 @@ layout: default
 
       {% for img in page.imgs limit:1 %}
         <figure class="item active">
-          {% picture blog {{ folder }}{{ img }} %}
+          <img src="{{ folder }}{{ img }}" class="picture--blog" />
           <figcaption class="hide">{{ img }}</figcaption>
         </figure>
       {% endfor %}
 
       {% for img in page.imgs offset:1 %}
         <figure class="item">
-          {% picture blog {{ folder }}{{ img }} %}
+          <img src="{{ folder }}{{ img }}" class="picture--blog" />
           <figcaption class="hide">{{ img }}</figcaption>
         </figure>
       {% endfor %}
