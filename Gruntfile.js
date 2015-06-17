@@ -11,6 +11,7 @@ module.exports = function (grunt) {
 
   // Begin Modular Config
   require('./grunt-tasks/pattern-lab/pattern-lab.js')(grunt, config);
+  require('./grunt-tasks/jekyll/jekyll.js')(grunt, config);
   //require('./grunt-tasks/compass/compass.js')(grunt, config);
   require('./grunt-tasks/libsass/libsass.js')(grunt, config);
   require('./grunt-tasks/jshint/jshint.js')(grunt, config);
@@ -53,6 +54,7 @@ module.exports = function (grunt) {
 
 // Begin Task Aliases
   grunt.registerTask("compile", [
+    "jekyllBuild",
     "plBuild",
     "icons-build",
     "pattern_lab_component_builder",
