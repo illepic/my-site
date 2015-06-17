@@ -7,7 +7,7 @@ tags:
   - tech
   - gear
 teaser_text: "This is a continually updated list of what I currently have installed for Mac Software, along with the hardware and desk setup."
-alias: "/my-awesome-mac-setup"
+redirect_from: "/my-awesome-mac-setup"
 ---
 
 This is a continually updated list of what I'm currently using.

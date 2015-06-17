@@ -2,7 +2,7 @@
 title: Dr. Dichter
 layout: portfolio
 weight: 10
-alias: /portfolio-items/dr-dichter
+redirect_from: /portfolio-items/dr-dichter
 features:
     - Custom Content
 services:

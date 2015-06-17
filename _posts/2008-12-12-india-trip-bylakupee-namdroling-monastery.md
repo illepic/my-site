@@ -33,7 +33,7 @@ imgs:
   - "49.jpg"
   - "50.jpg"
   - "52.jpg"
-alias: /ashtanga-vinyasa-yoga/india-trip-bylakupee-namdroling-monastery/
+redirect_from: /ashtanga-vinyasa-yoga/india-trip-bylakupee-namdroling-monastery/
 meta:
   dsq_thread_id: '1024172254'
 ---

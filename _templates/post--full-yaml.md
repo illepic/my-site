@@ -6,7 +6,7 @@ quote: ""
 quote_author: 
 quote_source_url: 
 layout: post
-alias: 
+redirect_from: 
 category: 
 tags:
   - 

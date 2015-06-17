@@ -2,7 +2,7 @@
 title: Missio
 layout: portfolio
 weight: 8
-alias: /portfolio-items/missio
+redirect_from: /portfolio-items/missio
 features:
     - Custom Content
 services:

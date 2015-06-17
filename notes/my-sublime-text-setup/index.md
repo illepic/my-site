@@ -6,7 +6,7 @@ tags:
   - mac
   - web-development
 weight: 4
-alias: "my-sublime-text-setup"
+redirect_from: "my-sublime-text-setup"
 ---
 
 Here's an ongoing list of my [Sublime Text](http://sublimetext.com) Setup. 

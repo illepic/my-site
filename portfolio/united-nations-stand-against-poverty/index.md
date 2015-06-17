@@ -3,7 +3,7 @@ title: United Nations ~ Stand Against Poverty
 layout: portfolio
 featured: true
 weight: 1
-alias: /portfolio-items/united-nations-stand-against-poverty
+redirect_from: /portfolio-items/united-nations-stand-against-poverty
 features:
     - Image Gallery
     - Social Plumbing

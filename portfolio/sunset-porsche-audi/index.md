@@ -2,7 +2,7 @@
 title: Sunset Porsche Audi
 layout: portfolio
 weight: 3
-alias: /portfolio-items/sunset-porsche-audi/
+redirect_from: /portfolio-items/sunset-porsche-audi/
 features:
     - Wide Browser Support
 services:

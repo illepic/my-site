@@ -4,7 +4,7 @@ layout: portfolio
 featured: true
 weight: 3
 live-site-url: http://stand.org
-alias: /portfolio-items/stand-for-children
+redirect_from: /portfolio-items/stand-for-children
 features:
     - Image Gallery
     - Modular Design

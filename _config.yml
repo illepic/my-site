@@ -27,6 +27,9 @@ defaults:
       categories: Technology
 
 
+gems:
+  - jekyll-redirect-from # https://github.com/jekyll/jekyll-redirect-from
+
 picture:
   source: ""
   output: "generated"
