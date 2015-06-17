@@ -12,6 +12,7 @@ vendor/bundle
 .bundle
 bower_components
 node_modules
+_blogposts/
 
 # Generated files
 *.sass-cache/
