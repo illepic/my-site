@@ -12,6 +12,8 @@ permalink: /blog/:categories/:title
 paginate: 10
 paginate_path: "/blog/page/:num"
 markdown: redcarpet
+keep_files:
+  - "extraimgs"
 exclude: 
   - node_modules
 collections:

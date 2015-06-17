@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     var customConfigOverrides = grunt.file.readYAML("Gruntconfig--custom.yml");
     _.extend(config, customConfigOverrides);
   }
+  config.jekyll = grunt.file.readYAML("_config.yml");
 
   // Begin Config
 
@@ -44,6 +45,44 @@ module.exports = function (grunt) {
         push: false,
         pushTo: 'origin',
         gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
+      }
+    },
+    responsive_images: {
+      options: {
+        separator: "--",
+        sizes: [
+          {
+            name: "w800",
+            width: "800px",
+            quality: 80
+          },
+          {
+            name: "w1200",
+            width: "1200px"
+          }
+        ]
+      },
+      some: {
+        
+      },
+      all: {
+        files: [
+          {
+            expand: true,
+            src: ["img/**/*.jpg"],
+            dest: config.jekyll.destination,
+            rename: function (dest, src) {
+              //console.log('dest: ', dest);
+              //console.log('src: ', src);
+              var path = src.split('/');
+              var file = path.pop();
+              var newDest = dest + "/" + path.join('/') + "/extraimgs/" + file;
+              grunt.log.debug("src file: " + src);
+              grunt.log.debug("dest file: " + newDest);
+              return newDest;
+            }
+          }
+        ]
       }
     }
   });

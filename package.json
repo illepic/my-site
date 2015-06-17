@@ -58,6 +58,7 @@
     "grunt-open": "^0.2.3",
     "grunt-pattern-lab-component-builder": "0.0.12",
     "grunt-phantomcss": "git://github.com/micahgodbolt/grunt-phantomcss.git",
+    "grunt-responsive-images": "^0.1.6",
     "grunt-sass": "^1.0.0",
     "grunt-sass-globbing": "^1.2.0",
     "grunt-scss-lint": "git://github.com/EvanLovely/grunt-scss-lint.git#master",
