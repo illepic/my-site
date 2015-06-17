@@ -2,7 +2,6 @@
 layout: post
 title: My Path with Yoga
 categories:
-- Yoga
 - Personal
 tags:
 - Missoula
