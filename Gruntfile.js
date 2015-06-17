@@ -62,9 +62,6 @@ module.exports = function (grunt) {
           }
         ]
       },
-      some: {
-        
-      },
       all: {
         files: [
           {

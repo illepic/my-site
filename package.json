@@ -69,6 +69,7 @@
     "load-grunt-tasks": "^3.1.0",
     "lodash": "^3.6.0",
     "phantomjs": "^1.9.16",
+    "grunt-responsive-images": "^0.1.6",
     "time-grunt": "^1.0.0"
   }
 }
