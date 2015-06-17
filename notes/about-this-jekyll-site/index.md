@@ -48,7 +48,7 @@ imgs:
   - 03
 ---
 
-{% include imgs.html path="/photos/india/_full/Bylakupee-Namdroling-Monastery" %}
+{% include imgs.html path="/photos/india/Bylakupee-Namdroling-Monastery" %}
 ```
 
 ## Setup
