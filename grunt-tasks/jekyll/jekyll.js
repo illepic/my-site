@@ -30,7 +30,7 @@ module.exports = function (grunt, config) {
           "!bower_components/**"
         ],
         tasks: [
-          "shell:jekyllBuild",
+          "jekyllBuild",
           "shell:livereload"
         ]
       }
@@ -49,6 +49,11 @@ module.exports = function (grunt, config) {
           {
             name: "w1200",
             width: "1200px",
+            upscale: true
+          },
+          {
+            name: "w2000",
+            width: "2000px",
             upscale: true
           }
         ]

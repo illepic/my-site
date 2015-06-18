@@ -55,15 +55,15 @@ module.exports = function (grunt) {
 
 // Begin Task Aliases
   grunt.registerTask("compile", [
-    "jekyllBuild",
-    "plBuild",
-    "icons-build",
-    "pattern_lab_component_builder",
     "stylesCompile",
-    "shell:plBuild",
+    "jekyllBuild",
+    //"plBuild",
+    //"icons-build",
+    //"pattern_lab_component_builder",
     "shell:livereload"
   ]);
   grunt.registerTask("build", "compile");
+  grunt.registerTask("b", "build");
 
   grunt.registerTask("validate", [
     "jsonlint",
