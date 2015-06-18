@@ -2,7 +2,8 @@ module.exports = function (grunt, config) {
   "use strict";
 
   grunt.registerTask("jekyllBuild", [
-    "shell:jekyllBuild"
+    "shell:jekyllBuild",
+    "img"
   ]);
   
   grunt.registerTask("img", [
@@ -14,6 +15,9 @@ module.exports = function (grunt, config) {
     shell: {
       jekyllBuild: {
         command: "bundle exec jekyll build"
+      },
+      cleanDest: {
+        command: "rm -rf " + config.jekyll.destination + " && mkdir " + config.jekyll.destination
       }
     },
 
@@ -39,11 +43,13 @@ module.exports = function (grunt, config) {
           {
             name: "w800",
             width: "800px",
-            quality: 80
+            quality: 80,
+            upscale: true
           },
           {
             name: "w1200",
-            width: "1200px"
+            width: "1200px",
+            upscale: true
           }
         ]
       },
