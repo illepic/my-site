@@ -46,41 +46,6 @@ module.exports = function (grunt) {
         pushTo: 'origin',
         gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
       }
-    },
-    responsive_images: {
-      options: {
-        separator: "--",
-        sizes: [
-          {
-            name: "w800",
-            width: "800px",
-            quality: 80
-          },
-          {
-            name: "w1200",
-            width: "1200px"
-          }
-        ]
-      },
-      all: {
-        files: [
-          {
-            expand: true,
-            src: ["img/**/*.jpg"],
-            dest: config.jekyll.destination,
-            rename: function (dest, src) {
-              //console.log('dest: ', dest);
-              //console.log('src: ', src);
-              var path = src.split('/');
-              var file = path.pop();
-              var newDest = dest + "/" + path.join('/') + "/extraimgs/" + file;
-              grunt.log.debug("src file: " + src);
-              grunt.log.debug("dest file: " + newDest);
-              return newDest;
-            }
-          }
-        ]
-      }
     }
   });
   // End Misc Config

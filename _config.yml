@@ -13,7 +13,7 @@ paginate: 10
 paginate_path: "/blog/page/:num"
 markdown: redcarpet
 keep_files:
-  - "extraimgs"
+  - "generated"
 exclude: 
   - node_modules
 collections:
