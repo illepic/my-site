@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<article class="type--note l--full">
+<article class="note note--full">
   {% if page.tags %}
-  <ul class="tag-list">
+  <ul class="note__tags">
     {% assign tags_list = page.tags %}  
     {% include tags_inline %}
   </ul>
@@ -18,5 +18,5 @@ layout: default
   <hr />
   <p class="history"><a href="https://github.com/EvanLovely/my-jekyll-site/commits/master{{ page.url | replace:".html",".md" }}" target="_blank">View historical changes to this note.</a></p>
   {% include social-share.html %}
-  <div id="disqus_thread"></div>
+  <div id="disqus_thread" class="js-disqus-thread"></div>
 </article>
