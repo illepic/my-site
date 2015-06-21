@@ -2,7 +2,8 @@ module.exports = function (grunt, config) {
   "use strict";
 
   grunt.registerTask("optimize", [
-    "imagemin"
+    "newer:responsive_images",
+    "newer:imagemin"
   ]);
 
   grunt.config.merge({
@@ -44,7 +45,7 @@ module.exports = function (grunt, config) {
         files: [
           {
             expand: true,
-            src: ["img/**/*.jpg"],
+            src: [config.jekyll.source + "img/**/*.jpg"],
             dest: config.jekyll.destination,
             rename: function (dest, src) {
               var path = src.split('/');

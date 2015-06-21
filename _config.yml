@@ -7,22 +7,16 @@ header_img: glacier
 url: http://evanlovely.com
 github: https://github.com/EvanLovely/my-jekyll-site/commits/master
 highlighter: pygments
-destination: ../my-jekyll-site-html/
+source: source/
+destination: public/
 permalink: /blog/:categories/:title
 paginate: 10
 paginate_path: "/blog/page/:num"
 markdown: redcarpet
 keep_files:
   - "generated"
+  - bower_components
 exclude: 
-  - node_modules
-  - grunt-tasks
-  - rsync-log.txt
-  - Gruntfile.js
-  - Gruntconfig.yml
-  - Gemfil*
-  - bower.json
-  - package.json
   - pattern-lab-assets.yml
 collections:
   blogposts:

@@ -2,8 +2,8 @@ module.exports = function (grunt, config) {
   "use strict";
 
   grunt.registerTask("jekyllBuild", [
-    "shell:jekyllBuild",
-    "img"
+    "shell:jekyllBuild"
+    //"newer:responsive_images"
   ]);
 
   grunt.registerTask("img", [
@@ -42,13 +42,11 @@ module.exports = function (grunt, config) {
     watch: {
       jekyll: {
         files: [
-          "**/*.{md,html}",
-          "!**/{readme,README}.md",
-          "!node_modules/**",
-          "!bower_components/**"
+          config.jekyll.source + "**/*.{md,html}",
+          "!**/{readme,README}.md"
         ],
         tasks: [
-          "jekyllBuild",
+          "shell:jekyllBuild",
           "shell:livereload"
         ]
       }

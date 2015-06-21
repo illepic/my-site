@@ -56,8 +56,10 @@ module.exports = function (grunt) {
 
 // Begin Task Aliases
   grunt.registerTask("compile", [
-    "stylesCompile",
+    //"validate",
+    //"stylesCompile",
     "jekyllBuild",
+    "newer:responsive_images",
     //"plBuild",
     //"icons-build",
     //"pattern_lab_component_builder",
@@ -72,6 +74,11 @@ module.exports = function (grunt) {
     "scsslint"
   ]);
 
+  grunt.registerTask("rebuild", [
+    "shell:cleanDest",
+    "compile"
+  ]);
+  
   // this is ran if you do either `grunt default` or `grunt`
   grunt.registerTask("default", [
     "compile",

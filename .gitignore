@@ -1,4 +1,4 @@
-_site
+public/
 _asset_bundler_cache
 rsync-log.txt
 _drafts
