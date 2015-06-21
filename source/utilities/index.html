@@ -2,9 +2,9 @@
 title: Utilities
 layout: default
 ---
-<p class="intro">Welcome to my utilities section! Here's where I keep small scripts, Alfred Workflows, and other tech productivity tools. Hope they're helpful!</p>
 
 <section class="utility-list section-list">
+<p class="section-list__intro">Welcome to my utilities section! Here's where I keep small scripts, Alfred Workflows, and other tech productivity tools. Hope they're helpful!</p>
 {% for weight in (1..10) %}{% for page in site.pages %}
   {% if page.layout == "utility" and page.weight == weight and page.published != "false" %}
     <article class="type--utility l--teaser section-item">
