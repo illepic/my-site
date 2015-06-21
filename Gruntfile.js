@@ -13,6 +13,7 @@ module.exports = function (grunt) {
   // Begin Modular Config
   require('./grunt-tasks/pattern-lab/pattern-lab.js')(grunt, config);
   require('./grunt-tasks/jekyll/jekyll.js')(grunt, config);
+  require('./grunt-tasks/optimize.js')(grunt, config);
   //require('./grunt-tasks/compass/compass.js')(grunt, config);
   require('./grunt-tasks/libsass/libsass.js')(grunt, config);
   require('./grunt-tasks/jshint/jshint.js')(grunt, config);
