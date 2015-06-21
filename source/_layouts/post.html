@@ -1,57 +1,61 @@
 ---
 layout: default
 ---
-<article class="type--post l--full format-standard">
+<article class="post post--full">
 
-  <aside class="post-info full-post">
+  <aside class="post__info">
+    <div class="taxonomy">
 
-    {% assign categories_list = page.categories %}  
-    {% include categories_inline %}
-    <hr class="invisible">
+      {% assign categories_list = page.categories %}
+      {% include categories_inline %}
 
-    {% assign tags_list = page.tags %}  
-    {% include tags_inline %}
+      {% assign tags_list = page.tags %}
+      {% include tags_inline %}
 
-    <time datetime="2013-07-20T14:01:16+00:00">
-      <i class="icon-calendar"></i>
-      <span class="day">{{ page.date | date: "%d" }}</span>
-      <span class="month">{{ page.date | date: "%b" }}</span>
-      <span class="year">{{ page.date | date: "%Y" }}</span>
-      <!-- <div>{{ page.date | date_to_string }}</div> -->
-    </time> 
+      <time datetime="2013-07-20T14:01:16+00:00">
+        <i class="icon-calendar"></i>
+        <span class="day">{{ page.date | date: "%d" }}</span>
+        <span class="month">{{ page.date | date: "%b" }}</span>
+        <span class="year">{{ page.date | date: "%Y" }}</span>
+        <!-- <div>{{ page.date | date_to_string }}</div> -->
+      </time>
+    </div>
 
     {% include social-share.html %}
-    
+
   </aside>
 
-  <div class="entry-content content-bg">
-  {% if page.quote %}
-    <blockquote>
+  <div class="post__content">
+    {% if page.quote %}
+    <blockquote class="post__quote">
       <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+
       <p>{{ page.quote | markdownify }}</p>
       <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
-	  {% if page.quote_author %}<cite>{% if page.quote_source_url %}<a href="{{ page.quote_source_url }}">{% endif %}{{ page.quote_author }}{% if page.quote_source_url %}</a>{% endif %}</cite>{% endif %}
+      {% if page.quote_author %}<cite>{% if page.quote_source_url %}<a href="{{ page.quote_source_url }}">{% endif %}{{
+      page.quote_author }}{% if page.quote_source_url %}</a>{% endif %}</cite>{% endif %}
     </blockquote>
-  {% endif %}
+    {% endif %}
 
 
-  {% if page.img %}
-    <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo {% endcomment %}
-    <img src="{{ page.img }}" class="picture--aside alignright" />
+    {% if page.img %}
+    <span class="label hide">Photo:</span> {% comment %} If this isn't here, the `picture` below doesn't generate. @todo
+    {% endcomment %}
+    <img src="{{ page.img }}" class="picture--aside alignright"/>
 
-  {% endif %}
+    {% endif %}
 
-  {{ content }}
-  
-  {% if page.title_url %}
-    <br />
+    {{ content }}
+
+    {% if page.title_url %}
+    <br/>
     <a href="{{ page.title_url }}" class="btn read-more">Check It Out <i class="icon-circle-arrow-right"></i></a>
-  {% endif %}
+    {% endif %}
 
   </div>
 
-  <footer class="entry-meta">
-    <div id="disqus_thread"></div>
+  <footer class="post__footer">
+    <div id="disqus_thread" class="js-disqus-thread"></div>
   </footer>
 
 </article>

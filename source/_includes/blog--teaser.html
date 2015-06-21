@@ -1,7 +1,7 @@
-<article class="type--post l--teaser content-bg post">
+<article class="post post--teaser">
   
-  <header class="entry-header">
-    <h2 class="entry-title">
+  <header class="post__header">
+    <h2 class="post__title">
       {% if post.title_url %}
         <a href="{{ post.title_url }}">{{ post.title }} <i class="icon-external-link icon-small"></i></a>
       {% else %}
@@ -10,11 +10,11 @@
     </h2>
   </header>
 
-  <aside class="post-info">
+  <aside class="post__info">
     <div class="taxonomy">
       {% assign categories_list = post.categories %}  
       {% include categories_inline %}
-      <hr class="invisible">
+      
       {% assign tags_list = post.tags %}  
       {% include tags_inline %}
       <time datetime="2013-07-20T14:01:16+00:00">
@@ -27,10 +27,10 @@
     </div>
   </aside>
 
-  <div class="entry-summary">
+  <div class="post__tldr">
 
     {% if post.quote %}
-      <blockquote>
+      <blockquote class="post__quote">
         <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
         <p>{{ post.quote }}</p>
         <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
@@ -59,8 +59,8 @@
 
   </div>
 
-  <footer class="entry-meta">
-    <a href="{{ post.url }}" class="btn read-more">
+  <footer class="post__footer">
+    <a href="{{ post.url }}" class="btn">
       {% if post.title_url %}
           Comment
         {% else %}
