@@ -5,7 +5,7 @@ module.exports = function (grunt, config) {
     "shell:jekyllBuild",
     "img"
   ]);
-  
+
   grunt.registerTask("img", [
     "responsive_images"
   ]);
@@ -36,29 +36,31 @@ module.exports = function (grunt, config) {
       }
     },
 
+    //imagemin: {},
+
     responsive_images: {
-      options: {
-        separator: "--",
-        sizes: [
-          {
-            name: "w800",
-            width: "800px",
-            quality: 80,
-            upscale: true
-          },
-          {
-            name: "w1200",
-            width: "1200px",
-            upscale: true
-          },
-          {
-            name: "w2000",
-            width: "2000px",
-            upscale: true
-          }
-        ]
-      },
       all: {
+        options: {
+          separator: "--",
+          sizes: [
+            {
+              name: "w800",
+              width: "800px",
+              quality: 80,
+              upscale: false
+            },
+            {
+              name: "w1200",
+              width: "1200px",
+              upscale: false
+            },
+            {
+              name: "w2000",
+              width: "2000px",
+              upscale: false
+            }
+          ]
+        },
         files: [
           {
             expand: true,
