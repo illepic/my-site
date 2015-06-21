@@ -32,8 +32,8 @@ layout: default
 
       <p>{{ page.quote | markdownify }}</p>
       <i class="icon-quote-right icon-2x pull-right icon-muted"></i>
-      {% if page.quote_author %}<cite>{% if page.quote_source_url %}<a href="{{ page.quote_source_url }}">{% endif %}{{
-      page.quote_author }}{% if page.quote_source_url %}</a>{% endif %}</cite>{% endif %}
+      {% if page.quote_author %}<cite>{% if page.quote_source_url %}<a href="{{ page.quote_source_url }}">{% endif %}
+      {{ page.quote_author }}{% if page.quote_source_url %}</a>{% endif %}</cite>{% endif %}
     </blockquote>
     {% endif %}
 
