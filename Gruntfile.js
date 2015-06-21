@@ -47,6 +47,14 @@ module.exports = function (grunt) {
         pushTo: 'origin',
         gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d'
       }
+    },
+    shell: {
+      bowerInstall: {
+        command: "bower install"
+      },
+      bundleInstall: {
+        command: "bundle install"
+      }
     }
   });
   // End Misc Config
@@ -57,7 +65,7 @@ module.exports = function (grunt) {
 // Begin Task Aliases
   grunt.registerTask("compile", [
     //"validate",
-    //"stylesCompile",
+    "stylesCompile",
     "jekyllBuild",
     "newer:responsive_images",
     //"plBuild",
@@ -76,6 +84,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask("rebuild", [
     "shell:cleanDest",
+    "shell:bowerInstall",
     "compile"
   ]);
   
