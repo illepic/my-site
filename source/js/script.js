@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-  $("#primary-clone > ul").tinyNav({
-      active: 'active' // Set the "active" class
-  });
-  $('.no-touch .archive-header >.nav-pills >li >a:not(.current-cat)').tooltip();
+  //$("#primary-clone > ul").tinyNav({
+  //    active: 'active' // Set the "active" class
+  //});
+  //$('.no-touch .archive-header >.nav-pills >li >a:not(.current-cat)').tooltip();
   //var $masonryContainer2 = $(".masonry-list.col-2");
   //$masonryContainer2.imagesLoaded(function(){
   //  $masonryContainer2.masonry({
@@ -41,13 +41,13 @@ $(document).ready(function() {
     //   // isResizable : true,
     //   // columnWidth : 300,
     // });
-  $('.no-touch .my-social-sites a[title]').tooltip({
-    animation: true,
-    placement: 'left'
-  });
+  //$('.no-touch .my-social-sites a[title]').tooltip({
+  //  animation: true,
+  //  placement: 'left'
+  //});
 
   
-  $(".my-social-sites a[title*='Skype']").attr('href', 'skype:evanlovely?chat');
-  $('a[href^="http"]:not([href*="ebook.local"]):not([href*="evanlovely.com"])').attr('target', '_blank'); //Opens all external links in new tabs
+  //$(".my-social-sites a[title*='Skype']").attr('href', 'skype:evanlovely?chat');
+  $('a[href^="http"]:not([href*="mysite.local"]):not([href*="evanlovely.com"])').attr('target', '_blank'); //Opens all external links in new tabs
 	$('body').addClass('js-ran');
 });
