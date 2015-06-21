@@ -15,7 +15,8 @@ paginate_path: "/blog/page/:num"
 markdown: redcarpet
 keep_files:
   - "generated"
-  - bower_components
+  - "bower_components"
+  - "css"
 exclude: 
   - pattern-lab-assets.yml
 collections:

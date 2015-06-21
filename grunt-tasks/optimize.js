@@ -45,7 +45,8 @@ module.exports = function (grunt, config) {
         files: [
           {
             expand: true,
-            src: [config.jekyll.source + "img/**/*.jpg"],
+            cwd: config.jekyll.source,
+            src: ["img/**/*.jpg"],
             dest: config.jekyll.destination,
             rename: function (dest, src) {
               var path = src.split('/');
