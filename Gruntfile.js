@@ -91,7 +91,7 @@ module.exports = function (grunt) {
   // this is ran if you do either `grunt default` or `grunt`
   grunt.registerTask("default", [
     "compile",
-    "concurrent:dev"
+    "watch"
   ]);
 // End Task Aliases
 

@@ -71,5 +71,8 @@
     "lodash": "^3.6.0",
     "phantomjs": "^1.9.16",
     "time-grunt": "^1.0.0"
+  },
+  "dependencies": {
+    "normalize.css": "^3.0.3"
   }
 }

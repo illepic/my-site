@@ -16,15 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "lodash": "~3.6.0",
-    "singularity": "~1.6.2",
-    "breakpoint-sass": "~2.5.0",
-    "normalize-scss": "~3.0.2",
-    "bourbon": "~4.2.2",
-    "modernizr": "~2.8.3",
-    "matchMedia": "~0.2.0",
-    "picturefill": "~2.3.1",
     "jquery": "~2.1.4",
+    "picturefill": "~2.3.1",
     "css-element-queries": "~0.2.1"
   }
 }
