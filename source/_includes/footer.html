@@ -1,59 +1,51 @@
-	</div><!-- #main .wrapper -->
-	<footer id="footer" class="content-bg row-fluid" role="contentinfo">
+  </div><!-- .site__content -->
+  <footer class="site__footer footer" role="contentinfo">
+    <nav class="footer__nav">
+      {% include menu--secondary.html %}
+    </nav>
+    <div class="footer__info">
+      © Evan Lovely ~ 2014 ~ EvanLovely.com v 5.0
+    </div>
+  </footer>
+</div><!-- .site -->
 
-    <!-- <aside class="span6">
-      <h4 class="title">Latest Tweets</h4>
-      <a class="twitter-timeline" href="https://twitter.com/EvanLovely" data-widget-id="308094870399094784">Tweets by @EvanLovely</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
-    </aside>
-    <aside class="span6">
-      <h4 class="title">Public Notes</h4>
-      
-    </aside>
-     -->
-            <nav id="secondary-nav">{% include menu--secondary.html %}</nav>
-		<div class="site-info">
-        © Evan Lovely ~ 2014 ~ EvanLovely.com v 5.0
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div></div></div><!-- #wrapper, #container, .inner -->
+<!--@todo aggregate JS-->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/css-element-queries/src/ResizeSensor.js"></script>
+<script src="/bower_components/css-element-queries/src/ElementQueries.js"></script>
+<script src="/bower_components/picturefill/dist/picturefill.js"></script>
+<script src="/js/script.js"></script>
 
-  <!--@todo aggregate JS-->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script src="/bower_components/css-element-queries/src/ResizeSensor.js"></script>
-  <script src="/bower_components/css-element-queries/src/ElementQueries.js"></script>
-  <script src="/css/bootstrap/js/bootstrap-carousel.js"></script>
-  <script src="/css/bootstrap/js/bootstrap-transition.js"></script>
-  <script src="/css/bootstrap/js/bootstrap-tooltip.js"></script>
-  <script src="/css/bootstrap/js/bootstrap-tab.js"></script>
-  <script src="/js/jquery.masonry.min.js"></script>
-  <script src="/js/tinynav.min.js"></script>
-  <script src="/js/ss-social.js"></script>
-  <script src="/bower_components/matchMedia/matchMedia.js"></script>
-  <script src="/bower_components/picturefill/dist/picturefill.js"></script>
-  <script src="/js/script.js"></script>
-  
-  <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'evanlovely'; // required: replace example with your forum shortname
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'evanlovely'; // required: replace example with your forum shortname
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-45410005-1', 'evanlovely.com');
-    ga('send', 'pageview');
+  ga('create', 'UA-45410005-1', 'evanlovely.com');
+  ga('send', 'pageview');
 
-  </script>
+</script>
 </body>
 </html>
