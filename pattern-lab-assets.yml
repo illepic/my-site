@@ -2,4 +2,4 @@
 css:
   - public/css/style.css
 js:
-  - public/js/script.js
+  - public/js/all.js

@@ -21,10 +21,8 @@ module.exports = function (grunt, config, _, bower) {
     var bowerPaths;
     bower.commands.list({paths: true}).on('end', function (output) {
       bowerPaths = _.flattenDeep(_.values(output));
-      //console.log(bowerPaths);
       var currentSetting = grunt.config.get('uglify.jsmin.src');
       var newSetting = currentSetting.concat(bowerPaths);
-      console.log(newSetting);
       grunt.config.set('uglify.jsmin.src', newSetting);
       grunt.task.run('uglify:jsmin');
       done(true);

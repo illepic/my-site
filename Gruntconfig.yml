@@ -7,7 +7,7 @@ scssDest: public/css/style.css
 scssConfigRoot: ./
 serverDir: ./
 serverPath: pattern-lab/public/
-openBrowserAtStart: false
+openBrowserAtStart: true
 updateAtStart: true
 buildModernizrAtStart: true
 regressionTestRoot: pattern-lab/source/_patterns/

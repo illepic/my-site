@@ -64,13 +64,12 @@ module.exports = function (grunt) {
 // Begin Task Aliases
   grunt.registerTask("compile", [
     //"validate",
+    //"icons-build",
     "jsPrep",
     "stylesCompile",
     "jekyllBuild",
     "newer:responsive_images",
-    //"plBuild",
-    //"icons-build",
-    //"pattern_lab_component_builder",
+    "plBuild",
     "shell:livereload"
   ]);
   grunt.registerTask("build", "compile");
@@ -91,7 +90,7 @@ module.exports = function (grunt) {
   // this is ran if you do either `grunt default` or `grunt`
   grunt.registerTask("default", [
     "compile",
-    "watch"
+    "concurrent:dev"
   ]);
 // End Task Aliases
 
