@@ -2,7 +2,7 @@
   "fonts": [
     {
       "name": "$font--family--regular",
-      "value": "'Helvetica', sans-serif"
+      "value": "'Open Sans', sans-serif"
     },
     {
       "name": "$font--family--alternate",

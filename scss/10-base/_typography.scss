@@ -1,11 +1,91 @@
-@mixin body-copy() {
-  font-family: $font--family--regular;
+// Body Text
+// ===
+
+$body-font-size: 1.1rem !default;
+$body-lineheight: 1.3 !default;
+@mixin body-font ($bold: false) {
+  font-size: $body-font-size;
+  line-height: $body-lineheight;
+  @if $bold {
+    font-family: $font--family--regular;
+    font-weight: bold;
+  } @else {
+    font-family: $font--family--regular;
+  }
+}
+// Headings
+// ===
+
+$h1-size: 3.5rem !default;
+$h2-size: 2.5rem !default;
+$h3-size: 1.5rem !default;
+$h4-size: 1.2rem !default;
+$h5-size: 0.9rem !default;
+$h6-size: 0.8rem !default;
+
+$h1-lineheight: 1.1 !default;
+$h2-lineheight: 1.1 !default;
+$h3-lineheight: 1.1 !default;
+$h4-lineheight: 1.1 !default;
+$h5-lineheight: 1.1 !default;
+$h6-lineheight: 1.1 !default;
+
+@mixin heading-base() {
+  font-family: $headline-font-family;
+  font-weight: normal;
 }
 
 @mixin h1() {
-  font-family: $font--family--regular;
+  @include heading-base();
+  font-size: $h1-size;
+  line-height: $h1-lineheight;
+  //margin-bottom: base-line-calc(0.5, $h1-size);
+  //margin-top: base-line-calc(0.5, $h1-size);
 }
 
 @mixin h2() {
-  font-family: sans-serif;
+  @include heading-base();
+  font-size: $h2-size;
+  line-height: $h2-lineheight;
+  //margin-bottom: base-line-calc(0.5, $h2-size);
+  //margin-top: base-line-calc(0.5, $h2-size);
+}
+
+@mixin h3() {
+  @include heading-base();
+  font-size: $h3-size;
+  line-height: $h3-lineheight;
+  //margin-bottom: base-line-calc(0.5, $h3-size);
+  //margin-top: base-line-calc(0.5, $h3-size);
+}
+
+@mixin h4() {
+  @include heading-base();
+  font-size: $h4-size;
+  line-height: $h4-lineheight;
+  //margin-bottom: base-line-calc(0.25, $h4-size);
+  //margin-top: base-line-calc(0.25, $h4-size);
+}
+
+@mixin h5() {
+  @include heading-base();
+  font-size: $h5-size;
+  line-height: $h5-lineheight;
+  //margin-bottom: base-line-calc(0.25, $h5-size);
+  //margin-top: base-line-calc(0.25, $h5-size);
+}
+
+@mixin h6() {
+  @include heading-base();
+  font-size: $h6-size;
+  line-height: $h6-lineheight;
+  //margin-bottom: base-line-calc(0.25, $h6-size);
+  //margin-top: base-line-calc(0.25, $h6-size);
+}
+
+@mixin link() {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }

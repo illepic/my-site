@@ -1,9 +1,56 @@
-body{
-  @include body-copy();
+* {
+  box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
+body{
+  @include body-font();
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Heading Element Styles
 h1 {
   @include h1();
+}
+
+h2 {
+  @include h2();
+}
+
+h3 {
+  @include h3();
+}
+
+h4 {
+  @include h4();
+}
+
+h5 {
+  @include h5();
+}
+
+h6 {
+  @include h6();
+}
+
+a {
+  @include link;
+}
+
+b,
+strong {
+  @include body-font($bold: true);
+}
+
+p {
+  
 }
 
 blockquote {
@@ -11,9 +58,4 @@ blockquote {
   border-left: solid 3px $color--gray;
   margin-left: $spacing;
   padding-left: $spacing;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
