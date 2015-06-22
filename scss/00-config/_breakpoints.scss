@@ -1,19 +1,19 @@
-$width-xsmall: 400px !default;
-$width-small: 480px !default;
-$width-medium: 640px !default;
-$width-large: 768px !default;
-$width-xlarge: 1000px !default;
-$width-xxlarge: 1200px !default;
-$width-xxxlarge: 1600px !default;
+$width-xs: 400px !default;
+$width-s: 480px !default;
+$width-m: 640px !default;
+$width-l: 768px !default;
+$width-xl: 1000px !default;
+$width-xxl: 1200px !default;
+$width-xxxl: 1600px !default;
 
-@mixin bp--medium {
-  @media (min-width: #{$width-medium}) {
-    @content;
-  }
-}
-
-@mixin bp--xlarge {
-  @media (min-width: #{$width-xlarge}) {
-    @content;
+@mixin mq($query) {
+  @if $query == m {
+    @media (min-width: #{$width-m}) {
+      @content;
+    }
+  } @else if $query == xl {
+    @media (min-width: #{$width-xl}) {
+      @content;
+    }
   }
 }
