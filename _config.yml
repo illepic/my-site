@@ -17,6 +17,7 @@ keep_files:
   - "generated"
   - "bower_components"
   - "css"
+  - "js"
 exclude: 
   - pattern-lab-assets.yml
 collections:

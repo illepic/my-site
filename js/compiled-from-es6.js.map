@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/es6/es6.js"],"names":[],"mappings":"AAAA,YAAY,CAAC;AACb;AACE,MAAM,UAAU,GAAG,yBAAyB,CAAC;AAC7C,SAAO,CAAC,GAAG,CAAC,UAAU,CAAC,CAAC;CACzB","file":"js/es6/es6.js","sourcesContent":["\"use strict\";\n{\n  const es6Message = \"Hello from the future!!\";\n  console.log(es6Message);\n}\n"]}

@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
   "use strict";
   var _ = require("lodash");
+  var bower = require("bower");
   var config = grunt.file.readYAML("Gruntconfig.yml");
   if (grunt.file.exists("Gruntconfig--custom.yml")) {
     var customConfigOverrides = grunt.file.readYAML("Gruntconfig--custom.yml");
@@ -14,10 +15,8 @@ module.exports = function (grunt) {
   require('./grunt-tasks/pattern-lab/pattern-lab.js')(grunt, config);
   require('./grunt-tasks/jekyll/jekyll.js')(grunt, config);
   require('./grunt-tasks/optimize.js')(grunt, config);
-  //require('./grunt-tasks/compass/compass.js')(grunt, config);
   require('./grunt-tasks/libsass/libsass.js')(grunt, config);
-  require('./grunt-tasks/jshint/jshint.js')(grunt, config);
-  //require('./grunt-tasks/drupal7/drupal7.js')(grunt, config);
+  require('./grunt-tasks/js.js')(grunt, config, _, bower);
   require('./grunt-tasks/icons/icons.js')(grunt, config);
   require('./grunt-tasks/regression-qa/regression-qa.js')(grunt, config);
   // End Modular Config
@@ -65,6 +64,7 @@ module.exports = function (grunt) {
 // Begin Task Aliases
   grunt.registerTask("compile", [
     //"validate",
+    "jsPrep",
     "stylesCompile",
     "jekyllBuild",
     "newer:responsive_images",
