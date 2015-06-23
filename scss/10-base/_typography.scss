@@ -86,7 +86,10 @@ $h6-lineheight: 1.1 !default;
 
 @mixin link() {
   text-decoration: none;
+  color: $color--green;
+  border-bottom: dashed 1px $color--green--trans;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom-style: solid;
   }
 }
