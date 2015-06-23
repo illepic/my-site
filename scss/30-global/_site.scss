@@ -3,25 +3,32 @@
   margin: 0 auto;
   padding: 0 $gap;
   &__header {
-  }
-  &__content {
-
-  }
-  &__footer {
-
-  }
-  @include mq(xl) {
-    &__header {
-      position: fixed;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: hsla(0, 100%, 100%, 0.9%);
+    box-shadow: 0 -3px 3px hsla(0, 0%, 0%, 0.14);
+    z-index: $z-overlay;
+    @include mq(xl) {
       left: 0;
       top: 0;
+      right: auto;
       width: 20%;
     }
-    &__content {
+  }
+  &__content {
+    z-index: 1;
+    @include mq(xl) {
       width: 80%;
       position: relative;
       left: 20%;
     }
   }
-  
+  &__footer {
+
+  }
+
 }
+

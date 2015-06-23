@@ -1,6 +1,6 @@
 .header {
   &__name {
-    
+    @include h2();   
   }
   &__image {
     
