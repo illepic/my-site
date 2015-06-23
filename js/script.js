@@ -1,5 +1,9 @@
+"use strict";
 $(document).ready(function() {
 
+  $(".js-site__nav-toggle").click(function() {
+    $("body").toggleClass("has-site__nav-open");
+  });
   //$("#primary-clone > ul").tinyNav({
   //    active: 'active' // Set the "active" class
   //});

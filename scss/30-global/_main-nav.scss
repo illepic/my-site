@@ -1,7 +1,13 @@
 .main-nav {
-  margin: $gap 0;
+  margin: 0;
   padding: 0;
-  &[min-width~="300px"] {
+  display: flex;
+  flex-direction: column-reverse;
+  @include mq(l) {
+    flex-direction: column;
+  }
+  &[min-width~="600px"] {
+    margin: $gap 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

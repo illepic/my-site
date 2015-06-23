@@ -19,9 +19,11 @@
 
   <header class="site__header header" role="banner">
     <h1 class="header__name"><a href="/" title="Evan Lovely" rel="home">Evan Lovely</a></h1>
-    <nav class="header__nav">
-      {% include menu--main.html %}
-    </nav>
+    <a href="#" class="header__toggle js-site__nav-toggle">Menu</a>
   </header>
+  <nav class="site__nav">
+    {% include menu--main.html %}
+  </nav>
+  
 
   <div class="site__content">

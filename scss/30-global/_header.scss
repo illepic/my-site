@@ -1,8 +1,13 @@
 .header {
   &__name {
-    @include h2();   
+    @include h2();
+  }
+  &__toggle {
+    @include mq(xl) {
+      display: none;
+    }
   }
   &__image {
-    
+
   }
 }

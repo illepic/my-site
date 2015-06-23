@@ -7,12 +7,32 @@ $width-xxl: 1200px !default;
 $width-xxxl: 1600px !default;
 
 @mixin mq($query) {
-  @if $query == m {
+  @if $query == xs {
+    @media (min-width: #{$width-xs}) {
+      @content;
+    }
+  } @else if $query == s {
+    @media (min-width: #{$width-s}) {
+      @content;
+    }
+  } @else if $query == m {
     @media (min-width: #{$width-m}) {
+      @content;
+    }
+  } @else if $query == l {
+    @media (min-width: #{$width-l}) {
       @content;
     }
   } @else if $query == xl {
     @media (min-width: #{$width-xl}) {
+      @content;
+    }
+  } @else if $query == xxl {
+    @media (min-width: #{$width-xxl}) {
+      @content;
+    }
+  } @else if $query == xxxl {
+    @media (min-width: #{$width-xxxl}) {
       @content;
     }
   }
