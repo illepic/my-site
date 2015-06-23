@@ -1,4 +1,14 @@
 {% include header.html %}
-<h1 class="site__title">{{ page.title }}</h1>
+<header class="page">
+<h1 class="page__title">{{ page.title }}</h1>
+  {% if page.header_img %}
+  <img class="header__image" 
+         src="/img/headers/generated/{{ site.header_img }}--w1200.jpg" 
+         srcset="/img/headers/generated/{{ site.header_img }}--w800.jpg 800w, /img/headers/generated/{{ site.header_img }}--w1200.jpg 1200w, /img/headers/generated/{{ site.header_img }}--w2000.jpg 2000w, /img/headers/{{ site.header_img }}.jpg 2400w"  
+         sizes="(min-width: 1px) 100vw, (min-width: 1200px) 80vw" 
+         alt="{{ site.header_img }}"
+      />
+  {% endif %}
+</header>
 {{ content }}
 {% include footer.html %}

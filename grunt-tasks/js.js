@@ -12,22 +12,22 @@ module.exports = function (grunt, config, _, bower) {
   }
 
   grunt.registerTask("jsPrep", [
-    "babel",
-    "bowerMin"
+    "newer:babel",
+    "newer:copy:js"
   ]);
   
-  grunt.registerTask('bowerMin', '', function () {
-    var done = this.async();
-    var bowerPaths;
-    bower.commands.list({paths: true}).on('end', function (output) {
-      bowerPaths = _.flattenDeep(_.values(output));
-      var currentSetting = grunt.config.get('uglify.jsmin.src');
-      var newSetting = currentSetting.concat(bowerPaths);
-      grunt.config.set('uglify.jsmin.src', newSetting);
-      grunt.task.run('uglify:jsmin');
-      done(true);
-    });
-  });
+  //grunt.registerTask('bowerMin', '', function () {
+  //  var done = this.async();
+  //  var bowerPaths;
+  //  bower.commands.list({paths: true}).on('end', function (output) {
+  //    bowerPaths = _.flattenDeep(_.values(output));
+  //    var currentSetting = grunt.config.get('uglify.jsmin.src');
+  //    var newSetting = currentSetting.concat(bowerPaths);
+  //    grunt.config.set('uglify.jsmin.src', newSetting);
+  //    grunt.task.run('uglify:jsmin');
+  //    done(true);
+  //  });
+  //});
   
   //function getBowerPaths() {
   //  //var done = this.async();
@@ -45,7 +45,7 @@ module.exports = function (grunt, config, _, bower) {
       js: {
         files: jsFiles,
         tasks: [
-          "newer:uglify:js",
+          "newer:copy:js",
           "shell:livereload",
           "newer:jshint:js"
         ]
@@ -55,21 +55,20 @@ module.exports = function (grunt, config, _, bower) {
         tasks: ["newer:babel:js"]
       }
     },
+    copy: {
+      js: {
+        src: config.jsDir + "*.{js,js.map}",
+        dest: config.jekyll.destination + ""
+      }
+    },
     uglify: {
       options: {
-        sourcemap: true,
+        sourcemap: true, // @todo fix js sourcemaps
         screwIe8: true,
         beautify: true
       },
       js: {
-        src: jsFiles.concat(config.jsDir + "lib/*.js"),
-        dest: config.jekyll.destination + "js/all.js"
-      },
-      jsmin: {
-        options: {
-          beautify: false
-        },
-        src: jsFiles.concat(config.jsDir + "lib/*.js"),
+        src: config.jekyll.destination + "js/**/*.js",
         dest: config.jekyll.destination + "js/all.min.js"
       }
     },
@@ -79,7 +78,7 @@ module.exports = function (grunt, config, _, bower) {
       },
       js: {
         src: config.jsDir + "es6/**/*.{js,jsx}",
-        dest: config.jsDir + "compiled-from-es6.js"
+        dest: config.jekyll.destination + "js/compiled-from-es6.js"
       }
     },
     jshint: {

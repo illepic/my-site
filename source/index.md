@@ -1,6 +1,8 @@
 ---
 layout: home
 menu: main
+header_img: glacier
+
 ---
 ## Hi! I’m Evan, and I theme Drupal websites with a responsive, mobile approach.
 

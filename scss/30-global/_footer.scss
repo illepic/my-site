@@ -1,3 +1,7 @@
 .footer {
-  
+  &__slots {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }  
 }

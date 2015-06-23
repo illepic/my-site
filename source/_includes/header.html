@@ -17,38 +17,11 @@
 
 <div class="site hfeed">
 
-  <nav class="site__nav">
-    {% include menu--main.html %}
-  </nav>
-
   <header class="site__header header" role="banner">
     <h1 class="header__name"><a href="/" title="Evan Lovely" rel="home">Evan Lovely</a></h1>
-    <img class="header__image" 
-         src="/img/headers/generated/{{ site.header_img }}--w1200.jpg" 
-         srcset="/img/headers/generated/{{ site.header_img }}--w800.jpg 800w, /img/headers/generated/{{ site.header_img }}--w1200.jpg 1200w, /img/headers/generated/{{ site.header_img }}--w2000.jpg 2000w, /img/headers/{{ site.header_img }}.jpg 2400w"  
-         sizes="(min-width: 1px) 100vw, (min-width: 1200px) 80vw" 
-         alt="{{ site.header_img }}"
-      />
-    <nav class="header__social social">
-      <ul class="social__list">
-        <li class="social__item">
-          <a href="http://twitter.com/EvanLovely" target="_blank" class="social__link" title="Twitter">Twitter</a>
-        </li>
-        <li class="social__item">
-          <a href="http://www.linkedin.com/in/evanlovely" target="_blank" class="social__link" title="LinkedIn">LinkedIn</a>
-        </li>
-        <li class="social__item">
-          <a href="http://www.flickr.com/photos/footfun/" target="_blank" class="social__link" title="Flickr">Flickr</a>
-        </li>
-        <li class="social__item">
-          <a href="http://instagram.com/evanlovely" target="_blank" class="social__link" title="Instagram">Instagram</a>
-        </li>
-        <li class="social__item">
-          <a href="https://github.com/evanlovely" target="_blank" class="social__link" title="GitHub">githuboctocat</a>
-        </li>
-        <li class="social__item"><a href="http://facebook.com/evanlovely" class="social__link" target="_blank" title="Facebook">Facebook</a></li>
-      </ul>
+    <nav class="site__nav">
+      {% include menu--main.html %}
     </nav>
   </header>
-  
+
   <div class="site__content">

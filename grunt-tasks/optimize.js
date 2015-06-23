@@ -3,7 +3,8 @@ module.exports = function (grunt, config) {
 
   grunt.registerTask("optimize", [
     "newer:responsive_images",
-    "newer:imagemin"
+    "newer:imagemin",
+    "newer:uglify:js"
   ]);
 
   grunt.config.merge({

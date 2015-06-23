@@ -1,15 +1,27 @@
 .site {
+  max-width: $width-xxxl;
+  margin: 0 auto;
   padding: 0 $gap;
-  &__nav {
-    
-  }
   &__header {
-    
   }
   &__content {
-    
+
   }
   &__footer {
-    
+
   }
+  @include mq(xl) {
+    &__header {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 20%;
+    }
+    &__content {
+      width: 80%;
+      position: relative;
+      left: 20%;
+    }
+  }
+  
 }
