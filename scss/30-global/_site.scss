@@ -10,7 +10,7 @@
     width: 100%;
     background: hsla(0, 100%, 100%, 0.9%);
     box-shadow: 3px -3px 3px hsla(0, 0%, 0%, 0.14);
-    z-index: ($z-overlay + 1);
+    z-index: z("navFixed");
     transition: all 0.3s ease-in;
     .has-site__nav-open & {
       left: 33%;
@@ -31,7 +31,7 @@
     margin-left: -100%;
     background: hsla(0, 100%, 100%, 0.9%);
     box-shadow: 3px 0 3px hsla(0, 0%, 0%, 0.14);
-    z-index: $z-overlay;
+    z-index: z("navFixed");
     text-align: right;
     padding: $spacing;
     transition: all 0.3s ease-in;
