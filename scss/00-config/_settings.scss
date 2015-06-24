@@ -10,3 +10,10 @@ $gap: 0.5rem;
 $border: solid 1px $color--gray;
 
 $z-overlay: 100;
+
+$trans-time: 0.3s;
+$trans-prop: all;
+$trans-func: ease-in;
+$trans-all: $trans-time $trans-prop $trans-func;
+$trans: $trans-time $trans-func;
+

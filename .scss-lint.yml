@@ -36,7 +36,7 @@ linters:
     ignore_single_line_blocks: false
 
   EmptyRule:
-    enabled: true
+    enabled: false
 
   FinalNewline:
     enabled: true
@@ -90,7 +90,7 @@ linters:
     severity: error
 
   PropertySortOrder:
-    enabled: true
+    enabled: false
     ignore_unspecified: false
 
   PropertySpelling:
@@ -177,4 +177,4 @@ linters:
 # Docs: https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/compass/README.md
 
   Compass::*:
-    enabled: true
+    enabled: false

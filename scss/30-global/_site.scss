@@ -16,17 +16,10 @@
       left: 80%;
     }
     @include mq(l) {
-      bottom: auto;
-      top: 0;
-      .has-site__nav-open & {
-        left: 33%;
-      }
+
     }
     @include mq(xl) {
-      left: 0;
-      top: 0;
-      right: auto;
-      width: 20%;
+
     }
   }
   &__nav {
@@ -47,25 +40,49 @@
     .has-site__nav-open & {
       margin-left: 0;
     }
-    @include mq(l) {
-      flex-direction: column;
-      width: 33%;
-    }
-    @include mq(xl) {
-      margin-left: 0;
-      text-align: left;
-    }
+    
   }
   &__content {
     z-index: 1;
-    @include mq(xl) {
-      width: 80%;
-      position: relative;
-      left: 20%;
-    }
   }
   &__footer {
 
+  }
+
+  @include mq(l) {
+    &__header {
+      bottom: auto;
+      top: 0;
+      .has-site__nav-open & {
+        left: 33%;
+      }
+    }
+    &__nav {
+      flex-direction: column;
+      width: 33%;
+    }
+    &__content {
+
+    }
+  }
+
+  @include mq(xl) {
+    &__header {
+      left: 0;
+      top: 0;
+      right: auto;
+      width: 20%;
+    }
+    &__nav {
+      margin-left: 0;
+      text-align: left;
+    }
+    &__content {
+
+    }
+    width: 80%;
+    position: relative;
+    left: 20%;
   }
 
 }
