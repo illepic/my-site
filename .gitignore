@@ -20,7 +20,7 @@ scss/99-imports/*
 !scss/99-imports/README.md
 
 # Generated files: icons
-images/icons/output/
+source/images/icons/output/fonts/
 scss/00-config/_icons.scss
 pattern-lab/source/_patterns/00-atoms/04-images/icons.mustache
 
