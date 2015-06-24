@@ -64,7 +64,7 @@ module.exports = function (grunt) {
 // Begin Task Aliases
   grunt.registerTask("compile", [
     //"validate",
-    //"icons-build",
+    "icons-build",
     "jsPrep",
     "stylesCompile",
     "jekyllBuild",

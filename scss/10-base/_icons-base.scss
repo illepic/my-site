@@ -49,12 +49,12 @@
   $color: inherit,
   $block: false
 ) {
+  @include font-icon-base();
+  font-size: $size;
+  color: $color;
   &:#{$pseudo} {
-    @include font-icon-base();
     content: map-get($font-icons, $icon);
-    font-size: $size;
-    color: $color;
-    @content;
+    //@content;
   }
   // Replace text with icon, like classic sprites
   @if $text-replace {

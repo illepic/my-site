@@ -9,11 +9,11 @@
     right: 0;
     width: 100%;
     background: hsla(0, 100%, 100%, 0.9%);
-    box-shadow: 0 -3px 3px hsla(0, 0%, 0%, 0.14);
-    z-index: $z-overlay;
+    box-shadow: 3px -3px 3px hsla(0, 0%, 0%, 0.14);
+    z-index: ($z-overlay + 1);
     transition: all 0.3s ease-in;
     .has-site__nav-open & {
-      left: 80%;
+      left: 33%;
     }
     @include mq(l) {
 
@@ -27,20 +27,19 @@
     bottom: 0;
     top: 0;
     left: 0;
-    width: 80%;
+    width: 33%;
     margin-left: -100%;
     background: hsla(0, 100%, 100%, 0.9%);
     box-shadow: 3px 0 3px hsla(0, 0%, 0%, 0.14);
     z-index: $z-overlay;
     text-align: right;
-    padding: $gap;
+    padding: $spacing;
     transition: all 0.3s ease-in;
     display: flex;
     flex-direction: column-reverse;
     .has-site__nav-open & {
       margin-left: 0;
     }
-    
   }
   &__content {
     z-index: 1;
@@ -49,7 +48,7 @@
 
   }
 
-  @include mq(l) {
+  @include mq(m) {
     &__header {
       bottom: auto;
       top: 0;
@@ -74,15 +73,21 @@
       width: 20%;
     }
     &__nav {
+      width: 20%;
+      top: 100px;
       margin-left: 0;
       text-align: left;
     }
     &__content {
-
+      width: 80%;
+      position: relative;
+      left: 20%;
     }
-    width: 80%;
-    position: relative;
-    left: 20%;
+    &__footer {
+      width: 80%;
+      position: relative;
+      left: 20%;
+    }
   }
 
 }

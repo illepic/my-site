@@ -4,17 +4,17 @@ module.exports = function (grunt, config) {
   grunt.config.merge({
     webfont: {
       icons: {
-        src: 'images/icons/src/*.svg',
-        dest: 'images/icons/output/fonts',
+        src: 'source/images/icons/src/*.svg',
+        dest: 'source/images/icons/output/fonts',
         destCss: 'scss/00-config/',
         options: {
           engine: "node",
           stylesheet: 'scss',
           relativeFontPath: '../images/icons/output/fonts/',
-          template: 'images/icons/templates/icons.template.css',
+          template: 'source/images/icons/templates/icons.template.css',
           htmlDemo: true,
-          htmlDemoTemplate: 'images/icons/templates/icons.html',
-          destHtml: 'images/icons/output/',
+          htmlDemoTemplate: 'source/images/icons/templates/icons.html',
+          destHtml: 'source/images/icons/output/',
           hashes: false,
           syntax: 'bem',
           templateOptions: {
@@ -26,16 +26,16 @@ module.exports = function (grunt, config) {
     },
     watch: {
       files: [
-        'images/icons/src/**/*'
+        'source/images/icons/src/**/*'
       ],
       tasks: ['icons-build']
     }
   });
 
   grunt.registerTask('icons-cleanup', function() {
-    grunt.file.copy('images/icons/output/icons.html', 'pattern-lab/source/_patterns/00-atoms/04-images/icons.mustache');
-    if (grunt.file.exists('images/icons/output/icons.html')) {
-      grunt.file.delete('images/icons/output/icons.html');
+    grunt.file.copy('source/images/icons/output/icons.html', 'pattern-lab/source/_patterns/00-atoms/04-images/icons.mustache');
+    if (grunt.file.exists('source/images/icons/output/icons.html')) {
+      grunt.file.delete('source/images/icons/output/icons.html');
     }
   });
   grunt.registerTask("icons-build", ['webfont:icons', 'icons-cleanup']);
