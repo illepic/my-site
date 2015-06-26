@@ -43,6 +43,14 @@
     {
       "name": "$color--green--trans",
       "value": "hsla(150, 45%, 50%, 0.5)"
+    },
+    {
+      "name": "$color--white--trans",
+      "value": "hsla(0, 100%, 100%, 0.9%)"
+    },
+    {
+      "name": "$color--blue",
+      "value": "hsl(207, 100%, 45%)"
     }
   ]
 }

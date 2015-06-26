@@ -3,7 +3,7 @@
   padding: 0;
   display: flex;
   flex-direction: column-reverse;
-  @include mq(l) {
+  @include mq("s") {
     flex-direction: column;
   }
   &[min-width~="600px"] {

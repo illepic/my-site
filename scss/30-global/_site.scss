@@ -3,23 +3,22 @@
   margin: 0 auto;
   padding: 0 $gap;
   &__header {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: hsla(0, 100%, 100%, 0.9%);
-    box-shadow: 3px -3px 3px hsla(0, 0%, 0%, 0.14);
-    z-index: z("navFixed");
-    transition: all 0.3s ease-in;
-    .has-site__nav-open & {
-      left: 33%;
-    }
-    @include mq(l) {
 
+    @include mq("s") {
+      
     }
-    @include mq(xl) {
-
+    @include mq("xl") {
+      width: 80%;
+      position: relative;
+      left: 20%;
+    }
+    @at-root .header__name {
+      @include mq("s") {
+        margin-left: 35px;
+      }
+      @include mq("xl") {
+        margin-left: 0;
+      }
     }
   }
   &__nav {
@@ -27,9 +26,9 @@
     bottom: 0;
     top: 0;
     left: 0;
-    width: 33%;
-    margin-left: -100%;
-    background: hsla(0, 100%, 100%, 0.9%);
+    width: 50%;
+    margin-left: -50%;
+    background: $color--white--trans;
     box-shadow: 3px 0 3px hsla(0, 0%, 0%, 0.14);
     z-index: z("navFixed");
     text-align: right;
@@ -40,55 +39,52 @@
     .has-site__nav-open & {
       margin-left: 0;
     }
-  }
-  &__content {
-    z-index: 1;
-  }
-  &__footer {
-
-  }
-
-  @include mq(m) {
-    &__header {
-      bottom: auto;
-      top: 0;
-      .has-site__nav-open & {
-        left: 33%;
-      }
-    }
-    &__nav {
+    @include mq("s") {
       flex-direction: column;
       width: 33%;
+      margin-left: -33%;
     }
-    &__content {
-
-    }
-  }
-
-  @include mq(xl) {
-    &__header {
-      left: 0;
-      top: 0;
-      right: auto;
+    @include mq("xl") {
       width: 20%;
-    }
-    &__nav {
-      width: 20%;
-      top: 100px;
       margin-left: 0;
       text-align: left;
     }
-    &__content {
-      width: 80%;
-      position: relative;
-      left: 20%;
+    &-toggle {
+      //@include h2();
+      cursor: pointer;
+      color: $color--blue;
+      position: absolute;
+      bottom: $spacing;
+      right: 0;
+      font-size: 24px;
+      padding: 6px 6px 6px 10px;
+      margin-right: -34px;
+      background: $color--white--trans;
+      border-radius: 0 6px 6px 0;
+      box-shadow: 3px 0 3px hsla(0, 0%, 0%, 0.14);
+      @include mq("s") {
+        bottom: auto;
+        top: 0.4rem;
+      }
+      @include mq("xl") {
+        display: none;
+      }
     }
-    &__footer {
+  }
+  &__content {
+    z-index: 1;
+    @include mq("xl") {
       width: 80%;
       position: relative;
       left: 20%;
     }
   }
-
+  &__footer {
+    @include mq(xl) {
+      width: 80%;
+      position: relative;
+      left: 20%;
+    }
+  }
 }
 

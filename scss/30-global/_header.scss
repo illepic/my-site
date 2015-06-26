@@ -2,17 +2,9 @@
   padding: 0 $gap;
   &__name {
     @include h2();
-    float: right;
     >a {
       border-bottom-width: 0;
     }
   }
-  &__toggle {
-    @include h2();
-    cursor: pointer;
-    color: $color--green;
-    @include mq(xl) {
-      display: none;
-    }
-  }
+
 }
