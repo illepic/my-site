@@ -54,6 +54,19 @@ module.exports = function (grunt) {
       bundleInstall: {
         command: "bundle install"
       }
+    },
+    browserSync: {
+      dev: {
+        options: {
+          proxy: "mysite.dev", // you must set URL to your localhost here 
+          //tunnel: true, // tunnel your localhost out to the internet ~ http://localtunnel.me
+          //reloadDelay: 500,
+          watchTask: true
+        },
+        bsFiles: {
+          src: "public/css/style.css"
+        }
+      }
     }
   });
   // End Misc Config
@@ -90,7 +103,8 @@ module.exports = function (grunt) {
   // this is ran if you do either `grunt default` or `grunt`
   grunt.registerTask("default", [
     "compile",
-    "concurrent:dev"
+    "browserSync",
+    "watch"
   ]);
 // End Task Aliases
 

@@ -3,7 +3,7 @@ module.exports = function (grunt, config, _, bower) {
   // `config` vars set in `Gruntconfig.yml`
 
   var jsFiles = [
-    config.jsDir + "*.js"
+    config.jsDir + "*.{js,min.js}"
   ];
 
   var jsHintForce = true;
@@ -57,7 +57,7 @@ module.exports = function (grunt, config, _, bower) {
     },
     copy: {
       js: {
-        src: config.jsDir + "*.{js,js.map}",
+        src: config.jsDir + "*.{js,js.map,min.js}",
         dest: config.jekyll.destination + ""
       }
     },

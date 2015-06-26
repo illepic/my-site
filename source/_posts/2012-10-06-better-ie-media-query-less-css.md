@@ -24,18 +24,18 @@ meta:
 
 ## Inline Media Queries
 
-{% highlight css %}
+```scss
 header {
   background-color: red;
     @media screen only and (min-width: 20em) {
       background-color: blue;
     }
 }
-{% endhighlight %}
+```
 
 Which when compiled into CSS returns us with this.
 
-{% highlight css %}
+```css
 header {
   background-color: red;
 }
@@ -45,7 +45,7 @@ header {
     background-color: blue;
   }
 }
-{% endhighlight %}
+```
 
 
 ## Using `&` to put a class before instead of after
@@ -55,7 +55,7 @@ You can use the  `&`  **after** (normally *before* to combine selector strings) 
 {% highlight css %}
 header {
   background-color: red;
-  .ie8&amp; {
+  .ie8 & {
     background-color: blue;
   }
 }
