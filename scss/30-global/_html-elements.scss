@@ -56,14 +56,38 @@ strong {
 }
 
 p {
-  
+  margin: 0 0 $spacing;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ul,
+ol,
+dl {
+  margin: 0 0 $spacing;
+  padding: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+li {
+  margin: 0 0 $spacing $spacing;
+  padding: 0;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 blockquote {
   font-style: italic;
   border-left: solid 3px $color--gray;
-  margin-left: $spacing;
+  margin: 0 0 $spacing $spacing;
   padding-left: $spacing;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 code, kbd, pre, samp {
@@ -83,11 +107,37 @@ pre {
   background: hsl(0, 0%, 17%);
   padding: $gap;
   border-radius: $gap;
+  margin-bottom: $spacing;
+  color: white;
+  &:last-child {
+    margin-bottom: 0;
+  }
   code {
     padding: 0;
     border: 0;
     border-radius: 0;
     font-size: 1em;
     color: white;
+  }
+}
+
+// Glyph, by Harry Roberts
+hr {
+  padding: 0;
+  border: none;
+  border-top: medium double $color--gray;
+  color: $color--gray--dark;
+  text-align: center;
+  font-family: Georgia, sans-serif;
+  margin: 0 0 $spacing 0;
+  clear: both;
+  &:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
   }
 }

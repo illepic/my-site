@@ -33,7 +33,7 @@ $h6-lineheight: 1.1 !default;
 
 @mixin heading-base() {
   font-family: $headline-font-family;
-  font-weight: normal;
+  margin-top: 0;
 }
 
 @mixin h1() {
@@ -41,7 +41,6 @@ $h6-lineheight: 1.1 !default;
   font-size: $h1-size;
   line-height: $h1-lineheight;
   margin-bottom: (0.5 * $h1-size);
-  margin-top: (0.5 * $h1-size);
 }
 
 @mixin h2() {
@@ -49,7 +48,6 @@ $h6-lineheight: 1.1 !default;
   font-size: $h2-size;
   line-height: $h2-lineheight;
   margin-bottom: (0.5 * $h2-size);
-  margin-top: (0.5 * $h2-size);
 }
 
 @mixin h3() {
@@ -57,7 +55,6 @@ $h6-lineheight: 1.1 !default;
   font-size: $h3-size;
   line-height: $h3-lineheight;
   margin-bottom: (0.5 * $h3-size);
-  margin-top: (0.5 * $h3-size);
 }
 
 @mixin h4() {
@@ -65,7 +62,6 @@ $h6-lineheight: 1.1 !default;
   font-size: $h4-size;
   line-height: $h4-lineheight;
   margin-bottom: (0.2 * $h4-size);
-  margin-top: (0.2 * $h4-size);
 }
 
 @mixin h5() {
@@ -73,7 +69,6 @@ $h6-lineheight: 1.1 !default;
   font-size: $h5-size;
   line-height: $h5-lineheight;
   margin-bottom: (0.2 * $h5-size);
-  margin-top: (0.2 * $h5-size);
 }
 
 @mixin h6() {
@@ -81,7 +76,6 @@ $h6-lineheight: 1.1 !default;
   font-size: $h6-size;
   line-height: $h6-lineheight;
   margin-bottom: (0.2 * $h6-size);
-  margin-top: (0.2 * $h6-size);
 }
 
 @mixin link() {

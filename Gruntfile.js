@@ -56,15 +56,36 @@ module.exports = function (grunt) {
       }
     },
     browserSync: {
-      dev: {
+      options: {
+        watchTask: true,
+        browser: "Google Chrome"
+        //reloadDelay: 500,
+      },
+      site: {
         options: {
-          proxy: "mysite.dev", // you must set URL to your localhost here 
+          proxy: "mysite.dev"
           //tunnel: true, // tunnel your localhost out to the internet ~ http://localtunnel.me
-          //reloadDelay: 500,
-          watchTask: true
+
         },
         bsFiles: {
-          src: "public/css/style.css"
+          src: [
+            "public/css/style.css",
+            "public/index.html"
+          ]
+        }
+      },
+      pl: {
+        options: {
+          startPath: "/pattern-lab/public/",
+          server: {
+            baseDir: "./"
+          }
+        },
+        bsFiles: {
+          src: [
+            "public/css/style.css",
+            "pattern-lab/public/index.html"
+          ]
         }
       }
     }
@@ -99,11 +120,11 @@ module.exports = function (grunt) {
     "shell:bowerInstall",
     "compile"
   ]);
-  
+
   // this is ran if you do either `grunt default` or `grunt`
   grunt.registerTask("default", [
     "compile",
-    "browserSync",
+    "browserSync:pl",
     "watch"
   ]);
 // End Task Aliases

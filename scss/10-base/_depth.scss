@@ -1,0 +1,11 @@
+@mixin depth($depth: 3, $baseStyles: false) {
+  @if $baseStyles {
+    transition: all $trans;
+  } @else {
+    $factor: 1 + ($depth * 0.001);
+    transform: scale($factor);
+  }
+  z-index: $depth;
+  $blur: $depth + 2px;
+  box-shadow: 0 0 $blur $color--shadow;
+}
