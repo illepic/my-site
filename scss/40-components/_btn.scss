@@ -1,9 +1,19 @@
-@mixin btn() {
-  border: $border;
-  padding: $gap ($gap * 2);
-  display: inline-block;  
+@mixin btn($baseStyles: false, $modifier: false) {
+  @if $baseStyles {
+    border: $border;
+    padding: $gap ($gap * 2);
+    display: inline-block;
+    border-radius: 2px;
+  }
+  @if $modifier == "primary" {
+    background: $color--green;
+    color: white;
+  }
 }
 
 .btn {
-  @include btn();
+  @include btn($baseStyles: true);
+  &--primary {
+    @include btn($modifier: "primary")
+  }
 }
