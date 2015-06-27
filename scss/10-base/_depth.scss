@@ -2,8 +2,8 @@
   @if $baseStyles {
     transition: all $trans;
   } @else {
-    $factor: 1 + ($depth * 0.001);
-    transform: scale($factor);
+    //$factor: 1 + ($depth * 0.001);
+    //transform: scale($factor);
   }
   z-index: $depth;
   $blur: $depth + 2px;

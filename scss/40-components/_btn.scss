@@ -4,6 +4,13 @@
     padding: $gap ($gap * 2);
     display: inline-block;
     border-radius: 2px;
+    @include depth(6, $baseStyles: true);
+    &:hover {
+      @include depth(7);
+    }
+    &:active {
+      @include depth(12);
+    }
   }
   @if $modifier == "primary" {
     background: $color--green;
