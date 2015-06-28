@@ -1,4 +1,4 @@
-@mixin depth($depth: 3, $baseStyles: false) {
+@mixin depth($depth: 3, $baseStyles: false, $direction: false) {
   @if $baseStyles {
     transition: all $trans;
   } @else {
@@ -7,5 +7,15 @@
   }
   z-index: $depth;
   $blur: $depth + 2px;
-  box-shadow: 0 0 $blur $color--shadow;
+  $offset: 0 0;
+  @if $direction == "down" {
+    $offset: 0 $blur;
+  } @else if $direction == "up" {
+    $offset: 0 (-1 * $blur);
+  } @else if $direction == "right" {
+    $offset: $blur 0;
+  } @else if $direction == "left" {
+    $offset: (-1 * $blur) 0;
+  }
+  box-shadow: $offset $blur $color--shadow;
 }
