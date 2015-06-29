@@ -42,6 +42,7 @@
       background: white;
       .article__content[min-width~="800px"] & {
         position: absolute;
+        width: 49%;
         margin-left: 51%;
         margin-top: (-2 * $spacing);
         //transform: translateY(-50%);
