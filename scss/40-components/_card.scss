@@ -1,5 +1,7 @@
-@mixin card() {
-  @include depth(1, $baseStyles: true);
+@mixin card($includeDepth: true) {
+  @if $includeDepth {
+    @include depth(1, $baseStyles: true);
+  }
   padding: $gap;
   margin-bottom: $spacing;
   &:last-child {

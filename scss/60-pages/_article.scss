@@ -1,0 +1,51 @@
+.article {
+  padding: $gap;
+  &__content {
+    &[min-width~="800px"] {
+      padding-right: 51%;
+    }
+  }
+  &__aside {
+    margin-bottom: $spacing;
+    .article__content[min-width~="800px"] & {
+      &:before {
+        @include card();
+        content: "-";
+        display: block;
+        height: 28px;
+        width: 28px;
+        border-radius: 14px;
+        line-height: 28px;
+        padding: 0;
+        text-align: center;
+        font-size: 18px;
+        margin: 0 auto;
+        background: white;
+        position: relative;
+        z-index: 2;
+      }
+      &:after {
+        @include card($includeDepth: false);
+        @include depth(1, $direction: left);
+        content: "";
+        background: white;
+        display: block;
+        position: absolute;
+        height: 10px;
+        padding: 0;
+        margin-top: -18px;
+        left: 26%;
+        width: 25%;
+      }
+    }
+    > .card {
+      background: white;
+      .article__content[min-width~="800px"] & {
+        position: absolute;
+        margin-left: 51%;
+        margin-top: (-2 * $spacing);
+        //transform: translateY(-50%);
+      }
+    }
+  }
+}

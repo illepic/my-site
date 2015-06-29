@@ -11,11 +11,11 @@
   @if $direction == "down" {
     $offset: 0 $blur;
   } @else if $direction == "up" {
-    $offset: 0 (-1 * $blur);
+    $offset: 0 (-1 * ($blur - 1));
   } @else if $direction == "right" {
-    $offset: $blur 0;
+    $offset: ($blur -1) 0;
   } @else if $direction == "left" {
-    $offset: (-1 * $blur) 0;
+    $offset: (-1 * ($blur - 1)) 0;
   }
   box-shadow: $offset $blur $color--shadow;
 }
