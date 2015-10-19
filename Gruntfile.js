@@ -58,7 +58,7 @@ module.exports = function (grunt) {
     browserSync: {
       options: {
         watchTask: true,
-        browser: "Google Chrome"
+        browser: "Google Chrome Canary"
         //reloadDelay: 500,
       },
       site: {
