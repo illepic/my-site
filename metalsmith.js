@@ -5,7 +5,7 @@ var collections = require('metalsmith-collections');
 var layouts = require('metalsmith-layouts');
 
 var metalsmith = Metalsmith(__dirname)
-  .source('./source/_posts')
+  .source('./tests/render')
   .destination('./public')
   //.use(collections({
   //  myposts: {
@@ -20,8 +20,8 @@ var metalsmith = Metalsmith(__dirname)
     date: 'YYYY'
   }))
   .use(layouts({
-    engine: 'handlebars',
-    default: 'default.hbs',
+    engine: 'react',
+    default: 'page.jsx',
     partials: './src',
     directory: './src/base'
   }))
