@@ -7,6 +7,14 @@ var layouts = require('metalsmith-layouts');
 var metalsmith = Metalsmith(__dirname)
   .source('./tests/render')
   .destination('./public')
+  .use(function(files, metalsmith, done) {
+    console.log(files);
+    console.log(metalsmith.metadata());
+  })
+  //.use(function(files, metalsmith, done) {
+  //    var metadata = metalsmith.metadata();
+  //    console.log('md:', metadata);
+  //})
   //.use(collections({
   //  myposts: {
   //    pattern: '*.md',
@@ -15,10 +23,10 @@ var metalsmith = Metalsmith(__dirname)
   //  }
   //}))
   .use(markdown())
-  .use(permalinks({
-    pattern: ':date/:title',
-    date: 'YYYY'
-  }))
+  //.use(permalinks({
+  //  pattern: ':date/:title',
+  //  date: 'YYYY'
+  //}))
   .use(layouts({
     engine: 'react',
     default: 'page.jsx',

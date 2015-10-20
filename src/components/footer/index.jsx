@@ -1,5 +1,4 @@
 var React = require('react');
-var Header = require('../components/header');
 
 var Site = React.createClass({
   render: function() {
@@ -10,7 +9,6 @@ var Site = React.createClass({
         </head>
         
         <body>
-          <Header />
           {this.props.children}
         </body>
       </html>
