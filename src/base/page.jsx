@@ -7,7 +7,7 @@ var Page = React.createClass({
     return (
       <Site title={this.props.title}>
         <div>{this.props.title}</div>
-        <div>{this.props.contents}</div>
+        <div dangerouslySetInnerHTML={{__html: this.props.contents}}></div>
       </Site>
     );
   }
