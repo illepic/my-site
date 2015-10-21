@@ -5,12 +5,12 @@ var collections = require('metalsmith-collections');
 var layouts = require('metalsmith-layouts');
 
 var metalsmith = Metalsmith(__dirname)
-  .source('./tests/render')
+  .source('./source/_posts')
   .destination('./public')
-  .use(function(files, metalsmith, done) {
-    console.log(files);
-    console.log(metalsmith.metadata());
-  })
+  //.use(function(files, metalsmith, done) {
+  //  console.log(files);
+  //  console.log(metalsmith.metadata());
+  //})
   //.use(function(files, metalsmith, done) {
   //    var metadata = metalsmith.metadata();
   //    console.log('md:', metadata);

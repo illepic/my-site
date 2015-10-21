@@ -2,7 +2,6 @@
 title: A Website I Worked On Won a Responsive Web Design Award!
 title_url: "http://www.pinterest.com/pin/525654587728414673/"
 img: "/portfolio/sutter-home-winery/phone-tablet.jpg"
-layout: post
 category: Technology
 tags:
   - Responsive Web Design

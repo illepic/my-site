@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 'India Trip: Bylakupee: Namdroling Monastery'
 category: Photography
 tags:

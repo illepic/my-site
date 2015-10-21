@@ -1,7 +1,6 @@
 ---
 title: "I'm now at Phase 2 as a Drupal Developer!"
 title_url: "http://www.phase2technology.com"
-layout: post
 category: Technology
 tags:
   - Drupal

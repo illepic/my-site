@@ -1,6 +1,5 @@
 ---
 title: Double Border Button with Negative Border Radius
-layout: post
 category: Technology
 tags:
   - CSS

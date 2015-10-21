@@ -1,5 +1,4 @@
 ---
-layout: post
 title: My Path with Yoga
 categories:
 - Personal

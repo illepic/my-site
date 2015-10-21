@@ -1,6 +1,5 @@
 ---
 title: Finding out the time on the East and West Coast with Alfred
-layout: post
 img: /img/2014/03/Alfred-EST-PST-time.png
 category: Technology
 tags:

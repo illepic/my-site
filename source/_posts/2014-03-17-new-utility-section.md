@@ -1,7 +1,6 @@
 ---
 title: I put together some of my utilities in a new site section!
 title_url: /utilities
-layout: post
 category: Technology
 tags:
   - Mac

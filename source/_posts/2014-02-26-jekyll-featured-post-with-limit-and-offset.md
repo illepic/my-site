@@ -1,6 +1,5 @@
 ---
 title: Creating a Featured Posts Lists Limited in Count in Jekyll 
-layout: post
 category: Technology
 tags:
   - Jekyll

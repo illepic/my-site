@@ -1,7 +1,6 @@
 ---
 title: Great article on work/life balance for high stress jobs and prioritizing family
 title_url: http://99u.com/workbook/21789/work-hard-without-being-a-jerk
-layout: post
 category: Technology
 tags:
   - work-life-balance

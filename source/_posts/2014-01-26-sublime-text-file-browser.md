@@ -1,7 +1,6 @@
 ---
 title: Great Sublime Text plugin for better file browsing
 title_url: https://sublime.wbond.net/packages/FileBrowser
-layout: post
 category: Technology
 tags:
   - Sublime Text

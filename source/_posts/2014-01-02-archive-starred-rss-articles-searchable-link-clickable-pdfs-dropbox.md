@@ -1,6 +1,5 @@
 ---
 title: Archive your Starred RSS articles to searchable, link-clickable PDFs on your Dropbox
-layout: post
 category: Technology
 tags:
   - Dropbox

@@ -1,7 +1,6 @@
 ---
 title: I made a tool for opening a Google Map where the photo was taken
 title_url: /utilities/photo-geotags/
-layout: post
 category: Technology
 tags:
   - Alfred

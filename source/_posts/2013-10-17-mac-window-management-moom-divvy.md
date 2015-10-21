@@ -1,6 +1,5 @@
 ---
 title: Mac Window Management using Moom or Divvy
-layout: post
 type: post
 categories: 
   - Technology

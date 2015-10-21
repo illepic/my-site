@@ -1,7 +1,6 @@
 ---
 title: I added a Review Section to my site!
 title_url: /reviews
-layout: post
 category: Personal
 tags:
   - gear

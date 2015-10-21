@@ -1,7 +1,6 @@
 ---
 title: Facebook Patents Inferring Income of Users
 title_url: http://m.slashdot.org/story/195299
-layout: post
 category: Technology
 tags:
   - Facebook

@@ -1,7 +1,6 @@
 ---
 title: New Note about Fav Alfred Workflows
 title_url: /notes/my-favorite-alfred-workflows
-layout: post
 category: Technology
 tags:
   - Alfred
