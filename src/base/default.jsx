@@ -1,5 +1,5 @@
 var React = require('react');
-var ReactDOMServer = require('react-dom/server');
+//var ReactDOMServer = require('react-dom/server');
 var Site = require('./site.jsx');
 
 var Page = React.createClass({
