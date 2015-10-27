@@ -1,5 +1,5 @@
 var React = require('react');
-var Header = require('../components/header');
+var Header = require('../components/header/index.jsx');
 
 var Site = React.createClass({
   render: function() {
@@ -12,6 +12,7 @@ var Site = React.createClass({
         <body>
           <Header />
           {this.props.children}
+          <script src="/js/bundle--default.js"></script>
         </body>
       </html>
     )

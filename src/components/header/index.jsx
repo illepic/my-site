@@ -1,5 +1,6 @@
 var React = require('react');
 var SiteNav = require('../site-nav');
+require('./_site-header.scss');
 
 var Header = React.createClass({
   render: function() {

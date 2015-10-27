@@ -8,6 +8,8 @@ var define = require('metalsmith-define');
 
 var metalsmith = Metalsmith(__dirname)
   .source('./source/_posts')
+  //.source('./tests')
+  .clean(false)
   .destination('./public')
   //.use(function(files, metalsmith, done) {
   //    var metadata = metalsmith.metadata();
@@ -35,6 +37,7 @@ var metalsmith = Metalsmith(__dirname)
   .use(templates({
     isStatic: false,
     directory: './src/base',
+    requireIgnoreExt: ['.scss'],
     babel: true
     //baseFile: 'base.html'
   }))
