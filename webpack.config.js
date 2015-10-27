@@ -1,9 +1,11 @@
+var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
-    default: path.resolve(__dirname, './src/base/default.jsx')
+    default: path.resolve(__dirname, './src/base/default.jsx'),
+    vendor: ['react']
   },
   output: {
     path: path.resolve(__dirname, './public/assets'),
@@ -39,7 +41,8 @@ module.exports = {
     //'react': 'React'
   },
   plugins: [
-    new ExtractTextPlugin("style--[name].css")
+    new ExtractTextPlugin("style--[name].css"),
+    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"bundle--vendor.js")
   ],
   sassLoader: {
     //includePaths: [path.resolve(__dirname, './some-folder')]

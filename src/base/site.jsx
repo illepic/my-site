@@ -23,6 +23,7 @@ var Site = React.createClass({
         <body>
           <Header />
           {this.props.children}
+          <script src="/assets/bundle--vendor.js"></script>
           {scriptTags}
         </body>
       </html>
