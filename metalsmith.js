@@ -40,7 +40,7 @@ var metalsmith = Metalsmith(__dirname)
   //})
   .use(templates({
     isStatic: false,
-    directory: './src/base',
+    directory: './src/templates',
     requireIgnoreExt: ['.scss'],
     babel: true
     //baseFile: 'base.html'

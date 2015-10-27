@@ -4,7 +4,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
-    default: path.resolve(__dirname, './src/base/default.jsx'),
+    default: path.resolve(__dirname, './src/templates/default.jsx'),
+    post: path.resolve(__dirname, './src/templates/post.jsx'),
     vendor: ['react']
   },
   output: {

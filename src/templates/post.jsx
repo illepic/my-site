@@ -1,5 +1,5 @@
 var React = require('react');
-var Site = require('./site.jsx');
+var Site = require('../global/site.jsx');
 
 var Page = React.createClass({
   render: function() {
