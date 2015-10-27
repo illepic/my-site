@@ -81,6 +81,8 @@
     "inquirer": "^0.8.5",
     "load-grunt-tasks": "^3.1.0",
     "lodash": "^3.6.0",
+    "metalsmith-date-in-filename": "0.0.14",
+    "metalsmith-filemetadata": "0.0.4",
     "node-sass": "^3.4.0",
     "phantomjs": "^1.9.16",
     "react": "^0.13.3",

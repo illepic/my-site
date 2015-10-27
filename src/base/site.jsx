@@ -1,5 +1,6 @@
 var React = require('react');
 var Header = require('../components/header/index.jsx');
+require('./typography.scss');
 
 var Site = React.createClass({
   render: function() {

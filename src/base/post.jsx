@@ -4,8 +4,9 @@ var Site = require('./site.jsx');
 var Page = React.createClass({
   render: function() {
     return (
-      <Site title={this.props.title} styleFiles={["/assets/style--default.css"]} scriptFiles={["/assets/bundle--default.js"]}>
-        <h2>{this.props.title}</h2>
+      <Site title={this.props.title} styleFiles={["/assets/style--post.css"]} scriptFiles={["/assets/bundle--post.js"]}>
+        <h2>Post: {this.props.title}</h2>
+        <p>Date: {this.props.date.toString()}</p>
         <div dangerouslySetInnerHTML={{__html: this.props.contents}}></div>
       </Site>
     );

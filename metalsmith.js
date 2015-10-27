@@ -5,6 +5,8 @@ var collections = require('metalsmith-collections');
 //var layouts = require('metalsmith-layouts');
 var templates = require('metalsmith-react-templates');
 var define = require('metalsmith-define');
+var fileMetadata = require('metalsmith-filemetadata');
+var dateInFile = require('metalsmith-date-in-filename');
 
 var metalsmith = Metalsmith(__dirname)
   .source('./source/_posts')
@@ -13,26 +15,28 @@ var metalsmith = Metalsmith(__dirname)
   .destination('./public')
   //.use(function(files, metalsmith, done) {
   //    var metadata = metalsmith.metadata();
-  //    console.log('md:', metadata);
+  //    metadata.rtemplate = 'post.jsx';
+  //  done();
   //})
-  //.use(collections({
-  //  myposts: {
-  //    pattern: '*.md',
-  //    sortBy: 'date',
-  //    reverse: true
-  //  }
-  //}))
+  .use(dateInFile())
   .use(markdown())
   //.use(permalinks({
   //  pattern: ':date/:title',
   //  date: 'YYYY'
   //}))
-  //.use(define({
-  //  rtemplate: 'page.jsx'
-  //}))
+  .use(fileMetadata([
+    {
+      pattern: '**/*.{md,html}',
+      preserve: true,
+      metadata: {
+        section: 'blog',
+        rtemplate: 'post.jsx'
+      }
+    }
+  ]))
   //.use(function(files, metalsmith, done) {
     //console.log(files);
-    //console.log(metalsmith.metadata());
+  //  console.log(metalsmith.metadata());
   //})
   .use(templates({
     isStatic: false,
