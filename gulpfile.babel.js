@@ -60,7 +60,7 @@ gulp.task('html', ['styles'], () => {
 });
 
 gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
+  return gulp.src(path.join(config.dir.src, '**/*.{png,jpeg,jpg,gif}'))
     .pipe($.if($.if.isFile, $.cache($.imagemin({
       progressive: true,
       interlaced: true,
@@ -72,7 +72,7 @@ gulp.task('images', () => {
       console.log(err);
       this.end();
     })))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest(config.dir.assets));
 });
 
 gulp.task('fonts', () => {
