@@ -35,6 +35,10 @@ module.exports = {
           optional: ['runtime'],
           stage: 0
         }
+      },
+      {
+        test: /\.png$/,
+        loader: 'file?name=[path][name].[ext]'
       }
     ]
   },
@@ -46,6 +50,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"bundle--vendor.js")
   ],
   sassLoader: {
-    //includePaths: [path.resolve(__dirname, './some-folder')]
+    //includePaths: [path.resolve(__dirname, './src/global/typography.scss')]
   }
 };

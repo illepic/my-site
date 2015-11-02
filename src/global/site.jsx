@@ -1,17 +1,16 @@
 var React = require('react');
 var Header = require('../components/header/index.jsx');
-require('./typography.scss');
 
 var Site = React.createClass({
   render: function() {
     var styleTags = this.props.styleFiles.map(function(styleFile, index) {
       return (
-        <link href={styleFile} rel="stylesheet" data-key={index} />
+        <link href={styleFile} rel="stylesheet" key={index} />
       );
     });
     var scriptTags = this.props.scriptFiles.map(function(scriptFile, index) {
       return (
-        <script src={scriptFile} data-key={index}></script>
+        <script src={scriptFile} key={index}></script>
       );
     });
     return (
@@ -31,6 +30,5 @@ var Site = React.createClass({
     )
   }
 });
-      
+
 module.exports = Site;
-      

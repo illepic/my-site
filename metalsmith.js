@@ -1,3 +1,5 @@
+var config = require('./config.js');
+var path = require('path');
 var Metalsmith = require('metalsmith');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
@@ -9,11 +11,12 @@ var fileMetadata = require('metalsmith-filemetadata');
 var dateInFile = require('metalsmith-date-in-filename');
 var branch = require('metalsmith-branch');
 
+
 var metalsmith = Metalsmith(__dirname)
-  .source('./source/_posts')
+  .source(path.join(config.dir.content, './_posts'))
   //.source('./tests')
   .clean(false)
-  .destination('./public')
+  .destination(config.dir.public)
   .use(branch('**/*.md')
     .use(markdown())
   )
@@ -34,13 +37,18 @@ var metalsmith = Metalsmith(__dirname)
       }
     ]))
     //.use(function(files, metalsmith, done) {
-    //console.log(files);
+    //  console.log(files);
+    //  console.log(metalsmith);
     //  console.log(metalsmith.metadata());
+    //  done();
     //})
     .use(templates({
       isStatic: false,
       directory: './src/templates',
-      requireIgnoreExt: ['.scss'],
+      requireIgnoreExt: [
+        '.scss',
+        '.png'
+      ],
       babel: true
       //baseFile: 'base.html'
     }))
