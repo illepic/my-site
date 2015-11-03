@@ -61,3 +61,5 @@ var metalsmith = Metalsmith(__dirname)
       throw err;
     }
   });
+
+module.exports = metalsmith;

@@ -26,7 +26,9 @@ gulp.task('styles', () => {
     .pipe(reload({stream: true}));
 });
 
-
+gulp.task('ms', () => {
+  require('./metalsmith.js');
+});
 
 function lint(files, options) {
   return () => {
