@@ -36,19 +36,10 @@ var metalsmith = Metalsmith(__dirname)
         }
       }
     ]))
-    //.use(function(files, metalsmith, done) {
-    //  console.log(files);
-    //  console.log(metalsmith);
-    //  console.log(metalsmith.metadata());
-    //  done();
-    //})
     .use(templates({
       isStatic: false,
       directory: './src/templates',
-      requireIgnoreExt: [
-        '.scss',
-        '.png'
-      ],
+      requireIgnoreExt: [],
       babel: true
       //baseFile: 'base.html'
     }))
