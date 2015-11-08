@@ -26,8 +26,22 @@ gulp.task('styles', () => {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('watch:styles', () => {
+  return gulp.watch(path.join(config.dir.src, '**/*.scss'), event => {
+    console.log('File ' + path.relative(config.dir.src, event.path) + ' was ' + event.type);
+    gulp.start('styles');
+  })
+});
+
 gulp.task('ms', () => {
   require('./metalsmith.js');
+});
+
+gulp.task('watch:ms', () => {
+  return gulp.watch(path.join(config.dir.src, '**/*.jsx'), event => {
+    console.log('File ' + path.relative(config.dir.src, event.path) + ' was ' + event.type);
+    gulp.start('ms');    
+  })
 });
 
 function lint(files, options) {
@@ -120,12 +134,13 @@ gulp.task('serve', ['styles', 'fonts'], () => {
   //gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
-gulp.task('serve:dist', () => {
+gulp.task('serve:public', () => {
   browserSync({
     notify: false,
     port: 9000,
+    directory: true,
     server: {
-      baseDir: ['dist']
+      baseDir: [config.dir.public]
     }
   });
 });
@@ -162,10 +177,16 @@ gulp.task('serve:dist', () => {
 //    .pipe(gulp.dest('app'));
 //});
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+gulp.task('build', ['styles', 'ms'], () => {
+  return gulp.src('public/**/*').pipe($.size({title: 'build'}));
 });
 
-gulp.task('default', ['clean'], () => {
+gulp.task('build:clean', ['clean'], () => {
   gulp.start('build');
 });
+
+gulp.task('default', [
+  'serve:public',
+  'watch:styles',
+  'watch:ms'
+]);
