@@ -8,9 +8,9 @@ var Page = React.createClass({
       myDate = this.props.date.toString();
     }
     return (
-      <Site title={this.props.title} styleFiles={["/assets/style--post.css"]} scriptFiles={["/assets/bundle--post.js"]}>
+      <Site title={this.props.title}>
         <h2>Post: {this.props.title}</h2>
-        <p>Date: {myDate}</p>
+        <p>Date : {myDate}</p>
         <div dangerouslySetInnerHTML={{__html: this.props.contents}}></div>
       </Site>
     );
