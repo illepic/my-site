@@ -48,20 +48,18 @@ var branch = require('metalsmith-branch');
 
 function build(cb) {
   ms.build(function (err, files) {
-        if (err) {
-          console.log('Error!');
-          console.log(err);
-          throw err;
-        }
-        //reload();
-        //console.log(Object.keys(files));
-        console.log(Object.keys(files).length + ' files built with Metalsmith');
-    if (cb) {
-      
-        cb();
+    if (err) {
+      console.log('Error!');
+      console.log(err);
+      throw err;
     }
-      });
-  
+    //console.log(Object.keys(files));
+    console.log(Object.keys(files).length + ' files built with Metalsmith');
+    if (cb) {
+      cb();
+    }
+  });
+
 }
 
 module.exports = function(cb) {

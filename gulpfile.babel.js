@@ -44,22 +44,24 @@ gulp.task('ms', (cb) => {
 
 gulp.task('watch:ms', () => {
   return gulp.watch([
-      path.join(config.dir.src, '**/*.jsx'), 
-      path.join(config.dir.content, '**/*.md') 
+      path.join(config.dir.src, '**/*.jsx') 
     ],
     event => {
     console.log('File ' + path.relative(config.dir.src, event.path) + ' was ' + event.type);
   // must use build process that dumps memory at end or `require()`s get cached
   sh('npm run metalsmith');
   reload();  
-  })
+  });
 });
 
 gulp.task('watch:content', () => {
-  return gulp.watch([
-      path.join(config.dir.content, '**/*.md') 
+  gulp.watch([
+      path.join(config.dir.content, '**/*.md')
     ],
-    ['ms']);
+    event => {
+    console.log('File ' + path.relative(config.dir.src, event.path) + ' was ' + event.type);
+      ms(reload);
+  });
 });
 
 gulp.task('images', () => {
