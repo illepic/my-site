@@ -5,10 +5,15 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
-//import {stream as wiredep} from 'wiredep';
-
+import through from 'through2';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+var ms = require('./metalsmith.js');
+var exec = require('child_process').execSync;
+// run bash commands with: `sh('bash script/to/run.sh')`
+function sh(cmd) {
+  console.log(exec(cmd, {encoding: 'utf8'}));
+}
 
 gulp.task('styles', () => {
   return gulp.src(path.join(config.dir.src, '**/*.scss'))
@@ -22,8 +27,8 @@ gulp.task('styles', () => {
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['last 1 version']}))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(config.dir.assets))
-    .pipe(reload({stream: true}));
+    .pipe(gulp.dest(config.dir.assets));
+    //.pipe(reload({stream: true}));
 });
 
 gulp.task('watch:styles', () => {
@@ -34,7 +39,9 @@ gulp.task('watch:styles', () => {
 });
 
 gulp.task('ms', () => {
-  require('./metalsmith.js');
+  // must use build process that dumps memory at end or `require()`s get cached
+  sh('npm run metalsmith');
+  reload();
 });
 
 gulp.task('watch:ms', () => {
@@ -61,7 +68,10 @@ gulp.task('images', () => {
 });
 
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', () => {
+  //del(['public/*', '!public/assets']);
+  del(['public']);
+});
 
 gulp.task('serve', () => {
   browserSync({
@@ -72,18 +82,18 @@ gulp.task('serve', () => {
       baseDir: [config.dir.public]
     }
   });
+  //gulp.watch(path.join(config.dir.public, '**')).on('change', reload);
 });
+
+
 
 gulp.task('build', ['styles', 'ms'], () => {
   return gulp.src('public/**/*').pipe($.size({title: 'build'}));
 });
 
-gulp.task('build:clean', ['clean'], () => {
-  gulp.start('build');
-});
-
 gulp.task('default', [
   'serve',
+  'build',
   'watch:styles',
   'watch:ms'
 ]);
