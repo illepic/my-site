@@ -12,8 +12,8 @@ var dateInFile = require('metalsmith-date-in-filename');
 var branch = require('metalsmith-branch');
 
 
-//module.exports = function(cb, reload) {
-  Metalsmith(__dirname)
+ var ms = new Metalsmith(__dirname);
+  ms
     .source(path.join(config.dir.content, './_posts'))
     //.source('./tests')
     .clean(false)
@@ -44,17 +44,41 @@ var branch = require('metalsmith-branch');
         babel: true
         //baseFile: 'base.html'
       }))
-    )
-    .build(function (err, files) {
-      if (err) {
-        console.log('Error!');
-        console.log(err);
-        throw err;
-      }
-      //reload();
-      //console.log(Object.keys(files));
-      console.log(Object.keys(files).length + ' files built with Metalsmith');
-      //cb();
-    });
+    );
+
+function build(cb) {
+  ms.build(function (err, files) {
+        if (err) {
+          console.log('Error!');
+          console.log(err);
+          throw err;
+        }
+        //reload();
+        //console.log(Object.keys(files));
+        console.log(Object.keys(files).length + ' files built with Metalsmith');
+    if (cb) {
+      
+        cb();
+    }
+      });
   
+}
+
+module.exports = function(cb) {
+  build(cb);
+};
+
+//module.exports = function (cb) {
+  //ms.build(function (err, files) {
+  //    if (err) {
+  //      console.log('Error!');
+  //      console.log(err);
+  //      throw err;
+  //    }
+  //    //reload();
+  //    //console.log(Object.keys(files));
+  //    console.log(Object.keys(files).length + ' files built with Metalsmith');
+  //    cb();
+  //  });
+  //return ms.run;
 //};

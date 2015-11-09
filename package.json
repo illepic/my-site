@@ -18,7 +18,7 @@
     "prebuild": "npm run clean",
     "build": "npm run metalsmith & gulp styles",
     "start": "npm run deps && npm run build",
-    "metalsmith": "node metalsmith.js",
+    "metalsmith": "node metalsmith-cli.js",
     "webpack": "webpack --display-error-details",
     "test": "npm install && bower install && bundle install && grunt build",
     "predeploy": "grunt compile",

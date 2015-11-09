@@ -38,17 +38,28 @@ gulp.task('watch:styles', () => {
   })
 });
 
-gulp.task('ms', () => {
-  // must use build process that dumps memory at end or `require()`s get cached
-  sh('npm run metalsmith');
-  reload();
+gulp.task('ms', (cb) => {
+  ms(cb);
 });
 
 gulp.task('watch:ms', () => {
-  return gulp.watch(path.join(config.dir.src, '**/*.jsx'), event => {
+  return gulp.watch([
+      path.join(config.dir.src, '**/*.jsx'), 
+      path.join(config.dir.content, '**/*.md') 
+    ],
+    event => {
     console.log('File ' + path.relative(config.dir.src, event.path) + ' was ' + event.type);
-    gulp.start('ms');    
+  // must use build process that dumps memory at end or `require()`s get cached
+  sh('npm run metalsmith');
+  reload();  
   })
+});
+
+gulp.task('watch:content', () => {
+  return gulp.watch([
+      path.join(config.dir.content, '**/*.md') 
+    ],
+    ['ms']);
 });
 
 gulp.task('images', () => {
@@ -95,5 +106,6 @@ gulp.task('default', [
   'serve',
   'build',
   'watch:styles',
+  'watch:content',
   'watch:ms'
 ]);
