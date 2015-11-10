@@ -20,7 +20,7 @@
     "start": "npm run deps && npm run build",
     "metalsmith": "node metalsmith-cli.js",
     "webpack": "webpack --display-error-details",
-    "test": "npm install && bower install && bundle install && grunt build",
+    "test": "node tests/index.js | tap-spec",
     "predeploy": "grunt compile",
     "postinstall": "find node_modules/ -name \"*.info\" -type f -delete"
   },
@@ -94,6 +94,8 @@
     "react": "^0.13.3",
     "sass-loader": "^3.1.1",
     "style-loader": "^0.13.0",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.2",
     "time-grunt": "^1.0.0",
     "webpack": "^1.12.2"
   },
