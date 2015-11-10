@@ -44,7 +44,7 @@ gulp.task('ms', (cb) => {
 
 gulp.task('watch:ms', () => {
   return gulp.watch([
-      path.join(config.dir.src, '**/*.jsx') 
+      path.join(config.dir.src, '**/*.{js,jsx}') 
     ],
     event => {
     console.log('File ' + path.relative(config.dir.src, event.path) + ' was ' + event.type);
@@ -64,8 +64,13 @@ gulp.task('watch:content', () => {
   });
 });
 
-gulp.task('images', () => {
-  return gulp.src(path.join(config.dir.src, '**/*.{png,jpeg,jpg,gif}'))
+
+const imgSrc = [
+  path.join(config.dir.src, '**/*.{png,jpeg,jpg,gif}')
+];
+
+gulp.task('img', () => {
+  return gulp.src(imgSrc)
     .pipe($.if($.if.isFile, $.cache($.imagemin({
       progressive: true,
       interlaced: true,
@@ -80,6 +85,7 @@ gulp.task('images', () => {
     .pipe(gulp.dest(config.dir.assets));
 });
 
+gulp.task('watch:img', ['img']);
 
 gulp.task('clean', () => {
   //del(['public/*', '!public/assets']);
@@ -99,8 +105,11 @@ gulp.task('serve', () => {
 });
 
 
-
-gulp.task('build', ['styles', 'ms'], () => {
+gulp.task('build', [
+  'styles',
+  'ms',
+'img'
+], () => {
   return gulp.src('public/**/*').pipe($.size({title: 'build'}));
 });
 
@@ -109,5 +118,6 @@ gulp.task('default', [
   'build',
   'watch:styles',
   'watch:content',
-  'watch:ms'
+  'watch:ms',
+  'watch:img'
 ]);

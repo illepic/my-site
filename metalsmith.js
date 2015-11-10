@@ -14,7 +14,7 @@ var branch = require('metalsmith-branch');
 
  var ms = new Metalsmith(__dirname);
   ms
-    .source(path.join(config.dir.content, './_posts'))
+    .source(config.dir.content)
     //.source('./tests')
     .clean(false)
     .destination(config.dir.public)
