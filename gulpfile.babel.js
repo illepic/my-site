@@ -10,6 +10,10 @@ const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 var ms = require('./metalsmith.js');
 var exec = require('child_process').execSync;
+var gutil = require("gulp-util");
+var webpack = require("webpack");
+var WebpackDevServer = require("webpack-dev-server");
+
 // run bash commands with: `sh('bash script/to/run.sh')`
 function sh(cmd) {
   console.log(exec(cmd, {encoding: 'utf8'}));
@@ -44,7 +48,7 @@ gulp.task('ms', (cb) => {
 
 gulp.task('watch:ms', () => {
   return gulp.watch([
-      path.join(config.dir.src, '**/*.{js,jsx}') 
+      path.join(config.dir.src, '**/*.{js,jsx,html}') 
     ],
     event => {
     console.log('File ' + path.relative(config.dir.src, event.path) + ' was ' + event.type);
@@ -104,11 +108,38 @@ gulp.task('serve', () => {
   //gulp.watch(path.join(config.dir.public, '**')).on('change', reload);
 });
 
+gulp.task("webpack", function(callback) {
+    // run webpack
+    webpack(require('./webpack.config.js'), function(err, stats) {
+        if(err) throw new gutil.PluginError("webpack", err);
+        gutil.log("[webpack]", stats.toString({
+            // output options
+        }));
+        callback();
+    });
+});
+
+gulp.task("webpack-dev-server", function(callback) {
+    // Start a webpack-dev-server
+    var compiler = webpack(require('./webpack.config.js'));
+
+    new WebpackDevServer(compiler, {
+        // server and middleware options
+    }).listen(8080, "localhost", function(err) {
+        if(err) throw new gutil.PluginError("webpack-dev-server", err);
+        // Server listening
+        gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
+
+        // keep the server alive or continue?
+        // callback();
+    });
+});
 
 gulp.task('build', [
   'styles',
   'ms',
-'img'
+  'img',
+  'webpack'
 ], () => {
   return gulp.src('public/**/*').pipe($.size({title: 'build'}));
 });

@@ -11,7 +11,6 @@ var fileMetadata = require('metalsmith-filemetadata');
 var dateInFile = require('metalsmith-date-in-filename');
 var branch = require('metalsmith-branch');
 
-
 var ms = new Metalsmith(__dirname);
 ms.source(config.dir.content)
   //.source('./tests')
@@ -40,8 +39,8 @@ ms.source(config.dir.content)
       isStatic: false,
       directory: './src/templates',
       requireIgnoreExt: [],
-      babel: true
-      //baseFile: 'base.html'
+      babel: true,
+      baseFile: '../global/site.html'
     }))
   );
 
@@ -64,18 +63,3 @@ function build(cb) {
 module.exports = function (cb) {
   build(cb);
 };
-
-//module.exports = function (cb) {
-//ms.build(function (err, files) {
-//    if (err) {
-//      console.log('Error!');
-//      console.log(err);
-//      throw err;
-//    }
-//    //reload();
-//    //console.log(Object.keys(files));
-//    console.log(Object.keys(files).length + ' files built with Metalsmith');
-//    cb();
-//  });
-//return ms.run;
-//};

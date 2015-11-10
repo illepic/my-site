@@ -1,7 +1,8 @@
-var base = require('../../base');
+//var base = require('../../base/index.js');
 var React = require('react');
 var SiteNav = require('../site-nav');
-var logo = base.assetPath(__dirname, 'logo.png');
+//var logo = base.assetPath(__dirname, 'logo.png');
+var logo = '/assets/components/header/logo.png';
 
 var Header = React.createClass({
   render: function() {

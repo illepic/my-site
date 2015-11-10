@@ -2,7 +2,7 @@ var React = require('react');
 var Header = require('../components/header/index.jsx');
 
 var Site = React.createClass({
-  render: function() {
+  render: function () {
     //var styleTags = this.props.styleFiles.map(function(styleFile, index) {
     //  return (
     //    <link href={styleFile} rel="stylesheet" key={index} />
@@ -14,17 +14,10 @@ var Site = React.createClass({
     //  );
     //});
     return (
-      <html>
-        <head>
-          <title>{this.props.title}</title>
-          <link href="/assets/style.css" rel="stylesheet" />
-        </head>
-        
-        <body>
-          <Header />
-          {this.props.children}
-        </body>
-      </html>
+      <div>
+        <Header />
+        {this.props.children}
+      </div>
     )
   }
 });

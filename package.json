@@ -27,9 +27,11 @@
   "license": "MIT",
   "devDependencies": {
     "async": "^1.5.0",
-    "babel": "^5.8.23",
+    "babel": "^6.0.15",
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-react": "^6.1.2",
     "bower": "^1.3.12",
     "browser-sync": "^2.2.1",
     "chalk": "^0.5.1",
@@ -97,11 +99,14 @@
     "tap-spec": "^4.1.0",
     "tape": "^4.2.2",
     "time-grunt": "^1.0.0",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "babel-runtime": "^6.0.14",
     "grunt-browser-sync": "^2.1.3",
     "handlebars": "^4.0.3",
+    "he": "^0.5.0",
     "jsx-loader": "^0.13.2",
     "liquid": "^1.2.1",
     "metalsmith": "^2.1.0",

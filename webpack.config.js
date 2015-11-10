@@ -1,18 +1,16 @@
 var webpack = require('webpack');
 var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
   entry: {
-    default: path.resolve(__dirname, './src/templates/default.jsx'),
-    post: path.resolve(__dirname, './src/templates/post.jsx'),
+    post: path.resolve(__dirname, './src/templates/post-loader.jsx'),
     vendor: ['react']
   },
   output: {
     path: path.resolve(__dirname, './public/assets'),
     publicPath: '/assets/',
-    filename: 'bundle--[name].js',
-    chunkFilename: 'chunk-[id].js'
+    filename: 'bundle--[name].js'
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
@@ -20,36 +18,25 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        loader: 'style!css'
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!sass') 
-      },
-      {
-        test: /\.jsx$/,
+        test: [
+          /\.jsx$/
+          ///\.js$/
+        ],
         loader: 'babel',
         //exclude: /(node_modules|bower_components)/,
+        exclude: [node_modules_dir],
         query: {
           optional: ['runtime'],
           stage: 0
         }
-      },
-      {
-        test: /\.png$/,
-        loader: 'file?name=[path][name].[ext]'
       }
-    ]
+    ],
+    noParse: [/\.scss$/]
   },
   externals: {
     //'react': 'React'
   },
   plugins: [
-    new ExtractTextPlugin("style--[name].css"),
-    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"bundle--vendor.js")
-  ],
-  sassLoader: {
-    //includePaths: [path.resolve(__dirname, './src/global/typography.scss')]
-  }
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+  ]
 };
