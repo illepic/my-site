@@ -12,39 +12,38 @@ var dateInFile = require('metalsmith-date-in-filename');
 var branch = require('metalsmith-branch');
 
 
- var ms = new Metalsmith(__dirname);
-  ms
-    .source(config.dir.content)
-    //.source('./tests')
-    .clean(false)
-    .destination(config.dir.public)
-    .use(branch('**/*.md')
-      .use(markdown())
-    )
-    .use(branch('**/*.{md,html}')
-      .use(dateInFile())
-      //.use(permalinks({
-      //  pattern: ':date/:title',
-      //  date: 'YYYY'
-      //}))
-      .use(fileMetadata([
-        {
-          pattern: '**/*.{md,html}',
-          preserve: true,
-          metadata: {
-            section: 'blog',
-            rtemplate: 'post.jsx'
-          }
+var ms = new Metalsmith(__dirname);
+ms.source(config.dir.content)
+  //.source('./tests')
+  .clean(false)
+  .destination(config.dir.public)
+  .use(branch('**/*.md')
+    .use(markdown())
+  )
+  .use(branch('**/*.{md,html}')
+    .use(dateInFile())
+    //.use(permalinks({
+    //  pattern: ':date/:title',
+    //  date: 'YYYY'
+    //}))
+    .use(fileMetadata([
+      {
+        pattern: '**/*.{md,html}',
+        preserve: true,
+        metadata: {
+          section: 'blog',
+          rtemplate: 'post.jsx'
         }
-      ]))
-      .use(templates({
-        isStatic: false,
-        directory: './src/templates',
-        requireIgnoreExt: [],
-        babel: true
-        //baseFile: 'base.html'
-      }))
-    );
+      }
+    ]))
+    .use(templates({
+      isStatic: false,
+      directory: './src/templates',
+      requireIgnoreExt: [],
+      babel: true
+      //baseFile: 'base.html'
+    }))
+  );
 
 function build(cb) {
   ms.build(function (err, files) {
@@ -62,21 +61,21 @@ function build(cb) {
 
 }
 
-module.exports = function(cb) {
+module.exports = function (cb) {
   build(cb);
 };
 
 //module.exports = function (cb) {
-  //ms.build(function (err, files) {
-  //    if (err) {
-  //      console.log('Error!');
-  //      console.log(err);
-  //      throw err;
-  //    }
-  //    //reload();
-  //    //console.log(Object.keys(files));
-  //    console.log(Object.keys(files).length + ' files built with Metalsmith');
-  //    cb();
-  //  });
-  //return ms.run;
+//ms.build(function (err, files) {
+//    if (err) {
+//      console.log('Error!');
+//      console.log(err);
+//      throw err;
+//    }
+//    //reload();
+//    //console.log(Object.keys(files));
+//    console.log(Object.keys(files).length + ' files built with Metalsmith');
+//    cb();
+//  });
+//return ms.run;
 //};
