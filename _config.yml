@@ -6,12 +6,12 @@ author:
 header_img: glacier
 url: http://evanlovely.com
 github: https://github.com/EvanLovely/my-jekyll-site/commits/master
-highlighter: pygments
+#highlighter: pygments
 destination: ../my-jekyll-site-html/
 permalink: /blog/:categories/:title
 paginate: 10
 paginate_path: "/blog/page/:num"
-markdown: redcarpet
+#markdown: redcarpet
 keep_files:
   - "generated"
 exclude: 
@@ -39,6 +39,7 @@ defaults:
 
 gems:
   - jekyll-redirect-from # https://github.com/jekyll/jekyll-redirect-from
+  - jekyll-paginate
 
 picture:
   source: ""
