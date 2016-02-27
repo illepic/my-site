@@ -5,13 +5,15 @@ author:
   email: evan@evanlovely.com
 header_img: glacier
 url: http://evanlovely.com
-github: https://github.com/EvanLovely/my-jekyll-site/commits/master
+github: https://github.com/EvanLovely/my-site/commits/master
 highlighter: pygments
-destination: ../my-jekyll-site-html/
+destination: ../my-site-html/
 permalink: /blog/:categories/:title
 paginate: 10
 paginate_path: "/blog/page/:num"
-markdown: redcarpet
+markdown: kramdown
+kramdown:
+  input: GFM
 keep_files:
   - "generated"
 exclude: 
@@ -39,6 +41,7 @@ defaults:
 
 gems:
   - jekyll-redirect-from # https://github.com/jekyll/jekyll-redirect-from
+  - jekyll-paginate
 
 picture:
   source: ""

@@ -49,5 +49,6 @@ $(document).ready(function() {
   
   $(".my-social-sites a[title*='Skype']").attr('href', 'skype:evanlovely?chat');
   $('a[href^="http"]:not([href*="ebook.local"]):not([href*="evanlovely.com"])').attr('target', '_blank'); //Opens all external links in new tabs
+  hljs.initHighlightingOnLoad();
 	$('body').addClass('js-ran');
 });
