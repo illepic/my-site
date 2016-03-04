@@ -15,13 +15,13 @@ redirect_from:
     <!-- {% include subscribe.html %} -->
     <h2 class="archive-title"><i class="icon-folder-open-alt"></i>Category: </h2>
     <ul class="nav nav-pills">
-      <li class="current-cat"><a href="/blog/technology/" data-original-title="Covering Web Design, Front End Web Development, Macs, iPhones, software, and more.">Technology</a>
+      <li class="current-cat"><a href="/content/blog/technology/" data-original-title="Covering Web Design, Front End Web Development, Macs, iPhones, software, and more.">Technology</a>
       </li>
-      <li><a href="/blog/personal/" data-original-title="Updates on my personal life &amp; my travel stories.">Personal</a>
+      <li><a href="/content/blog/personal/" data-original-title="Updates on my personal life &amp; my travel stories.">Personal</a>
       </li>
-      <li><a href="/blog/ashtanga-vinyasa-yoga/" data-original-title="The type of yoga I teach &amp; practice.">Ashtanga Vinyasa Yoga</a>
+      <li><a href="/content/blog/ashtanga-vinyasa-yoga/" data-original-title="The type of yoga I teach &amp; practice.">Ashtanga Vinyasa Yoga</a>
       </li>
-      <li><a href="/blog/photography/" data-original-title="New photos and albums from me!">Photography</a>
+      <li><a href="/content/blog/photography/" data-original-title="New photos and albums from me!">Photography</a>
       </li>
     </ul>
     <p class="archive-meta">
@@ -29,7 +29,7 @@ redirect_from:
     </p>
   </header>
   {% endcomment %}
-  <p class="subscribe shame" style="text-align: right;">Subscribe to Evan Lovely's Site via <a href="/feed" style="text-decoration: none;">RSS <i class="icon-rss"></i></a> or by <a href="/subscribe">Email <i class="icon-envelope"></i></p>
+  <p class="subscribe shame" style="text-align: right;">Subscribe to Evan Lovely's Site via <a href="/feed" style="text-decoration: none;">RSS <i class="icon-rss"></i></a> or by <a href="/content/subscribe">Email <i class="icon-envelope"></i></p>
   {% for post in paginator.posts %}
     {% include blog--teaser.html %}
   {% endfor %}
@@ -38,9 +38,9 @@ redirect_from:
   {% if paginator.previous_page %}
     <li class="previous">
       {% if paginator.previous_page == 1 %}
-        <a href="/blog">← Previous</a>
+        <a href="/content/blog">← Previous</a>
       {% else %}
-        <a href="/blog/{{ paginator.previous_page_path }}">← Previous</a>
+        <a href="/content/blog/{{ paginator.previous_page_path }}">← Previous</a>
       {% endif %}
     </li>
   {% else %}
