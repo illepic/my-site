@@ -59,7 +59,7 @@ nunjucksDate
 metalsmith
   .metadata(metadata)
   .source('./content')
-  .clean(true)
+  .clean(false)
   .use(drafts(true))
   // .use(collections(siteCollections))
   .use(markdown())
@@ -83,11 +83,21 @@ metalsmith
       partials: './src',
       directory: './src/templates'
   }))
-  .destination('./dist')
-  .build((err, files) => {
+  .destination('./dist');
+
+const msBuild = (cb) => {
+  metalsmith.build((err, files) => {
     if (err) {
       console.error(err);
       throw err;
     }
-    console.info(`${Object.keys(files).length} files built`);
+    console.info(`Metalsmith built ${Object.keys(files).length} files.`);
+    if (typeof cb === 'function') { cb(); }
   });
+};
+
+// msBuild();
+
+module.exports = {
+  build: msBuild
+};
