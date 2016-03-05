@@ -1,4 +1,5 @@
 'use strict';
+const config = require('./config');
 const Metalsmith = require('metalsmith');
 const drafts = require('metalsmith-drafts');
 const markdown = require('metalsmith-markdown');
@@ -46,7 +47,7 @@ const siteCollections = {
 };
 
 nunjucks
-  .configure('./src', {
+  .configure(config.paths.src, {
     watch: false, 
     autoescape: false,
     noCache: true
@@ -58,7 +59,7 @@ nunjucksDate
 
 metalsmith
   .metadata(metadata)
-  .source('./content')
+  .source(config.paths.content)
   .clean(false)
   .use(drafts(true))
   // .use(collections(siteCollections))
@@ -80,10 +81,10 @@ metalsmith
   })
   .use(layouts({
       engine: 'nunjucks',
-      partials: './src',
+      partials: config.paths.src,
       directory: './src/templates'
   }))
-  .destination('./dist');
+  .destination(config.paths.dist);
 
 const msBuild = (cb) => {
   metalsmith.build((err, files) => {

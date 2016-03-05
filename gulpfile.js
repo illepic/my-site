@@ -1,5 +1,7 @@
 'use strict';
 const gulp = require('gulp');
+const config = require('./config');
+const path = require('path');
 const watch = require('gulp-watch');
 const msBuild = require('./metalsmith').build;
 const del = require('del');
@@ -7,7 +9,7 @@ const browserSync = require('browser-sync').create('server');
 const reload = browserSync.reload;
 
 gulp.task('clean', (done) => {
-  del(['./dist']).then(() => {
+  del([config.paths.dist]).then(() => {
     done();  
   });
 });
@@ -15,18 +17,11 @@ gulp.task('clean', (done) => {
 gulp.task('serve', ['ms'], () => {
   browserSync.init({
     browser: 'Google Chrome Canary',
-    // files: [
-    //   './dist/*'
-    // ],
     server: {
-      baseDir: './dist'
+      baseDir: config.paths.dist
     },
-    // port: config.browserSync.port,
     open: false
-    // reloadDelay: config.browserSync.reloadDelay,
-    // reloadDebounce: config.browserSync.reloadDebounce,
   });
-  gulp.watch('./dist/*').on('change', reload);
 });
 
 gulp.task('ms', (done) => {
@@ -35,15 +30,9 @@ gulp.task('ms', (done) => {
 
 gulp.task('watch:ms', () => {
   watch([
-    './content/**',
-    './src/**'
-  ], () => {
-    msBuild();
-  });
-  // gulp.watch([
-  //   './content/**',
-  //   './src/**'
-  // ], ['ms']);
+    path.join(config.paths.content, '**'),
+    path.join(config.paths.src, '**')
+  ], () => msBuild(reload));
 });
 
 gulp.task('compile', [
