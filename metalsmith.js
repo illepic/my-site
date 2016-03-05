@@ -6,6 +6,8 @@ const markdown = require('metalsmith-markdown');
 const excerpts = require('metalsmith-excerpts');
 const layouts = require('metalsmith-layouts');
 // const inPlace = require('metalsmith-in-place');
+const logger = require('metalsmith-logger');
+
 const collections = require('metalsmith-collections');
 const feed = require('metalsmith-feed');
 const assets = require('metalsmith-assets');
@@ -14,6 +16,7 @@ const each = require('async').each;
 const nunjucks = require('nunjucks');
 const nunjucksDate = require('nunjucks-date');
 const metalsmith = Metalsmith(__dirname);
+const path = require('path');
 
 // template metadata
 const metadata = {
@@ -46,7 +49,7 @@ const siteCollections = {
   }
 };
 
-nunjucks
+const tpl = nunjucks
   .configure(config.paths.src, {
     watch: false, 
     autoescape: false,
@@ -63,7 +66,6 @@ metalsmith
   .clean(false)
   .use(drafts(true))
   // .use(collections(siteCollections))
-  .use(markdown())
   // .use(excerpts())
   // .use(assets())
   // .use(feed({
@@ -79,11 +81,50 @@ metalsmith
       done();
     }, done);
   })
-  .use(layouts({
-      engine: 'nunjucks',
-      partials: config.paths.src,
-      directory: './src/templates'
-  }))
+
+  // in-place templating
+  .use((files, metalsmith, done) => {
+    let globalData = metalsmith.metadata();
+    each(Object.keys(files), (file, done) => {
+      let fileExt = path.extname(file);
+      if(fileExt !== '.html') {
+        return;
+      }
+      let fileData = files[file];
+      let mergedData = Object.assign({}, globalData, fileData);
+      let contents = fileData.contents.toString();
+      let renderedContents = tpl.renderString(contents, mergedData);
+      fileData.contents = new Buffer(renderedContents, 'utf8');
+      done();
+    }, done()); // done with `each()`
+  })
+
+  // md => html
+  .use(markdown())
+
+  // layout templating
+  .use((files, metalsmith, done) => {
+    let globalData = metalsmith.metadata();
+    each(Object.keys(files), (file, done) => {
+      let fileExt = path.extname(file);
+      if(fileExt !== '.html') {
+        return;
+      }
+      let fileData = files[file];
+      let mergedData = Object.assign({}, globalData, fileData);
+      let templatePath = path.join(process.cwd(), config.paths.src, 'templates', fileData.layout);
+      let result = tpl.render(templatePath, mergedData);
+      fileData.contents = new Buffer(result, 'utf8');
+      done();
+    }, done()); // done with `each()`
+
+
+  })
+  //.use(layouts({
+  //    engine: 'nunjucks',
+  //    partials: config.paths.src,
+  //    directory: './src/templates'
+  //}))
   .destination(config.paths.dist);
 
 const msBuild = (cb) => {
