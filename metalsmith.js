@@ -54,7 +54,7 @@ const siteCollections = {
     sortBy: 'weight'
   },
   pages: {
-    pattern: '*.md',
+    pattern: '*/index.*',
     sortBy: 'position'
   }
 };

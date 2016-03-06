@@ -1,6 +1,6 @@
 ---
 title: "Reviews"
-layout: "default"
+nav: footer
 ---
 Here is a list of my favorite gear. If it's on this list, I like it; if I find something better I'll take the old one off this list. Also, I'm not hired by them and only recommend them out of my own love of the product – however, I will use an [affiliate link](http://en.wikipedia.org/wiki/Affiliate_link) if easily available. 
 
