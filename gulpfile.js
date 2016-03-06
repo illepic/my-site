@@ -25,6 +25,7 @@ gulp.task('clean', (done) => {
 gulp.task('serve', ['ms'], () => {
   browserSync.init({
     browser: 'Google Chrome Canary',
+    directory: true,
     server: {
       baseDir: config.paths.dist
     },
