@@ -4,21 +4,13 @@ layout: default
 ---
 <p class="intro">Welcome to my notes section! I try to maintain and constantly update the information on these pages. Think of them as my personal wiki of information that I want to share – enjoy!</p>
 
-<section class="note-list section-list">
-{% for weight in (1..10) %}{% for page in site.pages %}
-  {% if page.layout == "note" and page.weight == weight and page.published != "false" %}
-    <article class="type--note l--teaser section-item">
-      <h2><a href="{{ page.url | replace:'index.html','' }}">{{ page.title }}</a></h2>
-        {% if page.tags %}
-        <ul class="tag-list">
-          {% assign tags_list = page.tags %}  
-          {% include tags_inline %}
-        </ul>
-        {% endif %}
-        {% if page.teaser_text %}
-          <p>{{ page.teaser_text }}</p>
-        {% endif %}
-    </article>
-  {% endif %}
-{% endfor %}{% endfor %}
+{{ title }}
+{{ site.title }}
+
+<section class="landing-list">
+{% for note in collections.notes %}
+  <aside class="landing-list__item card">
+    <h3 class="card__title"><a href="{{ note.path }}">{{ note.title }}</a></h3>
+  </aside>
+{% endfor %}
 </section>

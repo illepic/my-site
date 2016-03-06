@@ -8,9 +8,12 @@
 </head>
 <body>
 {% include "organisms/site-header.html" %}
-<main>
-  {% block body %}
-  {% endblock %}
+<main class="page">
+  {% if title %}<h2 class="page__title">{{ title }}</h2>{% endif %}
+  <div class="page__contents">
+    {% block contents %}
+    {% endblock %}
+  </div>
 </main>
 
 </body>

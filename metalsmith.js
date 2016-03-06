@@ -17,6 +17,7 @@ const nunjucks = require('nunjucks');
 const nunjucksDate = require('nunjucks-date');
 const metalsmith = Metalsmith(__dirname);
 const path = require('path');
+const permalinks = require('metalsmith-permalinks');
 
 // template metadata
 const metadata = {
@@ -38,13 +39,14 @@ const metadata = {
 
 const siteCollections = {
   all: {
-    pattern: 'test-content/**/*.md'
+    pattern: '**/*.md'
   },
   notes: {
-    pattern: 'test-content/notes/*.md'
+    pattern: '**/*.{md,html}',
+    sortBy: 'weight'
   },
   pages: {
-    pattern: 'test-content/*.md',
+    pattern: '*.md',
     sortBy: 'position'
   }
 };
@@ -65,7 +67,10 @@ metalsmith
   .source(config.paths.content)
   .clean(false)
   .use(drafts(true))
-  // .use(collections(siteCollections))
+  // md => html
+  .use(markdown())
+  // .use(permalinks())
+  .use(collections(siteCollections))
   // .use(excerpts())
   // .use(assets())
   // .use(feed({
@@ -74,6 +79,7 @@ metalsmith
   .use((files, metalsmith, done) => {
     each(Object.keys(files), (file, done) => {
       let data = files[file];
+      data.path = `/${file}`;
       // let layout = data.layout || 'default';
       let layout = 'default';
       let ext = 'html';
@@ -99,8 +105,7 @@ metalsmith
     }, done()); // done with `each()`
   })
 
-  // md => html
-  .use(markdown())
+  
 
   // layout templating
   .use((files, metalsmith, done) => {
@@ -125,10 +130,8 @@ metalsmith
   //    partials: config.paths.src,
   //    directory: './src/templates'
   //}))
-  .destination(config.paths.dist);
-
-const msBuild = (cb) => {
-  metalsmith.build((err, files) => {
+  .destination(config.paths.dist)
+  .build((err, files) => {
     if (err) {
       console.error(err);
       throw err;
@@ -136,10 +139,5 @@ const msBuild = (cb) => {
     console.info(`Metalsmith built ${Object.keys(files).length} files.`);
     if (typeof cb === 'function') { cb(); }
   });
-};
 
-// msBuild();
 
-module.exports = {
-  build: msBuild
-};
