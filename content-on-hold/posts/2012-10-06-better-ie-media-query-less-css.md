@@ -24,18 +24,18 @@ meta:
 
 ## Inline Media Queries
 
-{% highlight css %}
+```scss
 header {
   background-color: red;
     @media screen only and (min-width: 20em) {
       background-color: blue;
     }
 }
-{% endhighlight %}
+```
 
 Which when compiled into CSS returns us with this.
 
-{% highlight css %}
+```css
 header {
   background-color: red;
 }
@@ -45,32 +45,32 @@ header {
     background-color: blue;
   }
 }
-{% endhighlight %}
+```
 
 
 ## Using `&` to put a class before instead of after
 
 You can use the  `&`  **after** (normally *before* to combine selector strings) which takes the preceding element and then puts the .ie8 class in front of it. So for example writing this LESS.
 
-{% highlight css %}
+```scss
 header {
   background-color: red;
-  .ie8&amp; {
+  .ie8 & {
     background-color: blue;
   }
 }
-{% endhighlight %}
+```
 
 Which gives us this CSS.
 
-{% highlight css %}
+```css
 header {
   background-color: red;
 }
 .ie8 header {
   background-color: blue;
 }
-{% endhighlight %}
+```
 
 
 ## Why this is cool

@@ -22,8 +22,8 @@ Here's all my keyboard shortcuts I have set up for window management using Moom,
 
 I'm using Moom over Divvy now as my Mac window management utility of choice. I've updated my [Mac Setup Page](/my-awesome-mac-setup) with the changes below to show this. Be sure to check it out for other great tips!
 
-{% highlight diff %}
+```diff
 Updating Mac Window Manger from Divvy to Moom. Adding shortcuts I use.
 -* [Divvy](http://mizage.com/divvy/) - Effortless window management
 +* [Moom](http://manytricks.com/moom/) - Effortless window management. Here's all my [keyboard shortcuts for window management](moom-window-management-shortcuts.png).
-{% endhighlight %}
+```
