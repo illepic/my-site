@@ -4,13 +4,5 @@ layout: default
 ---
 <p class="intro">Welcome to my notes section! I try to maintain and constantly update the information on these pages. Think of them as my personal wiki of information that I want to share – enjoy!</p>
 
-{{ title }}
-{{ site.title }}
-
-<section class="landing-list">
-{% for note in collections.notes %}
-  <aside class="landing-list__item card">
-    <h3 class="card__title"><a href="{{ note.path }}">{{ note.title }}</a></h3>
-  </aside>
-{% endfor %}
-</section>
+{% set items = collections.notes %}
+{% include "organisms/landing-list.html" %}

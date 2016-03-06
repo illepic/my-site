@@ -4,6 +4,5 @@ layout: default
 ---
 <p class="intro">Welcome to my utilities section! Here's where I keep small scripts, Alfred Workflows, and other tech productivity tools. Hope they're helpful!</p>
 
-<section class="utility-list section-list">
-
-</section>
+{% set items = collections.utilities %}
+{% include "organisms/landing-list.html" %}
