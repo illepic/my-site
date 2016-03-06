@@ -1,6 +1,5 @@
 ---
 title: Aspirations 
-layout: portfolio
 featured: true
 weight: 2
 features:

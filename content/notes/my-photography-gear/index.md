@@ -1,6 +1,5 @@
 ---
 title: My Photography Gear
-layout: note
 weight: 5
 tags: 
   - photography
@@ -14,7 +13,7 @@ tags:
 
 The sensor on that camera is a half cropped sensor of a 35mm/full frame camera; so my 20mm lens feels like a 40mm lens on a full frame camera. 
 
-![]({{ page.url | remove:'index.html' }}_my-camera.jpg)
+![](_my-camera.jpg)
 
 [7792-001]: http://www.amazon.com/Panasonic-Aspherical-Pancake-Interchangeable-Cameras/dp/B002IKLJVE "Amazon.com: Panasonic LUMIX G 20mm f/1.7 Aspherical Pancake ..."
 [7792-002]: http://www.amazon.com/Panasonic-14mm-2-5-Aspherical-Interchangeable/dp/B0043VE29C "Amazon.com: Panasonic Lumix 14mm f/2.5 G Aspherical Lens for ..."

@@ -1,6 +1,5 @@
 ---
 title: My Recommended Productivity Reading
-layout: note
 weight: 8
 tags: 
   - productivity

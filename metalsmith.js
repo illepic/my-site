@@ -42,7 +42,7 @@ const siteCollections = {
     pattern: '**/*.md'
   },
   notes: {
-    pattern: '**/*.{md,html}',
+    pattern: 'notes/**/*.{md,html}',
     sortBy: 'weight'
   },
   pages: {

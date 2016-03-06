@@ -1,6 +1,5 @@
 ---
 title: My Favorite Alfred Workflows
-layout: note
 weight: 4
 tags:
   - Alfred
