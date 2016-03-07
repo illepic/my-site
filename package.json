@@ -15,7 +15,7 @@
     "start": "nodemon --watch metalsmith.js --watch gulpfile.js --exec 'npm run clean && gulp' ",
     "compile": "npm run clean && gulp compile",
     "clean": "rm -rf dist",
-    "test": "npm run compile"
+    "test": "mocha tests/*"
   },
   "devDependencies": {
     "async": "^1.5.2",
@@ -36,6 +36,7 @@
     "metalsmith-layouts": "^1.4.2",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-permalinks": "^0.4.0",
+    "mocha": "^2.4.5",
     "nunjucks": "^2.2.0",
     "nunjucks-date": "^1.2.0"
   },
