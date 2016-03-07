@@ -14,11 +14,13 @@
   "scripts": {
     "start": "nodemon --watch metalsmith.js --watch gulpfile.js --exec 'npm run clean && gulp' ",
     "compile": "npm run clean && gulp compile",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "test": "npm run compile"
   },
   "devDependencies": {
     "async": "^1.5.2",
     "chalk": "^1.1.1",
+    "front-matter": "^2.0.6",
     "gulp-watch": "^4.3.5",
     "metalsmith": "^2.1.0",
     "metalsmith-assets": "^0.1.0",
