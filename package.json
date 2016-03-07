@@ -15,7 +15,7 @@
     "start": "nodemon --watch metalsmith.js --watch gulpfile.js --exec 'npm run clean && gulp' ",
     "compile": "npm run clean && gulp compile",
     "clean": "rm -rf dist",
-    "test": "mocha tests/*"
+    "test": "mocha tests/*.test.js"
   },
   "devDependencies": {
     "async": "^1.5.2",
