@@ -26,6 +26,7 @@ gulp.task('serve', ['ms'], () => {
   browserSync.init({
     browser: 'Google Chrome Canary',
     directory: true,
+    port: process.env.PORT || 3000,
     server: {
       baseDir: config.paths.dist
     },
