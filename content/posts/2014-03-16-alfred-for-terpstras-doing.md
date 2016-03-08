@@ -1,10 +1,11 @@
 ---
-title: Alfred Workflow for Brett Terpstra's `doing` CLI
+title: "Alfred Workflow for Brett Terpstra's `doing` CLI"
 layout: post
 category: Technology
 tags:
   - Alfred
   - productivity
+date: '2014-03-16'
 ---
 The Mad Scientist [Brett Terpstra](http://brettterpstra.com) is at it again, this time with a nifty script for "Scatterbrains" that captures what you are doing, and provides an easy way to find out what it was once you get off track and need to mentally re-orient yourself when coming back to a project – super handy in my opinion. Check out his [project page for `doing`](http://brettterpstra.com/projects/doing/). 
 

@@ -2,12 +2,13 @@
 title: Mac Window Management using Moom or Divvy
 layout: post
 type: post
-categories: 
+categories:
   - Technology
 tags:
   - mac
   - software
   - tips
+date: '2013-10-17'
 ---
 
 Here's all my keyboard shortcuts I have set up for window management using Moom, which could be set up for Divvy (a former favorite) or any other similar app. Super easy to remember once you get the hang of it and how it's all using the same modifier keys and the keys are on the same row. I especially like the 1/3 left/right and 2/3 left/right combos. The corner ones get used lots too. Check out [Moom](http://manytricks.com/moom/) if you still use a mouse to move windows around.
@@ -27,3 +28,4 @@ Updating Mac Window Manger from Divvy to Moom. Adding shortcuts I use.
 -* [Divvy](http://mizage.com/divvy/) - Effortless window management
 +* [Moom](http://manytricks.com/moom/) - Effortless window management. Here's all my [keyboard shortcuts for window management](moom-window-management-shortcuts.png).
 ```
+

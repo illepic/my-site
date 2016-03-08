@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Better management of IE & Media Query CSS Styles using LESS CSS
+title: 'Better management of IE & Media Query CSS Styles using LESS CSS'
 categories:
-- Technology
+  - Technology
 tags:
-- CSS
-- CSS preprocessors
-- LESS CSS
-- Responsive Web Design
-- Web Design
+  - CSS
+  - CSS preprocessors
+  - LESS CSS
+  - Responsive Web Design
+  - Web Design
 status: publish
 type: post
 published: true
@@ -17,8 +17,9 @@ meta:
   _cws_is_markdown: '1'
   _edit_last: '1'
   dsq_thread_id: '1023936043'
-  _wpbitly: http://bit.ly/VIVuH3
+  _wpbitly: 'http://bit.ly/VIVuH3'
   _su_title: ''
+date: '2012-10-06'
 ---
 **Wow!** I just [found out](http://alwaystwisted.com/post.php?s=2012-06-05-another-approach-to-mobile-first-css-whilst-supporting-internet-explorer) that you can do this awesomeness with LESS:
 
@@ -76,3 +77,4 @@ header {
 ## Why this is cool
 
 This really helps prevent fragmentation of styles. Before learning these techniques, I'd often put IE styles in their own `ie.less` sheet and media queries in `media-queries.less`, but with these new techniques, I can keep styles bundled with their other relevant rules.
+
