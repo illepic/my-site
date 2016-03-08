@@ -5,16 +5,13 @@ const drafts = require('metalsmith-drafts');
 const markdown = require('metalsmith-markdown');
 const excerpts = require('metalsmith-excerpts');
 const layouts = require('metalsmith-layouts');
-// const inPlace = require('metalsmith-in-place');
 const logger = require('metalsmith-logger');
-
 const collections = require('metalsmith-collections');
 const feed = require('metalsmith-feed');
 const assets = require('metalsmith-assets');
 const each = require('async').each;
-//const sass = require('metalsmith-sass');
 const nunjucks = require('nunjucks');
-const nunjucksDate = require('nunjucks-date');
+const moment = require('moment');
 const metalsmith = Metalsmith(__dirname);
 const path = require('path');
 const permalinks = require('metalsmith-permalinks');
@@ -70,10 +67,9 @@ const tpl = nunjucks
     autoescape: false,
     noCache: true
   })
-  .addFilter('date', nunjucksDate);
-
-nunjucksDate
-  .setDefaultFormat('MMMM Do, YYYY');
+  .addFilter('date', (text) => {
+    return moment(text).format('YYYY-MM-DD')
+  });
 
 metalsmith
   .metadata(metadata)
