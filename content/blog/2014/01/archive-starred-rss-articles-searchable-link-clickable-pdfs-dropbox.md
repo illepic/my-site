@@ -7,7 +7,7 @@ tags:
   - Pinboard
   - utilities
   - reference
-date: '2014-01-02'
+date: 2014-01-02
 ---
 Summary: This will show you how you can simply "star" an article in your RSS feed-reader and then have it become automatically bookmarked on Pinboard, then turned into a searchable, link-clickable PDF on your Dropbox.
 

@@ -7,6 +7,6 @@ tags:
   - Alfred
   - web-dev
   - productivity
-date: '2014-04-06'
+date: 2014-04-06
 ---
 I made a nice Alfred workflow for searching through a folder of plain text file snippets that copies the contents and then inserts it into your current focus point. Additionally, it's easy to see, search, and set Mavericks tags on the snippets. Since the whole storage of snippets is done with the file system, it makes it really easy to add and edit the snippets with other means. Go [check it out!](/utilities/alfred/snippets/)

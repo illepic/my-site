@@ -7,7 +7,7 @@ tags:
   - Sublime Text
   - software
   - web-development
-date: '2014-01-26'
+date: 2014-01-26
 ---
 > Ditch sidebar and browse your files in a normal tab with keyboard, like a pro!
 

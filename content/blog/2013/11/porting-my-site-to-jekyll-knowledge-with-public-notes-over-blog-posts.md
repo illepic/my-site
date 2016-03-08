@@ -8,7 +8,7 @@ tags:
   - this site
   - jekyll
   - web dev
-date: '2013-11-19'
+date: 2013-11-19
 ---
 I've ported this site to [Jekyll](http://jekyllrb.com/), the static site generator, after having it in WordPress for about a year after converting it from it's original platform, Drupal, which I do nearly all my [Front End Development & Theming](/portfolio) in. I initially moved to WordPress as I wanted a lower barrier towards publishing than Drupal; I had hoped that the plethora of apps and integration that the WordPress ecosystem provides would allow me to skip a web back-end interface when it came to something I wanted to quickly share that I discovered while working. 
 

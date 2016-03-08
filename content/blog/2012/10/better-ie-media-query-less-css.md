@@ -19,7 +19,7 @@ meta:
   dsq_thread_id: '1023936043'
   _wpbitly: 'http://bit.ly/VIVuH3'
   _su_title: ''
-date: '2012-10-06'
+date: 2012-10-06
 ---
 **Wow!** I just [found out](http://alwaystwisted.com/post.php?s=2012-06-05-another-approach-to-mobile-first-css-whilst-supporting-internet-explorer) that you can do this awesomeness with LESS:
 

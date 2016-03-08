@@ -11,7 +11,7 @@ tags:
 status: publish
 type: post
 published: true
-date: '2008-12-29'
+date: 2008-12-29
 ---
 
 Life Goal:Check. After hiking to the amazing spiritual pilgrimage spot of [Surkanda Devi](http://en.wikipedia.org/wiki/Surkanda_Devi), we were blessed with clear blue sky showing us a massive Himalayan Range that was utterly breathtaking. Seeing these mountains was the 2nd most important thing to do in my trip to India, after studying yoga of course. Below is a stitched together shot of 9 photos of the whole range (that I could see). I highly recommend clicking on it and then clicking on the zoom button to get a real look at it all. Enjoy!

@@ -7,6 +7,6 @@ tags:
   - tech
   - mac
   - iOS
-date: '2013-12-06'
+date: 2013-12-06
 ---
 I've been wanting something like this for a while! I love TextExpander, but the native integration of iOS Shortcuts is highly desirable. 

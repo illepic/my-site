@@ -6,7 +6,7 @@ category: Technology
 tags:
   - front-end-web-development
   - CSS
-date: '2013-12-11'
+date: 2013-12-11
 ---
 > Front-end developers are often told to do certain things:
 > 
