@@ -53,6 +53,11 @@ const siteCollections = {
     pattern: 'portfolio/**/*.{md,html}',
     sortBy: 'weight'
   },
+  posts: {
+    pattern: 'blog/**/*.{md,html}',
+    sortBy: 'date',
+    reverse: true
+  },
   pages: {
     pattern: '*/index.*',
     sortBy: 'position'
@@ -77,7 +82,13 @@ metalsmith
   .use(drafts(true))
   // md => html
   .use(markdown())
-  // .use(permalinks())
+  .use(permalinks({
+    linksets: [{
+      match: {collection: 'posts'},
+      pattern: 'blog/:date/:title',
+      date: 'yy/mm'
+    }]
+  }))
   .use(collections(siteCollections))
   // .use(excerpts())
   // .use(assets())
@@ -87,7 +98,7 @@ metalsmith
   .use((files, metalsmith, done) => {
     each(Object.keys(files), (file, done) => {
       let data = files[file];
-      data.path = `/${file}`;
+      data.path = `/${file.replace('index.html', '')}`;
       // let layout = data.layout || 'default';
       let layout = 'default';
       let ext = 'html';

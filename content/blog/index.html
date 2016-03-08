@@ -9,5 +9,7 @@ redirect_from:
 
 ---
 <section>
-
+{% for post in posts %}
+  <p>{{ post.date }} - <a href="{{ post.path }}">{{ post.title }}</a></p>
+{% endfor %}
 </section>
