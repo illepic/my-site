@@ -1,7 +1,5 @@
 <section class="landing-list">
   {% for item in items %}
-    {% if path != item.path %}
-      {% include "molecules/card.html" %}
-    {% endif %}
+    {% include "molecules/card.html" %}
   {% endfor %}
 </section>

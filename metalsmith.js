@@ -15,6 +15,7 @@ const moment = require('moment');
 const metalsmith = Metalsmith(__dirname);
 const path = require('path');
 const permalinks = require('metalsmith-permalinks');
+const pagination = require('metalsmith-pagination');
 
 // template metadata
 const metadata = {
@@ -39,19 +40,19 @@ const siteCollections = {
     pattern: '**/*.md'
   },
   notes: {
-    pattern: 'notes/**/*.{md,html}',
+    pattern: 'notes/*/**/*.{md,html}',
     sortBy: 'weight'
   },
   utilities: {
-    pattern: 'utilities/**/*.{md,html}',
+    pattern: 'utilities/*/**/*.{md,html}',
     sortBy: 'weight'
   },
   portfolios: {
-    pattern: 'portfolio/**/*.{md,html}',
+    pattern: 'portfolio/*/**/*.{md,html}',
     sortBy: 'weight'
   },
   posts: {
-    pattern: 'blog/**/*.{md,html}',
+    pattern: 'blog/*/**/*.{md,html}',
     sortBy: 'date',
     reverse: true
   },
@@ -91,12 +92,20 @@ metalsmith
   // .use(feed({
   //   collection: 'all'
   // }))
+  .use(pagination({
+    'collections.posts': {
+      perPage: 15,
+      path: 'blog/:num/index.html',
+      layout: 'blog',
+      first: 'blog/index.html'
+    }
+  }))
   .use((files, metalsmith, done) => {
     each(Object.keys(files), (file, done) => {
       let data = files[file];
       data.path = `/${file.replace('index.html', '')}`;
-      // let layout = data.layout || 'default';
-      let layout = 'default';
+       let layout = data.layout || 'default';
+      //let layout = 'default';
       let ext = 'html';
       data.layout = `${layout.trim()}.${ext}`;
       done();
