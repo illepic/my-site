@@ -96,7 +96,7 @@ metalsmith
     'collections.posts': {
       perPage: 15,
       path: 'blog/:num/index.html',
-      layout: 'blog',
+      template: 'blog',
       first: 'blog/index.html'
     }
   }))
@@ -104,10 +104,8 @@ metalsmith
     each(Object.keys(files), (file, done) => {
       let data = files[file];
       data.path = `/${file.replace('index.html', '')}`;
-       let layout = data.layout || 'default';
-      //let layout = 'default';
-      let ext = 'html';
-      data.layout = `${layout.trim()}.${ext}`;
+      let template = data.template || 'default';
+      data.template = template.trim();
       done();
     }, done);
   })
@@ -131,7 +129,7 @@ metalsmith
 
   
 
-  // layout templating
+  // template templating
   .use((files, metalsmith, done) => {
     let globalData = metalsmith.metadata();
     each(Object.keys(files), (file, done) => {
@@ -141,7 +139,14 @@ metalsmith
       }
       let fileData = files[file];
       let mergedData = Object.assign({}, globalData, fileData);
-      let templatePath = path.join(process.cwd(), config.paths.src, 'templates', fileData.layout);
+      let templateExt = 'html';
+      let templatePath = path.join(
+        process.cwd(), 
+        config.paths.src, 
+        'templates', 
+        fileData.template, // folder name same as template 
+        `${fileData.template}.${templateExt}`
+      );
       let result = tpl.render(templatePath, mergedData);
       fileData.contents = new Buffer(result, 'utf8');
       done();
@@ -149,11 +154,6 @@ metalsmith
 
 
   })
-  //.use(layouts({
-  //    engine: 'nunjucks',
-  //    partials: config.paths.src,
-  //    directory: './src/templates'
-  //}))
   .destination(config.paths.dist)
   .build((err, files) => {
     if (err) {
