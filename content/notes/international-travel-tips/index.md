@@ -1,6 +1,5 @@
 ---
 title: International Travel Tips
-layout: note
 weight: 4
 tags:
   - travel

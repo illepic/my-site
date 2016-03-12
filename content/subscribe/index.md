@@ -1,6 +1,5 @@
 ---
 title: Email Subscription
-layout: default
 nav: footer
 ---
 <!-- Begin MailChimp Signup Form -->

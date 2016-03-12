@@ -1,6 +1,5 @@
 ---
 title: Finding out the time on the East and West Coast with Alfred
-layout: utility
 weight: 8
 teaser_text: "Find out current times in a few times zone quickly."
 img: /img/2014/03/Alfred-EST-PST-time.png

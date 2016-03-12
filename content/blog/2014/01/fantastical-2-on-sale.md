@@ -1,7 +1,6 @@
 ---
 title: Fantastical 2 for iPhone on sale
 title_url: 'http://flexibits.com/fantastical-iphone'
-layout: post
 category: Technology
 tags:
   - iPhone

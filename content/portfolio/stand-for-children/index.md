@@ -1,6 +1,5 @@
 ---
 title: Stand for Children
-layout: portfolio
 featured: true
 weight: 3
 live-site-url: http://stand.org

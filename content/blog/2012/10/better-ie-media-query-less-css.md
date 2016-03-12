@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 'Better management of IE & Media Query CSS Styles using LESS CSS'
 categories:
   - Technology

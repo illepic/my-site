@@ -1,6 +1,5 @@
 ---
 title: Getting Dropbox Direct Links via Shared Links with Alfred
-layout: post
 category: Technology
 tags:
   - Alfred

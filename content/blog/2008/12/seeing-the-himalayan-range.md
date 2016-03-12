@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Seeing the Himalayan Range
 categories:
   - Photography

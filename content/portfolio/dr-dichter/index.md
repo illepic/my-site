@@ -1,6 +1,5 @@
 ---
 title: Dr. Dichter
-layout: portfolio
 weight: 10
 redirect_from: /portfolio-items/dr-dichter
 features:

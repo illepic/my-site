@@ -1,6 +1,5 @@
 ---
 title: Sunset Porsche Audi
-layout: portfolio
 weight: 3
 redirect_from: /portfolio-items/sunset-porsche-audi/
 features:

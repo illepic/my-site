@@ -1,6 +1,5 @@
 ---
 title: Alfred Workflow for `doing`
-layout: utility
 weight: 4
 teaser_text: "An Alfred Workflow for working with a What Was I Doing System."
 tags:

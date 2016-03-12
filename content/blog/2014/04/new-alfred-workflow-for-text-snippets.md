@@ -1,7 +1,6 @@
 ---
 title: I made an Alfred Workflow for Text and Code Snippets
 title_url: /utilities/alfred/snippets/
-layout: post
 category: Technology
 tags:
   - Alfred

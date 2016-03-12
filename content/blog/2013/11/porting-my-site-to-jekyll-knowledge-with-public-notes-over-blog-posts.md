@@ -1,6 +1,5 @@
 ---
 title: Porting My Site to Jekyll and Sharing Knowledge with Public Notes over Blog Posts
-layout: post
 type: post
 categories:
   - Technology

@@ -1,6 +1,5 @@
 ---
 title: "Alfred Workflow for Brett Terpstra's `doing` CLI"
-layout: post
 category: Technology
 tags:
   - Alfred
