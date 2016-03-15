@@ -111,21 +111,21 @@ metalsmith
   })
 
   // in-place templating
-  .use((files, metalsmith, done) => {
-    let globalData = metalsmith.metadata();
-    each(Object.keys(files), (file, done) => {
-      let fileExt = path.extname(file);
-      if(fileExt !== '.html') {
-        return;
-      }
-      let fileData = files[file];
-      let mergedData = Object.assign({}, globalData, fileData);
-      let contents = fileData.contents.toString();
-      let renderedContents = tpl.renderString(contents, mergedData);
-      fileData.contents = new Buffer(renderedContents, 'utf8');
-      done();
-    }, done()); // done with `each()`
-  })
+  //.use((files, metalsmith, done) => {
+  //  let globalData = metalsmith.metadata();
+  //  each(Object.keys(files), (file, done) => {
+  //    let fileExt = path.extname(file);
+  //    if(fileExt !== '.html') {
+  //      return;
+  //    }
+  //    let fileData = files[file];
+  //    let mergedData = Object.assign({}, globalData, fileData);
+  //    let contents = fileData.contents.toString();
+  //    let renderedContents = tpl.renderString(contents, mergedData);
+  //    fileData.contents = new Buffer(renderedContents, 'utf8');
+  //    done();
+  //  }, done()); // done with `each()`
+  //})
 
   
 

@@ -1,0 +1,6 @@
+{% extends "layouts/site/site.html" %}
+{% block contents %}
+  <h2>from utilities</h2>
+  {% set items = collections.utilities %}
+  {% include "organisms/landing-list/landing-list.html" %}
+{% endblock %}
