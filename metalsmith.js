@@ -92,14 +92,6 @@ metalsmith
   // .use(feed({
   //   collection: 'all'
   // }))
-  .use(pagination({
-    'collections.posts': {
-      perPage: 15,
-      path: 'blog/:num/index.html',
-      template: 'blog',
-      first: 'blog/index.html'
-    }
-  }))
   .use((files, metalsmith, done) => {
     each(Object.keys(files), (file, done) => {
       let data = files[file];
@@ -109,6 +101,14 @@ metalsmith
       done();
     }, done);
   })
+  .use(pagination({
+    'collections.posts': {
+      perPage: 15,
+      path: 'blog/:num/index.html',
+      template: 'blog',
+      first: 'blog/index.html'
+    }
+  }))
 
   // in-place templating
   //.use((files, metalsmith, done) => {
