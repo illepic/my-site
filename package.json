@@ -12,7 +12,7 @@
     "url": "git@github.com:EvanLovely/my-site.git"
   },
   "scripts": {
-    "start": "nodemon --watch metalsmith.js --watch gulpfile.js --exec 'npm run clean && gulp' ",
+    "start": "npm run compile && gulp",
     "compile": "npm run clean && gulp compile",
     "clean": "rm -rf dist",
     "test": "mocha tests/*.test.js"
@@ -41,9 +41,12 @@
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-help": "^1.6.1",
+    "js-yaml": "^3.5.5",
     "metalsmith-logger": "0.0.3",
     "metalsmith-pagination": "^1.4.0",
     "metalsmith-permalinks": "^0.5.0",
-    "nodemon": "^1.9.1"
+    "nodemon": "^1.9.1",
+    "p2-theme-core": "^6.4.5"
   }
 }
