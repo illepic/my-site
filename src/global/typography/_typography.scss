@@ -1,0 +1,27 @@
+html {
+  font-size: 16px;
+    
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
+    
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+h2 { 
+  font-size: 2em;
+}
+
+p {
+  font-size: 1em;
+}
+
+pre {
+  font-size: 0.8em;
+}
