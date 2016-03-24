@@ -1,5 +1,7 @@
 <section class="landing-list">
   {% for item in items %}
-    {% include "molecules/card/card.html" %}
+    <aside class="landing-list__item">
+      {% include "molecules/card/card.html" %}
+    </aside>
   {% endfor %}
 </section>
