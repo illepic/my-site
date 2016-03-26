@@ -1,5 +1,4 @@
 ---
-layout: note
 title: Pattern Lab
 weight: 1
 tags: 

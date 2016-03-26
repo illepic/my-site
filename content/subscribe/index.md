@@ -1,6 +1,6 @@
 ---
 title: Email Subscription
-layout: default
+nav: footer
 ---
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">

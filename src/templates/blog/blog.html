@@ -1,0 +1,13 @@
+{% extends "layouts/site/site.html" %}
+{% block contents %}
+<section>
+{% for post in pagination.files %}
+  <p>{{ post.date | date }} - <a href="{{ post.path }}">{{ post.title }}</a></p>
+{% endfor %}
+<hr>
+<nav class="pager">
+  {% if pagination.previous %}<a href="{{ pagination.previous.path }}" class="pager__link pager__link--prev">Previous</a>{% endif %}
+  {% if pagination.next %}<a href="{{ pagination.next.path }}" class="pager__link pager__link--next">Next</a>{% endif %}
+</nav>
+</section>
+{% endblock %}

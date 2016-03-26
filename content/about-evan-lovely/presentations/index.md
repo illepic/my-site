@@ -1,6 +1,5 @@
 ---
 title: My Presentations
-layout: default
 ---
 Here is a list of the presentations I've given:
 

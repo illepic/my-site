@@ -1,6 +1,5 @@
 ---
 title: Portland, OR Tours
-layout: note
 weight: 5
 tags: 
   - PDX

@@ -1,6 +1,5 @@
 ---
 title: United Nations ~ Stand Against Poverty
-layout: portfolio
 featured: true
 weight: 1
 redirect_from: /portfolio-items/united-nations-stand-against-poverty

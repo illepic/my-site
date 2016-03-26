@@ -1,0 +1,6 @@
+{% extends "layouts/site/site.html" %}
+{% block contents %}
+  {{ contents }}
+  {% set items = collections.portfolios %}
+  {% include "organisms/landing-list/landing-list.html" %}
+{% endblock %}

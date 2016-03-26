@@ -4,7 +4,6 @@ weight: 2
 tags: 
   - travel
   - gear
-layout: note
 ---
 
 - Total weight: 27lbs
@@ -14,7 +13,7 @@ layout: note
 
 - Weight: 8 lbs
 
-![](picture {{ page.url | remove:'index.html' }}_clothes.jpg)
+![](_clothes.jpg)
 
 ### Shoes 
 
@@ -44,7 +43,7 @@ layout: note
 
 ## Supplies
 
-![]({{ page.url | remove:'index.html' }}_supplies.jpg)
+![](_supplies.jpg)
 
 - [Manduka Travel Yoga Mat][0467-001]
 - [Sea to Summit Trek & Travel Laundry Soap][0467-002]

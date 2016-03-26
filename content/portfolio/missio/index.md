@@ -1,6 +1,5 @@
 ---
 title: Missio
-layout: portfolio
 weight: 8
 redirect_from: /portfolio-items/missio
 features:

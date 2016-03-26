@@ -1,0 +1,7 @@
+<nav class="site-nav">
+  {% for item in collections.pages %}
+    {% if item.nav == "main" %}
+      <a href="{{ item.path }}" class="site-nav__link">{{ item.title }}</a>
+    {% endif %}
+  {% endfor %}
+</nav>

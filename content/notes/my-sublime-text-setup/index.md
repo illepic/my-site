@@ -1,5 +1,4 @@
 ---
-layout: note
 title: My Sublime Text Setup
 tags: 
   - tech

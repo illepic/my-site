@@ -1,5 +1,4 @@
 ---
-layout: note
 title: My Awesome Mac Setup
 weight: 1
 tags: 

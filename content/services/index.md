@@ -1,7 +1,6 @@
 ---
 title: Services
-layout: default
-menu: main
+nav: footer
 ---
 **I currently cannot offer any of these services as I am employed full time by an [epic Drupal company](http://phase2technology.com). Thanks for looking!**
 
