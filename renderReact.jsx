@@ -1,5 +1,8 @@
+"use strict";
 const React = require('react');
 const ReactDomServer = require('react-dom/server');
-const Test = require('./test.jsx');
 
-module.exports = ReactDomServer.renderToStaticMarkup(<Test />);
+module.exports = function(file) {
+  let Template = require(file);
+  return ReactDomServer.renderToStaticMarkup(<Template />);
+};
