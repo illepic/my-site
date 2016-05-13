@@ -151,7 +151,9 @@ metalsmith
         `${fileData.template}.${templateExt}`
       );
       let result = tpl.render(templatePath, mergedData);
-      result = result + renderReact('./test.jsx');
+      result = result + renderReact('./test.jsx', {
+          title: 'World'
+        });
       fileData.contents = new Buffer(result, 'utf8');
       done();
     }, done()); // done with `each()`
