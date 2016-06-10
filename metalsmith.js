@@ -59,7 +59,10 @@ const siteCollections = {
   posts: {
     pattern: 'blog/*/**/*.{md,html}',
     sortBy: 'date',
-    reverse: true
+    reverse: true,
+    metadata: {
+      template: 'blog-post'
+    }
   },
   pages: {
     pattern: '*/index.*',
@@ -101,8 +104,21 @@ metalsmith
     each(Object.keys(files), (file, done) => {
       let data = files[file];
       data.path = `/${file.replace('index.html', '')}`;
-      let template = data.template || 'default';
-      data.template = template.trim();
+      
+      let template = '';
+      if (data.template) {
+        template = data.template;
+      } else if (data.collection && data.collection.length > 0) {
+        data.collection.forEach(item => {
+          switch(item) {
+            case 'posts':
+              template = 'blog-post';
+              break;
+          }
+        });
+      }
+      
+      data.template = template !== '' ? template.trim() : 'default';
       done();
     }, done);
   })
@@ -110,7 +126,7 @@ metalsmith
     'collections.posts': {
       perPage: 15,
       path: 'blog/:num/index.html',
-      template: 'blog',
+      template: 'blog-list',
       first: 'blog/index.html'
     }
   }))

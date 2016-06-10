@@ -4,7 +4,7 @@ const Default = require('../default/default');
 const Markdown = require('../../global/markdown');
 const Date = require('../../atoms/date');
 
-const Blog = (props) => {
+const BlogList = (props) => {
   let blogList = props.pagination.files.map(post=> {
     return (<p key={post.path}><Date date={post.date} /> - <a href={ post.path }>{ post.title }</a></p>);
   });
@@ -16,12 +16,12 @@ const Blog = (props) => {
       </section>
       <hr />
       <nav className="pager">
-        {props.pagination.previous ? (<a href={ props.pagination.previous.path } className="pager__link pager__link--prev">Previous</a>) : null}
-        {props.pagination.next ? (<a href={ props.pagination.next.path } className="pager__link pager__link--next">Next</a>) : null}
+        {props.pagination.previous ? (<a href={ '/' + props.pagination.previous.path.replace('index.html', '') } className="pager__link pager__link--prev">Previous</a>) : null}
+        {props.pagination.next ? (<a href={ '/' + props.pagination.next.path.replace('index.html', '') } className="pager__link pager__link--next">Next</a>) : null}
       </nav>
       
     </Default>
   );
 };
 
-module.exports = Blog;
+module.exports = BlogList;
