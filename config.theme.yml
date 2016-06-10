@@ -86,7 +86,7 @@ browserSync:
   # domain: mysite.dev # enable when full CMS is set up
   baseDir: ./dist
   startPath: 
-  openBrowserAtStart: true
+  openBrowserAtStart: false
   # requires above to be true; allows non-default browser to open
   browser:
     - Google Chrome Canary

@@ -1,10 +1,12 @@
 'use strict';
+require('babel-register')({
+  extensions: ['.jsx']
+});
 const config = require('./config');
 const Metalsmith = require('metalsmith');
 const drafts = require('metalsmith-drafts');
 const markdown = require('metalsmith-markdown');
 const excerpts = require('metalsmith-excerpts');
-const layouts = require('metalsmith-layouts');
 const logger = require('metalsmith-logger');
 const collections = require('metalsmith-collections');
 const feed = require('metalsmith-feed');
@@ -16,6 +18,9 @@ const metalsmith = Metalsmith(__dirname);
 const path = require('path');
 const permalinks = require('metalsmith-permalinks');
 const pagination = require('metalsmith-pagination');
+const renderReact = require('./renderReact.jsx');
+const siteLayout = require('./src/layouts/site/site.js');
+const debug = false;
 
 // template metadata
 const metadata = {
@@ -139,16 +144,19 @@ metalsmith
       }
       let fileData = files[file];
       let mergedData = Object.assign({}, globalData, fileData);
-      let templateExt = 'html';
+      let templateExt = 'jsx';
       let templatePath = path.join(
         process.cwd(), 
         config.paths.src, 
         'templates', 
-        fileData.template, // folder name same as template 
+        fileData.template,  
         `${fileData.template}.${templateExt}`
       );
-      let result = tpl.render(templatePath, mergedData);
-      fileData.contents = new Buffer(result, 'utf8');
+      if (debug) {
+        console.log(`templatePath: ${templatePath}`);
+      }
+      mergedData.renderedPage = renderReact(templatePath, mergedData);
+      fileData.contents = new Buffer(siteLayout(mergedData), 'utf8');
       done();
     }, done()); // done with `each()`
 
