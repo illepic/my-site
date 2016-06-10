@@ -19,7 +19,7 @@ const Cards = (props) => {
     </div>);
   });
   return (<div>
-    <h4>Cards</h4>
+    <h4 id="cards">Cards</h4>
     {allCards}
     <hr />
   </div>);
@@ -35,7 +35,7 @@ const LandingLists = (props) => {
     </div>);
   });
   return (<div>
-    <h4>LandingLists</h4>
+    <h4 id="landing-lists">LandingLists</h4>
     {allLandingLists}
     <hr />
   </div>);
@@ -44,6 +44,12 @@ const LandingLists = (props) => {
 const Styleguide = (props) => {
   return (
     <Default {...props}>
+      <ul className="toc">
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#landing-lists">Landing Lists</a></li>
+      </ul>
+      <h4 id="typography">Typography</h4>
       <Markdown contents={props.contents}/>
       <Cards {...props} />
       <LandingLists {...props} />
