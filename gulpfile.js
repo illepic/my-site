@@ -47,10 +47,6 @@ gulp.task('watch:ms', ['ms'], () => {
   ], () => sh('node metalsmith.js', reload));
 });
 
-gulp.task('compile', [
-  'ms'
-]);
-
 tasks.compile.push('ms');
 tasks.default.push('watch:ms');
 tasks.default.push('serve');
