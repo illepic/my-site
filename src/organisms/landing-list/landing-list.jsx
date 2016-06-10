@@ -6,7 +6,7 @@ const LandingList = (props) => {
   let list = props.items.map(item => {
     return (
       <aside className="landing-list__item">
-        <Card path={item.path} title={item.title} />  
+        <Card {...item} />  
       </aside>
     );
   });
