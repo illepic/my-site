@@ -19,6 +19,8 @@ const tasks = {
   'default': []
 };
 
+console.log('NODE_ENV: ' + process.env.NODE_ENV);
+
 require('p2-theme-core')(gulp, themeConfig, tasks);
 
 function sh(cmd, cb) {

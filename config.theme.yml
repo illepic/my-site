@@ -5,8 +5,8 @@ css:
   dest: dist/assets
   flattenDestOutput: true
   lint:
-    enabled: true
-    failOnError: true
+    enabled: false
+    failOnError: false
     # Add to the main src glob - useful for exclusions with `!`
 #    extraSrc:
 #      - '!src/scss/00-config/02-variables/_typography.scss'
@@ -21,7 +21,7 @@ css:
   includePaths:
     - ./node_modules
   sassdoc: # http://sassdoc.com
-    enabled: true
+    enabled: false
     dest: dist/assets/sassdoc
     verbose: false
     basePath: http://github.com/evanlovely/my-site

@@ -12,8 +12,9 @@
     "url": "git@github.com:EvanLovely/my-site.git"
   },
   "scripts": {
-    "start": "npm run compile && gulp",
-    "compile": "npm run clean && gulp compile",
+    "start": "export NODE_ENV=development && npm run compile && gulp",
+    "compile": "export NODE_ENV=development && npm run clean && gulp compile",
+    "compile:prod": "export NODE_ENV=production && npm run clean && gulp compile",
     "clean": "rm -rf dist",
     "test": "mocha tests/*.test.js"
   },

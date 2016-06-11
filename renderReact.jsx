@@ -1,10 +1,10 @@
 "use strict";
 const React = require('react');
-const ReactDomServer = require('react-dom/server');
+const render = require('react-dom/server').renderToStaticMarkup;
 const typeset = require('typeset');
 
 module.exports = function(file, props) {
-  let Template = require(file);
+  let Tpl = require(file);
   props = props || {};
-  return typeset(ReactDomServer.renderToStaticMarkup(<Template {...props} />));
+  return (process.env.NODE_ENV === 'production') ? typeset(render(<Tpl {...props} />)) : render(<Tpl {...props} />);
 };
