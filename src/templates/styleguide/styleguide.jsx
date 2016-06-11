@@ -46,6 +46,8 @@ const Styleguide = (props) => {
     <Default {...props}>
       <ul className="toc">
         <li><a href="#typography">Typography</a></li>
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#forms">Forms</a></li>
         <li><a href="#cards">Cards</a></li>
         <li><a href="#landing-lists">Landing Lists</a></li>
       </ul>
