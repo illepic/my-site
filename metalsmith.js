@@ -36,7 +36,8 @@ const metadata = {
   ],
   site: {
     description: "Evan's Site",
-    title: "Evan Lovely's Site"
+    title: "Evan Lovely's Site",
+    bodyClasses: ["theme--light"]
   }
 };
 

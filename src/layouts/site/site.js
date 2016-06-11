@@ -9,7 +9,7 @@ return `<!doctype html>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body class="site">
+<body class="site ${props.site.bodyClasses.join(' ')}" data-template="${props.template}">
   ${props.renderedPage}
 </body>
 </html>`;
