@@ -4,6 +4,7 @@ weight: 1
 tags: 
   - web-dev
   - tech
+  - pattern-lab
 teaser_text: "Resources for working Pattern Lab"
 
 ---

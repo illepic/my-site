@@ -49,6 +49,10 @@ const siteCollections = {
     pattern: 'notes/*/**/*.{md,html}',
     sortBy: 'weight'
   },
+  articles: {
+    pattern: 'articles/*/**/*.{md,html}',
+    sortBy: 'weight'
+  },
   utilities: {
     pattern: 'utilities/*/**/*.{md,html}',
     sortBy: 'weight'
