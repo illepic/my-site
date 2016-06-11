@@ -1,0 +1,10 @@
+body {
+  &.theme--dark {
+    background: $c-gray--darker;
+    color: $c-gray--lighter;
+  }
+  &.theme--light {
+    color: $c-gray--darkest;
+    background: $c-gray--lightest;
+  }
+}

@@ -25,3 +25,11 @@ p {
 pre {
   font-size: 0.8em;
 }
+a {
+  .theme--light & {
+    color: $c-orange;
+  }
+  .theme--dark & {
+    color: $c-orange--light;
+  }
+}
