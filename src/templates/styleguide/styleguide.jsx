@@ -13,7 +13,7 @@ const Cards = (props) => {
   let allCards = glob.sync('src/molecules/card/examples/*.{yml,yaml}').map(example => {
     let name = path.basename(example, path.extname(example));
     let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
-    return (<div>
+    return (<div key={name}>
       <h5 style={{textTransform: 'capitalize'}}>{name}</h5>
       <Card {...data} />
     </div>);
@@ -29,7 +29,7 @@ const LandingLists = (props) => {
   let allLandingLists = glob.sync('src/organisms/landing-list/examples/*.{yml,yaml}').map(example => {
     let name = path.basename(example, path.extname(example));
     let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
-    return (<div>
+    return (<div key={name}>
       <h5 style={{textTransform: 'capitalize'}}>{name}</h5>
       <LandingList {...data} />
     </div>);

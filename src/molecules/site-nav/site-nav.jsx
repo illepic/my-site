@@ -4,7 +4,7 @@ const React = require('react');
 const SiteNav = (props) => {
   let items = props.pages
     .filter(item => item.nav === 'main')
-    .map(item => (<a href={ item.path } className="site-nav__link">{ item.title }</a>));
+    .map(item => (<a href={ item.path } key={ item.path } className="site-nav__link">{ item.title }</a>));
   return (
     <nav className="site-nav">
       {items}

@@ -3,10 +3,10 @@ const React = require('react');
 const Card = require('../../molecules/card/card');
 
 const LandingList = (props) => {
-  let list = props.items.map(item => {
+  let list = props.items.map((item, i) => {
     return (
-      <aside className="landing-list__item">
-        <Card {...item} />  
+      <aside className="landing-list__item" key={i}>
+        <Card {...item} />
       </aside>
     );
   });
