@@ -85,7 +85,7 @@ const tpl = nunjucks
     return moment(text).format('YYYY-MM-DD')
   });
 
-metalsmith
+const ms = metalsmith
   .metadata(metadata)
   .source(config.paths.content)
   .clean(false)
@@ -183,8 +183,13 @@ metalsmith
 
 
   })
-  .destination(config.paths.dist)
-  .build((err, files) => {
+  .destination(config.paths.dist);
+  
+
+
+module.exports = {
+  buildIt: (cb) => {
+    ms.build((err, files) => {
     if (err) {
       console.error(err);
       throw err;
@@ -192,5 +197,5 @@ metalsmith
     console.info(`Metalsmith built ${Object.keys(files).length} files.`);
     if (typeof cb === 'function') { cb(); }
   });
-
-
+  }
+};

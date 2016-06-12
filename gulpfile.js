@@ -4,11 +4,9 @@ const config = require('./config');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
-const watch = require('gulp-watch');
 const del = require('del');
-const browserSync = require('browser-sync').create('server');
-const reload = browserSync.reload;
 const exec = require('child_process').exec;
+const ms = require('./metalsmith.js');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 const tasks = {
@@ -23,12 +21,38 @@ console.log('NODE_ENV: ' + process.env.NODE_ENV);
 
 require('p2-theme-core')(gulp, themeConfig, tasks);
 
-function sh(cmd, cb) {
-  exec(cmd, (err, stdout, stderr) => {
-    if (err) throw err;
-    process.stdout.write(stdout || stderr);
+function sh(cmd, exitOnError, cb) {
+  var child = exec(cmd, {encoding: 'utf8'});
+  var stdout = '';
+  var stderr = '';
+  child.stdout.on ('data', function(data) {
+    stdout += data;
+    process.stdout.write(data);
+  });
+  child.stderr.on('data', function(data) {
+    stderr += data;
+    process.stdout.write(data);
+  });
+  child.on('close', function(code) {
+    if (code > 0) {
+      console.log('Error with code ' + code + ' after running: ' + cmd);
+      if (exitOnError){
+        process.exit(code);
+      } 
+      // else {
+      //   notifier.notify({
+      //     title: cmd,
+      //     message: stdout,
+      //     sound: true
+      //   });
+      // }
+    }
     if (typeof cb === 'function') { cb(); }
   });
+}
+
+function reload() {
+  sh(`./node_modules/.bin/browser-sync reload --port=${themeConfig.browserSync.port}`, false); 
 }
 
 gulp.task('clean', (done) => {
@@ -38,20 +62,35 @@ gulp.task('clean', (done) => {
 });
 
 gulp.task('ms', (done) => {
-  sh('node metalsmith.js', done);
-  // msBuild(done);
+  sh('node metalsmith-cli.js', false, done);
 });
 
-gulp.task('watch:ms', ['ms'], () => {
-  watch([
-    path.join(config.paths.content, '**'),
-    path.join(config.paths.src, '**')
-  ], () => sh('node metalsmith.js', reload));
+gulp.task('watch:content', () => {
+  let watched = [
+    path.join(config.paths.content, '**/*.{md,html,png,jpg,jpeg}')
+  ];
+  console.log('watching: ', watched);
+  gulp.watch(watched, event => {
+    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
+    ms.buildIt(reload);
+  });
+});
+
+gulp.task('watch:templates', () => {
+  let watched = [
+    path.join(config.paths.src, '**/*.jsx'),
+    path.join(config.paths.src, 'layouts/site/site.js')
+  ];
+  console.log('watching: ', watched);
+  gulp.watch(watched, event => {
+    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
+    sh('node metalsmith-cli.js', false, reload);
+  });
 });
 
 tasks.compile.push('ms');
-tasks.default.push('watch:ms');
-tasks.default.push('serve');
+tasks.default.push('watch:content');
+tasks.default.push('watch:templates');
 
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);
