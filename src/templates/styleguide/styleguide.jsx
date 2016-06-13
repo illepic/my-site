@@ -13,12 +13,12 @@ const Cards = (props) => {
   let allCards = glob.sync('src/molecules/card/examples/*.{yml,yaml}').map(example => {
     let name = path.basename(example, path.extname(example));
     let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
-    return (<div key={name}>
+    return (<div key={name} className={'cards__' + name}>
       <h5 style={{textTransform: 'capitalize'}}>{name}</h5>
       <Card {...data} />
     </div>);
   });
-  return (<div>
+  return (<div className="styleguide--cards">
     <h4 id="cards">Cards</h4>
     {allCards}
     <hr />
@@ -55,6 +55,7 @@ const Styleguide = (props) => {
       <Markdown contents={props.contents}/>
       <Cards {...props} />
       <LandingLists {...props} />
+      <script src="/assets/bundle--styleguide.js"></script>
     </Default>
   );
 };

@@ -3,6 +3,7 @@ module.exports = {
   paths: {
     content: './content',
     src: './src',
-    dist: './dist'
+    dist: './dist',
+    assets: './dist/assets'
   }  
 };

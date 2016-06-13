@@ -13,7 +13,17 @@ module.exports = function (props) {
       var config = {
         kitId: 'vxa2vgs',
         scriptTimeout: 3000,
-        async: true
+        async: true,
+        active: function() {
+          if (window.CustomEvent) {
+            var event = new CustomEvent('fontsLoaded');
+          } else {
+            var event = document.createEvent('CustomEvent');
+            event.initCustomEvent('fontsLoaded', true, true);
+          }
+          
+          document.dispatchEvent(event);
+        }
       },
       h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
     })(document);
@@ -37,6 +47,7 @@ module.exports = function (props) {
   <noscript> <link href='https://fonts.googleapis.com/css?family=Inconsolata&subset=latin' rel='stylesheet' type='text/css'></noscript>
   <script>loadStyleSheet('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/darkula.min.css');</script>
   <noscript><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/darkula.min.css"></noscript>
+  <script src="/assets/bundle--main.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>

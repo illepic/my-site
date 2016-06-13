@@ -12,9 +12,9 @@
     "url": "git@github.com:EvanLovely/my-site.git"
   },
   "scripts": {
-    "start": "export NODE_ENV=development && npm run compile && gulp",
-    "compile": "export NODE_ENV=development && npm run clean && gulp compile",
-    "compile:prod": "export NODE_ENV=production && npm run clean && gulp compile",
+    "start": "export NODE_ENV=development && npm run compile && webpack --watch & gulp",
+    "compile": "export NODE_ENV=development && npm run clean && webpack -d && gulp compile",
+    "compile:prod": "export NODE_ENV=production && npm run clean && webpack && gulp compile",
     "clean": "rm -rf dist",
     "test": "mocha tests/*.test.js"
   },
@@ -25,6 +25,7 @@
     "babel-register": "^6.8.0",
     "chalk": "^1.1.1",
     "gulp-watch": "^4.3.5",
+    "iframify": "github:edenspiekermann/iframify",
     "metalsmith": "^2.1.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-branch": "0.0.4",
@@ -53,6 +54,7 @@
     "modularscale-sass": "^2.1.1",
     "nodemon": "^1.9.1",
     "p2-theme-core": "^8.0.0",
-    "typeset": "^0.2.2"
+    "typeset": "^0.2.2",
+    "webpack": "^1.13.1"
   }
 }
