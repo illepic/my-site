@@ -66,23 +66,19 @@ gulp.task('ms', (done) => {
 });
 
 gulp.task('watch:content', () => {
-  let watched = [
+  gulp.watch([
     path.join(config.paths.content, '**/*.{md,html,png,jpg,jpeg}')
-  ];
-  console.log('watching: ', watched);
-  gulp.watch(watched, event => {
+  ], event => {
     console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
     ms.buildIt(reload);
   });
 });
 
 gulp.task('watch:templates', () => {
-  let watched = [
+  gulp.watch([
     path.join(config.paths.src, '**/*.jsx'),
     path.join(config.paths.src, 'layouts/site/site.js')
-  ];
-  console.log('watching: ', watched);
-  gulp.watch(watched, event => {
+  ], event => {
     console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
     sh('node metalsmith-cli.js', false, reload);
   });
