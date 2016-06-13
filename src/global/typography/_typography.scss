@@ -1,30 +1,94 @@
+$ff--headings: "bree", sans-serif;
+$ff--body: "chaparral-pro", serif;
+$ff--mono: "Inconsolata", serif, monospace;
+
 html {
   font-size: 16px;
+  //font-size: 2vw;
+  font-family: $ff--body;
+  @media screen and (min-width: 600px) {
+    font-size: 18px;
+    //font-size: 3vw;
+  }
     
   @media screen and (min-width: 900px) {
-    font-size: 18px;
-  }
-    
-  @media screen and (min-width: 1200px) {
     font-size: 20px;
+    //font-size: 2vw;
+  }
+  @media screen and (min-width: 1200px) {
+    //font-size: 20px;
+    //font-size: 4vw;
   }
 }
 
-h1 {
-  font-size: 3.5em;
+@mixin headings() {
+  font-family: $ff--headings;
+  font-weight: 300;
+  font-style: normal;
 }
 
-h2 { 
-  font-size: 2em;
+.big-type {
+  @include headings();
+  margin: 0 0 ms(9);
+  font-size: ms(10);
 }
+
+@mixin h1() {
+  @include headings();
+  margin: 0 0 ms(8);
+  font-size: ms(8);
+}
+h1, .h1 { @include h1(); }
+
+@mixin h2() {
+  @include headings();
+  margin: 0 0 ms(7);
+  font-size: ms(7);
+}
+h2, .h2 { @include h2(); }
+
+@mixin h3() {
+  @include headings();
+  margin: 0 0 ms(6);
+  font-size: ms(6);
+}
+h3, .h3 { @include h3(); }
+
+@mixin h4() {
+  @include headings();
+  margin: 0 0 ms(5);
+  font-size: ms(5);
+}
+h4, .h4 { @include h4(); }
+
+@mixin h5() {
+  @include headings();
+  margin: 0 0 ms(4);
+  font-size: ms(4);
+}
+h5, .h5 { @include h5(); }
+
+@mixin h6() {
+  @include headings();
+  margin: 0 0 ms(2);
+  font-size: ms(3);
+}
+h6, .h6 { @include h6(); }
 
 p {
-  font-size: 1em;
+  font-size: ms(3);
+  margin: 0 0 ms(3);
 }
 
 pre {
-  font-size: 0.8em;
+  font-family: $ff--mono;
+  //font-size: 0.8em;
 }
+
+code {
+  font-family: $ff--mono;
+}
+
 a {
   .theme--light & {
     color: $c-orange;
