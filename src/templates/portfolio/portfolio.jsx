@@ -7,7 +7,6 @@ const LandingList = require('../../organisms/landing-list/landing-list');
 const Portfolio = (props) => {
   return (
     <Default {...props}>
-      <h3>Portfolio Layout</h3>
       <Markdown contents={props.contents} />
       <section>
         <LandingList items={props.collections.portfolios} />
