@@ -6,8 +6,10 @@ const SiteFooter = require('../../organisms/site-footer/site-footer');
 
 const Default = (props) => {
   let contents = (props.children ? props.children : <Markdown contents={props.contents}/>);
+  let linkTags = (props.css ? props.css.map(css => (<link rel="stylesheet" href={css} />)) : '');
   return (
     <div className="container">
+      {linkTags}
       <SiteHeader {...props} />
       <main className="site__main page">
         {props.title ? (<h2 className="page__title">{props.title}</h2>) : ''}
