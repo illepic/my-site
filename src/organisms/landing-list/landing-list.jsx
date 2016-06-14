@@ -11,10 +11,10 @@ const LandingList = (props) => {
     );
   });
   return (
-    <section className="landing-list">
+    <section className="landing-list smart-grid" data-row-items-small="2" data-row-items-medium="4" data-row-items-large="5">
       {list}
     </section>
   );
-};
+}; 
 
 module.exports = LandingList;

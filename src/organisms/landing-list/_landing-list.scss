@@ -1,8 +1,9 @@
 .landing-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  //display: flex;
+  //flex-wrap: wrap;
+  //justify-content: space-between;
   &__item {
-    flex: 1 1 50%;
+    //flex: 1 1 50%;
+    display: flex;
   }
 }

@@ -1,0 +1,104 @@
+$grid-gutter: 1rem;
+
+/// Smart Grid
+/// Include in a parent element to layout all children
+/// @param $row-items [4] - How many items per row
+/// @param $gutter [1rem] - Space between Items
+@mixin smart-grid($row-items: 4, $gutter: $grid-gutter) {
+  $column: (100% / $row-items);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @if $gutter > 0 {
+    > * {
+      margin-bottom: $gutter;
+      @if $row-items > 1 {
+        width: calc(#{$column} - (#{$gutter} / 2));
+      } @else {
+        width: 100%;
+      }
+    }
+  } @else {
+    > * {
+      @if $row-items > 1 {
+        width: $column;
+      } @else {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.grid-demo {
+  counter-reset: grid-item;
+  > * {
+    counter-increment: grid-item;
+    &:after {
+      content: counter(grid-item);
+      margin-left: 3px;
+    }
+    &:nth-child(odd) {
+      border: dashed 1px red;
+    }
+    &:nth-child(even) {
+      border: dashed 1px orange;
+    }
+  }
+}
+
+.smart-grid {
+  $smart-grid-sizes: 2, 3, 4, 5, 6;
+  > * {
+    margin-bottom: 1rem;
+  }
+  @each $size in $smart-grid-sizes {
+    @media #{$bp--small} {
+      &[data-row-items-small="#{$size}"] {
+        @include smart-grid($row-items: $size, $gutter: 42px);
+      }
+    }
+  }
+  @each $size in $smart-grid-sizes {
+    @media #{$bp--medium} {
+      &[data-row-items-medium="#{$size}"] {
+        @include smart-grid($row-items: $size, $gutter: 42px);
+      }
+    }
+  }
+  @each $size in $smart-grid-sizes {
+    @media #{$bp--large} {
+      &[data-row-items-large="#{$size}"] {
+        @include smart-grid($row-items: $size, $gutter: 42px);
+      }
+    }
+  }
+}
+
+.smart-grid--gutterless {
+  $smart-grid-sizes: 2, 3, 4, 5, 6;
+  > * {
+    margin-bottom: 1rem;
+  }
+  @each $size in $smart-grid-sizes {
+    @media #{$bp--small} {
+      &[data-row-items-small="#{$size}"] {
+        @include smart-grid($row-items: $size, $gutter: 0);
+      }
+    }
+  }
+  @each $size in $smart-grid-sizes {
+    @media #{$bp--medium} {
+      &[data-row-items-medium="#{$size}"] {
+        @include smart-grid($row-items: $size, $gutter: 0);
+      }
+    }
+  }
+  @each $size in $smart-grid-sizes {
+    @media #{$bp--large} {
+      &[data-row-items-large="#{$size}"] {
+        @include smart-grid($row-items: $size, $gutter: 0);
+      }
+    }
+  }
+}
