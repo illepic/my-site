@@ -11,4 +11,28 @@ body {
 
 .site {
   padding: ms(3);
+  @media #{$bp--small} {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @media #{$bp--medium} {
+    &__header {
+      width: w(8);
+    }
+    &__main {
+      width: w(16);
+    }
+  }
+  @media #{$bp--large} {
+    &__header {
+      width: w(6);
+    }
+    &__main {
+      width: w(14);
+    }
+    &__sidebar--first {
+      width: w(4);
+    }
+  }
 }

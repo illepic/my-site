@@ -29,7 +29,7 @@ module.exports = function (props) {
     })(document);
   </script>
 </head>
-<body class="site ${props.site.bodyClasses.join(' ')}" data-template="${props.template}">
+<body class="${props.site.bodyClasses.join(' ')}" data-template="${props.template}">
   ${props.renderedPage}
   <script>
     function loadStyleSheet(src){

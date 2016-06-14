@@ -1,2 +1,9 @@
 $ms-base: .5rem 1rem;
 $ms-ratio: $golden;
+$grid: 24;
+
+// .class { z-index: z("modal"); }
+@function w($key) {
+  @return percentage($key / $grid);
+}
+

@@ -3,12 +3,13 @@ const React = require('react');
 const Markdown = require('../../global/markdown');
 const SiteHeader = require('../../organisms/site-header/site-header');
 const SiteFooter = require('../../organisms/site-footer/site-footer');
+const Card = require('../../molecules/card/card');
 
 const Default = (props) => {
   let contents = (props.children ? props.children : <Markdown contents={props.contents}/>);
   let linkTags = (props.css ? props.css.map(css => (<link rel="stylesheet" href={css} />)) : '');
   return (
-    <div className="container">
+    <div className="site container">
       {linkTags}
       <SiteHeader {...props} />
       <main className="site__main page">
@@ -19,14 +20,10 @@ const Default = (props) => {
       </main>
 
       <section className="site__sidebar site__sidebar--first sidebar">
-
+        <Card />
+        <SiteFooter {...props} />
       </section>
-
-      <section className="site__sidebar site__sidebar--second sidebar">
-
-      </section>
-
-      <SiteFooter {...props} />
+      
     </div>
   );
 };
