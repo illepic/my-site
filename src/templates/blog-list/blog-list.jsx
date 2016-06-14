@@ -1,12 +1,22 @@
 'use strict';
 const React = require('react');
 const Default = require('../default/default');
+const Card = require('../../molecules/card/card');
 const Markdown = require('../../global/markdown');
 const Date = require('../../atoms/date');
 
 const BlogList = (props) => {
   let blogList = props.pagination.files.map(post=> {
-    return (<p key={post.path}><Date date={post.date} /> - <a href={ post.path }>{ post.title }</a></p>);
+    let url = (post.title_url ? post.title_url : post.path);
+    let excerpt = <Date date={post.date} />;
+    return (
+      <Card 
+        title={post.title} 
+        path={url} 
+        excerpt={excerpt} 
+        key={post.path} 
+      />
+    );
   });
   return (
     <Default {...props} title="Blog">

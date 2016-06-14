@@ -11,7 +11,7 @@ const LandingList = (props) => {
     );
   });
   return (
-    <section className="landing-list smart-grid" data-row-items-small="2" data-row-items-medium="4" data-row-items-large="5">
+    <section className="landing-list smart-grid" data-row-items-small="2"  data-row-items-large="3">
       {list}
     </section>
   );

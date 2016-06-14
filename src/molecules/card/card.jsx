@@ -4,7 +4,7 @@ const React = require('react');
 const Card = (props) => {
   return (
     <article className="card">
-      <h3 className="card__title"><a href={ props.path }>{ props.title }</a></h3>
+      <h5 className="card__title"><a href={ props.path }>{ props.title }</a></h5>
       {props.excerpt ? (<div className="card__excerpt">{ props.excerpt}</div>) : ''}
       <a href={props.path} className="button">Read More</a>
     </article>
