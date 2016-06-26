@@ -88,6 +88,19 @@ tasks.compile.push('ms');
 tasks.default.push('watch:content');
 tasks.default.push('watch:templates');
 
+gulp.task('img', () => {
+  return gulp.src(path.join(config.paths.src, '**/*.{jpg,jpeg,png}'))
+  .pipe(gulp.dest(config.paths.assets));
+});
+
+gulp.task('watch:img', () => {
+  gulp.watch([
+    path.join(config.paths.src, '**/*.{jpg,jpeg,png}')
+  ], ['img']);
+});
+
+tasks.compile.push('img');
+
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);
 gulp.task('validate', tasks.validate);
