@@ -13,6 +13,7 @@ const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const gulpif = require('gulp-if');
+const changed = require('gulp-changed');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 const tasks = {
@@ -105,6 +106,7 @@ gulp.task('img:src', (allDone) => {
   
   each(config.imgSizes, (size, done) => {
     imgFiles
+      .pipe(changed(config.paths.assets))
       .pipe(imageResize({width: size.width}))
       // only do time-intensive minification on prod build
       .pipe(gulpif(process.env.NODE_ENV === 'production', imagemin(imageminSettings)))
