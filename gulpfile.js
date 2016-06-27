@@ -7,6 +7,12 @@ const path = require('path');
 const del = require('del');
 const exec = require('child_process').exec;
 const ms = require('./metalsmith.js');
+const each = require('async').each;
+const imageResize = require('gulp-image-resize');
+const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+const gulpif = require('gulp-if');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 const tasks = {
@@ -88,18 +94,34 @@ tasks.compile.push('ms');
 tasks.default.push('watch:content');
 tasks.default.push('watch:templates');
 
-gulp.task('img', () => {
-  return gulp.src(path.join(config.paths.src, '**/*.{jpg,jpeg,png}'))
-  .pipe(gulp.dest(config.paths.assets));
+gulp.task('img:src', (allDone) => {
+  let imgFiles = gulp.src(path.join(config.paths.src, '**/*.{jpg,jpeg,png}'));
+  let imageminSettings = {
+    progressive: true,
+    use: [pngquant()]
+  };
+  // just move the originals unchanged
+  imgFiles.pipe(gulp.dest(config.paths.assets));
+  
+  each(config.imgSizes, (size, done) => {
+    imgFiles
+      .pipe(imageResize({width: size.width}))
+      // only do time-intensive minification on prod build
+      .pipe(gulpif(process.env.NODE_ENV === 'production', imagemin(imageminSettings)))
+      .pipe(rename({suffix: size.suffix}))
+      .pipe(gulp.dest(config.paths.assets))
+      .on('end', done);
+  }, allDone);
 });
 
-gulp.task('watch:img', () => {
+gulp.task('watch:img:src', () => {
   gulp.watch([
     path.join(config.paths.src, '**/*.{jpg,jpeg,png}')
-  ], ['img']);
+  ], ['img:src']);
 });
 
-tasks.compile.push('img');
+tasks.compile.push('img:src');
+tasks.watch.push('watch:img:src');
 
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);
