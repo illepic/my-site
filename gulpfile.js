@@ -95,6 +95,32 @@ tasks.compile.push('ms');
 tasks.default.push('watch:content');
 tasks.default.push('watch:templates');
 
+gulp.task('img:content', (allDone) => {
+  let imgFiles = gulp.src(path.join(config.paths.content, '**/*.{jpg,jpeg,png}'));
+  let imageminSettings = {
+    progressive: true,
+    use: [pngquant()]
+  };
+  
+  each(config.imgSizes, (size, done) => {
+    imgFiles
+      .pipe(changed(config.paths.dist))
+      .pipe(imageResize({width: size.width}))
+      // only do time-intensive minification on prod build
+      .pipe(gulpif(process.env.NODE_ENV === 'production', imagemin(imageminSettings)))
+      .pipe(rename({suffix: size.suffix}))
+      .pipe(gulp.dest(config.paths.dist))
+      .on('end', done);
+  }, allDone);
+  
+});
+
+gulp.task('watch:img:content', () => {
+  gulp.watch([
+    path.join(config.paths.content, '**/*.{jpg,jpeg,png}')
+  ], ['img:content']);
+});
+
 gulp.task('img:src', (allDone) => {
   let imgFiles = gulp.src(path.join(config.paths.src, '**/*.{jpg,jpeg,png}'));
   let imageminSettings = {
@@ -122,6 +148,7 @@ gulp.task('watch:img:src', () => {
   ], ['img:src']);
 });
 
+tasks.compile.push('img:content');
 tasks.compile.push('img:src');
 tasks.watch.push('watch:img:src');
 

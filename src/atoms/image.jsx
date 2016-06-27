@@ -8,17 +8,9 @@ const Image = (props) => {
   let rootRelativeSrc = util.imgSrc(props.src);
   let info = path.parse(rootRelativeSrc);
   let alt = props.alt || info.name;
-  let srcSet = config.imgSizes.map(size => {
-    let sizeInfo = {
-      dir: info.dir,
-      name: info.name + size.suffix,
-      ext: info.ext
-    };
-    return `${path.format(sizeInfo)} ${size.width}w`;
-  });
   return (<img 
     src={rootRelativeSrc} 
-    srcSet={srcSet.join(', ')}
+    srcSet={util.srcSet(rootRelativeSrc)}
     alt={alt}
     sizes={props.sizes}
   />);

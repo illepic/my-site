@@ -3,6 +3,7 @@ require('babel-register')({
   extensions: ['.jsx']
 });
 const config = require('./config');
+const util = require('./src/0-base/util');
 const Metalsmith = require('metalsmith');
 const drafts = require('metalsmith-drafts');
 const markdown = require('metalsmith-markdown');
@@ -18,6 +19,7 @@ const metalsmith = Metalsmith(__dirname);
 const path = require('path');
 const permalinks = require('metalsmith-permalinks');
 const pagination = require('metalsmith-pagination');
+const cheerio = require('cheerio');
 const renderReact = require('./renderReact.jsx');
 const siteLayout = require('./src/layouts/site/site.js');
 const debug = false;
@@ -153,14 +155,31 @@ const ms = metalsmith
   //  }, done()); // done with `each()`
   //})
 
-  
+ // post html
+  .use((files, metalsmith, done) => {
+    each(Object.keys(files), (file, done) => {
+      if(path.extname(file) !== '.html') {
+        return;
+      }
+      let fileData = files[file];
+      if (process.env.NODE_ENV === 'production') {
+        let $ = cheerio.load(fileData.contents.toString());
+        $('img').each(function() {
+          let $this = $(this);
+          let src = $this.attr('src');
+          $this.attr('srcset', util.srcSet(src));
+        });
+        fileData.contents = new Buffer($.html(), 'utf8');
+      }
+      done();
+    }, done()); // done with `each()`
+  })
 
   // template templating
   .use((files, metalsmith, done) => {
     let globalData = metalsmith.metadata();
     each(Object.keys(files), (file, done) => {
-      let fileExt = path.extname(file);
-      if(fileExt !== '.html') {
+      if(path.extname(file) !== '.html') {
         return;
       }
       let fileData = files[file];
