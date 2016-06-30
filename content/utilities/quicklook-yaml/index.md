@@ -1,7 +1,7 @@
 ---
 title: QuickLook Generator for YAML files
 weight: 10
-teaser_text: "Use Mac's QuickLook feature on YAML files"
+excerpt: "Use Mac's QuickLook feature on YAML files"
 tags:
   - Mac
 ---

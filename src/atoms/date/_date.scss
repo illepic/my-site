@@ -1,0 +1,14 @@
+.date {
+  border: solid 1px $c-gray--darker;
+  border-radius: 3px;
+  display: inline-block;
+  text-align: center;
+  &__month {
+    margin-right: .25em;
+  }
+  &__day {
+    display: block;
+    border-top: solid 1px $c-gray--darker;
+    font-size: 1.5em;
+  }
+}

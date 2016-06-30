@@ -18,7 +18,7 @@ tech:
 imgs:
     - home--full.jpg
     - home--full--mobile.jpg
-teaser: "Aspirations in Computing is a talent development initiative designed to increase female participation in technology careers by providing encouragement, visibility, community, leadership opportunities, scholarships, and internships to aspiring technically inclined young women."
+excerpt: "Aspirations in Computing is a talent development initiative designed to increase female participation in technology careers by providing encouragement, visibility, community, leadership opportunities, scholarships, and internships to aspiring technically inclined young women."
 live-site-url: https://www.aspirations.org/
 ---
 Aspirations in Computing is a talent development initiative designed to increase female participation in technology careers by providing encouragement, visibility, community, leadership opportunities, scholarships, and internships to aspiring technically inclined young women. The [award is hosted by NCWIT](http://www.ncwit.org/programs-campaigns/aspirations-computing) and has received national attention, even from [The White House][white-house], for its help and service for young woman in Technology.

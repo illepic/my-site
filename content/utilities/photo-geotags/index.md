@@ -1,7 +1,7 @@
 ---
 title: Photo Geotag Tools
 weight: 3
-teaser_text: "A Bash function for revealing where a photo was taken along with an Alfred Extension for it."
+excerpt: "A Bash function for revealing where a photo was taken along with an Alfred Extension for it."
 tags:
   - Alfred
   - photography

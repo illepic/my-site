@@ -1,7 +1,7 @@
 ---
 title: Utility to send a URL from iOS to Mac Browser
 weight: 4
-teaser_text: "Open URLs on your Mac from an iPhone"
+excerpt: "Open URLs on your Mac from an iPhone"
 tags:
   - Drafts
   - Hazel

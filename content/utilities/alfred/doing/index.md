@@ -1,7 +1,7 @@
 ---
 title: Alfred Workflow for `doing`
 weight: 4
-teaser_text: "An Alfred Workflow for working with a What Was I Doing System."
+excerpt: "An Alfred Workflow for working with a What Was I Doing System."
 tags:
   - Alfred
   - productivity

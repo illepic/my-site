@@ -6,7 +6,9 @@ const LandingList = (props) => {
   let list = props.items.map((item, i) => {
     return (
       <aside className="landing-list__item" key={i}>
-        <Card {...item} />
+        <Card {...item}>
+          {item.excerpt ? (<p className="card__excerpt">{item.excerpt}</p>) : null}
+        </Card> 
       </aside>
     );
   });

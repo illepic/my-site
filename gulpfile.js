@@ -74,7 +74,8 @@ gulp.task('ms', (done) => {
 
 gulp.task('watch:content', () => {
   gulp.watch([
-    path.join(config.paths.content, '**/*.{md,html,png,jpg,jpeg}')
+    path.join(config.paths.content, '**/*.{md,html,png,jpg,jpeg}'),
+    './metalsmith.js'
   ], event => {
     console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
     ms.buildIt(reload);

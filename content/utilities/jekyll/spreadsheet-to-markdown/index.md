@@ -1,7 +1,7 @@
 ---
 title: Turn a Spreadsheet into Markdown Files to fuel the content of a Jekyll Site
 weight: 3
-teaser_text: "Each column becomes a new YAML front matter setting and each row is a new Markdown file"
+excerpt: "Each column becomes a new YAML front matter setting and each row is a new Markdown file"
 tags:
   - Jekyll
   - Markdown

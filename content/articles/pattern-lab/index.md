@@ -5,7 +5,7 @@ tags:
   - web-dev
   - tech
   - pattern-lab
-teaser_text: "Resources for working Pattern Lab"
+excerpt: "Resources for working with Pattern Lab"
 
 ---
 

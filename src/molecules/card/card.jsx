@@ -5,7 +5,7 @@ const Card = (props) => {
   return (
     <article className="card">
       <h5 className="card__title"><a href={ props.path }>{ props.title }</a></h5>
-      {props.excerpt ? (<div className="card__excerpt">{ props.excerpt}</div>) : ''}
+      {props.children ? (<div className="card__contents">{props.children}</div>) : ''}
       <a href={props.path} className="button">Read More</a>
     </article>
   );

@@ -5,6 +5,7 @@ const yaml = require('js-yaml');
 const glob = require('glob');
 const React = require('react');
 const Default = require('../default/default');
+const Date = require('../../atoms/date');
 const Markdown = require('../../global/markdown');
 const Card = require('../../molecules/card/card');
 const LandingList = require('../../organisms/landing-list/landing-list');
@@ -15,7 +16,9 @@ const Cards = (props) => {
     let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
     return (<div key={name} className={'cards__' + name}>
       <h5 style={{textTransform: 'capitalize'}}>{name}</h5>
-      <Card {...data} />
+      <Card {...data}>
+        {data.excerpt}
+      </Card>
     </div>);
   });
   return (<div className="styleguide--cards">
@@ -46,6 +49,7 @@ const Styleguide = (props) => {
     <Default {...props}>
       <ul className="toc">
         <li><a href="#typography">Typography</a></li>
+        <li><a href="#metadata">Metadata</a></li>
         <li><a href="#buttons">Buttons</a></li>
         <li><a href="#forms">Forms</a></li>
         <li><a href="#cards">Cards</a></li>
@@ -53,6 +57,11 @@ const Styleguide = (props) => {
       </ul>
       <h4 id="typography">Typography</h4>
       <Markdown contents={props.contents}/>
+      <h4 id="metadata">Metadata</h4>
+      <h5>Date</h5>
+      <Date date="2015-12-25" />
+      <br />
+      <Date date="2015-1-2" /> 
       <Cards {...props} />
       <LandingLists {...props} />
       <script src="/assets/bundle--styleguide.js"></script>

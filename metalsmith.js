@@ -102,7 +102,7 @@ const ms = metalsmith
     }]
   }))
   .use(collections(siteCollections))
-  // .use(excerpts())
+  .use(excerpts())
   // .use(assets())
   // .use(feed({
   //   collection: 'all'
@@ -161,7 +161,9 @@ const ms = metalsmith
       if(path.extname(file) !== '.html') {
         return;
       }
-      let fileData = files[file];
+      // let fileData = files[file];
+
+      // add `srcset` to `<img>`s
       if (process.env.NODE_ENV === 'production') {
         let $ = cheerio.load(fileData.contents.toString());
         $('img').each(function() {
@@ -171,6 +173,7 @@ const ms = metalsmith
         });
         fileData.contents = new Buffer($.html(), 'utf8');
       }
+      
       done();
     }, done()); // done with `each()`
   })
