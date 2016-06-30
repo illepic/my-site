@@ -4,6 +4,7 @@ const Markdown = require('../../global/markdown');
 const SiteHeader = require('../../organisms/site-header/site-header');
 const SiteFooter = require('../../organisms/site-footer/site-footer');
 const Card = require('../../molecules/card/card');
+const Meta = require('../../molecules/meta');
 
 const Default = (props) => {
   let contents = (props.children ? props.children : <Markdown contents={props.contents}/>);
@@ -14,6 +15,8 @@ const Default = (props) => {
       <SiteHeader {...props} />
       <main className="site__main page">
         {props.title ? (<h2 className="page__title">{props.title}</h2>) : ''}
+                <Meta {...props} />
+
         <article className="page__contents">
           {contents}
         </article>

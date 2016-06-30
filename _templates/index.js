@@ -5,8 +5,14 @@ var fs = require('fs');
 var plBase = ('./src');
 
 module.exports = yeoman.Base.extend({
+  
+  
   prompting: function () {
 
+    String.prototype.capitalizeFirstLetter = function() {
+      return this.charAt(0).toUpperCase() + this.slice(1);
+    };
+    
     console.log('Hi! This will help you build a component folder with assets.');
     console.log('Templates for this are in: ' + path.relative(process.cwd(), __dirname));
     console.log('');
@@ -34,6 +40,7 @@ module.exports = yeoman.Base.extend({
     }];
 
     return this.prompt(prompts).then(function (props) {
+      props.capitalizedName = props.name.capitalizeFirstLetter();
       // To access props later use this.props.someAnswer;
       this.props = props;
     }.bind(this));

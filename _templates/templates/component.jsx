@@ -1,10 +1,10 @@
 'use strict';
 const React = require('react');
 
-const <%= name %> = (props) => {
-  return (
+const <%= capitalizedName %> = (props) => {
+  return (<div className="<%= name %>">
     
-  );
+  </div>);
 };
 
-module.exports = <%= name %>;
+module.exports = <%= capitalizedName %>;

@@ -3,8 +3,7 @@ const React = require('react');
 const Default = require('../default/default');
 const Card = require('../../molecules/card/card');
 const Markdown = require('../../global/markdown');
-const Date = require('../../atoms/date');
-const Tags = require('../../atoms/tags');
+const Meta = require('../../molecules/meta');
 
 const BlogList = (props) => {
   let blogList = props.pagination.files.map(post=> {
@@ -14,8 +13,7 @@ const BlogList = (props) => {
         path={(post.title_url ? post.title_url : post.path)} 
         key={post.path} 
       >
-        <Date date={post.date} />
-        <Tags tags={post.tags} />
+        <Meta {...post} />
         {post.excerpt ? (<div className="card__excerpt" dangerouslySetInnerHTML={{__html: post.excerpt}}></div>) : ''}
       </Card>
     );
