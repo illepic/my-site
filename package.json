@@ -16,6 +16,7 @@
     "compile": "export NODE_ENV=development && npm run clean && webpack -d && gulp compile",
     "compile:prod": "export NODE_ENV=production && npm run clean && webpack && gulp compile",
     "clean": "rm -rf dist",
+    "new": "yo ./_templates/index.js",
     "test": "mocha tests/*.test.js"
   },
   "devDependencies": {
@@ -46,7 +47,9 @@
     "mocha": "^2.4.5",
     "nunjucks": "^2.2.0",
     "react": "^15.0.2",
-    "react-dom": "^15.0.2"
+    "react-dom": "^15.0.2",
+    "yeoman-generator": "^0.23.4",
+    "yo": "^1.8.4"
   },
   "dependencies": {
     "del": "^2.2.0",
