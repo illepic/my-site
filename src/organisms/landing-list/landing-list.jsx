@@ -7,7 +7,7 @@ const LandingList = (props) => {
     return (
       <aside className="landing-list__item" key={i}>
         <Card {...item}>
-          {item.excerpt ? (<p className="card__excerpt">{item.excerpt}</p>) : null}
+          {item.excerpt ? (<p className="card__excerpt" dangerouslySetInnerHTML={{__html: item.excerpt}}></p>) : null}
         </Card> 
       </aside>
     );
@@ -20,3 +20,4 @@ const LandingList = (props) => {
 }; 
 
 module.exports = LandingList;
+ 

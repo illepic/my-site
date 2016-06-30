@@ -15,8 +15,7 @@ const Default = (props) => {
       <SiteHeader {...props} />
       <main className="site__main page">
         {props.title ? (<h2 className="page__title">{props.title}</h2>) : ''}
-                <Meta {...props} />
-
+        <Meta {...props} />
         <article className="page__contents">
           {contents}
         </article>

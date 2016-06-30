@@ -6,6 +6,8 @@ tags:
   - gear
 ---
 
+Here's a list of items I usually take on international travels that has worked well for me.
+
 - Total weight: 27lbs
 - Total volume: ~40L
 
