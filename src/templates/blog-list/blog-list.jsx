@@ -4,6 +4,7 @@ const Default = require('../default/default');
 const Card = require('../../molecules/card/card');
 const Markdown = require('../../global/markdown');
 const Date = require('../../atoms/date');
+const Tags = require('../../atoms/tags');
 
 const BlogList = (props) => {
   let blogList = props.pagination.files.map(post=> {
@@ -14,6 +15,7 @@ const BlogList = (props) => {
         key={post.path} 
       >
         <Date date={post.date} />
+        <Tags tags={post.tags} />
         {post.excerpt ? (<div className="card__excerpt" dangerouslySetInnerHTML={{__html: post.excerpt}}></div>) : ''}
       </Card>
     );

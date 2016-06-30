@@ -1,0 +1,10 @@
+.tags {
+  &__tag {
+    display: inline-block;
+    border-radius: 3px;
+    border: solid 1px $c-gray--darker;
+    padding: 2px;
+    font-size: ms(2);
+    margin-right: ms(0);
+  }
+}
