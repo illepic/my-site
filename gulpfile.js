@@ -14,6 +14,7 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
+const linkChecker = require('broken-link-checker');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 const tasks = {
@@ -25,6 +26,27 @@ const tasks = {
 };
 
 console.log('NODE_ENV: ' + process.env.NODE_ENV);
+
+gulp.task('test:links', (done) => {
+  let results = {};
+  let l = new linkChecker.SiteChecker({
+
+  }, {
+    link: (result, customData) => {
+      if (result.broken) {
+        // console.log(result.base, result.url);
+        console.log(`${result.base.original} ~ ${result.url.original}`);
+        results[result.base.original] = result;
+      }
+    },
+    end: () => {
+      let totalPages = Object.keys(results).length;
+      console.log(`${totalPages} have broken links`);
+      fs.writeFile('./reports/broken-links.json', JSON.stringify(results), done);
+    }
+  });
+  l.enqueue(`http://localhost:${themeConfig.browserSync.port}`);
+});
 
 require('p2-theme-core')(gulp, themeConfig, tasks);
 
@@ -85,6 +107,7 @@ gulp.task('watch:content', () => {
 gulp.task('watch:templates', () => {
   gulp.watch([
     path.join(config.paths.src, '**/*.jsx'),
+    path.join(config.paths.src, '0-base/util.js'),
     path.join(config.paths.src, 'layouts/site/site.js')
   ], event => {
     console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
