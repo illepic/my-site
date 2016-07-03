@@ -92,8 +92,40 @@ const ms = metalsmith
   .source(config.paths.content)
   .clean(false)
   .use(drafts(true))
+  
   // md => html
   .use(markdown())
+   
+  // post html
+  .use((files, metalsmith, done) => {
+    each(Object.keys(files), (file, done) => {
+      if(path.extname(file) !== '.html') {
+        return;
+      }
+      let fileData = files[file];
+      let $ = cheerio.load(fileData.contents.toString());
+
+      // add `srcset` to `<img>`s
+      if (process.env.NODE_ENV === 'production') {
+        $('img').each(function() {
+          let $this = $(this);
+          let src = $this.attr('src');
+          $this.attr('srcset', util.srcSet(src));
+        });
+      }
+      
+      // fileData.images = $('img').map(function() {
+      //   return {
+      //     src: $(this).attr('src'),
+      //     alt: $(this).attr('alt')
+      //   }
+      // });
+      
+      fileData.contents = new Buffer($.html(), 'utf8');
+      done();
+    }, done()); // done with `each()`
+  })
+
   .use(permalinks({
     linksets: [{
       match: {collection: 'posts'},
@@ -155,28 +187,6 @@ const ms = metalsmith
   //  }, done()); // done with `each()`
   //})
 
- // post html
-  .use((files, metalsmith, done) => {
-    each(Object.keys(files), (file, done) => {
-      if(path.extname(file) !== '.html') {
-        return;
-      }
-      // let fileData = files[file];
-
-      // add `srcset` to `<img>`s
-      if (process.env.NODE_ENV === 'production') {
-        let $ = cheerio.load(fileData.contents.toString());
-        $('img').each(function() {
-          let $this = $(this);
-          let src = $this.attr('src');
-          $this.attr('srcset', util.srcSet(src));
-        });
-        fileData.contents = new Buffer($.html(), 'utf8');
-      }
-      
-      done();
-    }, done()); // done with `each()`
-  })
 
   // template templating
   .use((files, metalsmith, done) => {

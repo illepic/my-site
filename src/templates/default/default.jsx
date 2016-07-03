@@ -5,10 +5,18 @@ const SiteHeader = require('../../organisms/site-header/site-header');
 const SiteFooter = require('../../organisms/site-footer/site-footer');
 const Card = require('../../molecules/card/card');
 const Meta = require('../../molecules/meta');
+const Image = require('../../atoms/image');
+const util = require('../../0-base/util');
+const path = require('path');
 
 const Default = (props) => {
   let contents = (props.children ? props.children : <Markdown contents={props.contents}/>);
   let linkTags = (props.css ? props.css.map(css => (<link rel="stylesheet" href={css} />)) : '');
+  let img = null;
+  if (props.featuredImage) {
+    let myPath = (util.isPathRootRelative(props.featuredImage) || util.isPathRemote(props.featuredImage)) ? props.featuredImage : path.join(props.path, props.featuredImage);
+    img = <Image src={myPath} />;
+  }
   return (
     <div className="site container">
       {linkTags}
@@ -17,6 +25,7 @@ const Default = (props) => {
         {props.title ? (<h2 className="page__title">{props.title}</h2>) : ''}
         <Meta {...props} />
         <article className="page__contents">
+          {img} 
           {contents}
         </article>
       </main>
