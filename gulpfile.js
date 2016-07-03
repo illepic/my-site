@@ -111,7 +111,7 @@ gulp.task('watch:templates', () => {
     path.join(config.paths.src, '0-base/util.js'),
     path.join(config.paths.src, 'layouts/site/site.js')
   ], event => {
-    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
+    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running Metalsmith...');
     sh('node metalsmith-cli.js', false, reload);
   });
 });
@@ -177,14 +177,32 @@ tasks.compile.push('img:content');
 tasks.compile.push('img:src');
 tasks.watch.push('watch:img:src');
 
+function eslintStream(stream) {
+  return stream
+    .pipe(eslint())
+    .pipe(eslint.format());
+}
+
 gulp.task('validate:js', () => {
-  return gulp.src([
+  return eslintStream(gulp.src([
     path.join(config.paths.src, '**/*.{js,jsx}')
-  ])
-  .pipe(eslint())
-  .pipe(eslint.format())
+  ]))
   .pipe(eslint.failAfterError());
 });
+
+gulp.task('watch:validate:js', () => {
+  gulp.watch([
+    path.join(config.paths.src, '**/*.{js,jsx}')
+  ], event => {
+    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running linting...');
+    return eslintStream(gulp.src([
+      event.path
+    ]));
+  });
+});
+
+tasks.watch.push('watch:validate:js');
+tasks.validate.push('validate:js');
 
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);

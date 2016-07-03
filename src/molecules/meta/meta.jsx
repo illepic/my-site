@@ -1,4 +1,3 @@
-'use strict';
 const React = require('react');
 const Date = require('../../atoms/date');
 const Tags = require('../../atoms/tags');

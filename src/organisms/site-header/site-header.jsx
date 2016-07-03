@@ -1,4 +1,3 @@
-'use strict';
 const React = require('react');
 const SiteNav = require('../../molecules/site-nav/site-nav');
 const Image = require('../../atoms/image');

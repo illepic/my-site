@@ -1,4 +1,3 @@
-'use strict';
 const React = require('react');
 const Image = require('../../atoms/image');
 const util = require('../../0-base/util');

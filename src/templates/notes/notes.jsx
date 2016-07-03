@@ -1,4 +1,3 @@
-'use strict';
 const React = require('react');
 const Default = require('../default/default');
 const Markdown = require('../../global/markdown');

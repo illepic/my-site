@@ -1,4 +1,3 @@
-'use strict';
 const iframifyComponent = require('./iframifyComponents');
 
 document.addEventListener('fontsLoaded', function () {

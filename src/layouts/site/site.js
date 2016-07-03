@@ -1,4 +1,3 @@
-'use strict';
 module.exports = function (props) {
   return `<!doctype html>
 <html lang="en-us">

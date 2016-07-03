@@ -1,4 +1,3 @@
-'use strict';
 
 module.exports = function (components) {
   require('iframify');

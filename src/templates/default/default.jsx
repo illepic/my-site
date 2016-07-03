@@ -1,4 +1,3 @@
-'use strict';
 const React = require('react');
 const Markdown = require('../../global/markdown');
 const SiteHeader = require('../../organisms/site-header/site-header');
