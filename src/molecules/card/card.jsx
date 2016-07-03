@@ -12,7 +12,7 @@ const Card = (props) => {
   }
   return (
     <article className="card">
-      <h5 className="card__title"><a href={ props.path }>{ props.title }</a></h5>
+      <h5 className="card__title"><a href={props.path}>{props.title}</a></h5>
       {img}
       {props.children ? (<div className="card__contents">{props.children}</div>) : ''}
       <a href={props.path} className="button">Read More</a>
@@ -22,7 +22,7 @@ const Card = (props) => {
 
 Card.defaultProps = {
   title: 'default title',
-  path: '#'
+  path: '#',
 };
 
 module.exports = Card;

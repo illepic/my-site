@@ -15,7 +15,7 @@ const Cards = (props) => {
     let name = path.basename(example, path.extname(example));
     let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
     return (<div key={name} className={'cards__' + name}>
-      <h5 style={{textTransform: 'capitalize'}}>{name}</h5>
+      <h5 style={{ textTransform: 'capitalize' }}>{name}</h5>
       <Card {...data}>
         {data.excerpt}
       </Card>
@@ -33,7 +33,7 @@ const LandingLists = (props) => {
     let name = path.basename(example, path.extname(example));
     let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
     return (<div key={name}>
-      <h5 style={{textTransform: 'capitalize'}}>{name}</h5>
+      <h5 style={{ textTransform: 'capitalize' }}>{name}</h5>
       <LandingList {...data} />
     </div>);
   });
@@ -56,12 +56,12 @@ const Styleguide = (props) => {
         <li><a href="#landing-lists">Landing Lists</a></li>
       </ul>
       <h4 id="typography">Typography</h4>
-      <Markdown contents={props.contents}/>
+      <Markdown contents={props.contents} />
       <h4 id="metadata">Metadata</h4>
       <h5>Date</h5>
       <Date date="2015-12-25" />
       <br />
-      <Date date="2015-1-2" /> 
+      <Date date="2015-1-2" />
       <Cards {...props} />
       <LandingLists {...props} />
       <script src="/assets/bundle--styleguide.js"></script>

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const React = require('react');
 const Markdown = require('../../global/markdown');
 const SiteHeader = require('../../organisms/site-header/site-header');
@@ -10,7 +10,7 @@ const util = require('../../0-base/util');
 const path = require('path');
 
 const Default = (props) => {
-  let contents = (props.children ? props.children : <Markdown contents={props.contents}/>);
+  let contents = (props.children ? props.children : <Markdown contents={props.contents} />);
   let linkTags = (props.css ? props.css.map(css => (<link rel="stylesheet" href={css} />)) : '');
   let img = null;
   if (props.featuredImage) {
@@ -25,7 +25,7 @@ const Default = (props) => {
         {props.title ? (<h2 className="page__title">{props.title}</h2>) : ''}
         <Meta {...props} />
         <article className="page__contents">
-          {img} 
+          {img}
           {contents}
         </article>
       </main>
@@ -34,13 +34,13 @@ const Default = (props) => {
         <Card />
         <SiteFooter {...props} />
       </section>
-      
+
     </div>
   );
 };
 
 Default.defaultProps = {
-  subtitle: 'default subtitle'
+  subtitle: 'default subtitle',
 };
 
 module.exports = Default;

@@ -5,7 +5,7 @@ module.exports = function (props) {
 <head>
   <meta charset="utf-8">
   <title>${props.title ? props.title + ' | ' + props.site.title : props.site.title}</title>
-  ${props.site.description ? `<meta name="description" content="${ props.site.description }">` : ''}
+  ${props.site.description ? `<meta name="description" content="${props.site.description}">` : ''}
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="/assets/style.css">
   <script>

@@ -11,7 +11,7 @@ const Portfolio = (props) => {
       <section>
         <LandingList items={props.collections.portfolios} />
 
-      </section>      
+      </section>
     </Default>
   );
 };

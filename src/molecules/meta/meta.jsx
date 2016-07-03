@@ -5,7 +5,7 @@ const Tags = require('../../atoms/tags');
 
 const Meta = (props) => {
   return (<div className="meta">
-    {props.date ? <Date date={props.date} /> : null }
+    {props.date ? <Date date={props.date} /> : null}
     {props.tags ? <Tags tags={props.tags} /> : null}
   </div>);
 };

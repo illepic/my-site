@@ -14,8 +14,8 @@ module.exports = function (components) {
       let el2 = el.insertAdjacentElement('afterend', newEl);
       let iframe = iframify(el2, {
         bodyAttr: {
-          class: bodyClasses
-        }
+          class: bodyClasses,
+        },
       });
       iframe.setAttribute('style', `width: ${size};`);
     });

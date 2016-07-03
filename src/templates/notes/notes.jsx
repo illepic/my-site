@@ -11,7 +11,7 @@ const Notes = (props) => {
       <section>
         <LandingList items={props.collections.notes} />
 
-      </section>      
+      </section>
     </Default>
   );
 };

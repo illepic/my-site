@@ -15,6 +15,7 @@ const pngquant = require('imagemin-pngquant');
 const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const linkChecker = require('broken-link-checker');
+const eslint = require('gulp-eslint');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 const tasks = {
@@ -175,6 +176,15 @@ gulp.task('watch:img:src', () => {
 tasks.compile.push('img:content');
 tasks.compile.push('img:src');
 tasks.watch.push('watch:img:src');
+
+gulp.task('validate:js', () => {
+  return gulp.src([
+    path.join(config.paths.src, '**/*.{js,jsx}')
+  ])
+  .pipe(eslint())
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError());
+});
 
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);

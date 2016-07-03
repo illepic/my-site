@@ -10,7 +10,7 @@ const Articles = (props) => {
       <Markdown contents={props.contents} />
       <section>
         <LandingList items={props.collections.articles} />
-      </section>      
+      </section>
     </Default>
   );
 };

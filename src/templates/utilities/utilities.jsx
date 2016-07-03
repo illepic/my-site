@@ -11,7 +11,7 @@ const Utilities = (props) => {
       <section>
         <LandingList items={props.collections.utilities} />
 
-      </section>      
+      </section>
     </Default>
   );
 };

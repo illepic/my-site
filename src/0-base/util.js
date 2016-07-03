@@ -14,7 +14,7 @@ function srcSet(imgPath) {
     let sizeInfo = {
       dir: info.dir,
       name: info.name + size.suffix,
-      ext: info.ext
+      ext: info.ext,
     };
     return `${path.format(sizeInfo)} ${size.width}w`;
   }).join(', ');
@@ -37,5 +37,5 @@ module.exports = {
   srcSet: srcSet,
   isPathRemote: isPathRemote,
   isPathRootRelative: isPathRootRelative,
-  isPathAbsolute: isPathAbsolute
+  isPathAbsolute: isPathAbsolute,
 };

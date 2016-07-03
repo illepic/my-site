@@ -10,8 +10,8 @@ const Image = (props) => {
   let src = ((isRemotePath || isRootRelativePath) ? props.src : util.imgSrc(props.src));
   let info = path.parse(src);
   let alt = props.alt || info.name;
-  return (<img 
-    src={src} 
+  return (<img
+    src={src}
     srcSet={isRemotePath ? null : util.srcSet(src)}
     alt={alt}
     sizes={props.sizes}
