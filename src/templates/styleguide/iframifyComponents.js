@@ -1,6 +1,7 @@
-
-module.exports = function (components) {
+module.exports = (components) => {
+  /* eslint-disable global-require */
   require('iframify');
+  /* eslint-enable global-require */
   const iframify = window.iframify;
   let bodyClasses = document.querySelector('body').getAttribute('class');
 

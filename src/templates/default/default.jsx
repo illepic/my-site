@@ -10,10 +10,16 @@ const path = require('path');
 
 const Default = (props) => {
   let contents = (props.children ? props.children : <Markdown contents={props.contents} />);
-  let linkTags = (props.css ? props.css.map(css => (<link rel="stylesheet" href={css} />)) : '');
+  let linkTags = (props.css ? props.css.map(css => (
+    <link rel="stylesheet" href={css} key={css} />)
+  ) : '');
   let img = null;
   if (props.featuredImage) {
-    let myPath = (util.isPathRootRelative(props.featuredImage) || util.isPathRemote(props.featuredImage)) ? props.featuredImage : path.join(props.path, props.featuredImage);
+    let myPath = (
+      util.isPathRootRelative(props.featuredImage) ||
+      util.isPathRemote(props.featuredImage)
+    ) ? props.featuredImage
+      : path.join(props.path, props.featuredImage);
     img = <Image src={myPath} />;
   }
   return (
@@ -40,6 +46,16 @@ const Default = (props) => {
 
 Default.defaultProps = {
   subtitle: 'default subtitle',
+};
+
+Default.propTypes = {
+  contents: React.PropTypes.object.isRequired,
+  children: React.PropTypes.node,
+  featuredImage: React.PropTypes.string,
+  path: React.PropTypes.string,
+  title: React.PropTypes.string,
+  // css: React.PropTypes.array,
+  css: React.PropTypes.arrayOf(React.PropTypes.string),
 };
 
 module.exports = Default;

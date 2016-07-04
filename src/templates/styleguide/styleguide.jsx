@@ -12,8 +12,8 @@ const LandingList = require('../../organisms/landing-list/landing-list');
 const Cards = (props) => {
   let allCards = glob.sync('src/molecules/card/examples/*.{yml,yaml}').map(example => {
     let name = path.basename(example, path.extname(example));
-    let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
-    return (<div key={name} className={'cards__' + name}>
+    const data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
+    return (<div key={name} className={`cards__${name}`}>
       <h5 style={{ textTransform: 'capitalize' }}>{name}</h5>
       <Card {...data}>
         {data.excerpt}
@@ -27,10 +27,15 @@ const Cards = (props) => {
   </div>);
 };
 
+Cards.propTypes = {
+  dummy: React.PropTypes.object,
+};
+
+
 const LandingLists = (props) => {
-  let allLandingLists = glob.sync('src/organisms/landing-list/examples/*.{yml,yaml}').map(example => {
-    let name = path.basename(example, path.extname(example));
-    let data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(example, 'utf8')));
+  let allLandingLists = glob.sync('src/organisms/landing-list/examples/*.{yml,yaml}').map(file => {
+    let name = path.basename(file, path.extname(file));
+    const data = Object.assign({}, props.dummy, yaml.safeLoad(fs.readFileSync(file, 'utf8')));
     return (<div key={name}>
       <h5 style={{ textTransform: 'capitalize' }}>{name}</h5>
       <LandingList {...data} />
@@ -43,29 +48,36 @@ const LandingLists = (props) => {
   </div>);
 };
 
-const Styleguide = (props) => {
-  return (
-    <Default {...props}>
-      <ul className="toc">
-        <li><a href="#typography">Typography</a></li>
-        <li><a href="#metadata">Metadata</a></li>
-        <li><a href="#buttons">Buttons</a></li>
-        <li><a href="#forms">Forms</a></li>
-        <li><a href="#cards">Cards</a></li>
-        <li><a href="#landing-lists">Landing Lists</a></li>
-      </ul>
-      <h4 id="typography">Typography</h4>
-      <Markdown contents={props.contents} />
-      <h4 id="metadata">Metadata</h4>
-      <h5>Date</h5>
-      <Date date="2015-12-25" />
-      <br />
-      <Date date="2015-1-2" />
-      <Cards {...props} />
-      <LandingLists {...props} />
-      <script src="/assets/bundle--styleguide.js"></script>
-    </Default>
-  );
+LandingLists.propTypes = {
+  dummy: React.PropTypes.object,
+};
+
+const Styleguide = (props) => (
+  <Default {...props}>
+    <ul className="toc">
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#metadata">Metadata</a></li>
+      <li><a href="#buttons">Buttons</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#cards">Cards</a></li>
+      <li><a href="#landing-lists">Landing Lists</a></li>
+    </ul>
+    <h4 id="typography">Typography</h4>
+    <Markdown contents={props.contents} />
+    <h4 id="metadata">Metadata</h4>
+    <h5>Date</h5>
+    <Date date="2015-12-25" />
+    <br />
+    <Date date="2015-1-2" />
+    <Cards {...props} />
+    <LandingLists {...props} />
+    <script src="/assets/bundle--styleguide.js"></script>
+  </Default>
+);
+
+Styleguide.propTypes = {
+  dummy: React.PropTypes.object,
+  contents: React.PropTypes.object,
 };
 
 module.exports = Styleguide;
