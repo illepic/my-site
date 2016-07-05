@@ -50,10 +50,10 @@ const BlogList = (props) => {
 BlogList.propTypes = {
   pagination: React.PropTypes.shape({
     files: React.PropTypes.array.isRequired,
-    previous: React.PropType.object,
-    next: React.PropType.object,
+    previous: React.PropTypes.object,
+    next: React.PropTypes.object,
   }),
-  contents: React.PropType.string.isRequired,
+  contents: React.PropTypes.object.isRequired,
 };
 
 module.exports = BlogList;

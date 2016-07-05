@@ -2,15 +2,15 @@ const config = require('../../config');
 const path = require('path');
 
 function imgSrc(imgPath) {
-  let relSrc = path.relative(config.paths.src, path.resolve(imgPath));
-  let relDest = path.join(config.paths.assets, relSrc);
+  const relSrc = path.relative(config.paths.src, path.resolve(imgPath));
+  const relDest = path.join(config.paths.assets, relSrc);
   return `/${path.relative(config.paths.dist, relDest)}`;
 }
 
 function srcSet(imgPath) {
-  let info = path.parse(imgPath);
+  const info = path.parse(imgPath);
   return config.imgSizes.map(size => {
-    let sizeInfo = {
+    const sizeInfo = {
       dir: info.dir,
       name: info.name + size.suffix,
       ext: info.ext,
@@ -32,9 +32,9 @@ function isPathAbsolute(myPath) {
 }
 
 module.exports = {
-  imgSrc: imgSrc,
-  srcSet: srcSet,
-  isPathRemote: isPathRemote,
-  isPathRootRelative: isPathRootRelative,
-  isPathAbsolute: isPathAbsolute,
+  imgSrc,
+  srcSet,
+  isPathRemote,
+  isPathRootRelative,
+  isPathAbsolute,
 };

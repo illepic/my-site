@@ -1,8 +1,7 @@
 const iframifyComponent = require('./iframifyComponents');
 
-document.addEventListener('fontsLoaded', function () {
-
-  let cards = [{
+document.addEventListener('fontsLoaded', () => {
+  const cards = [{
     selector: '.cards__full .card',
     sizes: ['400px'],
   }, {
@@ -10,5 +9,4 @@ document.addEventListener('fontsLoaded', function () {
     sizes: ['400px'],
   }];
   iframifyComponent(cards);
-
 });

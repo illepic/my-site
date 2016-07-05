@@ -12,4 +12,8 @@ const SiteNav = (props) => {
   );
 };
 
+SiteNav.propTypes = {
+  pages: React.PropTypes.arrayOf(React.PropTypes.object),
+};
+
 module.exports = SiteNav;

@@ -1,7 +1,7 @@
 const React = require('react');
 
 const SiteFooter = (props) => {
-  let items = props.collections.pages
+  const items = props.collections.pages
   .filter(item => item.nav === 'footer')
   .map(item => (<a href={item.path} key={item.path} className="footer-nav__link">{item.title}</a>));
   return (
@@ -11,6 +11,12 @@ const SiteFooter = (props) => {
       </nav>
     </footer>
   );
+};
+
+SiteFooter.propTypes = {
+  collections: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
 };
 
 module.exports = SiteFooter;
