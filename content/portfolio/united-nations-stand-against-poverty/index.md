@@ -13,10 +13,18 @@ services:
 tech:
     - Drupal CMS
 imgs:
-    - Home_Page-Guinness.jpg
-    - Home.jpg
-    - About.jpg
-    - Map.jpg
+    - 
+      src: Home_Page-Guinness.jpg
+      caption: The Home Page with World Record
+    - 
+      src: Home.jpg
+      caption: Home Page
+    - 
+      src: About.jpg
+      caption: About Page
+    - 
+      src: Map.jpg
+      caption: Map Page
 excerpt: "One of the biggest website projects I was ever on was one I was the Lead Front End Developer and Developer Manager."
 ---
 
