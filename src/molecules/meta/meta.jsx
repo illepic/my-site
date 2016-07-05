@@ -2,7 +2,7 @@ const React = require('react');
 const Date = require('../../atoms/date');
 const Tags = require('../../atoms/tags');
 
-const Meta = (props) => (<div className="meta">
+const Meta = (props) => (<div className={`meta ${props.className}`}>
   {props.date ? <Date date={props.date} /> : null}
   {props.tags ? <Tags tags={props.tags} /> : null}
 </div>);
@@ -10,6 +10,7 @@ const Meta = (props) => (<div className="meta">
 Meta.propTypes = {
   date: React.PropTypes.object,
   tags: React.PropTypes.array,
+  className: React.PropTypes.string,
 };
 
 module.exports = Meta;

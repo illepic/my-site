@@ -27,8 +27,10 @@ const Default = (props) => {
       {linkTags}
       <SiteHeader {...props} />
       <main className="site__main page">
-        {props.title ? (<h2 className="page__title">{props.title}</h2>) : ''}
-        <Meta {...props} />
+        <header className="page__header">
+          {props.title ? (<h2 className="page__title">{props.title}</h2>) : ''}
+          <Meta {...props} className="page__meta" />
+        </header>
         <article className="page__contents">
           {img}
           {contents}

@@ -1,0 +1,20 @@
+.site-header {
+  &__branding {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    width: 100px;
+    order: -1;
+  }
+  &__title {
+    @include h3();
+    margin-bottom: 0;
+    > a {
+      text-decoration: none;
+    }
+  }
+  &__nav {
+    
+  }
+}

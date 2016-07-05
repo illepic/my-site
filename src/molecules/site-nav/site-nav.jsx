@@ -6,7 +6,7 @@ const SiteNav = (props) => {
     // .sort((a, b) => a.weight - b.weight)
     .map(item => (<a href={item.path} key={item.path} className="site-nav__link">{item.title}</a>));
   return (
-    <nav className="site-nav">
+    <nav className="site-nav site-header__nav">
       {items}
     </nav>
   );

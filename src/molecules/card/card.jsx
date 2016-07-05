@@ -23,6 +23,10 @@ const Card = (props) => {
   );
 };
 
+Card.defaultProps = {
+  title: 'Default Title',
+};
+
 Card.propTypes = {
   featuredImage: React.PropTypes.string,
   path: React.PropTypes.string,
