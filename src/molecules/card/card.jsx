@@ -27,7 +27,7 @@ Card.propTypes = {
   featuredImage: React.PropTypes.string,
   path: React.PropTypes.string,
   title: React.PropTypes.string,
-  children: React.PropTypes.element,
+  children: React.PropTypes.node,
 };
 
 module.exports = Card;

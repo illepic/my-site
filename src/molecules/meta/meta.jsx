@@ -8,8 +8,8 @@ const Meta = (props) => (<div className="meta">
 </div>);
 
 Meta.propTypes = {
-  date: React.propTypes.object,
-  tags: React.propTypes.array,
+  date: React.PropTypes.object,
+  tags: React.PropTypes.array,
 };
 
 module.exports = Meta;

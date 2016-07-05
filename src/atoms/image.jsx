@@ -17,9 +17,9 @@ const Image = (props) => {
 };
 
 Image.propTypes = {
-  src: React.propTypes.string,
-  alt: React.propTypes.string,
-  sizes: React.propTypes.string,
+  src: React.PropTypes.string,
+  alt: React.PropTypes.string,
+  sizes: React.PropTypes.string,
 };
 
 module.exports = Image;
