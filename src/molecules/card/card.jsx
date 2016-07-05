@@ -6,7 +6,11 @@ const path = require('path');
 const Card = (props) => {
   let img;
   if (props.featuredImage) {
-    let myPath = (util.isPathRootRelative(props.featuredImage) || util.isPathRemote(props.featuredImage)) ? props.featuredImage : path.join(props.path, props.featuredImage);
+    let myPath = (
+      util.isPathRootRelative(props.featuredImage) ||
+      util.isPathRemote(props.featuredImage)
+    ) ? props.featuredImage
+      : path.join(props.path, props.featuredImage);
     img = <Image src={myPath} />;
   }
   return (
@@ -19,9 +23,11 @@ const Card = (props) => {
   );
 };
 
-Card.defaultProps = {
-  title: 'default title',
-  path: '#',
+Card.propTypes = {
+  featuredImage: React.PropTypes.string,
+  path: React.PropTypes.string,
+  title: React.PropTypes.string,
+  children: React.PropTypes.element,
 };
 
 module.exports = Card;

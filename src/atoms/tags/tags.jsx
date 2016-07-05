@@ -5,4 +5,8 @@ const Tags = (props) => {
   return (<div className="tags">{tags}</div>);
 };
 
+Tags.propTypes = {
+  tags: React.PropTypes.arrayOf(React.PropTypes.string),
+};
+
 module.exports = Tags;
