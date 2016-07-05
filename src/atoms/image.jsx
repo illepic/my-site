@@ -12,14 +12,14 @@ const Image = (props) => {
     src={src}
     srcSet={isRemotePath ? null : util.srcSet(src)}
     alt={alt}
-    sizes={props.sizes} // @todo change to `util.srcSet(props.sizes)`
+    sizes={props.sizes}
   />);
 };
 
 Image.propTypes = {
   src: React.propTypes.string,
   alt: React.propTypes.string,
-  sizes: React.propTypes.array,
+  sizes: React.propTypes.string,
 };
 
 module.exports = Image;
