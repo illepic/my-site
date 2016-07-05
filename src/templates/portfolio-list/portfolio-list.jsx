@@ -8,7 +8,6 @@ const Portfolio = (props) => (
     <Markdown contents={props.contents} />
     <section>
       <LandingList items={props.collections.portfolios} />
-
     </section>
   </Default>
 );

@@ -7,6 +7,7 @@ const Default = require('../default/default');
 const Date = require('../../atoms/date');
 const Markdown = require('../../global/markdown');
 const Card = require('../../molecules/card/card');
+const Tags = require('../../atoms/tags');
 const LandingList = require('../../organisms/landing-list/landing-list');
 
 const Cards = (props) => {
@@ -69,6 +70,9 @@ const Styleguide = (props) => (
     <Date date="2015-12-25" />
     <br />
     <Date date="2015-1-2" />
+    <h5>Tags</h5>
+    <Tags tags={['Tag 1', 'Tag 2']} />
+    <Tags title="Tags with Title" tags={['Tag A', 'Tag B']} />
     <Cards {...props} />
     <LandingLists {...props} />
     <script src="/assets/bundle--styleguide.js"></script>

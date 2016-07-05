@@ -1,4 +1,15 @@
 .tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: ms(1);
+  &__title {
+    margin-bottom: 0;
+    margin-right: ms(1);
+    &:after {
+      content: ':';
+    }
+  }
   &__tag {
     display: inline-block;
     border-radius: 3px;

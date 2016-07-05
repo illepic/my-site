@@ -153,6 +153,9 @@ const ms = metalsmith
             case 'posts':
               template = 'blog-post';
               break;
+            case 'portfolios':
+              template = 'portfolio-item';
+              break;
           }
         });
       }
