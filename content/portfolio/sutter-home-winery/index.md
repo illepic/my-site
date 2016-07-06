@@ -3,10 +3,17 @@ title: Sutter Home Winery
 featured: true
 weight: 3
 imgs:
-    - phone-tablet.jpg
-    - Landing-Page.png
-    - Full-Node-Page.png
-    - Listing-Page.png
+    - 
+      src: phone-tablet.jpg
+    - 
+      src: Landing-Page.png
+      caption: Landing Page
+    - 
+      src: Full-Node-Page.png
+      caption: Full Node
+    - 
+      src: Listing-Page.png
+      caption: Listing Page
 features:
     - Custom Content
 services:

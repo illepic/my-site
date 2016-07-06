@@ -16,8 +16,12 @@ tech:
     - Icon Fonts
     - Retina Graphics
 imgs:
-    - home--full.jpg
-    - home--full--mobile.jpg
+    - 
+      src: home--full.jpg
+      caption: Home Page
+    - 
+      src: home--full--mobile.jpg
+      caption: Home Page Mobile
 excerpt: "Aspirations in Computing is a talent development initiative designed to increase female participation in technology careers by providing encouragement, visibility, community, leadership opportunities, scholarships, and internships to aspiring technically inclined young women."
 live-site-url: https://www.aspirations.org/
 ---

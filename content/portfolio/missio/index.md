@@ -10,8 +10,12 @@ services:
 tech:
     - Drupal CMS
 imgs:
-    - home.png
-    - store.png
+    - 
+      src: home.png
+      caption: Home Page
+    - 
+      src: store.png
+      caption: Store Page
 excerpt: "A stylish site showing off the written works of an author."
 ---
 This site bundles a store front (links off to a 3rd party store), training sections, video galleries, profiles, and blogs. All the content is managed by the user via easy to use edit buttons throughout the site. The design was prepared by another designer and moved from a Photoshop PSD to CSS/jQuery theme in Drupal.

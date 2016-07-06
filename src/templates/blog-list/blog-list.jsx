@@ -5,7 +5,7 @@ const Markdown = require('../../global/markdown');
 const Meta = require('../../molecules/meta');
 
 const BlogList = (props) => {
-  let blogList = props.pagination.files.map(post => (
+  const blogList = props.pagination.files.map(post => (
     <Card
       {...post}
       path={(post.title_url ? post.title_url : post.path)}
