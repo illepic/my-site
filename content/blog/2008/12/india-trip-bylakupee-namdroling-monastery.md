@@ -7,31 +7,7 @@ tags:
 status: publish
 type: post
 published: true
-img: /photos/india/Bylakupee-Namdroling-Monastery-05.jpg
-imgs:
-  - 01.jpg
-  - 03.jpg
-  - 05.jpg
-  - 06.jpg
-  - 07.jpg
-  - 08.jpg
-  - 09.jpg
-  - 10.jpg
-  - 12.jpg
-  - 13.jpg
-  - 15.jpg
-  - 18.jpg
-  - 20.jpg
-  - 24.jpg
-  - 29.jpg
-  - 33.jpg
-  - 34.jpg
-  - 36.jpg
-  - 37.jpg
-  - 46.jpg
-  - 49.jpg
-  - 50.jpg
-  - 52.jpg
+#img: /photos/india/Bylakupee-Namdroling-Monastery-05.jpg
 redirect_from: /ashtanga-vinyasa-yoga/india-trip-bylakupee-namdroling-monastery/
 meta:
   dsq_thread_id: '1024172254'
