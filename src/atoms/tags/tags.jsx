@@ -2,10 +2,10 @@ const React = require('react');
 
 const Tags = (props) => {
   let tags = props.tags.map(tag => <span className="tags__tag" key={tag}>{tag}</span>);
-  return (<div className="tags">
+  return (<span className="tags">
     {props.title ? (<h6 className="tags__title">{props.title}</h6>) : null}
     {tags}
-  </div>);
+  </span>);
 };
 
 Tags.propTypes = {

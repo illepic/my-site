@@ -1,5 +1,5 @@
 .tags {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: ms(1);
@@ -11,13 +11,14 @@
     }
   }
   &__tag {
+    //@include depth(10);
     display: inline-block;
     border-radius: 3px;
     border: solid 1px $c-gray--darker;
     padding: 0 ms(0);
-    height: ms(5);
-    border-radius: (ms(5) / 2);
-    line-height: ms(5);
+    height: ms(4);
+    border-radius: (ms(4) / 2);
+    line-height: ms(4);
     font-size: ms(2);
     margin-right: ms(0);
   }

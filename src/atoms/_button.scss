@@ -1,15 +1,18 @@
 .button {
+  @include depth(15);
   font-family: $ff--sans-serif;
   border-radius: ms(-4);
   display: inline-block;
-  border-style: solid;
-  border-width: 1px;
-  padding: ms(-5);
+  //border-style: solid;
+  //border-width: 1px;
+  padding: ms(-5) ms(0);
   margin: 0 ms(1) ms(1) 0;
   text-decoration: none;
   .theme--light & {
     color: $c-gray--darker;
-    background: $c-gray--lighter;
+    //background: $c-orange--light;
+    background: transparent;
+    //color: white;
     border-color: $c-border;
   }
   &--primary {
