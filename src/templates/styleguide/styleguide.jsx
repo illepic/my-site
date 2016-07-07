@@ -73,6 +73,15 @@ const Styleguide = (props) => (
     <h5>Tags</h5>
     <Tags tags={['Tag 1', 'Tag 2']} />
     <Tags title="Tags with Title" tags={['Tag A', 'Tag B']} />
+    <h5>Depth</h5>
+    <div className="sg-depth">
+      <div className="sg-depth__item"></div>
+      <div className="sg-depth__item"></div>
+      <div className="sg-depth__item"></div>
+      <div className="sg-depth__item"></div>
+      <div className="sg-depth__item"></div>
+      <div className="sg-depth__item"></div>
+    </div>
     <Cards {...props} />
     <LandingLists {...props} />
     <script src="/assets/bundle--styleguide.js"></script>

@@ -1,8 +1,9 @@
 .card {
+  @include depth(10);
   width: 100%;
   font-size: 1.1rem;
-  border: solid 1px $c-border;
-  border-radius: ms(1);
+  border-radius: ms(0);
   padding: ms(1);
-  margin-bottom: ms(1);
+  margin-bottom: ms(3);
+  background: white;
 }

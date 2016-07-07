@@ -20,7 +20,7 @@ const BlogList = (props) => {
   return (
     <Default {...props} title="Blog">
       <Markdown contents={props.contents} />
-      <section>
+      <section className="blog-list">
         {blogList}
       </section>
       <hr />
