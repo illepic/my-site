@@ -5,4 +5,10 @@
   &__link {
     margin-right: ms(1);
   }
+  .site-header__nav-visible:checked + & {
+    
+  }
+  @media #{$bp--medium} {
+    flex-direction: column;
+  }
 }

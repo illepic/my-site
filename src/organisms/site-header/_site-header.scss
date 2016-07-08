@@ -1,20 +1,26 @@
 .site-header {
+  @include depth(30);
+  padding: ms(1);
+  background: white;
   &__branding {
     display: flex;
     align-items: center;
   }
   &__logo {
-    width: 100px;
+    width: 50px;
     order: -1;
+    margin-right: ms(1);
   }
   &__title {
-    @include h3();
+    @include h5();
     margin-bottom: 0;
     > a {
       text-decoration: none;
     }
   }
-  &__nav {
-    
+  &__nav-toggle {
+    @media #{$bp--small} {
+      @include hidden();
+    }
   }
 }
