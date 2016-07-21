@@ -75,6 +75,8 @@ each(fileList, (file, done) => {
   fs.readFile(join(config.paths.content, file), (err, data) => {
     // get path info and build new path in `dist` that ends in `.json`
     const pathData = path.parse(file);
+    // first folder name - i.e. `notes`, `utilities`, etc
+    const sectionName = pathData.dir.split('/')[0];
     const jsonFilePath = join(config.paths.dist, path.format({
       dir: pathData.dir,
       name: pathData.name,
@@ -92,26 +94,23 @@ each(fileList, (file, done) => {
     // adding path as root relative path
     fileData.path = `/${htmlFilePath}`;
     
-    // @todo add template data
-    // let template = '';
-    // if (fileData.template) {
-    //   template = fileData.template;
-    // } else if (fileData.collection && fileData.collection.length > 0) {
-    //   fileData.collection.forEach(item => {
-    //     switch (item) {
-    //       case 'posts':
-    //         template = 'blog-post';
-    //         break;
-    //       case 'portfolios':
-    //         template = 'portfolio-item';
-    //         break;
-    //     }
-    //   });
-    // } else {
-    //   template = 'default';
-    // }
-    //
-    // fileData.template = template.trim();
+    let template = '';
+    if (fileData.template) {
+      template = fileData.template;
+    } else {
+      switch (sectionName) {
+        case 'blog':
+          template = 'blog-post';
+          break;
+        case 'portfolio':
+          template = 'portfolio-item';
+          break;
+        default:
+          template = 'default';
+          break;
+      }
+    }
+    fileData.template = template.trim();
     
     // add original markdown to data
     // fileData.markdown = pathData.ext === '.md' ? x.content : false;
@@ -137,7 +136,6 @@ each(fileList, (file, done) => {
     
     if (pathData.dir.split('/').length > 1) {
       // if section (parent folder) is listed, add to it's data collection
-      const sectionName = pathData.dir.split('/')[0];
       if (sections.some(x => x === sectionName)) {
         let x = Object.assign({}, fileData);
         if (sectionName !== 'blog') {
