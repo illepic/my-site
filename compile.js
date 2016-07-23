@@ -6,11 +6,11 @@ const renderReact = require('./renderReact');
 
 if (process.argv[2]) {
   process.argv[2].split(',').forEach(file => {
-    console.log(`Compiling ${file}...`);
+    process.stdout.write(`Compiling ${file}...`);
     renderReact.compilePage(file);
   });
 } else {
-  console.log('Compiling Site...');
+  process.stdout.write('Compiling Site...');
   renderReact.compileSite();
 }
-console.log('Done');
+console.log('Done.');

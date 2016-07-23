@@ -25,6 +25,7 @@ function buildAll(cb) {
   each(fileList, (file, done) => {
     // read each file in content
     fs.readFile(join(config.paths.content, file), (err, data) => {
+      if (err) throw err;
       // get path info and build new path in `dist` that ends in `.json`
       const pathData = path.parse(file);
       const fileDirectory = pathData.name === 'index' ? pathData.dir : join(pathData.dir, pathData.name);
@@ -38,6 +39,12 @@ function buildAll(cb) {
       const parsedData = fm(data.toString());
       let fileData = parsedData.data;
 
+      // don't add drafts in production builds
+      if (fileData.draft && process.env.NODE_ENV === 'production') {
+        done();
+        return;
+      }
+      
       // first folder name - i.e. `notes`, `utilities`, etc
       fileData.section = pathData.dir.split('/')[0];
       // if one level deep (i.e. `notes/index.json`) assume it's a landing page @todo improve
