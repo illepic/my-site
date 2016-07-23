@@ -4,9 +4,10 @@ const config = require('./config');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
+const join = path.join;
+const through = require('through2');
 const del = require('del');
 const exec = require('child_process').exec;
-const ms = require('./metalsmith.js');
 const each = require('async').each;
 const imageResize = require('gulp-image-resize');
 const rename = require('gulp-rename');
@@ -16,6 +17,7 @@ const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const linkChecker = require('broken-link-checker');
 const eslint = require('gulp-eslint');
+const buildJson = require('./buildJson');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 const tasks = {
@@ -91,18 +93,18 @@ gulp.task('clean', (done) => {
   });
 });
 
-gulp.task('ms', (done) => {
-  sh('node metalsmith-cli.js', false, done);
+gulp.task('json', (done) => {
+  buildJson.buildAll(done);
+});
+
+gulp.task('html', ['json'], () => {
+  sh('node compile.js', false, reload);
 });
 
 gulp.task('watch:content', () => {
   gulp.watch([
-    path.join(config.paths.content, '**/*.{md,html,png,jpg,jpeg}'),
-    './metalsmith.js'
-  ], event => {
-    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running tasks...');
-    ms.buildIt(reload);
-  });
+    path.join(config.paths.content, '**/*.{md,html}')
+  ], ['html']);
 });
 
 gulp.task('watch:templates', () => {
@@ -111,12 +113,12 @@ gulp.task('watch:templates', () => {
     path.join(config.paths.src, '0-base/util.js'),
     path.join(config.paths.src, 'layouts/site/site.js')
   ], event => {
-    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running Metalsmith...');
-    sh('node metalsmith-cli.js', false, reload);
+    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', compiling...');
+    sh('node compile.js', false, reload);
   });
 });
 
-tasks.compile.push('ms');
+tasks.compile.push('html');
 tasks.default.push('watch:content');
 tasks.default.push('watch:templates');
 
@@ -185,7 +187,8 @@ function eslintStream(stream) {
 
 gulp.task('validate:js', () => {
   return eslintStream(gulp.src([
-    path.join(config.paths.src, '**/*.{js,jsx}')
+    path.join(config.paths.src, '**/*.{js,jsx}'),
+    './*.{js,jsx}'
   ]))
   .pipe(eslint.failAfterError());
 });

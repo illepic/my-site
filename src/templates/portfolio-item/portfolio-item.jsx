@@ -16,7 +16,7 @@ const PortfolioItem = (props) => {
   );
 };
 PortfolioItem.propTypes = {
-  contents: React.PropTypes.object,
+  contents: React.PropTypes.string,
   features: React.PropTypes.array,
   services: React.PropTypes.array,
   tech: React.PropTypes.array,

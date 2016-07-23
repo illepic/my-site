@@ -8,7 +8,7 @@ const Meta = (props) => (<div className={`meta ${props.className || ''}`}>
 </div>);
 
 Meta.propTypes = {
-  date: React.PropTypes.object,
+  date: React.PropTypes.string,
   tags: React.PropTypes.array,
   className: React.PropTypes.string,
 };

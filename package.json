@@ -59,11 +59,15 @@
     "yo": "^1.8.4"
   },
   "dependencies": {
+    "babel-loader": "^6.2.4",
     "del": "^2.2.0",
+    "fs-extra": "^0.30.0",
     "glob": "^7.0.3",
+    "gray-matter": "^2.0.2",
     "gulp": "^3.9.1",
     "gulp-help": "^1.6.1",
     "js-yaml": "^3.5.5",
+    "marked": "^0.3.5",
     "metalsmith-logger": "0.0.3",
     "metalsmith-pagination": "^1.4.0",
     "metalsmith-permalinks": "^0.5.0",
@@ -72,6 +76,7 @@
     "normalize.scss": "^0.1.0",
     "p2-theme-core": "^8.0.0",
     "typeset": "^0.2.2",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "whatwg-fetch": "^1.0.0"
   }
 }

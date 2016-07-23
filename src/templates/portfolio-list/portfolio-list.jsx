@@ -7,15 +7,15 @@ const Portfolio = (props) => (
   <Default {...props}>
     <Markdown contents={props.contents} />
     <section>
-      <LandingList items={props.collections.portfolios} />
+      <LandingList items={props.site.pages.filter(page => page.section === 'portfolio')} />
     </section>
   </Default>
 );
 
 Portfolio.propTypes = {
-  contents: React.PropTypes.object,
-  collections: React.PropTypes.shape({
-    portfolios: React.PropTypes.array,
+  contents: React.PropTypes.string,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
   }),
 };
 
