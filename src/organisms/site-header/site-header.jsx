@@ -15,7 +15,7 @@ const SiteHeader = (props) => (
     </div>
     <label htmlFor="site-nav-toggle" className="site-header__nav-toggle">Menu</label>
     <input type="checkbox" id="site-nav-toggle" className="site-header__nav-visible hidden" />
-    <SiteNav pages={props.collections.pages} />
+    <SiteNav pages={props.site.pages} />
   </header>
 );
 

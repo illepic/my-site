@@ -14,7 +14,7 @@ const Home = (props) => (
 );
 
 Home.propTypes = {
-  contents: React.PropTypes.object.isRequired,
+  contents: React.PropTypes.string.isRequired,
 };
 
 module.exports = Home;

@@ -13,7 +13,7 @@ const config = require('./config'),
 const globalData = {
   description: "Evan's Site",
   title: "Evan Lovely's Site",
-  bodyClasses: ["theme--light"],
+  bodyClasses: ['theme--light'],
   pages: [],
 };
 
@@ -21,53 +21,10 @@ const fileList = glob.sync('**/*.{md,html}', {
   cwd: config.paths.content
 });
 
-const sections = [
-  'notes',
-  'articles',
-  'utilities',
-  'portfolio',
-  'blog',
-];
-
-let sectionData = {
-  all: {
-    data: []
-  },
-  notes: {
-    data: []
-  },
-  articles: {
-    data: []
-  },
-  utilities: {
-    data: []
-  },
-  portfolio: {
-    data: []
-  },
-  blog: {
-    data: []
-  },
-};
-
 function allDone() {
-  // sections.forEach(section => console.log(section, sectionData[section].data.length));
   fs.mkdirsSync(join(config.paths.assets, 'data/'));
   fs.writeFileSync(join(config.paths.assets, 'data/', 'global.json'), JSON.stringify(globalData, null, '  '));
-  each(Object.keys(sectionData), (section, done) => {
-    if (section === 'blog') {
-      sectionData[section].data.sort((a, b) => new Date(b.date) - new Date(a.date));
-    } else if (section !== 'all') {
-      sectionData[section].data.sort((a, b) => a.weight < b.weight);
-    }
-    fs.writeFile(
-      join(config.paths.assets, 'data/', `section--${section}.json`),
-      JSON.stringify(sectionData[section], null, '  '
-    ), err => {
-      if (err) throw err;
-      done();
-    });
-  }, console.log('all done'));
+  console.log(`Created JSON files for ${globalData.pages.length} pages.`);
 }
 
 each(fileList, (file, done) => {
@@ -75,30 +32,35 @@ each(fileList, (file, done) => {
   fs.readFile(join(config.paths.content, file), (err, data) => {
     // get path info and build new path in `dist` that ends in `.json`
     const pathData = path.parse(file);
-    // first folder name - i.e. `notes`, `utilities`, etc
-    const sectionName = pathData.dir.split('/')[0];
+    const fileDirectory = pathData.name === 'index' ? pathData.dir : join(pathData.dir, pathData.name);
     const jsonFilePath = join(config.paths.dist, path.format({
-      dir: pathData.dir,
-      name: pathData.name,
+      dir: fileDirectory,
+      name: 'index',
       ext: '.json' // renaming `{.html,.md}` => `.json`
     }));
-    const htmlFilePath = path.format({
-      dir: pathData.dir,
-      name: pathData.name,
-      ext: '.html' // renaming `{.html,.md}` => `.html`
-    });
 
     // parse yaml front matter contents into data 
     const parsedData = fm(data.toString());
     let fileData = parsedData.data;
+    
+    // first folder name - i.e. `notes`, `utilities`, etc
+    fileData.section = pathData.dir.split('/')[0];
+    // if one level deep (i.e. `notes/index.json`) assume it's a landing page @todo improve
+    if (pathData.dir.split('/').length === 1) {
+      fileData.landingPage = true;
+    }
+    if (fileData.section !== 'blog') {
+      fileData.weight = fileData.weight || 5;
+    }
+    
     // adding path as root relative path
-    fileData.path = `/${htmlFilePath}`;
+    fileData.path = `/${fileDirectory}`;
     
     let template = '';
     if (fileData.template) {
       template = fileData.template;
     } else {
-      switch (sectionName) {
+      switch (fileData.section) {
         case 'blog':
           template = 'blog-post';
           break;
@@ -132,23 +94,8 @@ each(fileList, (file, done) => {
     fileData.excerpt = fileData.excerpt || $('p').first().html();
     
     // add file to all data before adding content
-    sectionData.all.data.push(Object.assign({}, fileData));
+    globalData.pages.push(Object.assign({}, fileData));
     
-    if (pathData.dir.split('/').length > 1) {
-      // if section (parent folder) is listed, add to it's data collection
-      if (sections.some(x => x === sectionName)) {
-        let x = Object.assign({}, fileData);
-        if (sectionName !== 'blog') {
-          x.weight = x.weight || 5;
-        }
-        sectionData[sectionName].data.push(x);
-      }
-    } else {
-      if (pathData.name === 'index') {
-        globalData.pages.push(Object.assign({}, fileData));
-      }
-    }
-
     // adding html contents
     fileData.contents = $.html();
 

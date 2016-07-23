@@ -7,15 +7,15 @@ const Utilities = (props) => (
   <Default {...props}>
     <Markdown contents={props.contents} />
     <section>
-      <LandingList items={props.collections.utilities} />
+      <LandingList items={props.site.pages.filter(page => page.section === 'utilities')} />
     </section>
   </Default>
 );
 
 Utilities.propTypes = {
-  contents: React.PropTypes.object,
-  collections: React.PropTypes.shape({
-    utilities: React.PropTypes.array,
+  contents: React.PropTypes.string,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
   }),
 };
 

@@ -7,15 +7,15 @@ const Articles = (props) => (
   <Default {...props}>
     <Markdown contents={props.contents} />
     <section>
-      <LandingList items={props.collections.articles} />
+      <LandingList items={props.site.pages.filter(page => page.section === 'articles')} />
     </section>
   </Default>
 );
 
 Articles.propTypes = {
-  contents: React.PropTypes.object,
-  collections: React.PropTypes.shape({
-    articles: React.PropTypes.array,
+  contents: React.PropTypes.string,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
   }),
 };
 

@@ -90,7 +90,7 @@ const Styleguide = (props) => (
 
 Styleguide.propTypes = {
   dummy: React.PropTypes.object,
-  contents: React.PropTypes.object,
+  contents: React.PropTypes.string,
 };
 
 module.exports = Styleguide;

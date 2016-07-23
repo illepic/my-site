@@ -5,7 +5,10 @@ const Markdown = require('../../global/markdown');
 const Meta = require('../../molecules/meta');
 
 const BlogList = (props) => {
-  const blogList = props.pagination.files.map(post => (
+  const blogList = props.site.pages
+  .filter(page => page.section === 'blog' && !page.landingPage)
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .map(post => (
     <Card
       {...post}
       path={(post.title_url ? post.title_url : post.path)}
@@ -23,29 +26,30 @@ const BlogList = (props) => {
       <section className="blog-list">
         {blogList}
       </section>
-      <hr />
-      <nav className="pager">
-        {props.pagination.previous ?
-          (<a
-            href={`/${props.pagination.previous.path.replace('index.html', '')}`}
-            className="pager__link pager__link--prev button"
-          >
-            Previous
-          </a>)
-          : null}
-        {props.pagination.next ?
-          (<a
-            href={`/${props.pagination.next.path.replace('index.html', '')}`}
-            className="pager__link pager__link--next button"
-          >
-            Next
-          </a>)
-          : null}
-      </nav>
-
     </Default>
   );
 };
+
+/*
+<nav className="pager">
+  {props.pagination.previous ?
+    (<a
+      href={`/${props.pagination.previous.path.replace('index.html', '')}`}
+      className="pager__link pager__link--prev button"
+    >
+      Previous
+    </a>)
+    : null}
+  {props.pagination.next ?
+    (<a
+      href={`/${props.pagination.next.path.replace('index.html', '')}`}
+      className="pager__link pager__link--next button"
+    >
+      Next
+    </a>)
+    : null}
+</nav>
+*/
 
 BlogList.propTypes = {
   pagination: React.PropTypes.shape({
@@ -53,7 +57,7 @@ BlogList.propTypes = {
     previous: React.PropTypes.object,
     next: React.PropTypes.object,
   }),
-  contents: React.PropTypes.object.isRequired,
+  contents: React.PropTypes.string.isRequired,
 };
 
 module.exports = BlogList;

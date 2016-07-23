@@ -51,7 +51,7 @@ Default.defaultProps = {
 };
 
 Default.propTypes = {
-  contents: React.PropTypes.object.isRequired,
+  contents: React.PropTypes.string.isRequired,
   children: React.PropTypes.node,
   featuredImage: React.PropTypes.string,
   path: React.PropTypes.string,

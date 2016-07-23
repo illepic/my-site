@@ -31,7 +31,7 @@ const BlogPost = (props) => {
 BlogPost.propTypes = {
   previous: React.PropTypes.object,
   next: React.PropTypes.object,
-  contents: React.PropTypes.object.isRequired,
+  contents: React.PropTypes.string.isRequired,
 };
 
 module.exports = BlogPost;
