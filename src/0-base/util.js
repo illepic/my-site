@@ -31,10 +31,23 @@ function isPathAbsolute(myPath) {
   return myPath.startsWith('/Users');
 }
 
+function getJsonData(cb) {
+  const pathname = window.location.pathname;
+  if (pathname.endsWith('/')) {
+    const jsonPath = `${pathname}index.json`;
+    fetch(jsonPath).then(res => res.json()).then(json => {
+      cb(null, json);
+    });
+  } else {
+    cb('no page data');
+  }
+}
+
 module.exports = {
   imgSrc,
   srcSet,
   isPathRemote,
   isPathRootRelative,
   isPathAbsolute,
+  getJsonData,
 };

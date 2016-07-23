@@ -28,7 +28,7 @@ module.exports = props => `<!doctype html>
   </script>
 </head>
 <body class="${props.site.bodyClasses.join(' ')}" data-template="${props.template}">
-  ${props.renderedPage}
+  <div id="app">${props.renderedPage}</div>
   <script>
     function loadStyleSheet(src){
       if (document.createStyleSheet) document.createStyleSheet(src);
@@ -59,6 +59,7 @@ module.exports = props => `<!doctype html>
     >
   </noscript>
   <script src="/assets/bundle--main.js"></script>
+  <script src="/assets/bundle--search.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
