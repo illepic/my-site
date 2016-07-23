@@ -5,8 +5,10 @@ require('babel-register')({
 const renderReact = require('./renderReact');
 
 if (process.argv[2]) {
-  console.log(`Compiling ${process.argv[2]}...`);
-  renderReact.compilePage(process.argv[2]);
+  process.argv[2].split(',').forEach(file => {
+    console.log(`Compiling ${file}...`);
+    renderReact.compilePage(file);
+  });
 } else {
   console.log('Compiling Site...');
   renderReact.compileSite();
