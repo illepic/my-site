@@ -5,15 +5,12 @@ const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 const join = path.join;
-const through = require('through2');
-const del = require('del');
 const exec = require('child_process').exec;
 const each = require('async').each;
 const imageResize = require('gulp-image-resize');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
-const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const linkChecker = require('broken-link-checker');
 const eslint = require('gulp-eslint');
@@ -87,18 +84,15 @@ function reload() {
   sh(`./node_modules/.bin/browser-sync reload --port=${themeConfig.browserSync.port}`, false); 
 }
 
-gulp.task('clean', (done) => {
-  del([config.paths.dist]).then(() => {
-    done();  
-  });
-});
-
 gulp.task('json', (done) => {
   buildJson.buildAll(done);
 });
 
-gulp.task('html', ['json'], () => {
-  sh('node compile.js', false, reload);
+gulp.task('html', ['json'], (done) => {
+  sh('node compile.js', false, function() {
+    reload();
+    done();
+  });
 });
 
 gulp.task('watch:content', () => {
