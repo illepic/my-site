@@ -128,17 +128,22 @@ gulp.task('img:content', (allDone) => {
     progressive: true,
     use: [pngquant()]
   };
+  // just move the originals unchanged
+  imgFiles.pipe(gulp.dest(config.paths.dist));
   
-  each(config.imgSizes, (size, done) => {
-    imgFiles
-      .pipe(changed(config.paths.dist))
-      .pipe(imageResize({width: size.width}))
-      // only do time-intensive minification on prod build
-      .pipe(gulpif(process.env.NODE_ENV === 'production', imagemin(imageminSettings)))
-      .pipe(rename({suffix: size.suffix}))
-      .pipe(gulp.dest(config.paths.dist))
-      .on('end', done);
-  }, allDone);
+  if (process.env.NODE_ENV === 'production') {
+    each(config.imgSizes, (size, done) => {
+      imgFiles
+        .pipe(changed(config.paths.dist))
+        .pipe(imageResize({width: size.width}))
+        .pipe(imagemin(imageminSettings))
+        .pipe(rename({suffix: size.suffix}))
+        .pipe(gulp.dest(config.paths.dist))
+        .on('end', done);
+    }, allDone);
+  } else {
+    allDone();
+  }
   
 });
 
@@ -157,16 +162,19 @@ gulp.task('img:src', (allDone) => {
   // just move the originals unchanged
   imgFiles.pipe(gulp.dest(config.paths.assets));
   
-  each(config.imgSizes, (size, done) => {
-    imgFiles
-      .pipe(changed(config.paths.assets))
-      .pipe(imageResize({width: size.width}))
-      // only do time-intensive minification on prod build
-      .pipe(gulpif(process.env.NODE_ENV === 'production', imagemin(imageminSettings)))
-      .pipe(rename({suffix: size.suffix}))
-      .pipe(gulp.dest(config.paths.assets))
-      .on('end', done);
-  }, allDone);
+  if (process.env.NODE_ENV === 'production') {
+    each(config.imgSizes, (size, done) => {
+      imgFiles
+        .pipe(changed(config.paths.assets))
+        .pipe(imageResize({width: size.width}))
+        .pipe(imagemin(imageminSettings))
+        .pipe(rename({suffix: size.suffix}))
+        .pipe(gulp.dest(config.paths.assets))
+        .on('end', done);
+    }, allDone);
+  } else {
+    allDone();
+  }
 });
 
 gulp.task('watch:img:src', () => {
@@ -174,6 +182,8 @@ gulp.task('watch:img:src', () => {
     path.join(config.paths.src, '**/*.{jpg,jpeg,png}')
   ], ['img:src']);
 });
+
+gulp.task('img', ['img:content', 'img:src']);
 
 tasks.compile.push('img:content');
 tasks.compile.push('img:src');

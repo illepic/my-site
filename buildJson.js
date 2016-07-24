@@ -80,13 +80,15 @@ function buildAll(cb) {
 
       const $ = cheerio.load(html);
 
-      // add `srcset` to `<img>`s
-      $('img').each(function () {
-        let $this = $(this);
-        let src = $this.attr('src');
-        $this.attr('srcset', util.srcSet(src));
-      });
-
+      if (process.env.NODE_ENV === 'production') {
+        // add `srcset` to `<img>`s
+        $('img').each(function () {
+          let $this = $(this);
+          let src = $this.attr('src');
+          $this.attr('srcset', util.srcSet(src));
+        });
+      }
+      
       // if there's no `excerpt` declared, grab first paragraph
       // @todo when first line is image, `$('p').first().html()` return `<img>`
       fileData.excerpt = fileData.excerpt || $('p').first().html();
