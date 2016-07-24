@@ -11,7 +11,7 @@ const BlogList = (props) => {
   .map(post => (
     <Card
       {...post}
-      path={(post.title_url ? post.title_url : post.path)}
+      path={post.path}
       key={post.path}
     >
       <Meta {...post} />
