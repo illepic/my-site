@@ -75,6 +75,7 @@
     "nodemon": "^1.9.1",
     "normalize.scss": "^0.1.0",
     "p2-theme-core": "^8.0.0",
+    "rss": "^1.2.1",
     "typeset": "^0.2.2",
     "webpack": "^1.13.1",
     "whatwg-fetch": "^1.0.0"

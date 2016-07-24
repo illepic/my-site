@@ -14,11 +14,7 @@ const fileList = glob.sync('**/*.{md,html}', {
   cwd: config.paths.content
 });
 
-const globalData = {
-  description: "Evan's Site",
-  title: "Evan Lovely's Site",
-  bodyClasses: ['theme--light'],
-};
+const globalData = config.site;
 
 function buildAll(cb) {
   globalData.pages = [];

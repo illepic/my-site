@@ -207,6 +207,11 @@ gulp.task('watch:validate:js', () => {
 tasks.watch.push('watch:validate:js');
 tasks.validate.push('validate:js');
 
+gulp.task('rss', ['json'], (done) => {
+  require('./lib/buildRss')(done);
+});
+tasks.compile.push('rss');
+
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);
 gulp.task('validate', tasks.validate);
