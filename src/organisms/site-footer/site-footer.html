@@ -1,9 +1,0 @@
-<footer class="site__footer">
-  <nav class="footer-nav">
-    {% for item in collections.pages %}
-      {% if item.nav == "footer" %}
-        <a href="{{ item.path }}" class="footer-nav__link">{{ item.title }}</a>
-      {% endif %}
-    {% endfor %}
-  </nav>
-</footer>
