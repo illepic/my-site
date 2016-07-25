@@ -25,6 +25,7 @@ SiteHeader.propTypes = {
   }),
   site: React.PropTypes.shape({
     title: React.PropTypes.string,
+    pages: React.PropTypes.array,
   }),
 };
 

@@ -11,7 +11,7 @@ const BlogList = (props) => {
   .map(post => (
     <Card
       {...post}
-      path={(post.title_url ? post.title_url : post.path)}
+      path={post.path}
       key={post.path}
     >
       <Meta {...post} />
@@ -58,6 +58,9 @@ BlogList.propTypes = {
     next: React.PropTypes.object,
   }),
   contents: React.PropTypes.string.isRequired,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
 };
 
 module.exports = BlogList;
