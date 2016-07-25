@@ -52,18 +52,19 @@ body {
   }
   @media #{$bp--large} {
     &__header {
-      width: w(6);
+      width: w(4);
       margin-bottom: 0;
     }
     &__main {
       width: w(14);
-      margin-left: w(6);
+      margin-left: w(4);
     }
     &__sidebar--first {
       @include depth(30);
       padding: ms(1) ms(2);
-      width: w(4);
+      width: w(6);
       margin-left: 0;
+      margin-bottom: 0;
     }
   }
 }

@@ -7,8 +7,6 @@ tags:
 status: publish
 type: post
 published: true
-quote: Efficiency is doing things right; effectiveness is doing the right things.
-quote_author: Peter Drucker
 meta:
   _sd_is_markdown: '1'
   source_url: 'http://clearquot.es/d'
@@ -18,5 +16,4 @@ meta:
   _social_aggregation_log: 'a:10:{i:1360784325;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360787108;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360790509;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360794281;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360802374;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360816861;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360845994;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360889628;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360976907;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1361150043;O:8:"stdClass":1:{s:6:"manual";b:0;}}'
 date: 2013-02-13
 ---
-
-
+> Efficiency is doing things right; effectiveness is doing the right things. ~ [Peter Drucker](http://clearquot.es/d)

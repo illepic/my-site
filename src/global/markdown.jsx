@@ -2,8 +2,10 @@ const React = require('react');
 const typeset = require('typeset');
 
 const Markdown = (props) => {
-  const contents = (process.env.NODE_ENV === 'production') ? typeset(props.contents) : props.contents; 
-  return <div className="markdown" dangerouslySetInnerHTML={{ __html: contents }}></div>
+  const contents = (process.env.NODE_ENV === 'production')
+    ? typeset(props.contents)
+    : props.contents;
+  return <div className="markdown" dangerouslySetInnerHTML={{ __html: contents }}></div>;
 };
 
 Markdown.propTypes = {

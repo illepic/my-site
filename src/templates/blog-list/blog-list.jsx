@@ -8,12 +8,16 @@ const typeset = require('typeset');
 const BlogList = (props) => {
   const blogList = props.site.pages
   .filter(page => page.section === 'blog' && !page.landingPage)
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .map(post => { 
+  .map(post => {
     let contents = '';
     if (post.excerpt) {
-      const excerpt = (process.env.NODE_ENV === 'production') ? typeset(post.excerpt) : post.excerpt;
-      contents = (<div className="card__excerpt" dangerouslySetInnerHTML={{ __html: excerpt }}></div>);
+      const excerpt = (process.env.NODE_ENV === 'production')
+        ? typeset(post.excerpt)
+        : post.excerpt;
+      contents = (<div
+        className="card__excerpt"
+        dangerouslySetInnerHTML={{ __html: excerpt }}
+      ></div>);
     }
     return (<Card
       {...post}

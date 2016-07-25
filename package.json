@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "export NODE_ENV=development && npm run compile && webpack --watch & gulp",
-    "compile": "export NODE_ENV=development && npm run clean && webpack -d && gulp compile",
+    "compile": "export NODE_ENV=development && webpack -d && gulp compile",
     "compile:prod": "export NODE_ENV=production && webpack && gulp compile",
     "clean": "rm -rf dist",
     "new": "yo ./_templates/index.js",
