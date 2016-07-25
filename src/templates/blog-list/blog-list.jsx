@@ -58,6 +58,9 @@ BlogList.propTypes = {
     next: React.PropTypes.object,
   }),
   contents: React.PropTypes.string.isRequired,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
 };
 
 module.exports = BlogList;

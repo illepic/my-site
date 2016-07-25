@@ -1,23 +1,22 @@
-'use strict';
 module.exports = {
   paths: {
     content: './content',
     src: './src',
     dist: './dist',
-    assets: './dist/assets'
+    assets: './dist/assets',
   },
   imgSizes: [{
     width: 1200,
-    suffix: '--xlarge'
+    suffix: '--xlarge',
   }, {
     width: 960,
-    suffix: '--large'
+    suffix: '--large',
   }, {
     width: 700,
-    suffix: '--medium'
+    suffix: '--medium',
   }, {
     width: 450,
-    suffix: '--small'
+    suffix: '--small',
   }],
   site: {
     description: "Evan's Site",

@@ -12,6 +12,7 @@ Meta.propTypes = {
   date: React.PropTypes.string,
   tags: React.PropTypes.array,
   className: React.PropTypes.string,
+  draft: React.PropTypes.bool,
 };
 
 module.exports = Meta;
