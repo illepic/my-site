@@ -13,7 +13,7 @@ const pngquant = require('imagemin-pngquant');
 const changed = require('gulp-changed');
 const linkChecker = require('broken-link-checker');
 const eslint = require('gulp-eslint');
-const buildJson = require('./buildJson');
+const buildJson = require('./lib/buildJson');
 const buildRss = require('./lib/buildRss');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
@@ -81,7 +81,7 @@ gulp.task('json', (done) => {
 });
 
 gulp.task('html', ['json'], (done) => {
-  sh('node compile.js', false, () => {
+  sh('node lib/compile.js', false, () => {
     reload();
     done();
   });
@@ -100,7 +100,7 @@ gulp.task('watch:templates', () => {
     join(config.paths.src, 'layouts/site/site.js'),
   ], event => {
     console.log(`'${path.relative(process.cwd(), event.path)}' was ${event.type}, compiling...`);
-    sh('node compile.js', false, reload);
+    sh('node lib/compile.js', false, reload);
   });
 });
 

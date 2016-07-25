@@ -1,9 +1,9 @@
 const React = require('react');
 const render = require('react-dom/server').renderToString;
-const siteLayout = require('./src/layouts/site/site.js');
+const siteLayout = require('./../src/layouts/site/site.js');
 const typeset = require('typeset');
 const join = require('path').join;
-const config = require('./config');
+const config = require('./../config');
 const glob = require('glob');
 const fs = require('fs-extra');
 const globalData = fs.readJsonSync(join(config.paths.assets, 'data/global.json'));
