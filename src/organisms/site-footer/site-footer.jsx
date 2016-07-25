@@ -3,6 +3,7 @@ const React = require('react');
 const SiteFooter = (props) => {
   const items = props.site.pages
   .filter(item => item.nav === 'footer')
+  .sort((a, b) => a.weight > b.weight)
   .map(item => (<a href={item.path} key={item.path} className="footer-nav__link">{item.title}</a>));
   return (
     <footer className="site__footer">
