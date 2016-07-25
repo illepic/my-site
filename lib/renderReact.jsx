@@ -10,9 +10,7 @@ const globalData = fs.readJsonSync(join(config.paths.assets, 'data/global.json')
 
 function staticCompile(file, props = {}) {
   const Tpl = require(file); // eslint-disable-line global-require
-  return (process.env.NODE_ENV === 'production')
-    ? typeset(render(<Tpl {...props} />))
-    : render(<Tpl {...props} />);
+  return render(<Tpl {...props} />);
 }
 
 function compilePage(dataFilePath) {
