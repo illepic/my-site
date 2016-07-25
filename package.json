@@ -14,9 +14,10 @@
   "scripts": {
     "start": "export NODE_ENV=development && npm run compile && webpack --watch & gulp",
     "compile": "export NODE_ENV=development && npm run clean && webpack -d && gulp compile",
-    "compile:prod": "export NODE_ENV=production && npm run clean && webpack && gulp compile",
+    "compile:prod": "export NODE_ENV=production && webpack && gulp compile",
     "clean": "rm -rf dist",
     "new": "yo ./_templates/index.js",
+    "deploy:stage": "time rsync -azP --delete dist--prod/ evlove@evanlovely.com:/home/evlove/www/dev.evanlovely.com/public/",
     "test:links": "blc -ro http://localhost:3042",
     "test": "mocha tests/*.test.js"
   },

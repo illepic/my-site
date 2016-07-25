@@ -17,6 +17,11 @@ const buildJson = require('./lib/buildJson');
 const buildRss = require('./lib/buildRss');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
+if (process.env.NODE_ENV === 'production') {
+  themeConfig.css.dest = './dist--prod/assets';
+  themeConfig.browserSync.baseDir = './dist--prod';
+}
+
 const tasks = {
   compile: [],
   watch: [],

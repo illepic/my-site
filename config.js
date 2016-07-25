@@ -2,8 +2,8 @@ module.exports = {
   paths: {
     content: './content',
     src: './src',
-    dist: './dist',
-    assets: './dist/assets',
+    dist: (process.env.NODE_ENV === 'production') ? './dist--prod' : './dist',
+    assets: (process.env.NODE_ENV === 'production') ? './dist--prod/assets' : './dist/assets',
   },
   imgSizes: [{
     width: 1200,
