@@ -99,12 +99,16 @@ p {
 
 pre {
   font-family: $ff--mono;
-  border-radius: ms(1)
+  border-radius: ms(1);
+  white-space: pre-wrap;
   //font-size: 0.8em;
 }
 
 code {
   font-family: $ff--mono;
+  background: transparentize($c-gray--lightest, 0.2);
+  padding: 0 3px;
+  border-radius: 4px;
 }
 
 a {
