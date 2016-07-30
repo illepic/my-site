@@ -33,6 +33,13 @@ body {
       top: 0;
     }
   }
+  // don't fix header when height is small (i.e. landscape phones)
+  @media screen and (max-height: 500px) {
+    padding-top: 0;
+    &__header {
+      position: static;
+    }
+  }
   @media #{$bp--medium} {
     padding: 0;
     &__header {
