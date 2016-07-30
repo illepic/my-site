@@ -15,6 +15,7 @@ const linkChecker = require('broken-link-checker');
 const eslint = require('gulp-eslint');
 const buildJson = require('./lib/buildJson');
 const buildRss = require('./lib/buildRss');
+const buildRedirects = require('./lib/buildRedirects');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 if (process.env.NODE_ENV === 'production') {
@@ -56,7 +57,7 @@ gulp.task('test:links', (done) => {
 gulp.task('test:images', (done) => {
   const results = {};
   const l = new linkChecker.SiteChecker({
-    
+
   }, {
     link: (result) => {
       if (result.broken) {
@@ -119,7 +120,7 @@ gulp.task('watch:content', () => {
   gulp.watch([
     join(config.paths.content, '**/*.{md,html}'),
   ], ['html'])
-  .on('error', function (error) {
+  .on('error', error => {
     // silently catch 'ENOENT' error typically caused by renaming watched folders
     if (error.code === 'ENOENT') {
       return;
@@ -238,7 +239,15 @@ tasks.validate.push('validate:js');
 gulp.task('rss', ['json'], (done) => {
   buildRss(done);
 });
-tasks.compile.push('rss');
+
+gulp.task('redirects', ['json'], (done) => {
+  buildRedirects(done);
+});
+
+if (process.env.NODE_ENV === 'production') {
+  tasks.compile.push('rss');
+  tasks.compile.push('redirects');
+}
 
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);
