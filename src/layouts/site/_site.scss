@@ -63,15 +63,21 @@ body {
       margin-bottom: 0;
     }
     &__main {
-      width: w(14);
+      width: w(20);
       margin-left: w(4);
     }
-    &__sidebar--first {
-      @include depth(30);
-      padding: ms(1) ms(2);
-      width: w(6);
-      margin-left: 0;
-      margin-bottom: 0;
+    @media #{$bp--xxxlarge} {
+      &__main {
+        width: w(14);
+        margin-left: w(4);
+      }
+      &__sidebar--first {
+        @include depth(30);
+        padding: ms(1) ms(2);
+        width: w(6);
+        margin-left: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }
