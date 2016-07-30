@@ -6,7 +6,6 @@ const Meta = require('../../molecules/meta');
 const Image = require('../../atoms/image');
 const util = require('../../0-base/util');
 const path = require('path');
-const LinksCard = require('../../molecules/links-card');
 
 const Default = (props) => {
   let contents = (props.children ? props.children : <Markdown contents={props.contents} />);
@@ -23,21 +22,7 @@ const Default = (props) => {
     img = <Image src={myPath} />;
   }
 
-  let relatedPosts;
-  if (props.tags) {
-    const related = props.site.pages
-    .filter(page => page.tags && page.tags.some(
-      relatedTag => props.tags.some(
-        thisTag => thisTag === relatedTag)
-      )
-    );
-    relatedPosts = <LinksCard title="Related" links={related} />;
-  }
-
-  const recentBlogPosts = props.site.pages
-  .filter(page => page.section === 'blog' && !page.landingPage)
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .slice(0, 5);
+  
 
   return (
     <div className="site container">
@@ -54,16 +39,12 @@ const Default = (props) => {
         </article>
       </main>
 
-      <section className="site__sidebar site__sidebar--first sidebar">
-        {relatedPosts}
-        <LinksCard title="Recent Blog Posts" links={recentBlogPosts} />
-        <SiteFooter {...props} />
-      </section>
+      <SiteFooter {...props} />
 
     </div>
   );
 };
-
+ 
 Default.defaultProps = {
   subtitle: 'default subtitle',
 };
@@ -74,7 +55,6 @@ Default.propTypes = {
   featuredImage: React.PropTypes.string,
   path: React.PropTypes.string,
   title: React.PropTypes.string,
-  tags: React.PropTypes.array,
   css: React.PropTypes.arrayOf(React.PropTypes.string),
   site: React.PropTypes.shape({
     pages: React.PropTypes.array,

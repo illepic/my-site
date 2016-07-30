@@ -8,7 +8,7 @@ const LinksCard = (props) => {
     <span className="small"> {page.section}</span>
     <Meta {...page} />
   </li>);
-  return (<Card className="card--links" {...props}>
+  return (<Card {...props} className={`card--links ${props.className}`}>
     <ul>{relatedList}</ul>
   </Card>);
 };
