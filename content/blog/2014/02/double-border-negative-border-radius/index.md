@@ -22,4 +22,4 @@ Also, I know I definitely need to uses some Compass Mixins to keep that code tig
 [1]:	http://codepen.io/anon/pen/InDqa
 [2]:	http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/
 
-[image-1]:	/img/2014/02/double-border-broken-button.png
+[image-1]: double-border-broken-button.png

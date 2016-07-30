@@ -35,7 +35,7 @@ console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 gulp.task('test:links', (done) => {
   const results = {};
   const l = new linkChecker.SiteChecker({
-
+    excludeExternalLinks: true,
   }, {
     link: (result) => {
       if (result.broken) {
@@ -48,6 +48,29 @@ gulp.task('test:links', (done) => {
       const totalPages = Object.keys(results).length;
       console.log(`${totalPages} have broken links`);
       fs.writeFile('./reports/broken-links.json', JSON.stringify(results), done);
+    },
+  });
+  l.enqueue(`http://localhost:${themeConfig.browserSync.port}`);
+});
+
+gulp.task('test:images', (done) => {
+  const results = {};
+  const l = new linkChecker.SiteChecker({
+    
+  }, {
+    link: (result) => {
+      if (result.broken) {
+        const x = result.url.original;
+        if (x.endsWith('jpg') || x.endsWith('jpeg') || x.endsWith('png')) {
+          console.log(`${result.base.original} ~ ${result.url.original}`);
+          results[result.base.original] = result;
+        }
+      }
+    },
+    end: () => {
+      const totalPages = Object.keys(results).length;
+      console.log(`${totalPages} have broken links`);
+      fs.writeFile('./reports/broken-images.json', JSON.stringify(results), done);
     },
   });
   l.enqueue(`http://localhost:${themeConfig.browserSync.port}`);
@@ -95,7 +118,13 @@ gulp.task('html', ['json'], (done) => {
 gulp.task('watch:content', () => {
   gulp.watch([
     join(config.paths.content, '**/*.{md,html}'),
-  ], ['html']);
+  ], ['html'])
+  .on('error', function (error) {
+    // silently catch 'ENOENT' error typically caused by renaming watched folders
+    if (error.code === 'ENOENT') {
+      return;
+    }
+  });
 });
 
 gulp.task('watch:templates', () => {
