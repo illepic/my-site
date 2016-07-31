@@ -1,5 +1,7 @@
 ---
-title: Porting My Site to Jekyll and Sharing Knowledge with Public Notes over Blog Posts
+title: >-
+  Porting My Site to Jekyll and Sharing Knowledge with Public Notes over Blog
+  Posts
 type: post
 categories:
   - Technology
@@ -8,6 +10,8 @@ tags:
   - jekyll
   - web dev
 date: 2013-11-19
+redirect_from: >-
+  /blog/technology/porting-my-site-to-jekyll-knowledge-with-public-notes-over-blog-posts/
 ---
 I've ported this site to [Jekyll](http://jekyllrb.com/), the static site generator, after having it in WordPress for about a year after converting it from it's original platform, Drupal, which I do nearly all my [Front End Development & Theming](/portfolio) in. I initially moved to WordPress as I wanted a lower barrier towards publishing than Drupal; I had hoped that the plethora of apps and integration that the WordPress ecosystem provides would allow me to skip a web back-end interface when it came to something I wanted to quickly share that I discovered while working. 
 
@@ -32,4 +36,5 @@ Which brings me around to thoughts on blogging and publishing and how public not
 Instead, I would like my software suggestions to be a single page/note that I continously update and then announce the change with a blog post. So here's my note outlining [My Awesome Mac Setup](/notes/my-awesome-mac-setup) and a blog post announcing that I switched from using Divvy to using Moom that contains thoughts on why I switched and a Git Diff of the change to the Mac Setup Note.
 
 So that's what I hope for this recent change: to easily and frequently build a continuously improving set of information around certain favorite categories and announce those changes via my blog. I think people enjoy sites like that, such as [The Wirecutter](http://thewirecutter.com/) and the brand new [The Sweet Setup](http://thesweetsetup.com/). Also, the entire [source of this Jekyll website is viewable in a public GirHub repository](https://github.com/EvanLovely/my-jekyll-site) for any enquiring mind! **I'd love to hear any thoughts from you in the comments below!** Thanks for reading; have a great day!
+
 
