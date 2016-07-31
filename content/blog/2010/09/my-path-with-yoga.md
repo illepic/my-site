@@ -12,6 +12,7 @@ meta:
   _rawhtml_settings: '0,0,0,0'
   dsq_thread_id: '1024082797'
 date: 2010-09-15
+redirect_from: /blog/personal/my-path-with-yoga/
 ---
 I don't remember exactly what compelled me to walk into my first yoga studio sometime in February 2000 and sign up for my first Hatha class, but it is something I'll be eternally grateful for. I was hooked from the start, attending as much as I could. My tendency to share what I love with others I love lead to me bringing friend after friend down to the studio so they could experience how wonderful it made me feel. I brought so many friends with me to the studio that my teacher offered to teach a private free class to me and as many friends as I could bring one enjoyable night. I think we had a class of 12-15.
 
@@ -24,4 +25,5 @@ After college, my desire to teach still itched without it's accompanying scratch
 My weekly free Ashtanga Yoga Class started up in January 2008 and consisted of close friends who had already been through a few "living room classes" with me. It was personal, communal, and loved. So they all told their friends about this great feeling they had from this great class, and they brought a friend, who eventually brought another friend. Soon, we really were connected to the community. People I didn't know in town asked me if I was that guy with the free yoga class and when it was. Every day I was thankful to be making people's lives around me better by showing them this light. The class continued until August 2009, having never charged a single student.
 
 During the time of my free yoga class (Dec 2008-mid Jan 2009), I had the immense honor of traveling to India to practice yoga at it's originating school in Mysore. Every day (with the exceptions of Sundays &amp; Moon Days), we would have completed a sweaty, challenging, 2 hour Primary Series of Ashtanga Yoga before 7 am. I had the life-goal-accomplishing honor of meeting the guru of Ashtanga Yoga, K. Pattabhi Jois, and thanking him for Ashtanga Yoga, before he died 4 months later. After 2 weeks of the traditional practice, I went elsewhere to try other teachers and enjoy the rest of the country during my 6 total weeks there. The traditional form of Ashtanga Vinyasa Yoga continues to be my favorite style and is still challenging me while making me feel like I can accomplish anything as long as I continue to breath, stay steady, and take things one at a time.
+
 

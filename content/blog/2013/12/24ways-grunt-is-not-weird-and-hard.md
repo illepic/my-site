@@ -6,6 +6,7 @@ tags:
   - front-end-web-development
   - CSS
 date: 2013-12-11
+redirect_from: /blog/technology/24ways-grunt-is-not-weird-and-hard/
 ---
 > Front-end developers are often told to do certain things:
 > 
@@ -18,4 +19,5 @@ date: 2013-12-11
 > I bet you’ve heard of Grunt. Well, Grunt is a task runner. Grunt can do all of those things for you. Once you’ve got it set up, which isn’t particularly difficult, those things can happen automatically without you having to think about them again.
 > 
 > But let’s face it: Grunt is one of those fancy newfangled things that all the cool kids seem to be using but at first glance feels strange and intimidating. I hear you. This article is for you.
+
 

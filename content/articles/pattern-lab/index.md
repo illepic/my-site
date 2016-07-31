@@ -6,7 +6,7 @@ tags:
   - tech
   - pattern-lab
 excerpt: "Resources for working with Pattern Lab"
-
+redirect_from: /notes/pattern-lab
 ---
 
 # Tools & Utilities

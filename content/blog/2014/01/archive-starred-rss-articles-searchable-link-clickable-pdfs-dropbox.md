@@ -1,5 +1,7 @@
 ---
-title: 'Archive your Starred RSS articles to searchable, link-clickable PDFs on your Dropbox'
+title: >-
+  Archive your Starred RSS articles to searchable, link-clickable PDFs on your
+  Dropbox
 category: Technology
 tags:
   - Dropbox
@@ -7,6 +9,8 @@ tags:
   - utilities
   - reference
 date: 2014-01-02
+redirect_from: >-
+  /blog/technology/archive-starred-rss-articles-searchable-link-clickable-pdfs-dropbox/
 ---
 Summary: This will show you how you can simply "star" an article in your RSS feed-reader and then have it become automatically bookmarked on Pinboard, then turned into a searchable, link-clickable PDF on your Dropbox.
 
@@ -25,4 +29,5 @@ The amazing [Brett Terpstra has a tool to turn web-based Pinboard bookmarks into
 Now, get the RSS feed of your Starred articles; most services should offer this, I use Feed Wrangler. Then go and clone my [IFTTT RSS Starred to Pinboard action](https://ifttt.com/recipes/137671) and put in your own URL, which will make new Pinboard bookmarks and tag them with "pdfit" from an articles starred in your feed reader. Finally, test it!
 
 Hope this helps! Have a great day!
+
 
