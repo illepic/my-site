@@ -259,7 +259,7 @@ gulp.task('rss', ['json'], (done) => {
 });
 
 gulp.task('redirects', ['json'], (done) => {
-  buildRedirects(done);
+  buildRedirects.buildAll(done);
 });
 
 if (process.env.NODE_ENV === 'production') {
