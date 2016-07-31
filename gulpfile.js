@@ -205,6 +205,24 @@ gulp.task('watch:img:src', () => {
 
 gulp.task('img', ['img:content', 'img:src']);
 
+const miscFiles = [
+  join(config.paths.content, '**/*.*'),
+  `!${join(config.paths.content, '**/*.{jpg,jpeg,png,html,md}')}`,
+];
+
+gulp.task('misc', (done) => {
+  gulp.src(miscFiles)
+  .pipe(gulp.dest(config.paths.dist))
+  .on('end', done);
+});
+
+gulp.task('watch:misc', () => {
+  gulp.watch(miscFiles, ['misc']);
+});
+
+tasks.compile.push('misc');
+tasks.watch.push('watch:misc');
+
 tasks.compile.push('img:content');
 tasks.compile.push('img:src');
 tasks.watch.push('watch:img:src');
