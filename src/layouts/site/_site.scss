@@ -9,10 +9,9 @@ body {
 }
 
 .site {
-  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  //justify-content: space-between;
   padding-bottom: 120px;
   &__header {
     width: w(24);
@@ -21,9 +20,16 @@ body {
   }
   &__main {
     padding: 0 ms(2);
+    margin-bottom: ms(3);
+    &:after {
+      content: '';
+      display: block;
+      border-bottom: solid 1px $c-border;
+    }
   }
-  &__sidebar--first {
+  &__footer {
     padding: 0 ms(2);
+    width: 100%;
   }
   @media #{$bp--small} {
     padding-top: 100px;
@@ -31,6 +37,13 @@ body {
     &__header {
       bottom: auto;
       top: 0;
+    }
+  }
+  // don't fix header when height is small (i.e. landscape phones)
+  @media screen and (max-height: 500px) {
+    padding-top: 0;
+    &__header {
+      position: static;
     }
   }
   @media #{$bp--medium} {
@@ -44,7 +57,7 @@ body {
       width: w(16);
       margin-left: w(8);
     }
-    &__sidebar--first {
+    &__footer {
       margin-left: w(8);
       padding: 0 ms(3);
       margin-bottom: ms(2);
@@ -52,18 +65,30 @@ body {
   }
   @media #{$bp--large} {
     &__header {
-      width: w(6);
+      width: w(4);
       margin-bottom: 0;
     }
     &__main {
-      width: w(14);
-      margin-left: w(6);
+      width: w(20);
+      margin-left: w(4);
     }
-    &__sidebar--first {
-      @include depth(30);
-      padding: ms(1) ms(2);
-      width: w(4);
-      margin-left: 0;
+    &__footer {
+      margin-left: w(4);
+    }
+    // footer becomes sidebar
+    @media #{$bp--xxxlarge} {
+      min-height: 100vh;
+      &__main {
+        width: w(14);
+        margin-left: w(4);
+      }
+      &__footer {
+        @include depth(30);
+        padding: ms(1) ms(2);
+        width: w(6);
+        margin-left: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

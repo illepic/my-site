@@ -4,6 +4,7 @@ category: Technology
 tags:
   - CSS
   - Front End Web Development
+redirect_from: /blog/technology/double-border-negative-border-radius/
 date: 2014-02-19
 ---
 I'm working on a project and I get the designs for this button style and I am really happy how it all came together. At first I thought that a CodePen I came across talking about [double border buttons][1] would help, but it didn't ultimately. Then I came across the excellent [negative border radius example by Lea Verou][2] and it really helped, but it didn't address the double borders. 
@@ -22,4 +23,4 @@ Also, I know I definitely need to uses some Compass Mixins to keep that code tig
 [1]:	http://codepen.io/anon/pen/InDqa
 [2]:	http://lea.verou.me/2011/03/beveled-corners-negative-border-radius-with-css3-gradients/
 
-[image-1]:	/img/2014/02/double-border-broken-button.png
+[image-1]: double-border-broken-button.png

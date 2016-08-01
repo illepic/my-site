@@ -1,3 +1,14 @@
-$bp--small: 'screen and (min-width: 600px)';
-$bp--medium: 'screen and (min-width: 900px)';
-$bp--large: 'screen and (min-width: 1200px)';
+$width--small: 600px;
+$width--medium: 800px;
+$width--large: 1000px;
+$width--xlarge: 1400px;
+$width--xxlarge: 1900px;
+$width--xxxlarge: 2200px;
+
+$bp--small: 'screen and (min-width: #{$width--small})';
+$bp--medium: 'screen and (min-width: #{$width--medium})';
+$bp--medium--down: 'screen and (max-width: #{$width--medium})';
+$bp--large: 'screen and (min-width: #{$width--large})';
+$bp--xlarge: 'screen and (min-width: #{$width--xlarge})';
+$bp--xxlarge: 'screen and (min-width: #{$width--xxlarge})';
+$bp--xxxlarge: 'screen and (min-width: #{$width--xxxlarge})';

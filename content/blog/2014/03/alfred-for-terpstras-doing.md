@@ -1,10 +1,11 @@
 ---
-title: "Alfred Workflow for Brett Terpstra's `doing` CLI"
+title: Alfred Workflow for Brett Terpstra's `doing` CLI
 category: Technology
 tags:
   - Alfred
   - productivity
 date: 2014-03-16
+redirect_from: /blog/technology/alfred-for-terpstras-doing/
 ---
 The Mad Scientist [Brett Terpstra](http://brettterpstra.com) is at it again, this time with a nifty script for "Scatterbrains" that captures what you are doing, and provides an easy way to find out what it was once you get off track and need to mentally re-orient yourself when coming back to a project – super handy in my opinion. Check out his [project page for `doing`](http://brettterpstra.com/projects/doing/). 
 
@@ -29,3 +30,4 @@ Hat tip to [Sam Kimbrel](http://www.samkimbrel.com/posts/2013-12-24-os-x-shell-l
 ## Feedback ##
 
 I welcome any feedback and would love to help anybody with issues they might have. I've got this as a [repo on GitHub](https://github.com/EvanLovely/alfred--doing) for anybody interested and welcome anybody to [create a new issue](https://github.com/EvanLovely/alfred--doing/issues/new) or feel free to comment below or even reach out to me on Twitter: [@EvanLovely](http://twitter.com/EvanLovely). Hope this helps someone out there!
+

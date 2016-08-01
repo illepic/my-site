@@ -2,7 +2,6 @@ const React = require('react');
 const Markdown = require('../../global/markdown');
 const SiteHeader = require('../../organisms/site-header/site-header');
 const SiteFooter = require('../../organisms/site-footer/site-footer');
-const Card = require('../../molecules/card/card');
 const Meta = require('../../molecules/meta');
 const Image = require('../../atoms/image');
 const util = require('../../0-base/util');
@@ -22,6 +21,9 @@ const Default = (props) => {
       : path.join(props.path, props.featuredImage);
     img = <Image src={myPath} />;
   }
+
+  
+
   return (
     <div className="site container">
       {linkTags}
@@ -37,15 +39,12 @@ const Default = (props) => {
         </article>
       </main>
 
-      <section className="site__sidebar site__sidebar--first sidebar">
-        <Card />
-        <SiteFooter {...props} />
-      </section>
+      <SiteFooter {...props} />
 
     </div>
   );
 };
-
+ 
 Default.defaultProps = {
   subtitle: 'default subtitle',
 };
@@ -56,8 +55,10 @@ Default.propTypes = {
   featuredImage: React.PropTypes.string,
   path: React.PropTypes.string,
   title: React.PropTypes.string,
-  // css: React.PropTypes.array,
   css: React.PropTypes.arrayOf(React.PropTypes.string),
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
 };
 
 module.exports = Default;

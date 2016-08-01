@@ -1,22 +1,26 @@
-'use strict';
 module.exports = {
   paths: {
     content: './content',
     src: './src',
-    dist: './dist',
-    assets: './dist/assets'
+    dist: (process.env.NODE_ENV === 'production') ? './dist--prod' : './dist',
+    assets: (process.env.NODE_ENV === 'production') ? './dist--prod/assets' : './dist/assets',
   },
   imgSizes: [{
     width: 1200,
-    suffix: '--xlarge'
-  },{
+    suffix: '--xlarge',
+  }, {
     width: 960,
-    suffix: '--large'
-  },{
+    suffix: '--large',
+  }, {
     width: 700,
-    suffix: '--medium'
-  },{
+    suffix: '--medium',
+  }, {
     width: 450,
-    suffix: '--small'
-  }]
+    suffix: '--small',
+  }],
+  site: {
+    description: "Evan's Site",
+    title: "Evan Lovely's Site",
+    bodyClasses: ['theme--light'],
+  },
 };

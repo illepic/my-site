@@ -4,7 +4,6 @@ const Card = require('../../molecules/card/card');
 const LandingList = (props) => {
   let list = props.items
   .filter(page => !page.landingPage)
-  .sort((a, b) => a.weight > b.weight)
   .map((item, i) => (
     <aside className="landing-list__item" key={i}>
       <Card {...item}>

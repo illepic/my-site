@@ -1,41 +1,44 @@
-'use strict';
 const gulp = require('gulp-help')(require('gulp'));
 const config = require('./config');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const path = require('path');
 const join = path.join;
-const through = require('through2');
-const del = require('del');
 const exec = require('child_process').exec;
 const each = require('async').each;
 const imageResize = require('gulp-image-resize');
 const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
-const gulpif = require('gulp-if');
 const changed = require('gulp-changed');
 const linkChecker = require('broken-link-checker');
 const eslint = require('gulp-eslint');
-const buildJson = require('./buildJson');
+const buildJson = require('./lib/buildJson');
+const buildRss = require('./lib/buildRss');
+const buildRedirects = require('./lib/buildRedirects');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
+if (process.env.NODE_ENV === 'production') {
+  themeConfig.css.dest = './dist--prod/assets';
+  themeConfig.browserSync.baseDir = './dist--prod';
+}
+
 const tasks = {
-  'compile': [],
-  'watch': [],
-  'validate': [],
-  'clean': [],
-  'default': []
+  compile: [],
+  watch: [],
+  validate: [],
+  clean: [],
+  default: [],
 };
 
-console.log('NODE_ENV: ' + process.env.NODE_ENV);
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 
 gulp.task('test:links', (done) => {
-  let results = {};
-  let l = new linkChecker.SiteChecker({
-
+  const results = {};
+  const l = new linkChecker.SiteChecker({
+    excludeExternalLinks: true,
   }, {
-    link: (result, customData) => {
+    link: (result) => {
       if (result.broken) {
         // console.log(result.base, result.url);
         console.log(`${result.base.original} ~ ${result.url.original}`);
@@ -43,10 +46,33 @@ gulp.task('test:links', (done) => {
       }
     },
     end: () => {
-      let totalPages = Object.keys(results).length;
+      const totalPages = Object.keys(results).length;
       console.log(`${totalPages} have broken links`);
       fs.writeFile('./reports/broken-links.json', JSON.stringify(results), done);
-    }
+    },
+  });
+  l.enqueue(`http://localhost:${themeConfig.browserSync.port}`);
+});
+
+gulp.task('test:images', (done) => {
+  const results = {};
+  const l = new linkChecker.SiteChecker({
+
+  }, {
+    link: (result) => {
+      if (result.broken) {
+        const x = result.url.original;
+        if (x.endsWith('jpg') || x.endsWith('jpeg') || x.endsWith('png')) {
+          console.log(`${result.base.original} ~ ${result.url.original}`);
+          results[result.base.original] = result;
+        }
+      }
+    },
+    end: () => {
+      const totalPages = Object.keys(results).length;
+      console.log(`${totalPages} have broken links`);
+      fs.writeFile('./reports/broken-images.json', JSON.stringify(results), done);
+    },
   });
   l.enqueue(`http://localhost:${themeConfig.browserSync.port}`);
 });
@@ -54,23 +80,15 @@ gulp.task('test:links', (done) => {
 require('p2-theme-core')(gulp, themeConfig, tasks);
 
 function sh(cmd, exitOnError, cb) {
-  var child = exec(cmd, {encoding: 'utf8'});
-  var stdout = '';
-  var stderr = '';
-  child.stdout.on ('data', function(data) {
-    stdout += data;
-    process.stdout.write(data);
-  });
-  child.stderr.on('data', function(data) {
-    stderr += data;
-    process.stdout.write(data);
-  });
-  child.on('close', function(code) {
+  const child = exec(cmd, { encoding: 'utf8' });
+  child.stdout.on('data', data => process.stdout.write(data));
+  child.stderr.on('data', data => process.stdout.write(data));
+  child.on('close', code => {
     if (code > 0) {
-      console.log('Error with code ' + code + ' after running: ' + cmd);
-      if (exitOnError){
+      console.log(`Error with code ${code} after running: ${cmd}`);
+      if (exitOnError) {
         process.exit(code);
-      } 
+      }
       // else {
       //   notifier.notify({
       //     title: cmd,
@@ -84,37 +102,40 @@ function sh(cmd, exitOnError, cb) {
 }
 
 function reload() {
-  sh(`./node_modules/.bin/browser-sync reload --port=${themeConfig.browserSync.port}`, false); 
+  sh(`./node_modules/.bin/browser-sync reload --port=${themeConfig.browserSync.port}`, false);
 }
-
-gulp.task('clean', (done) => {
-  del([config.paths.dist]).then(() => {
-    done();  
-  });
-});
 
 gulp.task('json', (done) => {
   buildJson.buildAll(done);
 });
 
-gulp.task('html', ['json'], () => {
-  sh('node compile.js', false, reload);
+gulp.task('html', ['json'], (done) => {
+  sh('node lib/compile.js', false, () => {
+    reload();
+    done();
+  });
 });
 
 gulp.task('watch:content', () => {
   gulp.watch([
-    path.join(config.paths.content, '**/*.{md,html}')
-  ], ['html']);
+    join(config.paths.content, '**/*.{md,html}'),
+  ], ['html'])
+  .on('error', error => {
+    // silently catch 'ENOENT' error typically caused by renaming watched folders
+    if (error.code === 'ENOENT') {
+      return;
+    }
+  });
 });
 
 gulp.task('watch:templates', () => {
   gulp.watch([
-    path.join(config.paths.src, '**/*.jsx'),
-    path.join(config.paths.src, '0-base/util.js'),
-    path.join(config.paths.src, 'layouts/site/site.js')
+    join(config.paths.src, '**/*.jsx'),
+    join(config.paths.src, '0-base/util.js'),
+    join(config.paths.src, 'layouts/site/site.js'),
   ], event => {
-    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', compiling...');
-    sh('node compile.js', false, reload);
+    console.log(`'${path.relative(process.cwd(), event.path)}' was ${event.type}, compiling...`);
+    sh('node lib/compile.js', false, reload);
   });
 });
 
@@ -123,57 +144,84 @@ tasks.default.push('watch:content');
 tasks.default.push('watch:templates');
 
 gulp.task('img:content', (allDone) => {
-  let imgFiles = gulp.src(path.join(config.paths.content, '**/*.{jpg,jpeg,png}'));
-  let imageminSettings = {
+  const imgFiles = gulp.src(join(config.paths.content, '**/*.{jpg,jpeg,png}'));
+  const imageminSettings = {
     progressive: true,
-    use: [pngquant()]
+    use: [pngquant()],
   };
-  
-  each(config.imgSizes, (size, done) => {
-    imgFiles
-      .pipe(changed(config.paths.dist))
-      .pipe(imageResize({width: size.width}))
-      // only do time-intensive minification on prod build
-      .pipe(gulpif(process.env.NODE_ENV === 'production', imagemin(imageminSettings)))
-      .pipe(rename({suffix: size.suffix}))
-      .pipe(gulp.dest(config.paths.dist))
-      .on('end', done);
-  }, allDone);
-  
+  // just move the originals unchanged
+  imgFiles.pipe(gulp.dest(config.paths.dist));
+
+  if (process.env.NODE_ENV === 'production') {
+    each(config.imgSizes, (size, done) => {
+      imgFiles
+        .pipe(changed(config.paths.dist))
+        .pipe(imageResize({ width: size.width }))
+        .pipe(imagemin(imageminSettings))
+        .pipe(rename({ suffix: size.suffix }))
+        .pipe(gulp.dest(config.paths.dist))
+        .on('end', done);
+    }, allDone);
+  } else {
+    allDone();
+  }
 });
 
 gulp.task('watch:img:content', () => {
   gulp.watch([
-    path.join(config.paths.content, '**/*.{jpg,jpeg,png}')
+    join(config.paths.content, '**/*.{jpg,jpeg,png}'),
   ], ['img:content']);
 });
 
 gulp.task('img:src', (allDone) => {
-  let imgFiles = gulp.src(path.join(config.paths.src, '**/*.{jpg,jpeg,png}'));
-  let imageminSettings = {
+  const imgFiles = gulp.src(join(config.paths.src, '**/*.{jpg,jpeg,png}'));
+  const imageminSettings = {
     progressive: true,
-    use: [pngquant()]
+    use: [pngquant()],
   };
   // just move the originals unchanged
   imgFiles.pipe(gulp.dest(config.paths.assets));
-  
-  each(config.imgSizes, (size, done) => {
-    imgFiles
-      .pipe(changed(config.paths.assets))
-      .pipe(imageResize({width: size.width}))
-      // only do time-intensive minification on prod build
-      .pipe(gulpif(process.env.NODE_ENV === 'production', imagemin(imageminSettings)))
-      .pipe(rename({suffix: size.suffix}))
-      .pipe(gulp.dest(config.paths.assets))
-      .on('end', done);
-  }, allDone);
+
+  if (process.env.NODE_ENV === 'production') {
+    each(config.imgSizes, (size, done) => {
+      imgFiles
+        .pipe(changed(config.paths.assets))
+        .pipe(imageResize({ width: size.width }))
+        .pipe(imagemin(imageminSettings))
+        .pipe(rename({ suffix: size.suffix }))
+        .pipe(gulp.dest(config.paths.assets))
+        .on('end', done);
+    }, allDone);
+  } else {
+    allDone();
+  }
 });
 
 gulp.task('watch:img:src', () => {
   gulp.watch([
-    path.join(config.paths.src, '**/*.{jpg,jpeg,png}')
+    join(config.paths.src, '**/*.{jpg,jpeg,png}'),
   ], ['img:src']);
 });
+
+gulp.task('img', ['img:content', 'img:src']);
+
+const miscFiles = [
+  join(config.paths.content, '**/*.*'),
+  `!${join(config.paths.content, '**/*.{jpg,jpeg,png,html,md}')}`,
+];
+
+gulp.task('misc', (done) => {
+  gulp.src(miscFiles)
+  .pipe(gulp.dest(config.paths.dist))
+  .on('end', done);
+});
+
+gulp.task('watch:misc', () => {
+  gulp.watch(miscFiles, ['misc']);
+});
+
+tasks.compile.push('misc');
+tasks.watch.push('watch:misc');
 
 tasks.compile.push('img:content');
 tasks.compile.push('img:src');
@@ -185,27 +233,39 @@ function eslintStream(stream) {
     .pipe(eslint.format());
 }
 
-gulp.task('validate:js', () => {
-  return eslintStream(gulp.src([
-    path.join(config.paths.src, '**/*.{js,jsx}'),
-    './*.{js,jsx}'
-  ]))
-  .pipe(eslint.failAfterError());
-});
+gulp.task('validate:js', () => eslintStream(gulp.src([
+  join(config.paths.src, '**/*.{js,jsx}'),
+  './*.{js,jsx}',
+]))
+.pipe(eslint.failAfterError()));
 
 gulp.task('watch:validate:js', () => {
   gulp.watch([
-    path.join(config.paths.src, '**/*.{js,jsx}')
+    join(config.paths.src, '**/*.{js,jsx}'),
+    './*.{js,jsx}',
   ], event => {
-    console.log('File `' + path.relative(process.cwd(), event.path) + '` was ' + event.type + ', running linting...');
+    console.log(`'${path.relative(process.cwd(), event.path)}' was ${event.type}, linting...`);
     return eslintStream(gulp.src([
-      event.path
+      event.path,
     ]));
   });
 });
 
 tasks.watch.push('watch:validate:js');
 tasks.validate.push('validate:js');
+
+gulp.task('rss', ['json'], (done) => {
+  buildRss(done);
+});
+
+gulp.task('redirects', ['json'], (done) => {
+  buildRedirects.buildAll(done);
+});
+
+if (process.env.NODE_ENV === 'production') {
+  tasks.compile.push('rss');
+  tasks.compile.push('redirects');
+}
 
 gulp.task('compile', tasks.compile);
 gulp.task('clean', tasks.clean);

@@ -15,29 +15,38 @@ const Card = (props) => {
       : path.join(props.path, imgFilename);
     img = <Image src={myPath} />;
   }
+  let title = '';
+  if (props.title) {
+    if (props.path || props.title_url) {
+      title = (<a href={(props.title_url ? props.title_url : props.path)}>
+        {props.title} {(props.title_url ? '=>' : null)}
+      </a>);
+    } else {
+      title = props.title;
+    }
+  }
   return (
-    <article className="card">
-      <h5 className="card__title"><a href={props.path}>{props.title}</a></h5>
+    <article className={`card ${props.className}`}>
+      {title ? (<h5 className="card__title">{title}</h5>) : null}
       {img}
       {props.children ? (<div className="card__contents">{props.children}</div>) : ''}
-      <a href={props.path} className="button">Read More</a>
+      {props.path ? (<a href={props.path} className="button">Read More</a>) : null}
     </article>
   );
-};
-
-Card.defaultProps = {
-  title: 'Default Title',
 };
 
 Card.propTypes = {
   featuredImage: React.PropTypes.string,
   path: React.PropTypes.string,
   title: React.PropTypes.string,
+  title_url: React.PropTypes.string,
+  className: React.PropTypes.string,
   children: React.PropTypes.node,
   imgs: React.PropTypes.arrayOf(React.PropTypes.shape({
     src: React.PropTypes.string,
     caption: React.PropTypes.string,
   })),
+  draft: React.PropTypes.bool,
 };
 
 module.exports = Card;

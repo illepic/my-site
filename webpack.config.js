@@ -1,5 +1,3 @@
-'use strict';
-const webpack = require('webpack');
 const config = require('./config');
 const path = require('path');
 
@@ -16,7 +14,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle--[name].js',
-    path: config.paths.assets
+    path: config.paths.assets,
   },
   resolve: {
     // modulesDirectories: ['node_modules', 'src'],

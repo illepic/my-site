@@ -2,7 +2,7 @@
 title: Finding out the time on the East and West Coast with Alfred
 weight: 8
 excerpt: "Find out current times in a few times zone quickly."
-img: /img/2014/03/Alfred-EST-PST-time.png
+featuredImage: Alfred-EST-PST-time.png
 tags:
   - Alfred
 ---

@@ -3,23 +3,31 @@ const Default = require('../default/default');
 const Card = require('../../molecules/card/card');
 const Markdown = require('../../global/markdown');
 const Meta = require('../../molecules/meta');
+const typeset = require('typeset');
 
 const BlogList = (props) => {
   const blogList = props.site.pages
   .filter(page => page.section === 'blog' && !page.landingPage)
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .map(post => (
-    <Card
+  .map(post => {
+    let contents = '';
+    if (post.excerpt) {
+      const excerpt = (process.env.NODE_ENV === 'production')
+        ? typeset(post.excerpt)
+        : post.excerpt;
+      contents = (<div
+        className="card__excerpt"
+        dangerouslySetInnerHTML={{ __html: excerpt }}
+      ></div>);
+    }
+    return (<Card
       {...post}
-      path={(post.title_url ? post.title_url : post.path)}
+      path={post.path}
       key={post.path}
     >
       <Meta {...post} />
-      {post.excerpt ?
-        (<div className="card__excerpt" dangerouslySetInnerHTML={{ __html: post.excerpt }}></div>)
-        : ''}
-    </Card>
-  ));
+      {contents}
+    </Card>);
+  });
   return (
     <Default {...props} title="Blog">
       <Markdown contents={props.contents} />
@@ -58,6 +66,9 @@ BlogList.propTypes = {
     next: React.PropTypes.object,
   }),
   contents: React.PropTypes.string.isRequired,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
 };
 
 module.exports = BlogList;

@@ -8,11 +8,19 @@ const Image = (props) => {
   const src = ((isRemotePath || isRootRelativePath) ? props.src : util.imgSrc(props.src));
   const info = path.parse(src);
   const alt = props.alt || info.name;
+  let srcSet = null;
+  let sizes = null;
+  if (process.env.NODE_ENV === 'production') {
+    if (!isRemotePath) {
+      srcSet = util.srcSet(src);
+    }
+    sizes = props.sizes;
+  }
   return (<img
     src={src}
-    srcSet={isRemotePath ? null : util.srcSet(src)}
+    srcSet={srcSet}
     alt={alt}
-    sizes={props.sizes}
+    sizes={sizes}
     className={props.className}
   />);
 };
