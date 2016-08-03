@@ -17,6 +17,13 @@ const Utilities = require('./templates/utilities');
 document.addEventListener('DOMContentLoaded', () => {
   const appRoot = document.getElementById('app');
 
+  function onNewPage() {
+    const elements = document.querySelectorAll('pre code');
+    Array.prototype.forEach.call(elements, el => {
+      window.hljs.highlightBlock(el);
+    });
+  }
+
   function getJsonData(pathname, cb) {
     fetch('/assets/data/global.json').then(res => res.json()).then(globalData => {
       const jsonPath = join(pathname, 'index.json');
@@ -69,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       ReactDOM.render(<Template {...data} />, appRoot);
+
+      onNewPage();
     });
   }
 

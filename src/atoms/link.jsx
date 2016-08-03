@@ -26,10 +26,6 @@ const Link = class extends React.Component {
 
     event.preventDefault();
 
-    // history.listen(x => {
-    //   console.log('yolo', x);
-    // });
-
     if (this.props.href) {
       history.push(this.props.href);
     } else {
