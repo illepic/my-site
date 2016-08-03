@@ -3,7 +3,7 @@ const Default = require('../default/default');
 const Card = require('../../molecules/card/card');
 const Markdown = require('../../global/markdown');
 const Meta = require('../../molecules/meta');
-const typeset = require('typeset');
+// const typeset = require('typeset');
 
 const BlogList = (props) => {
   const blogList = props.site.pages
@@ -11,9 +11,10 @@ const BlogList = (props) => {
   .map(post => {
     let contents = '';
     if (post.excerpt) {
-      const excerpt = (process.env.NODE_ENV === 'production')
-        ? typeset(post.excerpt)
-        : post.excerpt;
+      // const excerpt = (process.env.NODE_ENV === 'production')
+      //   ? typeset(post.excerpt)
+      //   : post.excerpt;
+      const excerpt = post.excerpt;
       contents = (<div
         className="card__excerpt"
         dangerouslySetInnerHTML={{ __html: excerpt }}

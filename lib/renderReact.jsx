@@ -1,7 +1,6 @@
 const React = require('react');
 const render = require('react-dom/server').renderToString;
 const siteLayout = require('./../src/layouts/site/site.js');
-const typeset = require('typeset');
 const join = require('path').join;
 const config = require('./../config');
 const glob = require('glob');

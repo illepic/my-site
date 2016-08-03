@@ -19,10 +19,8 @@ const Default = (props) => {
       util.isPathRemote(props.featuredImage)
     ) ? props.featuredImage
       : path.join(props.path, props.featuredImage);
-    img = <Image src={myPath} />;
+    img = <Image src={myPath} className="featuredImage" />;
   }
-
-  
 
   return (
     <div className="site container">
@@ -44,7 +42,7 @@ const Default = (props) => {
     </div>
   );
 };
- 
+
 Default.defaultProps = {
   subtitle: 'default subtitle',
 };

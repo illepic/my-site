@@ -1,12 +1,12 @@
 const React = require('react');
-const path = require('path');
+const parse = require('path-parse');
 const util = require('../0-base/util');
 
 const Image = (props) => {
   const isRemotePath = util.isPathRemote(props.src);
   const isRootRelativePath = util.isPathRootRelative(props.src);
   const src = ((isRemotePath || isRootRelativePath) ? props.src : util.imgSrc(props.src));
-  const info = path.parse(src);
+  const info = parse(src);
   const alt = props.alt || info.name;
   let srcSet = null;
   let sizes = null;

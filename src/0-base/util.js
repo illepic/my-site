@@ -8,14 +8,16 @@ function imgSrc(imgPath) {
 }
 
 function srcSet(imgPath) {
-  const info = path.parse(imgPath);
+  // doing this way instead of using `path.parse` b/c webpack has hard time w/it
+  const pathArray = imgPath.split('/');
+  const file = pathArray.pop();
+  const dir = pathArray.join('/');
+  const fileInfoArray = file.split('.');
+  const fileName = fileInfoArray[0];
+  const fileExt = fileInfoArray[1];
   return config.imgSizes.map(size => {
-    const sizeInfo = {
-      dir: info.dir,
-      name: info.name + size.suffix,
-      ext: info.ext,
-    };
-    return `${path.format(sizeInfo)} ${size.width}w`;
+    const filePath = `${dir}/${fileName}${size.suffix}.${fileExt}`;
+    return `${filePath} ${size.width}w`;
   }).join(', ');
 }
 
@@ -31,23 +33,10 @@ function isPathAbsolute(myPath) {
   return myPath.startsWith('/Users');
 }
 
-function getJsonData(cb) {
-  const pathname = window.location.pathname;
-  if (pathname.endsWith('/')) {
-    const jsonPath = `${pathname}index.json`;
-    fetch(jsonPath).then(res => res.json()).then(json => {
-      cb(null, json);
-    });
-  } else {
-    cb('no page data');
-  }
-}
-
 module.exports = {
   imgSrc,
   srcSet,
   isPathRemote,
   isPathRootRelative,
   isPathAbsolute,
-  getJsonData,
 };

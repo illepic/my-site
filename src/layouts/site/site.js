@@ -59,7 +59,6 @@ module.exports = props => `<!doctype html>
     >
   </noscript>
   <script src="/assets/bundle--main.js"></script>
-  <script src="/assets/bundle--search.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </body>
