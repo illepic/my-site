@@ -1,4 +1,5 @@
 const React = require('react');
+const config = require('../../config');
 const parse = require('path-parse');
 const util = require('../0-base/util');
 
@@ -10,7 +11,7 @@ const Image = (props) => {
   const alt = props.alt || info.name;
   let srcSet = null;
   let sizes = null;
-  if (process.env.NODE_ENV === 'production') {
+  if (config.feat.srcset) {
     if (!isRemotePath) {
       srcSet = util.srcSet(src);
     }

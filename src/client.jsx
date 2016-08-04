@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const appRoot = document.getElementById('app');
 
   function onNewPage() {
+      // window.scrollTo(0,0);
+
     const elements = document.querySelectorAll('pre code');
     Array.prototype.forEach.call(elements, el => {
       window.hljs.highlightBlock(el);

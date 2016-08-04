@@ -152,7 +152,7 @@ gulp.task('img:content', (allDone) => {
   // just move the originals unchanged
   imgFiles.pipe(gulp.dest(config.paths.dist));
 
-  if (process.env.NODE_ENV === 'production') {
+  if (config.feat.srcset) {
     each(config.imgSizes, (size, done) => {
       imgFiles
         .pipe(changed(config.paths.dist))
@@ -182,7 +182,7 @@ gulp.task('img:src', (allDone) => {
   // just move the originals unchanged
   imgFiles.pipe(gulp.dest(config.paths.assets));
 
-  if (process.env.NODE_ENV === 'production') {
+  if (config.feat.srcset) {
     each(config.imgSizes, (size, done) => {
       imgFiles
         .pipe(changed(config.paths.assets))
