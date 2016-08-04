@@ -24,6 +24,7 @@ const BlogList = (props) => {
       {...post}
       path={post.path}
       key={post.path}
+      className="blog-list__item"
     >
       <Meta {...post} />
       {contents}

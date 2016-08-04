@@ -14,7 +14,7 @@ const Card = (props) => {
       util.isPathRemote(imgFilename)
     ) ? imgFilename
       : path.join(props.path, imgFilename);
-    img = <Image src={myPath} />;
+    img = <Image src={myPath} className='card__image' />;
   }
   let title = '';
   if (props.title) {
@@ -27,7 +27,7 @@ const Card = (props) => {
     }
   }
   return (
-    <article className={`card ${props.className}`}>
+    <article className={`card ${props.className ? props.className : ''}`}>
       {title ? (<h5 className="card__title">{title}</h5>) : null}
       {img}
       {props.children ? (<div className="card__contents">{props.children}</div>) : ''}
