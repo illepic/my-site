@@ -76,7 +76,7 @@ body {
       margin-left: w(4);
     }
     // footer becomes sidebar
-    @media #{$bp--xxxlarge} {
+    @media #{$bp--xxxxlarge} {
       min-height: 100vh;
       &__main {
         width: w(14);

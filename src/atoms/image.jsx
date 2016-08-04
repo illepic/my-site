@@ -15,7 +15,7 @@ const Image = (props) => {
     if (!isRemotePath) {
       srcSet = util.srcSet(src);
     }
-    sizes = props.sizes;
+    sizes = props.sizes || '(min-width: 1200px) 33vw, (min-width: 800px) 50vw, 100vw';
   }
   return (<img
     src={src}

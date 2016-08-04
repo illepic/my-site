@@ -9,9 +9,6 @@ module.exports = {
     width: 1200,
     suffix: '--xlarge',
   }, {
-    width: 960,
-    suffix: '--large',
-  }, {
     width: 700,
     suffix: '--medium',
   }, {
