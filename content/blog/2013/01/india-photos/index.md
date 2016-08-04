@@ -22,9 +22,6 @@ meta:
   _su_title: ''
 date: 2013-01-29
 ---
-[gallery type="square" ids="513,512,514,517,518,519,520,521,522"]
-
-<img alt="" src="http://www.evanlovely.com/tricky-name/wp-content/uploads/2013/01/1359476463.jpg" width="600" height="450" />
-
-<img title="Cute!" alt="max" src="http://www.evanlovely.com/tricky-name/wp-content/uploads/2013/01/1359476565.jpg" width="1024" height="768" />
+![](india-photo-1.jpg)
+![](india-photo-2.jpg)
 

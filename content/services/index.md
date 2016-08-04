@@ -15,7 +15,7 @@ I am a Front End Web Designer & Developer that has been working with the Drupal 
     <li>Drupal Module Selection & CMS Building</li>
     <li>Responsive Web Design</li>
     <li>Mobile Web Site Development</li>
-    <li>Version Control - comfortable with branching, difficult merge conflicts, and multiple origins with Git, Mercurial, and love utilizing the <a hfef="http://nvie.com/posts/a-successful-git-branching-model/">Git Flow</a> approach (which I've given presentations on)</li>
+    <li>Version Control - comfortable with branching, difficult merge conflicts, and multiple origins with Git, Mercurial, and love utilizing the <a href="http://nvie.com/posts/a-successful-git-branching-model/">Git Flow</a> approach (which I've given presentations on)</li>
     <li>Browser-based design and prototyping</li>
     <li>Photoshop</li>
     <li>Terminal, Bash, & SSH</li>
