@@ -9,9 +9,6 @@ module.exports = {
     width: 1200,
     suffix: '--xlarge',
   }, {
-    width: 960,
-    suffix: '--large',
-  }, {
     width: 700,
     suffix: '--medium',
   }, {
@@ -23,4 +20,9 @@ module.exports = {
     title: "Evan Lovely's Site",
     bodyClasses: ['theme--light'],
   },
+  /* eslint-disable no-unneeded-ternary */
+  feat: {
+    srcset: (process.env.NODE_ENV === 'production') ? true : true,
+  },
+  /* eslint-enable no-unneeded-ternary */
 };

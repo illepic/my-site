@@ -1,11 +1,16 @@
 const React = require('react');
 const LinksCard = require('../../molecules/links-card');
+const Link = require('../../atoms/link');
 
 const SiteFooter = (props) => {
   const items = props.site.pages
   .filter(item => item.nav === 'footer')
   .sort((a, b) => a.weight > b.weight)
-  .map(item => (<a href={item.path} key={item.path} className="footer-nav__link">{item.title}</a>));
+  .map(item => (<Link
+    href={item.path}
+    key={item.path}
+    className="footer-nav__link"
+  >{item.title}</Link>));
 
   const postCount = 6;
   let footerBlockCount = 1;

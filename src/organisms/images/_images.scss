@@ -3,7 +3,12 @@
   flex-wrap: wrap;
   align-items: flex-start;
   &__item {
-    width: 33%;
     margin-bottom: ms(1);
+    @media #{$bp--medium} {
+      width: 50%;
+    }
+    @media #{$bp--xlarge} {
+      width: 33%;
+    }
   }
 }
