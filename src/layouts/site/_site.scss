@@ -6,6 +6,9 @@ body {
   &.theme--light {
     color: $c-gray--darkest;
   }
+  &.is-loading * {
+    cursor: progress;
+  }
 }
 
 .site {

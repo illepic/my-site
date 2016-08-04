@@ -26,6 +26,8 @@ const Link = class extends React.Component {
 
     event.preventDefault();
 
+    document.body.classList.add('is-loading');
+
     if (this.props.href) {
       history.push(this.props.href);
     } else {

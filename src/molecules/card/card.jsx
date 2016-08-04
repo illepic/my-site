@@ -14,7 +14,7 @@ const Card = (props) => {
       util.isPathRemote(imgFilename)
     ) ? imgFilename
       : path.join(props.path, imgFilename);
-    img = <Image src={myPath} className='card__image' />;
+    img = <Image src={myPath} className="card__image" />;
   }
   let title = '';
   if (props.title) {
