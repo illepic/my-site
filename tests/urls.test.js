@@ -9,7 +9,7 @@ const config = require('../config');
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 
 let host = 'http://evanlovely.com';
-// host = `http://localhost:${themeConfig.browserSync.port}`;
+host = `http://localhost:${themeConfig.browserSync.port}`;
 
 describe('Get urls', function() {
   this.timeout(5000);

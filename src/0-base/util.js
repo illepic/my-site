@@ -22,11 +22,11 @@ function srcSet(imgPath) {
 }
 
 function isPathRemote(myPath) {
-  return myPath.startsWith('http');
+  return myPath.startsWith('http') || myPath.startsWith('//');
 }
 
 function isPathRootRelative(myPath) {
-  return (myPath.startsWith('/') && !myPath.startsWith('/Users'));
+  return (myPath.startsWith('/') && !myPath.startsWith('//') && !myPath.startsWith('/Users'));
 }
 
 function isPathAbsolute(myPath) {
