@@ -1,20 +1,13 @@
 const React = require('react');
-// const Markdown = require('../../global/markdown');
+const Markdown = require('../../global/markdown');
 const SiteHeader = require('../../organisms/site-header/site-header');
 const SiteFooter = require('../../organisms/site-footer/site-footer');
 const Meta = require('../../molecules/meta/meta');
 const Image = require('../../atoms/image');
-const Articles = require('./../../templates/articles/articles');
-const BlogList = require('./../../templates/blog-list/blog-list');
-const BlogPost = require('./../../templates/blog-post/blog-post');
-const Default = require('./../../templates/default/default');
 const Home = require('./../../templates/home/home');
-const Notes = require('./../../templates/notes/notes');
 const PortfolioItem = require('./../../templates/portfolio-item/portfolio-item');
-const PortfolioList = require('./../../templates/portfolio-list/portfolio-list');
+const LandingList = require('../../organisms/landing-list/landing-list');
 const Search = require('./../../templates/search/search');
-// const Styleguide = require('./templates/styleguide');
-const Utilities = require('./../../templates/utilities/utilities');
 const util = require('../../0-base/util');
 const path = require('path');
 
@@ -59,39 +52,28 @@ const Site = class extends React.Component {
 
     let Template;
     switch (this.props.template) {
-      case 'articles':
-        Template = Articles;
-        break;
-      case 'blog-list':
-        Template = BlogList;
-        break;
-      case 'blog-post':
-        Template = BlogPost;
-        break;
       case 'home':
         Template = Home;
-        break;
-      case 'notes':
-        Template = Notes;
         break;
       case 'portfolio-item':
         Template = PortfolioItem;
         break;
-      case 'portfolio-list':
-        Template = PortfolioList;
-        break;
       case 'search':
         Template = Search;
         break;
-      // case 'styleguide':
-      //   Template = Styleguide;
-      //   break;
-      case 'utilities':
-        Template = Utilities;
-        break;
       default:
-        Template = Default;
+        Template = null;
         break;
+    }
+
+    let content;
+    if (Template) {
+      content = <Template {...this.props} />;
+    } else if (this.props.landingPage) {
+      content = (<LandingList
+        {...this.props}
+        items={this.props.site.pages.filter(page => page.section === this.props.section)}
+      />);
     }
 
     return (
@@ -105,7 +87,8 @@ const Site = class extends React.Component {
           </header>
           <article className="page__contents">
             {img}
-            <Template {...this.props} />
+            <Markdown contents={this.props.contents} />
+            {content}
           </article>
         </main>
 
@@ -121,6 +104,12 @@ Site.propTypes = {
   path: React.PropTypes.string,
   title: React.PropTypes.string,
   template: React.PropTypes.string,
+  contents: React.PropTypes.string,
+  section: React.PropTypes.string,
+  landingPage: React.PropTypes.bool,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
 };
 
 module.exports = Site;

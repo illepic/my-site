@@ -5,7 +5,6 @@ const Images = require('../../organisms/images');
 
 const PortfolioItem = (props) => (
   <div>
-    <Markdown contents={props.contents} />
     {props.imgs && <Images images={props.imgs} basePath={props.path} />}
     {props.features && <Tags title="Features" tags={props.features} link={false} />}
     {props.services && <Tags title="Services" tags={props.services} link={false} />}
