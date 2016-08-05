@@ -1,15 +1,14 @@
 const React = require('react');
-const Default = require('../default/default');
 const Markdown = require('../../global/markdown');
 const LandingList = require('../../organisms/landing-list/landing-list');
 
 const Portfolio = (props) => (
-  <Default {...props}>
+  <div>
     <Markdown contents={props.contents} />
     <section>
       <LandingList items={props.site.pages.filter(page => page.section === 'portfolio')} />
     </section>
-  </Default>
+  </div>
 );
 
 Portfolio.propTypes = {

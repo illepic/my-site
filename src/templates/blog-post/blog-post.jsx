@@ -1,5 +1,4 @@
 const React = require('react');
-const Default = require('../default/default');
 const Markdown = require('../../global/markdown');
 
 const BlogPost = (props) => {
@@ -21,10 +20,10 @@ const BlogPost = (props) => {
     </nav>);
   }
   return (
-    <Default {...props}>
+    <div>
       <Markdown contents={props.contents} />
       {pager}
-    </Default>
+    </div>
   );
 };
 

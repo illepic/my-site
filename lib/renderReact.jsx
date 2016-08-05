@@ -6,28 +6,13 @@ const config = require('./../config');
 const glob = require('glob');
 const fs = require('fs-extra');
 const globalData = fs.readJsonSync(join(config.paths.assets, 'data/global.json'));
-
-function staticCompile(file, props = {}) {
-  const Tpl = require(file); // eslint-disable-line global-require
-  return render(<Tpl {...props} />);
-}
+const Site = require('../src/layouts/site/site.jsx');
 
 function compilePage(dataFilePath) {
   const fileData = fs.readJsonSync(dataFilePath); // eslint-disable-line global-require
   fileData.site = globalData;
-
-  // template path
-  const templateExt = 'jsx';
-  const templatePath = join(
-    process.cwd(),
-    config.paths.src,
-    'templates',
-    fileData.template,
-    `${fileData.template}.${templateExt}`
-  );
-
   // create html for page
-  fileData.renderedPage = staticCompile(templatePath, fileData);
+  fileData.renderedPage = render(<Site {...fileData} />);
   // create html that wraps the page
   const fullHtml = siteLayout(fileData);
   // write the json file to the dist directory
@@ -45,7 +30,6 @@ function compileSite() {
 }
 
 module.exports = {
-  staticCompile,
   compileSite,
   compilePage,
 };

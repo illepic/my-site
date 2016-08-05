@@ -1,5 +1,4 @@
 const React = require('react');
-const Default = require('../default/default');
 const Card = require('../../molecules/card/card');
 const Markdown = require('../../global/markdown');
 const Meta = require('../../molecules/meta');
@@ -31,12 +30,12 @@ const BlogList = (props) => {
     </Card>);
   });
   return (
-    <Default {...props} title="Blog">
+    <div>
       <Markdown contents={props.contents} />
       <section className="blog-list">
         {blogList}
       </section>
-    </Default>
+    </div>
   );
 };
 

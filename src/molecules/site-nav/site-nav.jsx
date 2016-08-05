@@ -1,24 +1,42 @@
 const React = require('react');
 const Link = require('../../atoms/link');
 
-const SiteNav = (props) => {
-  let items = props.pages
+const SiteNav = class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.isActiveSection = this.isActiveSection.bind(this);
+  }
+
+  isActiveSection(link) {
+    return this.props.currentPage.split('/')[1] === link.split('/')[1];
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return !this.isActiveSection(nextProps.currentPage);
+  }
+
+  render() {
+    let items = this.props.pages
     .filter(item => item.nav === 'main')
     .sort((a, b) => a.weight > b.weight)
     .map(item => (<Link
       href={item.path}
       key={item.path}
-      className="site-nav__link"
+      className={this.isActiveSection(item.path)
+        ? 'site-nav__link site-nav__link--active'
+        : 'site-nav__link'}
     >{item.title}</Link>));
-  return (
-    <nav className="site-nav site-header__nav">
-      {items}
-    </nav>
-  );
+    return (
+      <nav className="site-nav site-header__nav">
+        {items}
+      </nav>
+    );
+  }
 };
 
 SiteNav.propTypes = {
   pages: React.PropTypes.arrayOf(React.PropTypes.object),
+  currentPage: React.PropTypes.string,
 };
 
 module.exports = SiteNav;

@@ -1,7 +1,6 @@
 const React = require('react');
 const url = require('url');
 const querystring = require('querystring');
-const Default = require('../default/default');
 const Link = require('../../atoms/link');
 
 const Search = class extends React.Component {
@@ -50,23 +49,21 @@ const Search = class extends React.Component {
         <Link href={page.path}>{page.title}</Link> - {page.tags.join(', ')}
       </li>);
     return (
-      <Default {...this.props}>
-        <div className="search">
-          <label>Title: </label>
-          <input
-            type="text"
-            value={this.state.title}
-            onChange={this.handleTitleForm}
-          />
-          <label>Tag: </label>
-          <input
-            type="text"
-            value={this.state.tags}
-            onChange={this.handleTagsForm}
-          />
-          <ul>{pages}</ul>
-        </div>
-      </Default>
+      <div className="search">
+        <label>Title: </label>
+        <input
+          type="text"
+          value={this.state.title}
+          onChange={this.handleTitleForm}
+        />
+        <label>Tag: </label>
+        <input
+          type="text"
+          value={this.state.tags}
+          onChange={this.handleTagsForm}
+        />
+        <ul>{pages}</ul>
+      </div>
     );
   }
 };
