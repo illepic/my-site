@@ -2,6 +2,7 @@ const React = require('react');
 const Markdown = require('../../global/markdown');
 const SiteHeader = require('../../organisms/site-header/site-header');
 const SiteFooter = require('../../organisms/site-footer/site-footer');
+const Branding = require('../../molecules/branding');
 const Meta = require('../../molecules/meta/meta');
 const Image = require('../../atoms/image');
 const Home = require('./../../templates/home/home');
@@ -123,6 +124,7 @@ const Site = class extends React.Component {
         {linkTags}
         <SiteHeader {...this.props} />
         <main className="site__main page">
+          <Branding {...this.props} />
           <header className="page__header">
             {this.props.title ? (<h2 className="page__title">{this.props.title}</h2>) : ''}
             <Meta {...this.props} className="page__meta" />

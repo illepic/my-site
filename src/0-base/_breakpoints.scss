@@ -7,6 +7,7 @@ $width--xxxlarge: 1900px;
 $width--xxxxlarge: 2200px;
 
 $bp--small: 'screen and (min-width: #{$width--small})';
+$bp--small--down: 'screen and (max-width: #{$width--small})';
 $bp--medium: 'screen and (min-width: #{$width--medium})';
 $bp--medium--down: 'screen and (max-width: #{$width--medium})';
 $bp--large: 'screen and (min-width: #{$width--large})';

@@ -2,17 +2,24 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  overflow: scroll;
   &__link {
     margin-right: ms(1);
     text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
     &--active {
-      &:after {
-        content: ' •';
+      text-decoration: underline;
+      @media #{$bp--small} {
+        text-decoration: none;
+        &:after {
+          content: ' •';
+        }
       }
     }
   }
   .site-header__nav-visible:checked + & {
-    
+
   }
   @media #{$bp--medium} {
     flex-direction: column;

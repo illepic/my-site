@@ -1,22 +1,45 @@
 /* eslint-disable react/prefer-stateless-function */
 const React = require('react');
 const SiteNav = require('../../molecules/site-nav/site-nav');
-const Image = require('../../atoms/image');
-const Link = require('../../atoms/link');
+const Branding = require('../../molecules/branding');
 
 const SiteHeader = class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      open: true,
+    };
+  }
+
+  componentWillMount() {
+    this.setState({
+      open: false,
+    });
+  }
+
+  componentWillReceiveProps() {
+    this.setState({
+      open: false,
+    });
+  }
+
+  toggle() {
+    this.setState({
+      open: !this.state.open,
+    });
+  }
+
   render() {
+    const classList = [
+      'site__header',
+      'site-header',
+    ];
+    if (this.state.open) classList.push('site__header--open');
     return (
-      <header className="site__header site-header">
-        <div className="site-header__branding">
-          <h1 className="site-header__title"><Link href="/">{this.props.site.title}</Link></h1>
-          <Image
-            src={'/assets/organisms/site-header/logo.png'}
-            alt="Evan Lovely Design logo"
-            // sizes="(min-width: 900px) 33vw, 100vw"
-            className="site-header__logo"
-          />
-        </div>
+      <header className={classList.join(' ')}>
+        <Branding {...this.props} />
+        {/* <button className="site-header__nav-toggle" onClick={this.toggle}>Menu</button>*/}
         {/* <label htmlFor="site-nav-toggle" className="site-header__nav-toggle">Menu</label>*/}
         {/* <input type="checkbox" id="site-nav-toggle" className="site-header__nav-visible" />*/}
         <SiteNav pages={this.props.site.pages} currentPage={this.props.path} />
@@ -27,7 +50,6 @@ const SiteHeader = class extends React.Component {
 
 SiteHeader.propTypes = {
   site: React.PropTypes.shape({
-    title: React.PropTypes.string,
     pages: React.PropTypes.array,
   }),
   path: React.PropTypes.string,
