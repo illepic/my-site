@@ -3,6 +3,10 @@
   flex-wrap: wrap;
   flex-direction: row;
   overflow: scroll;
+  justify-content: space-between;
+  @media #{$bp--small} {
+    justify-content: flex-start;
+  }
   &__link {
     margin-right: ms(1);
     text-decoration: none;
