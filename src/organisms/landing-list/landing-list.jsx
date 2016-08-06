@@ -5,6 +5,7 @@ const Meta = require('../../molecules/meta');
 const LandingList = (props) => {
   const list = props.items
   .filter(page => !page.landingPage)
+  .sort((a, b) => a.weight > b.weight)
   .map(item => {
     let contents = '';
     if (item.excerpt) {
@@ -39,6 +40,7 @@ const LandingList = (props) => {
 
 LandingList.propTypes = {
   items: React.PropTypes.array.isRequired,
+  landingListRows: React.PropTypes.bool,
 };
 
 module.exports = LandingList;
