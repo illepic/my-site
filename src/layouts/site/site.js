@@ -1,8 +1,10 @@
+const util = require('../../0-base/util');
+
 module.exports = props => `<!doctype html>
 <html lang="en-us">
 <head>
   <meta charset="utf-8">
-  <title>${props.title ? `${props.title} | ${props.site.title}` : props.site.title}</title>
+  <title>${util.docTitle(props)}</title>
   ${props.site.description ? `<meta name="description" content="${props.site.description}">` : ''}
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="/assets/style.css">

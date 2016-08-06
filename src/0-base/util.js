@@ -33,10 +33,22 @@ function isPathAbsolute(myPath) {
   return myPath.startsWith('/Users');
 }
 
+function capitalizeFirstLetter(string) {
+    return string[0].toUpperCase() + string.slice(1);
+}
+
+function docTitle(props) {
+  let title = [props.site.title];
+  if (props.section) title.unshift(capitalizeFirstLetter(props.section));
+  if (props.title && props.title !== title[0]) title.unshift(props.title);
+  return title.join(' | ');
+}
+
 module.exports = {
   imgSrc,
   srcSet,
   isPathRemote,
   isPathRootRelative,
   isPathAbsolute,
+  docTitle,
 };

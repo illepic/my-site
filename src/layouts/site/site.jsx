@@ -18,21 +18,21 @@ const Site = class extends React.Component {
   }
 
   newPage() {
-    document.body.classList.remove('is-loading');
 
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-
-    // @todo only do this when going to a new page and trigger AFTER render
-    window.scrollTo(0, 0);
   }
 
   componentDidMount() {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
     this.newPage();
   }
 
   componentDidUpdate() {
+    document.body.classList.remove('is-loading');
+    // @todo only do this when going to a new page and trigger AFTER render
+    window.scrollTo(0, 0);
+    document.title = util.docTitle(this.props);
     this.newPage();
   }
 
