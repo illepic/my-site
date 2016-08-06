@@ -23,6 +23,7 @@ const Site = class extends React.Component {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
+
     // @todo only do this when going to a new page and trigger AFTER render
     window.scrollTo(0, 0);
   }
@@ -31,9 +32,8 @@ const Site = class extends React.Component {
     this.newPage();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.debug('componentDidUpdate', prevProps, prevState);
-    this.newPage(prevProps);
+  componentDidUpdate() {
+    this.newPage();
   }
 
   render() {
