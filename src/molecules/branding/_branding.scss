@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: ms(1);
+  .site__main & {
+    margin-top: ms(1);
+  }
   &__logo {
     width: 50px;
     order: -1;
@@ -16,8 +19,9 @@
     > a {
       text-decoration: none;
     }
-    @media #{$bp--large} {
+    @media #{$bp--xlarge} {
       @include h6();
+      margin-bottom: 0;
     }
   }
 }

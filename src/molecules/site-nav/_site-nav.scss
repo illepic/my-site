@@ -21,7 +21,7 @@
   .site-header__nav-visible:checked + & {
 
   }
-  @media #{$bp--medium} {
+  @media #{$bp--xlarge} {
     flex-direction: column;
   }
 }

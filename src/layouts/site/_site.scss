@@ -1,3 +1,5 @@
+$site-header-width-on-left: 280px;
+
 body {
   &.theme--dark {
     background: $c-gray--darker;
@@ -38,7 +40,7 @@ body {
     width: 100%;
   }
   @media #{$bp--small} {
-    padding-top: 100px;
+    padding-top: 120px;
     padding-bottom: 0;
     &__header {
       bottom: auto;
@@ -60,48 +62,39 @@ body {
       position: static;
     }
   }
-  @media #{$bp--medium} {
+  @media #{$bp--xlarge} {
     padding: 0;
     &__header {
-      width: w(8);
+      width: $site-header-width-on-left;
       bottom: 0;
     }
     &__main {
       padding: 0 ms(3);
-      width: w(16);
-      margin-left: w(8);
+      width: calc(100% - #{$site-header-width-on-left});
+      margin-left: $site-header-width-on-left;
     }
     &__footer {
-      margin-left: w(8);
+      margin-left: $site-header-width-on-left;
       padding: 0 ms(3);
       margin-bottom: ms(2);
     }
   }
-  @media #{$bp--large} {
-    &__header {
-      width: w(4);
-      margin-bottom: 0;
-    }
+  // footer becomes sidebar
+  @media #{$bp--xxxxlarge} {
+    min-height: 100vh;
     &__main {
-      width: w(20);
-      margin-left: w(4);
+      width: calc(100% - #{w(6)} - #{$site-header-width-on-left});
     }
     &__footer {
-      margin-left: w(4);
-    }
-    // footer becomes sidebar
-    @media #{$bp--xxxxlarge} {
-      min-height: 100vh;
-      &__main {
-        width: w(14);
-        margin-left: w(4);
-      }
-      &__footer {
-        @include depth(30);
-        padding: ms(1) ms(2);
-        width: w(6);
-        margin-left: 0;
-        margin-bottom: 0;
+      @include depth(30);
+      padding: ms(1) ms(2);
+      width: w(6);
+      margin-left: 0;
+      margin-bottom: 0;
+      .footer-blocks {
+        .footer-blocks__block {
+          width: 100%;
+        }
       }
     }
   }
