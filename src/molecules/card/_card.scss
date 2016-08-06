@@ -6,4 +6,7 @@
   padding: ms(1);
   margin-bottom: ms(3);
   background: white;
+  &__section {
+    text-transform: capitalize;
+  }
 }
