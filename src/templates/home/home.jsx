@@ -1,15 +1,12 @@
 const React = require('react');
-const Default = require('../default/default');
-const Markdown = require('../../global/markdown');
 const Link = require('../../atoms/link');
 
-const Home = (props) => (<Default {...props}>
-  <Markdown contents={props.contents} />
+const Home = (props) => (<div>
   <p>
     <Link className="button button-primary button-lg" href="/portfolio">Portfolio</Link>
     <Link className="button button-sm" href="/contact">Contact</Link>
   </p>
-</Default>
+</div>
 );
 
 Home.propTypes = {

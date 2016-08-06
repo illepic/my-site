@@ -4,6 +4,12 @@
   flex-direction: row;
   &__link {
     margin-right: ms(1);
+    text-decoration: none;
+    &--active {
+      &:after {
+        content: ' •';
+      }
+    }
   }
   .site-header__nav-visible:checked + & {
     
