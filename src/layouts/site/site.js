@@ -71,5 +71,15 @@ module.exports = props => `<!doctype html>
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
   </script>
+  <script>
+    if (window.location !== 'localhost' && window.location !== 'dev.evanlovely.com') {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-45410005-1', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
 </body>
 </html>`;
