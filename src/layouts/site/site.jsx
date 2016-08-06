@@ -32,7 +32,21 @@ const Site = class extends React.Component {
     document.body.classList.remove('is-loading');
     // @todo only do this when going to a new page and trigger AFTER render
     window.scrollTo(0, 0);
+
     document.title = util.docTitle(this.props);
+
+    if (this.props.comments) {
+      window.DISQUS.reset({
+        reload: true,
+        config: function configDisqus() {
+          this.page.identifier = this.props.path;
+          this.page.url = window.location.origin + this.props.path;
+          this.page.title = this.props.title;
+          this.language = 'en';
+        },
+      });
+    }
+
     this.newPage();
   }
 
@@ -90,6 +104,7 @@ const Site = class extends React.Component {
             <Markdown contents={this.props.contents} />
             {content}
           </article>
+          {this.props.comments ? <div id="disqus_thread"></div> : ''}
         </main>
 
         <SiteFooter {...this.props} />
@@ -107,6 +122,7 @@ Site.propTypes = {
   contents: React.PropTypes.string,
   section: React.PropTypes.string,
   landingPage: React.PropTypes.bool,
+  comments: React.PropTypes.bool,
   site: React.PropTypes.shape({
     pages: React.PropTypes.array,
   }),
