@@ -31,7 +31,7 @@ const Site = class extends React.Component {
       },
     });
   }
-  
+
   updateHead() {
     document.title = util.docTitle(this.props);
   }
@@ -41,7 +41,7 @@ const Site = class extends React.Component {
     window.ga('set', 'page', this.props.path);
     window.ga('send', 'pageview');
   }
-  
+
   newPage() {
 
   }
@@ -105,9 +105,14 @@ const Site = class extends React.Component {
     if (Template) {
       content = <Template {...this.props} />;
     } else if (this.props.landingPage) {
+      let landingListItems = this.props.site.pages
+        .filter(page => !page.landingPage && page.section === this.props.section);
+      landingListItems = (this.props.section === 'blog')
+        ? landingListItems.sort((a, b) => new Date(b.date) - new Date(a.date))
+        : landingListItems.sort((a, b) => a.weight > b.weight);
       content = (<LandingList
         {...this.props}
-        items={this.props.site.pages.filter(page => page.section === this.props.section)}
+        items={landingListItems}
       />);
     }
 
