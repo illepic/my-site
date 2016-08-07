@@ -62,11 +62,11 @@ const SiteFooter = (props) => {
     <footer className="site__footer">
       <section className={`footer-blocks footer-blocks--has-${footerBlockCount}`}>
         {relatedPages}
-        <LinksCard
+        {!props.hideRecentPosts ? <LinksCard
           title="Recent Blog Posts"
           links={recentBlogPosts}
           className="footer-blocks__block"
-        />
+        /> : null}
       </section>
       <nav className="footer-nav">
         {items}

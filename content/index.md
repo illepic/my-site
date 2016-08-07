@@ -2,6 +2,7 @@
 menu: main
 template: home
 hideToc: true
+hideRecentPosts: true
 ---
 ## Hi! I’m Evan, and I theme Drupal websites with a responsive, mobile approach.
 

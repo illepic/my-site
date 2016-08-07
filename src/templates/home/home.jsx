@@ -1,11 +1,20 @@
 const React = require('react');
 const Link = require('../../atoms/link');
+const LandingList = require('../../organisms/landing-list/landing-list');
 
 const Home = (props) => (<div>
   <p>
     <Link className="button button-primary button-lg" href="/portfolio">Portfolio</Link>
     <Link className="button button-sm" href="/contact">Contact</Link>
   </p>
+    <LandingList
+      items={props.site.pages
+        .filter(page => page.section === 'blog' && !page.landingPage)
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .slice(0, 6)
+      }
+      showExcerpts={false}
+    />
 </div>
 );
 

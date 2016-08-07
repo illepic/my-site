@@ -5,7 +5,7 @@ const Meta = require('../../molecules/meta');
 const LandingList = (props) => {
   const list = props.items.map(item => {
     let contents = '';
-    if (item.excerpt) {
+    if (props.showExcerpts && item.excerpt) {
       const excerpt = item.excerpt;
       contents = (<div
         className="card__excerpt"
@@ -33,6 +33,10 @@ const LandingList = (props) => {
       {list}
     </section>
   );
+};
+
+LandingList.defaultProps = {
+  showExcerpts: true,
 };
 
 LandingList.propTypes = {
