@@ -113,7 +113,7 @@ gulp.task('watch:buildJson', () => {
   gulp.watch('./lib/buildJson.js', () => {
     const x = require.resolve('./lib/buildJson');
     delete require.cache[x];
-    buildJson = require('./lib/buildJson');
+    buildJson = require('./lib/buildJson'); // eslint-disable-line global-require
     buildJson.buildAll();
   });
 });
