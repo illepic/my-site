@@ -109,8 +109,8 @@ gulp.task('json', (done) => {
   buildJson.buildAll(done);
 });
 
-gulp.task('watch:buildJson', (done) => {
-  gulp.watch('./lib/buildJson.js', event => {
+gulp.task('watch:buildJson', () => {
+  gulp.watch('./lib/buildJson.js', () => {
     const x = require.resolve('./lib/buildJson');
     delete require.cache[x];
     buildJson = require('./lib/buildJson');
