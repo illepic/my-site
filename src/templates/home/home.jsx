@@ -4,8 +4,8 @@ const LandingList = require('../../organisms/landing-list/landing-list');
 
 const Home = (props) => (<div>
   <p>
-    <Link className="button button-primary button-lg" href="/portfolio">Portfolio</Link>
-    <Link className="button button-sm" href="/contact">Contact</Link>
+    <Link className="button button--lg" href="/portfolio">Portfolio</Link>
+    <Link className="button" href="/contact">Contact</Link>
   </p>
     <LandingList
       items={props.site.pages
