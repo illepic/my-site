@@ -54,13 +54,20 @@ const SiteFooter = (props) => {
   .sort((a, b) => new Date(b.date) - new Date(a.date))
   .slice(0, postCount);
 
+  const classList = ['footer-blocks'];
+
   if (relatedPages) {
     footerBlockCount = 2;
   }
 
+  if (footerBlockCount > 1) classList.push('smart-grid');
+
   return (
     <footer className="site__footer">
-      <section className={`footer-blocks footer-blocks--has-${footerBlockCount}`}>
+      <section
+        className={classList.join(' ')}
+        data-row-items-small="2"
+      >
         {relatedPages}
         {!props.hideRecentPosts ? <LinksCard
           title="Recent Blog Posts"
