@@ -1,5 +1,6 @@
 @import "../node_modules/normalize.scss/normalize";
 @import "../node_modules/modularscale-sass/stylesheets/modular-scale";
-
+$ms-base: .5rem 1rem;
+$ms-ratio: $golden;
+$grid: 24;
 @import "**/*.scss";
-
