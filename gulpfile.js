@@ -33,7 +33,7 @@ const tasks = {
 
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 
-gulp.task('test:links', (done) => {
+function testLinks(url, done) {
   const results = {};
   const l = new linkChecker.SiteChecker({
     excludeExternalLinks: true,
@@ -51,10 +51,22 @@ gulp.task('test:links', (done) => {
       fs.writeFile('./reports/broken-links.json', JSON.stringify(results), done);
     },
   });
-  l.enqueue(`http://localhost:${themeConfig.browserSync.port}`);
+  l.enqueue(url);
+}
+
+gulp.task('test:links:local', (done) => {
+  testLinks(`http://localhost:${themeConfig.browserSync.port}`, done);
 });
 
-gulp.task('test:images', (done) => {
+gulp.task('test:links:stage', (done) => {
+  testLinks('http://dev.evanlovely.com', done);
+});
+
+gulp.task('test:links:prod', (done) => {
+  testLinks('http://evanlovely.com', done);
+});
+
+function testImages(url, done) {
   const results = {};
   const l = new linkChecker.SiteChecker({
 
@@ -74,7 +86,19 @@ gulp.task('test:images', (done) => {
       fs.writeFile('./reports/broken-images.json', JSON.stringify(results), done);
     },
   });
-  l.enqueue(`http://localhost:${themeConfig.browserSync.port}`);
+  l.enqueue(url);
+}
+
+gulp.task('test:images:local', (done) => {
+  testImages(`http://localhost:${themeConfig.browserSync.port}`, done);
+});
+
+gulp.task('test:images:stage', (done) => {
+  testImages('http://dev.evanlovely.com', done);
+});
+
+gulp.task('test:images:prod', (done) => {
+  testImages('http://evanlovely.com', done);
 });
 
 require('p2-theme-core')(gulp, themeConfig, tasks);

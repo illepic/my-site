@@ -18,9 +18,13 @@
     "compile:prod": "export NODE_ENV=production && webpack -p && gulp compile",
     "clean": "rm -rf dist",
     "new": "yo ./_templates/index.js",
+    "predeploy:stage": "npm run compile:prod",
+    "predeploy:prod": "npm run compile:prod",
     "deploy:stage": "time rsync -azP --delete dist--prod/ evlove@evanlovely.com:/home/evlove/www/dev.evanlovely.com/public/",
     "deploy:prod": "time rsync -azP --delete dist--prod/ evlove@evanlovely.com:/home/evlove/www/evanlovely.com/public/",
-    "test:links": "blc -ro http://localhost:3042",
+    "test:links:local": "blc -ro http://localhost:3042",
+    "test:links:stage": "blc -ro http://dev.evanlovely.com",
+    "test:links:prod": "blc -ro http://evanlovely.com",
     "test": "mocha tests/*.test.js src/**/*.test.js"
   },
   "devDependencies": {
