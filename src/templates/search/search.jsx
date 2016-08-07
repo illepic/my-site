@@ -1,7 +1,7 @@
 const React = require('react');
 const url = require('url');
 const querystring = require('querystring');
-const Link = require('../../atoms/link');
+const LandingList = require('../../organisms/landing-list/landing-list');
 
 const Search = class extends React.Component {
   constructor(props) {
@@ -45,24 +45,27 @@ const Search = class extends React.Component {
         const x = new RegExp(this.state.title, 'i');
         return x.test(page.title);
       })
-      .map(page => <li key={page.path}>
-        <Link href={page.path}>{page.title}</Link> - {page.tags.join(', ')}
-      </li>);
+      .slice(0, 26);
     return (
       <div className="search">
-        <label>Title: </label>
-        <input
-          type="text"
-          value={this.state.title}
-          onChange={this.handleTitleForm}
-        />
-        <label>Tag: </label>
-        <input
-          type="text"
-          value={this.state.tags}
-          onChange={this.handleTagsForm}
-        />
-        <ul>{pages}</ul>
+        <p>
+          <label>Title: </label>
+          <input
+            type="text"
+            value={this.state.title}
+            onChange={this.handleTitleForm}
+          />
+        </p>
+        <p>
+          <label>Tag: </label>
+          <input
+            type="text"
+            value={this.state.tags}
+            onChange={this.handleTagsForm}
+          />
+        </p>
+        <hr />
+        <LandingList items={pages} showExcerpts={false} />
       </div>
     );
   }
