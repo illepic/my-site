@@ -63,8 +63,10 @@ const Site = class extends React.Component {
 
     this.updateHead();
 
-    if (this.props.comments || !this.props.draft) {
-      this.updateComments();
+    if (window.location.hostname === 'www.evanlovely.com') {
+      if (this.props.comments || !this.props.draft) {
+        this.updateComments();
+      }
     }
 
     if (window.location.hostname === 'www.evanlovely.com') {
