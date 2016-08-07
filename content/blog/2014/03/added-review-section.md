@@ -5,7 +5,7 @@ category: Personal
 tags:
   - gear
   - review
-  - this-site
+  - this site
 date: 2014-03-02
 redirect_from: /blog/personal/added-review-section/
 ---

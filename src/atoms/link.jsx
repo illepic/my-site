@@ -1,4 +1,5 @@
 const React = require('react');
+const util = require('../0-base/util');
 
 const Link = class extends React.Component {
   constructor(props) {
@@ -7,6 +8,10 @@ const Link = class extends React.Component {
   }
 
   handleClick(event) {
+    if (util.isPathRemote(this.props.href)) {
+      return;
+    }
+
     const history = require('../../lib/history'); // eslint-disable-line global-require
     if (this.props.onClick) {
       this.props.onClick(event);
@@ -40,7 +45,11 @@ const Link = class extends React.Component {
 
   render() {
     // const {to, ...props} = this.props; // eslint-disable-line no-use-before-define
-    return <a {...this.props} onClick={this.handleClick}>{this.props.children}</a>;
+    return (<a
+      {...this.props}
+      onClick={this.handleClick}
+      target={util.isPathRemote(this.props.href) ? '_blank' : null}
+    >{this.props.children}</a>);
   }
 };
 
