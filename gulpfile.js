@@ -13,7 +13,7 @@ const pngquant = require('imagemin-pngquant');
 const changed = require('gulp-changed');
 const linkChecker = require('broken-link-checker');
 const eslint = require('gulp-eslint');
-const buildJson = require('./lib/buildJson');
+let buildJson = require('./lib/buildJson');
 const buildRss = require('./lib/buildRss');
 const buildRedirects = require('./lib/buildRedirects');
 
@@ -108,6 +108,17 @@ function reload() {
 gulp.task('json', (done) => {
   buildJson.buildAll(done);
 });
+
+gulp.task('watch:buildJson', (done) => {
+  gulp.watch('./lib/buildJson.js', event => {
+    const x = require.resolve('./lib/buildJson');
+    delete require.cache[x];
+    buildJson = require('./lib/buildJson');
+    buildJson.buildAll();
+  });
+});
+
+tasks.watch.push('watch:buildJson');
 
 gulp.task('html', ['json'], (done) => {
   sh('node lib/compile.js', false, () => {
