@@ -1,0 +1,30 @@
+.button {
+  border: solid 1px $c-border;
+  font-family: $ff--sans-serif;
+  border-radius: ms(-3);
+  display: inline-block;
+  padding: ms(-5) ms(0);
+  margin: 0 ms(1) ms(1) 0;
+  text-decoration: none;
+  .theme--light & {
+    color: $c-gray--darker;
+    background: transparent;
+    border-color: $c-border;
+  }
+  &--primary {
+    .theme--light & {
+      color: $c-blue;
+    }
+  }
+  &--alt {
+    .theme--light & {
+      background: transparent;
+    }
+  }
+  &--sm {
+    font-size: ms(1);
+  }
+  &--lg {
+    font-size: ms(4);
+  }
+}

@@ -1,41 +1,10 @@
-_site
-_asset_bundler_cache
-rsync-log.txt
-_drafts
+dist/
+dist--prod/
 
 # OS generated files
 .DS_Store
 .DS_Store?
 
 # Dependencies
-vendor/bundle
-.bundle
-bower_components
 node_modules
-_blogposts/
-
-# Generated files
-*.sass-cache/
-scss/99-imports/*
-!scss/99-imports/README.md
-
-# Generated files: icons
-images/icons/output/
-scss/00-config/_icons.scss
-pattern-lab/source/_patterns/00-atoms/04-images/icons.mustache
-
-# Styleguide specific stuff
-pattern-lab/public/*
-
-#IDE plugins
-.idea
-atlassian-ide-plugin.xml
-
-# Visual Regression Testing
-baselines
-!pattern-lab/source/_patterns/**/baselines
-pattern-lab/source/_patterns/**/baselines/*.diff.png
-pattern-lab/source/_patterns/**/baselines/*.fail.png
-pattern-lab/source/_patterns/**/results
-
-photos/
+reports/*.json

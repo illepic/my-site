@@ -1,0 +1,31 @@
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow: scroll;
+  justify-content: space-between;
+  @media #{$bp--small} {
+    justify-content: flex-start;
+  }
+  &__link {
+    margin-right: ms(1);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    &--active {
+      text-decoration: underline;
+      @media #{$bp--small} {
+        text-decoration: none;
+        &:after {
+          content: ' •';
+        }
+      }
+    }
+  }
+  .site-header__nav-visible:checked + & {
+
+  }
+  @media #{$bp--xlarge} {
+    flex-direction: column;
+  }
+}

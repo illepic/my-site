@@ -1,9 +1,2 @@
-language: ruby
-rvm:
- - "2.3.0"
-# uncomment this line if your project needs to run something other than `rake`:
-script: bundle exec jekyll build
-git:
-  depth: 3
-install:
-  - bundle install --path .vendor/bundle
+language: node_js # grabs version from `.nvmrc`
+

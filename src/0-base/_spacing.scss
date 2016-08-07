@@ -1,0 +1,3 @@
+@function w($key) {
+  @return percentage($key / $grid);
+}

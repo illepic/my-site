@@ -1,0 +1,37 @@
+.site-header {
+  @include depth(30);
+  padding: ms(1);
+  background: white;
+  &__nav-toggle {
+    @media #{$bp--small} {
+      @include hidden();
+    }
+  }
+}
+
+.toc {
+  border-top: solid 1px $c-border;
+  display: none;
+  padding-top: ms(1);
+  padding-left: 0;
+  @media #{$bp--xlarge} {
+    display: block;
+  }
+  &__item {
+    &--h1 {
+      font-size: 1.1em;
+    }
+    &--h3 {
+      margin-left: ms(2);
+    }
+    &--h4 {
+      margin-left: ms(4);
+    }
+    &--h5 {
+      margin-left: ms(6);
+    }
+    &--h6 {
+      margin-left: ms(8);
+    }
+  }
+}

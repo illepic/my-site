@@ -1,0 +1,64 @@
+.sg-spacing {
+  @for $i from 0 through 9 {
+    [data-spacing="ms(#{$i})"] {
+      width: ms($i);
+      background: $c-orange;
+      height: 2px;
+      margin-bottom: ms(3);
+      &:after {
+        content: attr(data-spacing);
+        font-family: $ff--mono;
+        display: block;
+        font-size: ms(2);
+      }
+    }
+  }
+}
+
+.sg-depth {
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__item {
+    padding: ms(1);
+    width: 30%;
+    margin-bottom: ms(5);
+    &:nth-child(1) {
+      @include depth(10);
+      &:before {
+        content: 'depth(10)';
+      }
+    }
+    &:nth-child(2) {
+      @include depth(15);
+      &:before {
+        content: 'depth(15)';
+      }
+    }
+    &:nth-child(3) {
+      @include depth(20);
+      &:before {
+        content: 'depth(20)';
+      }
+    }
+    &:nth-child(4) {
+      @include depth(30);
+      &:before {
+        content: 'depth(30)';
+      }
+    }
+    &:nth-child(5) {
+      @include depth(40);
+      &:before {
+        content: 'depth(40)';
+      }
+    }
+    &:nth-child(6) {
+      @include depth(50);
+      &:before {
+        content: 'depth(50)';
+      }
+    }
+  }
+}

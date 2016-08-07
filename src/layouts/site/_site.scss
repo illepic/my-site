@@ -1,0 +1,101 @@
+$site-header-width-on-left: 280px;
+
+body {
+  &.theme--dark {
+    background: $c-gray--darker;
+    color: $c-gray--lighter;
+  }
+  &.theme--light {
+    color: $c-gray--darkest;
+  }
+  &.is-loading * {
+    cursor: progress;
+  }
+}
+
+.site {
+  display: flex;
+  flex-wrap: wrap;
+  //justify-content: space-between;
+  padding-bottom: 120px;
+  &__header {
+    width: w(24);
+    position: fixed;
+    bottom: 0;
+    .branding {
+      display: none;
+    }
+  }
+  &__main {
+    padding: 0 ms(2);
+    margin-bottom: ms(3);
+    &:after {
+      content: '';
+      display: block;
+      border-bottom: solid 1px $c-border;
+    }
+  }
+  &__footer {
+    padding: 0 ms(2);
+    width: 100%;
+  }
+  @media #{$bp--small} {
+    padding-top: 120px;
+    padding-bottom: 0;
+    &__header {
+      bottom: auto;
+      top: 0;
+      .branding {
+        display: flex;
+      }
+    }
+    &__main {
+      .branding {
+        display: none;
+      }
+    }
+  }
+  // don't fix header when height is small (i.e. landscape phones)
+  @media screen and (max-height: 500px) {
+    padding-top: 0;
+    &__header {
+      position: static;
+    }
+  }
+  @media #{$bp--xlarge} {
+    padding: 0;
+    &__header {
+      width: $site-header-width-on-left;
+      bottom: 0;
+    }
+    &__main {
+      padding: 0 ms(3);
+      width: calc(100% - #{$site-header-width-on-left});
+      margin-left: $site-header-width-on-left;
+    }
+    &__footer {
+      margin-left: $site-header-width-on-left;
+      padding: 0 ms(3);
+      margin-bottom: ms(2);
+    }
+  }
+  // footer becomes sidebar
+  @media #{$bp--xxxxlarge} {
+    min-height: 100vh;
+    &__main {
+      width: calc(100% - #{w(6)} - #{$site-header-width-on-left});
+    }
+    &__footer {
+      @include depth(30);
+      padding: ms(1) ms(2);
+      width: w(6);
+      margin-left: 0;
+      margin-bottom: 0;
+      .footer-blocks {
+        .footer-blocks__block {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

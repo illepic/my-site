@@ -1,0 +1,27 @@
+.branding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: ms(1);
+  .site__main & {
+    margin-top: ms(1);
+  }
+  &__logo {
+    width: 50px;
+    order: -1;
+    margin-right: ms(1);
+  }
+  &__title {
+    @include h5();
+    margin-bottom: 0;
+    flex-grow: 1;
+    > a {
+      text-decoration: none;
+    }
+    @media #{$bp--xlarge} {
+      @include h6();
+      margin-bottom: 0;
+    }
+  }
+}

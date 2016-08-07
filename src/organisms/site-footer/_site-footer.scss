@@ -1,0 +1,8 @@
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  &__link {
+    margin-right: ms(1);
+  }
+}

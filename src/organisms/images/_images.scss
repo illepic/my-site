@@ -1,0 +1,14 @@
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  &__item {
+    margin-bottom: ms(1);
+    @media #{$bp--medium} {
+      width: 50%;
+    }
+    @media #{$bp--xlarge} {
+      width: 33%;
+    }
+  }
+}
