@@ -10,3 +10,52 @@ figure {
 figcaption {
   font-style: italic;
 }
+
+blockquote {
+  font-size: 1.25em;
+  margin: 0 0 ms(3);
+  padding-left: ms(1);
+  border-left: solid 3px $c-border;
+  font-style: italic;
+}
+
+ul,
+ol {
+  margin: 0 0 ms(3) ms(2);
+  padding: 0;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: $c-border;
+  margin: 0 0 ms(3);
+}
+
+pre {
+  border-radius: ms(1);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+code {
+  background: transparentize($c-gray--lightest, 0.2);
+  padding: 0 3px;
+  border-radius: 4px;
+}
+
+a {
+  .theme--light & {
+    color: $c-orange;
+  }
+  .theme--dark & {
+    color: $c-orange--light;
+  }
+}
+
+p {
+  margin: 0 0 ms(3);
+  &.intro {
+    font-size: ms(4);
+  }
+}
