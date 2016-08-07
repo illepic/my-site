@@ -54,10 +54,13 @@ const Site = class extends React.Component {
     this.newPage();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     document.body.classList.remove('is-loading');
-    // @todo only do this when going to a new page and trigger AFTER render
-    window.scrollTo(0, 0);
+    if (prevProps.path !== this.props.path && !window.location.hash) {
+      console.log('scrolling...');
+      // @todo only do this when going to a new page and trigger AFTER render
+      window.scrollTo(0, 0);
+    }
 
     this.updateHead();
 

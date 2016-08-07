@@ -1,6 +1,7 @@
 ---
 menu: main
 template: home
+hideToc: true
 ---
 ## Hi! I’m Evan, and I theme Drupal websites with a responsive, mobile approach.
 

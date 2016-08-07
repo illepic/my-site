@@ -18,7 +18,7 @@ html {
     font-size: 18px;
     //font-size: 3vw;
   }
-    
+
   @media #{$bp--medium} {
     font-size: 20px;
     //font-size: 2vw;
@@ -126,6 +126,12 @@ blockquote {
   padding-left: ms(1);
   border-left: solid 3px $c-border;
   font-style: italic;
+}
+
+ul,
+ol {
+  margin: 0 0 ms(3) ms(1);
+  padding: 0;
 }
 
 hr {

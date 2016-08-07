@@ -8,3 +8,30 @@
     }
   }
 }
+
+.toc {
+  border-top: solid 1px $c-border;
+  display: none;
+  padding-top: ms(1);
+  padding-left: 0;
+  @media #{$bp--xlarge} {
+    display: block;
+  }
+  &__item {
+    &--h1 {
+      font-weight: bold;
+    }
+    &--h3 {
+      margin-left: ms(2);
+    }
+    &--h4 {
+      margin-left: ms(4);
+    }
+    &--h5 {
+      margin-left: ms(6);
+    }
+    &--h6 {
+      margin-left: ms(8);
+    }
+  }
+}
