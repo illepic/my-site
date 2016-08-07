@@ -106,7 +106,10 @@ function reload() {
 }
 
 gulp.task('json', (done) => {
-  buildJson.buildAll(done);
+  buildJson.buildAll(() => {
+    reload();
+    done();
+  });
 });
 
 gulp.task('watch:buildJson', () => {
@@ -122,7 +125,7 @@ tasks.watch.push('watch:buildJson');
 
 gulp.task('html', ['json'], (done) => {
   sh('node lib/compile.js', false, () => {
-    reload();
+    // reload();
     done();
   });
 });
