@@ -57,7 +57,6 @@ const Site = class extends React.Component {
   componentDidUpdate(prevProps) {
     document.body.classList.remove('is-loading');
     if (prevProps.path !== this.props.path && !window.location.hash) {
-      console.log('scrolling...');
       // @todo only do this when going to a new page and trigger AFTER render
       window.scrollTo(0, 0);
     }
@@ -68,10 +67,7 @@ const Site = class extends React.Component {
       this.updateComments();
     }
 
-    if (!(
-        window.location.hostname === 'localhost' ||
-        window.location.hostname === 'dev.evanlovely.com'
-      )) {
+    if (window.location.hostname === 'www.evanlovely.com') {
       // this is set on my browsers to ensure I don't trigger pageviews on prod
       if (!(JSON.parse(localStorage.getItem('doNotTrack')))) {
         this.updateAnalytics();

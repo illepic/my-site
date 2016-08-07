@@ -72,7 +72,7 @@ module.exports = props => `<!doctype html>
     })();
   </script>
   <script>
-    if (!(window.location.hostname === 'localhost' || window.location.hostname === 'dev.evanlovely.com')) {
+    if (window.location.hostname === 'www.evanlovely.com') {
       // this is set on my browsers to ensure I don't trigger pageviews on prod
       if (!(JSON.parse(localStorage.getItem('doNotTrack')))) {
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
