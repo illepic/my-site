@@ -64,12 +64,18 @@ const Site = class extends React.Component {
 
     this.updateHead();
 
-    if (this.props.comments) {
+    if (this.props.comments || !this.props.draft) {
       this.updateComments();
     }
 
-    if (window.location !== 'localhost' && window.location !== 'dev.evanlovely.com') {
-      this.updateAnalytics();
+    if (!(
+        window.location.hostname === 'localhost' ||
+        window.location.hostname === 'dev.evanlovely.com'
+      )) {
+      // this is set on my browsers to ensure I don't trigger pageviews on prod
+      if (!(JSON.parse(localStorage.getItem('doNotTrack')))) {
+        this.updateAnalytics();
+      }
     }
 
     this.newPage();
@@ -137,7 +143,10 @@ const Site = class extends React.Component {
             <Markdown contents={this.props.contents} />
             {content}
           </article>
-          <div id="disqus_thread" className={!this.props.comments ? 'hidden' : 'comments'}></div>
+          <div
+            id="disqus_thread"
+            className={!this.props.comments || this.props.draft ? 'hidden' : 'comments'}
+          ></div>
         </main>
 
         <SiteFooter {...this.props} />
@@ -154,6 +163,7 @@ Site.propTypes = {
   template: React.PropTypes.string,
   contents: React.PropTypes.string,
   section: React.PropTypes.string,
+  draft: React.PropTypes.bool,
   landingPage: React.PropTypes.bool,
   comments: React.PropTypes.bool,
   site: React.PropTypes.shape({
