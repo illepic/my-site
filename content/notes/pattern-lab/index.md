@@ -32,7 +32,6 @@ I presented on how we use Pattern Lab here: [DrupalCon Los Angeles 2015: The New
 ### Devsigner 2016
 
 - Download [my presentation](integrating-pattern-lab-into-drupal-workshop.pdf) here.
-- We kept shared notes in [this Google Doc](https://docs.google.com/document/d/1DQr4WZIYsRBxbnR0GJ_6BmEYzbO7Qjh99W235WHdmU8/edit?usp=sharing).
 
 ## Smaller Utilities
 
