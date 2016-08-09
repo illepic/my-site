@@ -16,9 +16,9 @@ const Card = (props) => {
       : path.join(props.path, imgFilename);
     img = (props.title_url || props.path)
       ? (
-        <Link href={(props.title_url ? props.title_url : props.path)}>
-          <Image src={myPath} className="card__image" />
-        </Link>
+      <Link href={(props.title_url ? props.title_url : props.path)}>
+        <Image src={myPath} className="card__image" />
+      </Link>
       ) : (<Image src={myPath} className="card__image" />);
   }
   let title = '';
@@ -38,7 +38,9 @@ const Card = (props) => {
       {title ? (<h5 className="card__title">{title}</h5>) : null}
       {img}
       {props.children ? (<div className="card__contents">{props.children}</div>) : ''}
-      {props.title_url && props.path ? (<Link href={props.path} className="button">Read More</Link>) : null}
+      {props.title_url && props.path
+        ? (<Link href={props.path} className="button">Read More</Link>)
+        : null}
     </article>
   );
 };

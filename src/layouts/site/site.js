@@ -69,7 +69,8 @@ module.exports = props => `<!doctype html>
         dsq.type = 'text/javascript';
         dsq.async = true;
         dsq.src = 'http://evanlovely.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0])
+          .appendChild(dsq);
       })();
     }
   </script>

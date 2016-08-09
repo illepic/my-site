@@ -88,6 +88,7 @@ SiteFooter.propTypes = {
     pages: React.PropTypes.array,
   }),
   path: React.PropTypes.string,
+  hideRecentPosts: React.PropTypes.bool,
 };
 
 module.exports = SiteFooter;
