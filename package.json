@@ -12,8 +12,8 @@
     "url": "git@github.com:EvanLovely/my-site.git"
   },
   "scripts": {
-    "start": "export NODE_ENV=development && npm run compile && webpack -d --watch & gulp",
-    "start:prod": "export NODE_ENV=production && npm run compile:prod && webpack -p --watch & gulp",
+    "start": "export NODE_ENV=development && gulp compile && webpack-dev-server --inline --hot --content-base=dist & gulp",
+    "start:prod": "export NODE_ENV=production && npm run compile:prod && webpack -p --watch & NODE_ENV=production gulp",
     "compile": "export NODE_ENV=development && webpack -d && gulp compile",
     "compile:prod": "export NODE_ENV=production && webpack -p && gulp compile",
     "clean": "rm -rf dist",
@@ -49,7 +49,9 @@
     "mocha": "^2.4.5",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-hot-loader": "^1.3.0",
     "request": "^2.74.0",
+    "webpack-dev-server": "^1.14.1",
     "yeoman-generator": "^0.24.1",
     "yo": "^1.8.4"
   },

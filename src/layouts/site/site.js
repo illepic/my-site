@@ -60,7 +60,7 @@ module.exports = props => `<!doctype html>
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/darkula.min.css"
     >
   </noscript>
-  <script src="/assets/bundle--main.js"></script>
+  <script src="${process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'}/assets/bundle--main.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
   <script>
     if (window.location.hostname === 'www.evanlovely.com') {

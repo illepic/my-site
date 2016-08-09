@@ -16,6 +16,7 @@ const options = {
   output: {
     filename: 'bundle--[name].js',
     path: config.paths.assets,
+    publicPath: (process.env.NODE_ENV === 'production') ? '/assets/' : 'http://localhost:8080/assets/',
   },
   resolve: {
     modulesDirectories: ['node_modules', 'src'],
@@ -26,10 +27,7 @@ const options = {
       {
         test: /\.js/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015'],
-        },
+        loaders: ['babel'],
       },
     ],
   },
@@ -53,6 +51,8 @@ if (process.env.NODE_ENV === 'production') {
       warnings: false, // https://github.com/webpack/webpack/issues/1496
     },
   }));
+} else {
+  options.module.loaders[0].loaders.unshift('react-hot');
 }
 
 module.exports = options;

@@ -31,7 +31,7 @@ const tasks = {
   default: [],
 };
 
-console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+console.log(`gulp's NODE_ENV: ${process.env.NODE_ENV}`);
 
 function testLinks(url, done) {
   const results = {};
@@ -131,7 +131,7 @@ function reload() {
 
 gulp.task('json', (done) => {
   buildJson.buildAll(() => {
-    reload();
+    // reload();
     done();
   });
 });
@@ -173,7 +173,7 @@ gulp.task('watch:templates', () => {
     join(config.paths.src, 'layouts/site/site.js'),
   ], event => {
     console.log(`'${path.relative(process.cwd(), event.path)}' was ${event.type}, compiling...`);
-    sh('node lib/compile.js', false, reload);
+    sh('node lib/compile.js', false);
   });
 });
 
