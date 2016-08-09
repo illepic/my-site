@@ -2,8 +2,9 @@ language: node_js
 node_js: # grabs version from `.nvmrc`
 git:
   depth: 1
+before_install:
+  - apt-get install imagemagick
 install:
-  - npm install -g gm # GraphicsMagick/ImageMagick
   - npm install
 script:
   - npm run compile:prod
