@@ -29,6 +29,7 @@ body {
   &__main {
     padding: 0 ms(2);
     margin-bottom: ms(3);
+    width: 100%;
     &:after {
       content: '';
       display: block;

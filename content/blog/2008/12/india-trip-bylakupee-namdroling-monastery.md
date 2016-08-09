@@ -7,7 +7,9 @@ tags:
 status: publish
 type: post
 published: true
-redirect_from: /blog/photography/india-trip-bylakupee-namdroling-monastery/
+redirect_from: 
+  - /blog/photography/india-trip-bylakupee-namdroling-monastery/
+  - /ashtanga-vinyasa-yoga/india-trip-bylakupee-namdroling-monastery/
 meta:
   dsq_thread_id: '1024172254'
 date: 2008-12-12
