@@ -5,7 +5,7 @@ git:
 sudo: required
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install imagemagick
+  - sudo apt-get install graphicsmagick
 install:
   - npm install
 script:
