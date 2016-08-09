@@ -119,7 +119,7 @@ const Site = class extends React.Component {
         ? landingListItems
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .slice(0, 20) // @todo add pagination for Blog
-        : landingListItems.sort((a, b) => a.weight > b.weight);
+        : landingListItems;
       content = (<LandingList
         {...this.props}
         items={landingListItems}

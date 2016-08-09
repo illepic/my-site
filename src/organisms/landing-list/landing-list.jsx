@@ -3,7 +3,15 @@ const Card = require('../../molecules/card/card');
 const Meta = require('../../molecules/meta');
 
 const LandingList = (props) => {
-  const list = props.items.map(item => {
+  const items = [];
+
+  for (let i = 1; i < 11; i++) {
+    props.items
+      .filter(item => item.weight === i)
+      .forEach(item => items.push(item));
+  }
+
+  const list = items.map(item => {
     let contents = '';
     if (props.showExcerpts && item.excerpt) {
       const excerpt = item.excerpt;
