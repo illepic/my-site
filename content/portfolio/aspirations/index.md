@@ -17,6 +17,8 @@ tech:
     - Retina Graphics
 imgs:
     - 
+      src: home.jpg
+    -
       src: home--full.jpg
       caption: Home Page
     - 
