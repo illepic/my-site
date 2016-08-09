@@ -1,6 +1,8 @@
 dist/
 dist--prod/
 
+content/**/_*
+
 # OS generated files
 .DS_Store
 .DS_Store?
@@ -8,3 +10,5 @@ dist--prod/
 # Dependencies
 node_modules
 reports/*.json
+
+
