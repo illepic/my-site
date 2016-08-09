@@ -26,7 +26,7 @@
     "test:links:local": "blc -ro http://localhost:3042",
     "test:links:stage": "blc -ro http://dev.evanlovely.com",
     "test:links:prod": "blc -ro http://evanlovely.com",
-    "test": "mocha tests/*.test.js src/**/*.test.js"
+    "test": "mocha src/**/*.test.js && gulp validate"
   },
   "devDependencies": {
     "async": "^1.5.2",

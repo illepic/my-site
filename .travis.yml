@@ -1,2 +1,9 @@
-language: node_js # grabs version from `.nvmrc`
-node_js:
+language: node_js
+node_js: # grabs version from `.nvmrc`
+git:
+  depth: 1
+install:
+  - npm install
+script:
+  - npm run compile:prod
+  - npm test
