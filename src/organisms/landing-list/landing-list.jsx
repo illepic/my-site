@@ -3,29 +3,7 @@ const Card = require('../../molecules/card/card');
 const Meta = require('../../molecules/meta');
 
 const LandingList = (props) => {
-
-  // @todo cleanup
-  const sortedOtherPages = [];
-  const datedPages = [];
-  const otherPages = [];
-  props.items.forEach(page => {
-    if (page.date) {
-      datedPages.push(page);
-    } else {
-      otherPages.push(page);
-    }
-  });
-  datedPages.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  for (let i = 1; i < 11; i++) {
-    otherPages
-      .filter(item => item.weight === i)
-      .forEach(item => sortedOtherPages.push(item));
-  }
-
-  const items = sortedOtherPages.concat(datedPages);
-
-  const list = items.map(item => {
+  const list = props.items.map(item => {
     let contents = '';
     if (props.showExcerpts && item.excerpt) {
       const excerpt = item.excerpt;

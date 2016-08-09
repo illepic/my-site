@@ -44,6 +44,16 @@ function docTitle(props) {
   return title.join(' | ');
 }
 
+function sortByWeight(a, b) {
+  if (a.weight > b.weight) return 1;
+  if (a.weight < b.weight) return -1;
+  return 0;
+}
+
+function sortByDate(a, b) {
+  return new Date(b.date) - new Date(a.date);
+}
+
 module.exports = {
   imgSrc,
   srcSet,
@@ -51,4 +61,6 @@ module.exports = {
   isPathRootRelative,
   isPathAbsolute,
   docTitle,
+  sortByWeight,
+  sortByDate,
 };
