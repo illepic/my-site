@@ -1,6 +1,5 @@
 const React = require('react');
 const Tags = require('../../atoms/tags');
-const Markdown = require('../../global/markdown');
 const Images = require('../../organisms/images');
 
 const PortfolioItem = (props) => (

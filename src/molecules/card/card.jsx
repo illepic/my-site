@@ -26,8 +26,10 @@ const Card = (props) => {
       title = props.title;
     }
   }
+  const classList = ['card'];
+  if (props.className) classList.push(props.className);
   return (
-    <article className={`card ${props.className ? props.className : ''}`}>
+    <article className={classList.join(' ')}>
       {title ? (<h5 className="card__title">{title}</h5>) : null}
       {img}
       {props.children ? (<div className="card__contents">{props.children}</div>) : ''}

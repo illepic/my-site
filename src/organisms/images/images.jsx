@@ -1,13 +1,18 @@
 const React = require('react');
-const Image = require('../../atoms/image');
+const Card = require('../../molecules/card');
 const join = require('path').join;
 
 const Images = (props) => {
-  const images = props.images.map(item => (<figure className="images__item" key={item.src}>
-    <Image src={props.basePath ? join(props.basePath, item.src) : item.src} />
-    <figcaption>{item.caption}</figcaption>
-  </figure>));
-  return (<div className="images">
+  const images = props.images.map(item => (
+    <Card
+      className="images__item"
+      key={item.src}
+      featuredImage={props.basePath ? join(props.basePath, item.src) : item.src}
+    >
+      <p>{item.caption}</p>
+    </Card>
+  ));
+  return (<div className="images smart-grid" data-row-items-small="2" data-row-items-large="3">
     {images}
   </div>);
 };

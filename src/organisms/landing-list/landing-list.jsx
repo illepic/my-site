@@ -16,7 +16,9 @@ const LandingList = (props) => {
       {...item}
       path={item.path}
       key={item.path}
-      className="landing-list__item"
+      className={contents
+        ? 'landing-list__item'
+        : 'landing-list__item landing-list__item--excerptless'}
     >
       <Meta {...item} />
       {contents}
@@ -43,6 +45,7 @@ LandingList.propTypes = {
   items: React.PropTypes.array.isRequired,
   landingListRows: React.PropTypes.bool,
   section: React.PropTypes.string,
+  showExcerpts: React.PropTypes.bool,
 };
 
 module.exports = LandingList;

@@ -131,7 +131,7 @@ function reload() {
 
 gulp.task('json', (done) => {
   buildJson.buildAll(() => {
-    // reload();
+    reload();
     done();
   });
 });
