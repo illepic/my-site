@@ -1,0 +1,9 @@
+.markdown {
+  img {
+    @media #{$bp--medium} {
+      float: right;
+      width: 50%;
+      margin: 0 0 ms(1) ms(1);
+    }
+  }
+}
