@@ -1,4 +1,5 @@
 const React = require('react');
+const config = require('../../../config');
 const LinksCard = require('../../molecules/links-card');
 const Link = require('../../atoms/link');
 
@@ -62,6 +63,10 @@ const SiteFooter = (props) => {
 
   if (footerBlockCount > 1) classList.push('smart-grid');
 
+  /* eslint-disable max-len */
+  const bottomText = <p className="small">View this page on GitHub for it's <a href={config.githubBase.file + props.srcPath} target="_blank">source</a> or <a href={config.githubBase.commits + props.srcPath} target="_blank">history</a>.</p>;
+  /* eslint-enable max-len */
+
   return (
     <footer className="site__footer">
       <section
@@ -78,6 +83,7 @@ const SiteFooter = (props) => {
       <nav className="footer-nav">
         {items}
       </nav>
+      {bottomText}
     </footer>
   );
 };
@@ -89,6 +95,7 @@ SiteFooter.propTypes = {
   }),
   path: React.PropTypes.string,
   hideRecentPosts: React.PropTypes.bool,
+  srcPath: React.PropTypes.string,
 };
 
 module.exports = SiteFooter;

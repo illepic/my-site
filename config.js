@@ -25,4 +25,8 @@ module.exports = {
     srcset: (process.env.NODE_ENV === 'production') ? true : true,
   },
   /* eslint-enable no-unneeded-ternary */
+  githubBase: {
+    file: 'https://github.com/EvanLovely/my-site/blob/master/content/',
+    commits: 'https://github.com/EvanLovely/my-site/commits/master/content/',
+  },
 };
