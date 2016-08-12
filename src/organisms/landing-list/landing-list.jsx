@@ -90,7 +90,7 @@ const LandingList = class extends React.Component {
     let toggle;
     if (this.props.showToggle && this.state.mounted) {
       toggle = (
-        <div className="toggle landing-list__header__item">
+        <div className="toggle landing-list__toggle landing-list__header__item">
           <button
             onClick={this.toggleLayout}
           >Toggle Layout</button>
