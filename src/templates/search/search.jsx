@@ -1,5 +1,6 @@
 const React = require('react');
 const url = require('url');
+const util = require('../../0-base/util');
 const querystring = require('querystring');
 const LandingList = require('../../organisms/landing-list/landing-list');
 
@@ -58,14 +59,15 @@ const Search = class extends React.Component {
         </p>
         <p>
           <label>Tag: </label>
-          <input
-            type="text"
-            value={this.state.tags}
+          <select
             onChange={this.handleTagsForm}
-          />
+            value={this.state.tags}
+          >{util.getTags(this.props.site.pages).map((tag, i) =>
+            <option value={tag.name} key={i}>{tag.name}</option>)}
+          </select>
         </p>
         <hr />
-        <LandingList items={pages} showExcerpts={false} />
+        <LandingList items={pages} showExcerpts={false} showFilter={false} />
       </div>
     );
   }
