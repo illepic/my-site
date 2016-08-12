@@ -38,9 +38,11 @@ const LandingList = class extends React.Component {
 
   render() {
     const list = this.props.items
-      .filter(item => item.tags && item.tags.some(tag =>
-        tag.toLowerCase().startsWith(this.state.tags.toLowerCase()))
-      )
+      .filter(item => {
+        if (!this.props.showFilter) return true;
+        return  item.tags && item.tags.some(tag =>
+        tag.toLowerCase().startsWith(this.state.tags.toLowerCase()));
+      })
       .map(item => {
         let contents = '';
         if (this.props.showExcerpts && item.excerpt) {
@@ -95,6 +97,7 @@ const LandingList = class extends React.Component {
         </div>
       );
     }
+
     return (
       <section className={classList.join(' ')}>
         <header className="landing-list__header">

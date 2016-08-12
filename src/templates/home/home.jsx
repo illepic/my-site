@@ -10,6 +10,7 @@ const Home = (props) => (<div>
       .slice(0, 6)
     }
     showExcerpts={false}
+    showFilter={false}
   />
 </div>
 );
