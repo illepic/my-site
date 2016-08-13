@@ -9,6 +9,7 @@ content/**/_*
 
 # Dependencies
 node_modules
+typings
 reports/*.json
 
 
