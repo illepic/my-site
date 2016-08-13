@@ -9,7 +9,6 @@ excerpt: Resources for working with Pattern Lab
 redirect_from:
   - /articles/pattern-lab
   - /pattern-lab
-published: true
 ---
 
 ## Tools & Utilities
