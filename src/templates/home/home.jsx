@@ -11,6 +11,7 @@ const Home = (props) => (<div>
     }
     showExcerpts={false}
     showFilter={false}
+    showToggle={false}
   />
 </div>
 );
