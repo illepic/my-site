@@ -81,7 +81,7 @@ const LandingList = class extends React.Component {
           >
             <option value="">Filter by Tag</option>
             {util.getTags(this.props.items).map((tag, i) =>
-              <option value={tag.name} key={i}>{tag.name}</option>)}
+              <option value={tag.name} key={i}>{tag.name} ({tag.count})</option>)}
           </select>
         </div>
       );

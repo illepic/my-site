@@ -65,7 +65,7 @@ const Search = class extends React.Component {
           >
             <option></option>
           {util.getTags(this.props.site.pages).map((tag, i) =>
-            <option value={tag.name} key={i}>{tag.name}</option>)}
+            <option value={tag.name} key={i}>{tag.name} ({tag.count})</option>)}
           </select>
         </p>
         <hr />
