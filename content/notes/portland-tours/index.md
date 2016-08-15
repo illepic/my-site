@@ -1,8 +1,8 @@
 ---
-title: Portland, OR Tours
+title: 'Portland, OR Tours'
 weight: 5
-tags: 
-  - PDX
+tags:
+  - Portland
   - travel
 ---
 A growing list of fun things to do in Portland, OR.

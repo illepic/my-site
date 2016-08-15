@@ -4,11 +4,11 @@ title: >-
   Dropbox
 category: Technology
 tags:
-  - Dropbox
-  - Pinboard
+  - dropbox
+  - pinboard
   - utilities
   - reference
-date: 2014-01-02
+date: 2014-01-02T00:00:00.000Z
 redirect_from: >-
   /blog/technology/archive-starred-rss-articles-searchable-link-clickable-pdfs-dropbox/
 ---

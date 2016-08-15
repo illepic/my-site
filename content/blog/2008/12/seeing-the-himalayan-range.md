@@ -4,13 +4,13 @@ categories:
   - Photography
 tags:
   - India
-  - Life Goals
+  - life-goals
   - mountains
   - travel
 status: publish
 type: post
 published: true
-date: 2008-12-29
+date: 2008-12-29T00:00:00.000Z
 redirect_from: /blog/photography/seeing-the-himalayan-range/
 ---
 

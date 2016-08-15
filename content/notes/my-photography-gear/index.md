@@ -1,7 +1,7 @@
 ---
 title: My Photography Gear
 weight: 5
-tags: 
+tags:
   - photography
   - gear
 ---

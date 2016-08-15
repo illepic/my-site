@@ -3,10 +3,10 @@ title: Great Sublime Text plugin for better file browsing
 title_url: 'https://sublime.wbond.net/packages/FileBrowser'
 category: Technology
 tags:
-  - Sublime Text
+  - sublime-text
   - software
-  - web-development
-date: 2014-01-26
+  - web-dev
+date: 2014-01-26T00:00:00.000Z
 redirect_from: /blog/technology/sublime-text-file-browser/
 ---
 > Ditch sidebar and browse your files in a normal tab with keyboard, like a pro!

@@ -5,10 +5,10 @@ tags:
   - web-dev
   - tech
   - pattern-lab
-excerpt: "Resources for working with Pattern Lab"
+excerpt: Resources for working with Pattern Lab
 redirect_from:
- - /articles/pattern-lab
- - /pattern-lab
+  - /articles/pattern-lab
+  - /pattern-lab
 ---
 
 ## Tools & Utilities

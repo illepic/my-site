@@ -3,9 +3,9 @@ title: Grunt for People Who Think Things Like Grunt are Weird and Hard
 title_url: 'http://24ways.org/2013/grunt-is-not-weird-and-hard'
 category: Technology
 tags:
-  - front-end-web-development
-  - CSS
-date: 2013-12-11
+  - front-end
+  - css
+date: 2013-12-11T00:00:00.000Z
 redirect_from: /blog/technology/24ways-grunt-is-not-weird-and-hard/
 ---
 > Front-end developers are often told to do certain things:

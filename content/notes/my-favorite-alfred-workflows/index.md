@@ -2,9 +2,9 @@
 title: My Favorite Alfred Workflows
 weight: 4
 tags:
-  - Alfred
-  - Mac
-  - Technology
+  - alfred
+  - mac
+  - technology
 ---
 Here's a list of my favorite [Alfred](http://alfredapp.com) Workflows (basically plugins). The paid "PowerPack" is needed for all of these. Plenty more can be found in the [Alfred Forum](http://www.alfredforum.com/forum/3-share-your-workflows/) - I suggest filtering the list by "Most Replies" or "Most Viewed".
 

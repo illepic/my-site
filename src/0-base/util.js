@@ -87,7 +87,7 @@ function getTags(pages, options = {}) {
 
     if (isAlreadyAdded) {
       tags[i].count++;
-    } else {
+    } else if (tag) {
       tags.push({
         name: tag,
         count: 1,

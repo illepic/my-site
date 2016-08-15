@@ -2,8 +2,8 @@
 title: Creating a Featured Posts Lists Limited in Count in Jekyll
 category: Technology
 tags:
-  - Jekyll
-date: 2014-02-26
+  - jekyll
+date: 2014-02-26T00:00:00.000Z
 redirect_from: /blog/technology/jekyll-featured-post-with-limit-and-offset/
 ---
 I was having problems getting a list of [Jekyll](http://jekyllrb.com) blog posts that had a specific property declared in the YAML front matter (a simple `featured: true`) and limiting the list. If you do what I did at first: 

@@ -7,7 +7,7 @@ tags:
   - mac
   - software
   - tips
-date: 2013-10-17
+date: 2013-10-17T00:00:00.000Z
 redirect_from: /blog/technology/mac-window-management-moom-divvy/
 ---
 

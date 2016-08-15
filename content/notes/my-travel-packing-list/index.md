@@ -1,7 +1,7 @@
 ---
 title: My Travel Packing List
 weight: 2
-tags: 
+tags:
   - travel
   - gear
 ---

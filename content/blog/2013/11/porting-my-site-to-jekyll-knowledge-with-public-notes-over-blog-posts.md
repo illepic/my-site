@@ -6,10 +6,10 @@ type: post
 categories:
   - Technology
 tags:
-  - this site
+  - this-site
   - jekyll
-  - web dev
-date: 2013-11-19
+  - web-dev
+date: 2013-11-19T00:00:00.000Z
 redirect_from: >-
   /blog/technology/porting-my-site-to-jekyll-knowledge-with-public-notes-over-blog-posts/
 ---

@@ -62,7 +62,9 @@ const Search = class extends React.Component {
           <select
             onChange={this.handleTagsForm}
             value={this.state.tags}
-          >{util.getTags(this.props.site.pages).map((tag, i) =>
+          >
+            <option></option>
+          {util.getTags(this.props.site.pages).map((tag, i) =>
             <option value={tag.name} key={i}>{tag.name}</option>)}
           </select>
         </p>

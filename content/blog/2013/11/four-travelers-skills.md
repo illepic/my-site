@@ -1,11 +1,13 @@
 ---
-title: "The Four Traveler's Skills: Navigation, Monetary Exchange, Linguistics & Itinerary"
+title: >-
+  The Four Traveler's Skills: Navigation, Monetary Exchange, Linguistics &
+  Itinerary
 title_url: /notes/international-travel-tips/
 tags:
   - travel
   - advice
 category: Personal
-date: 2013-11-27
+date: 2013-11-27T00:00:00.000Z
 redirect_from: /blog/personal/four-travelers-skills/
 ---
 

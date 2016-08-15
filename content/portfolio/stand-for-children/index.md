@@ -2,26 +2,26 @@
 title: Stand for Children
 featured: true
 weight: 3
-live-site-url: http://stand.org
+live-site-url: 'http://stand.org'
 redirect_from: /portfolio-items/stand-for-children
 features:
-    - Image Gallery
-    - Modular Design
+  - Image Gallery
+  - Modular Design
 services:
-    - CMS Integration
-    - Front End Web Development
+  - CMS Integration
+  - Front End Web Development
 tech:
-    - Drupal CMS
+  - Drupal CMS
 imgs:
-    - 
-      src: Home-Page-full1.png
-      caption: Home Page
-    - 
-      src: Action-Page.png
-      caption: Action Page
-    - 
-      src: blocks1.png
-excerpt: "One of my favorite projects is Stand.org, as the site pushed myself and my whole team forward, and we ended up making one of the strongest platforms for getting their message out."
+  - src: Home-Page-full1.png
+    caption: Home Page
+  - src: Action-Page.png
+    caption: Action Page
+  - src: blocks1.png
+excerpt: >-
+  One of my favorite projects is Stand.org, as the site pushed myself and my
+  whole team forward, and we ended up making one of the strongest platforms for
+  getting their message out.
 ---
 One of my favorite projects is [Stand.org][1], as the site pushed myself and my whole team forward, and we ended up making one of the strongest platforms for getting their message out. Taking on all the Front End Web Development and making sure it all integrated into the Drupal Theme was my task. A unique challenge for the project was the styling of the different blocks of the site. The CMS allows the client to create and move around blocks with multiple fields of text, images, videos, and buttons with each of the presence or absence of those elements rendering a different looking block. Additionally they all can be designated as one of three different widths. This project was created at [OMBU Web][2] with the tireless effort of [Jon Duell][3] behind the Back End Drupal Development, and [Martin Rio][4] handling the project’s management and execution. The design was provided by a partner agency providing many static Photoshop documents which I turned into the Drupal Theme.
 

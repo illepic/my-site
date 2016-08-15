@@ -15,7 +15,7 @@ meta:
   _wpas_done_all: '1'
   _social_aggregation_log: >-
     a:10:{i:1360784325;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360787108;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360790509;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360794281;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360802374;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360816861;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360845994;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360889628;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1360976907;O:8:"stdClass":1:{s:6:"manual";b:0;}i:1361150043;O:8:"stdClass":1:{s:6:"manual";b:0;}}
-date: 2013-02-13
+date: 2013-02-13T00:00:00.000Z
 redirect_from: /blog/personal/efficiency-vs-effectiveness/
 ---
 > Efficiency is doing things right; effectiveness is doing the right things. ~ [Peter Drucker](http://clearquot.es/d)

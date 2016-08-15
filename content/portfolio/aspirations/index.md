@@ -1,31 +1,32 @@
 ---
-title: Aspirations 
+title: Aspirations
 featured: true
 weight: 2
 features:
-    - Custom Content
-    - Wide Browser Support
-    - Modular Design
+  - Custom Content
+  - Wide Browser Support
+  - Modular Design
 services:
-    - CMS Integration
-    - Front End Web Development
-    - Mobile Web Development
-    - Responsive Web Design
+  - CMS Integration
+  - Front End Web Development
+  - Mobile Web Development
+  - Responsive Web Design
 tech:
-    - Drupal CMS
-    - Icon Fonts
-    - Retina Graphics
+  - Drupal CMS
+  - Icon Fonts
+  - Retina Graphics
 imgs:
-    - 
-      src: home.jpg
-    -
-      src: home--full.jpg
-      caption: Home Page
-    - 
-      src: home--full--mobile.jpg
-      caption: Home Page Mobile
-excerpt: "Aspirations in Computing is a talent development initiative designed to increase female participation in technology careers by providing encouragement, visibility, community, leadership opportunities, scholarships, and internships to aspiring technically inclined young women."
-live-site-url: https://www.aspirations.org/
+  - src: home.jpg
+  - src: home--full.jpg
+    caption: Home Page
+  - src: home--full--mobile.jpg
+    caption: Home Page Mobile
+excerpt: >-
+  Aspirations in Computing is a talent development initiative designed to
+  increase female participation in technology careers by providing
+  encouragement, visibility, community, leadership opportunities, scholarships,
+  and internships to aspiring technically inclined young women.
+live-site-url: 'https://www.aspirations.org/'
 ---
 Aspirations in Computing is a talent development initiative designed to increase female participation in technology careers by providing encouragement, visibility, community, leadership opportunities, scholarships, and internships to aspiring technically inclined young women. The [award is hosted by NCWIT](http://www.ncwit.org/programs-campaigns/aspirations-computing) and has received national attention, even from [The White House][white-house], for its help and service for young woman in Technology.
 

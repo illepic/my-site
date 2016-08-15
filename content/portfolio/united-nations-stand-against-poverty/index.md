@@ -4,28 +4,26 @@ featured: true
 weight: 1
 redirect_from: /portfolio-items/united-nations-stand-against-poverty
 features:
-    - Image Gallery
-    - Social Plumbing
-    - User Generated Content
+  - Image Gallery
+  - Social Plumbing
+  - User Generated Content
 services:
-    - CMS Integration
-    - Front End Web Development
+  - CMS Integration
+  - Front End Web Development
 tech:
-    - Drupal CMS
+  - Drupal CMS
 imgs:
-    - 
-      src: Home_Page-Guinness.jpg
-      caption: The Home Page with World Record
-    - 
-      src: Home.jpg
-      caption: Home Page
-    - 
-      src: About.jpg
-      caption: About Page
-    - 
-      src: Map.jpg
-      caption: Map Page
-excerpt: "One of the biggest website projects I was ever on was one I was the Lead Front End Developer and Developer Manager."
+  - src: Home_Page-Guinness.jpg
+    caption: The Home Page with World Record
+  - src: Home.jpg
+    caption: Home Page
+  - src: About.jpg
+    caption: About Page
+  - src: Map.jpg
+    caption: Map Page
+excerpt: >-
+  One of the biggest website projects I was ever on was one I was the Lead Front
+  End Developer and Developer Manager.
 ---
 
 One of the biggest website projects I was ever on was one I was the Lead Front End Developer and Developer Manager while at freeStyle Media when we developed, [Stand Against Poverty][1], for the United Nations [Millennium Development Goals Campaign][2], which hosts the world wide event. The website hosted nearly 4,000 events which were created on the site from users that signed up all over the world. The web site allowed them to download materials, announce there event, and report the total numbers of participants that attended. Afterwards, we created the biggest Microsoft Excel sheet you’ve ever seen of event titles, locations, emails, and participants of all the events all over the world to hand off to the Millennium Development Goals counting team, who verified the events and the number of participants. This was submitted to the Guinness Book of World Records which gave them the record for the “[Largest Stand Up in One Week][3]” for the **173,045,325 participants** that our website counted. The numbers were [announced here][4].

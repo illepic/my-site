@@ -1,9 +1,9 @@
 ---
 title: Alfred Workflow for `doing`
 weight: 4
-excerpt: "An Alfred Workflow for working with a What Was I Doing System."
+excerpt: An Alfred Workflow for working with a What Was I Doing System.
 tags:
-  - Alfred
+  - alfred
   - productivity
 ---
 The Mad Scientist [Brett Terpstra](http://brettterpstra.com) is at it again, this time with a nifty script for "Scatterbrains" that captures what you are doing, and provides an easy way to find out what it was once you get off track and need to mentally re-orient yourself when coming back to a project – super handy in my opinion. Check out his [project page for `doing`](http://brettterpstra.com/projects/doing/). 

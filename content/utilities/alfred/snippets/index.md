@@ -1,9 +1,9 @@
 ---
 title: Alfred Workflow for Snippets
 weight: 3
-excerpt: "An Alfred Workflow for managing text and code snippets with tag support."
+excerpt: An Alfred Workflow for managing text and code snippets with tag support.
 tags:
-  - Alfred
+  - alfred
   - productivity
   - web-dev
 ---

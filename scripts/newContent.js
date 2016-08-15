@@ -21,7 +21,7 @@ module.exports = yeoman.Base.extend({
       name: 'section',
       message: 'Where would you like this?',
       choices: fs.readdirSync(config.paths.content, 'utf8')
-        .filter(item => fs.statSync(join(config.paths.content, item)).isDirectory())
+        .filter(item => fs.statSync(join(config.paths.content, item)).isDirectory()),
     }, {
       type: 'list',
       name: 'subFolder',
@@ -32,7 +32,7 @@ module.exports = yeoman.Base.extend({
         const subfolders = fs.readdirSync(folder, 'utf8')
           .filter(item => fs.statSync(join(folder, item)).isDirectory());
         return ['./'].concat(subfolders);
-      }
+      },
     }, {
       name: 'date',
       message: 'Date?',

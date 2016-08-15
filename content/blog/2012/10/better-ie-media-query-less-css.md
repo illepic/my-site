@@ -3,11 +3,11 @@ title: Better management of IE & Media Query CSS Styles using LESS CSS
 categories:
   - Technology
 tags:
-  - CSS
-  - CSS preprocessors
-  - LESS CSS
-  - Responsive Web Design
-  - Web Design
+  - css
+  - css-preprocessors
+  - less-css
+  - responsive-web-design
+  - web-dev
 status: publish
 type: post
 published: true
@@ -18,7 +18,7 @@ meta:
   dsq_thread_id: '1023936043'
   _wpbitly: 'http://bit.ly/VIVuH3'
   _su_title: ''
-date: 2012-10-06
+date: 2012-10-06T00:00:00.000Z
 redirect_from: /blog/technology/better-ie-media-query-less-css/
 ---
 **Wow!** I just [found out](http://alwaystwisted.com/post.php?s=2012-06-05-another-approach-to-mobile-first-css-whilst-supporting-internet-explorer) that you can do this awesomeness with LESS:

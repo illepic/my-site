@@ -1,12 +1,14 @@
 ---
 title: My Awesome Mac Setup
 weight: 1
-tags: 
+tags:
   - mac
   - tech
   - gear
-excerpt: "This is a continually updated list of what I currently have installed for Mac Software, along with the hardware and desk setup."
-redirect_from: "/my-awesome-mac-setup"
+excerpt: >-
+  This is a continually updated list of what I currently have installed for Mac
+  Software, along with the hardware and desk setup.
+redirect_from: /my-awesome-mac-setup
 ---
 
 This is a continually updated list of what I'm currently using.

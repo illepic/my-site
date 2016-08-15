@@ -3,7 +3,7 @@ title: Environmental Neglect in Thailand
 categories:
   - Personal
 tags:
-  - Environment
+  - environment
   - Thailand
   - travel
 status: publish
@@ -15,7 +15,7 @@ meta:
   dsq_thread_id: '1024059763'
   _wpbitly: 'http://bit.ly/VEWXJ4'
   _su_title: ''
-date: 2011-10-26
+date: 2011-10-26T00:00:00.000Z
 redirect_from: /blog/personal/environmental-neglect-in-thailand/
 ---
 ![](thai-glass.jpg)

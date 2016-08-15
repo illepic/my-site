@@ -10,7 +10,7 @@ category: Technology
 tags:
   - travel
   - iPhone
-date: 2013-12-05
+date: 2013-12-05T00:00:00.000Z
 redirect_from: /blog/technology/quick-conversions-with-launch-center-pro-and-soulver/
 ---
 My friend [Ryan](http://www.ryanmo.co) has a great, fast way to do easy conversions from feet to meters and Fairenheight to Celsius for us Americans traveling or living abroad. Check it out!

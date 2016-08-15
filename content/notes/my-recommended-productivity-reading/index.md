@@ -1,7 +1,7 @@
 ---
 title: My Recommended Productivity Reading
 weight: 8
-tags: 
+tags:
   - productivity
 published: false
 ---

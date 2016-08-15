@@ -1,11 +1,11 @@
 ---
 title: My Sublime Text Setup
-tags: 
+tags:
   - tech
   - mac
-  - web-development
+  - web-dev
 weight: 4
-redirect_from: "my-sublime-text-setup"
+redirect_from: my-sublime-text-setup
 ---
 
 Here's an ongoing list of my [Sublime Text](http://sublimetext.com) Setup. 

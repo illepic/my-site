@@ -2,10 +2,10 @@
 title: Double Border Button with Negative Border Radius
 category: Technology
 tags:
-  - CSS
-  - Front End Web Development
+  - css
+  - front-end
 redirect_from: /blog/technology/double-border-negative-border-radius/
-date: 2014-02-19
+date: 2014-02-19T00:00:00.000Z
 ---
 I'm working on a project and I get the designs for this button style and I am really happy how it all came together. At first I thought that a CodePen I came across talking about [double border buttons][1] would help, but it didn't ultimately. Then I came across the excellent [negative border radius example by Lea Verou][2] and it really helped, but it didn't address the double borders. 
 

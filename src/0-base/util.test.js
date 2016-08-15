@@ -88,6 +88,6 @@ describe('getTags', () => {
       { name: 'web-dev', count: 1 },
     ];
 
-    return assert.deepStrictEqual(util.getTags(sampleTags, {sortBy: 'name'}), expected);
+    return assert.deepStrictEqual(util.getTags(sampleTags, { sortBy: 'name' }), expected);
   });
 });

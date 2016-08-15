@@ -2,14 +2,12 @@
 title: Veritable Vegetable
 weight: 9
 services:
-    - CMS Integration
-    - Front End Web Development
+  - CMS Integration
+  - Front End Web Development
 tech:
-    - Drupal CMS
+  - Drupal CMS
 imgs:
-    - 
-      src: 1.png
-    - 
-      src: 2.png
-live-site-url: https://www.collegeofidaho.edu
+  - src: 1.png
+  - src: 2.png
+live-site-url: 'https://www.collegeofidaho.edu'
 ---

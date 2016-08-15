@@ -40,7 +40,7 @@ const LandingList = class extends React.Component {
     const list = this.props.items
       .filter(item => {
         if (!this.props.showFilter) return true;
-        return  item.tags && item.tags.some(tag =>
+        return item.tags && item.tags.some(tag =>
         tag.toLowerCase().startsWith(this.state.tags.toLowerCase()));
       })
       .map(item => {

@@ -20,7 +20,7 @@ meta:
   _wpas_skip_2730171: '1'
   _wpas_skip_2730182: '1'
   _su_title: ''
-date: 2013-01-29
+date: 2013-01-29T00:00:00.000Z
 ---
 ![](india-photo-1.jpg)
 ![](india-photo-2.jpg)

@@ -1,10 +1,10 @@
 ---
 title: Utility to send a URL from iOS to Mac Browser
 weight: 4
-excerpt: "Open URLs on your Mac from an iPhone"
+excerpt: Open URLs on your Mac from an iPhone
 tags:
-  - Drafts
-  - Hazel
+  - drafts
+  - hazel
 ---
 I often come across items of interest while on my iPhone or iPad that requires my Mac for the next step (like installing new Mac software or utilities that I read about while browsing Twitter on my phone) and I feel that a few other methods are too much work: OmniFocus task to check out the URL, bookmarking it, or even tossing it into a Read Later service. I just want the URL open on my Mac and the first thing I see when I sit down to it next. This little set of utilities does that simply.
 

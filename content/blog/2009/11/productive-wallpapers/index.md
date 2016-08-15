@@ -13,7 +13,7 @@ meta:
   dsq_thread_id: '1024129412'
   _wpbitly: 'http://bit.ly/YVxFwO'
   _su_title: ''
-date: 2009-11-12
+date: 2009-11-12T00:00:00.000Z
 redirect_from: /blog/technology/productive-wallpapers/
 ---
 Saw some great wallpapers for getting things done that I liked. Here are some of my favorites:
