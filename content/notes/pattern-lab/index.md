@@ -47,3 +47,4 @@ I presented on how we use Pattern Lab here: [DrupalCon Los Angeles 2015: The New
 
 - [Making And Maintaining Atomic Design Systems With Pattern Lab 2 – Smashing Magazine](https://www.smashingmagazine.com/2016/07/building-maintaining-atomic-design-systems-pattern-lab/) - one of the most comprehensive and helpful posts.
 - [Your Frontend Methodology Is All of Them: Atomic Design & Pattern Lab | Phase2 Technology](https://www.phase2technology.com/your-frontend-methodology-is-all-of-them-atomic-design-patternlab/)
+- [Gitter Pattern Lab Chat Room](https://gitter.im/pattern-lab)
