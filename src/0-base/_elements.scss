@@ -2,9 +2,6 @@ iframe,
 img {
   max-width: 100%;
   height: auto;
-  @media #{$bp--small--down} {
-    @include full-width();
-  }
 }
 
 figure {
