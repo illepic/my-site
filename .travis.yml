@@ -1,5 +1,5 @@
 language: node_js
-node_js: 
+node_js:
 git:
   depth: 1
 sudo: required
@@ -11,6 +11,12 @@ install:
 script:
 - npm run compile:prod
 - npm test
+deploy:
+  provider: script
+  script: npm run deploy:stage
+  skip_cleanup: true
+  on:
+    branch: develop
 notifications:
   slack:
     secure: doQPSnD2FBV3AB4elzu9G92kXnlZajQmw0WucliEXrZ+vvbT39xzOEkPFAkuBpS9DLbhOThxMfhiVXfoE6HHrQ6HWZSE+As5O37O/vRv1jHR3Q+8huSQyDDUpJRDIa2a1aWFN4+jVnS+ZsIXC7gpwViyiGJvzF4+zDCREdZyIX0OI2KT57tkB6bHN9GavPnWnlqB/nmma7UNN+8s4wK85cU2Ynwh4XSEOYNtlzHrkRc1OmdIPjeNIyQrv4kP3kniLcvq2nd5OnrPFNNquhm/UmKOCPRuN9duulph51N3WoSWIi0OH4JW1yi06F76QBfDPFLBxaVhkTZsum1Tz90Tu5ubsTtaXfI4pJiX8xBbJAEepE7OGVU3iVW2bNF4jdyjn52tB81HixKpxVd+hswS6lyZ+3gAFEJ6RMyYfS1DNI9x1aY+IP/jv/K3wTKeCfTzpVkh43pG7F+iHHzMAZlAJ3MOWyyeJaqjJZWZFXav/xzQ6JsKr0FidQqcnWFGElyWVeaFx5b2EerKC7FrUT/3zrMfrJCDgp7hgZYqHowxjaROO9eezPJKvvCPsZwWOzf+fmXmjfEm2Nw70qzeBxfX93G37Gtt3gHaaHPA5wPrL4Sx3zGsC+x3GC9xYNtpjXJf9ez8/a0vpVyhcRxrMuDfnuxHTiNbMPquG8OWFFV1uyw=
