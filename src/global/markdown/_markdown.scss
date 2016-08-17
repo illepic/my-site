@@ -1,6 +1,8 @@
 .markdown {
   img {
+    @include full-width();
     @media #{$bp--medium} {
+      @include full-width($undo: true);
       float: right;
       width: 50%;
       margin: 0 0 ms(1) ms(1);

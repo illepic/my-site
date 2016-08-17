@@ -59,6 +59,7 @@
   },
   "dependencies": {
     "babel-loader": "^6.2.4",
+    "evans-sass-tools": "^1.4.0",
     "fs-extra": "^0.30.0",
     "glob": "^7.0.3",
     "gray-matter": "^2.0.2",
