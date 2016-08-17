@@ -26,8 +26,8 @@ This is a continually updated list of what I'm currently using.
 
 ## Hardware
 
-* 13" Retina MacBook Pro - *love* the pixel density: displays as much as a 20" monitor.
-* 23" Cinema Display - had this since 2004 and love it.
+* 15" Retina MacBook Pro - *love* the pixel density: displays as much as a 23" monitor.
+* 27" & 30" monitors; love that screen real estate!
 * A [Laptop Stand](http://amzn.to/ZBE3pA), an Apple Bluetooth Keyboard, & a Magic Trackpad - needed to get the laptop's display up in height so I didn't hunch to look at it. Back pain sucks. Used to be anti-external keyboard as I loved having my thumbs rest on the trackpad & fingers on the keyboard but whatever; the Magic Trackpad is epic and I love how I can position it so my wrist is always straight.
 * Time Machine drive that backs up laptop & a portable USB3 hard drive that holds all photos. I have another Time Machine hard drive off site that gets updated with the photos hard drive & laptop about once a week or so. If my house got broken into and all computers & hard drives got stolen, I'd lose no data; I'm mainly concerned about my 60,000 photos I've taken over the past 13 years. 
 
