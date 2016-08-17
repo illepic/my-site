@@ -13,10 +13,12 @@ script:
 - npm test
 deploy:
   provider: script
-  script: rsync -azP -e "ssh -o StrictHostKeyChecking=no" --delete dist--prod/ evlove@evanlovely.com:/home/evlove/www/dev.evanlovely.com/public/
+  script: rsync -azP -e "ssh -o StrictHostKeyChecking=no" --delete dist--prod/ evlove:$PASS@evanlovely.com:/home/evlove/www/dev.evanlovely.com/public/
   skip_cleanup: true
   on:
     branch: develop
 notifications:
   slack:
     secure: doQPSnD2FBV3AB4elzu9G92kXnlZajQmw0WucliEXrZ+vvbT39xzOEkPFAkuBpS9DLbhOThxMfhiVXfoE6HHrQ6HWZSE+As5O37O/vRv1jHR3Q+8huSQyDDUpJRDIa2a1aWFN4+jVnS+ZsIXC7gpwViyiGJvzF4+zDCREdZyIX0OI2KT57tkB6bHN9GavPnWnlqB/nmma7UNN+8s4wK85cU2Ynwh4XSEOYNtlzHrkRc1OmdIPjeNIyQrv4kP3kniLcvq2nd5OnrPFNNquhm/UmKOCPRuN9duulph51N3WoSWIi0OH4JW1yi06F76QBfDPFLBxaVhkTZsum1Tz90Tu5ubsTtaXfI4pJiX8xBbJAEepE7OGVU3iVW2bNF4jdyjn52tB81HixKpxVd+hswS6lyZ+3gAFEJ6RMyYfS1DNI9x1aY+IP/jv/K3wTKeCfTzpVkh43pG7F+iHHzMAZlAJ3MOWyyeJaqjJZWZFXav/xzQ6JsKr0FidQqcnWFGElyWVeaFx5b2EerKC7FrUT/3zrMfrJCDgp7hgZYqHowxjaROO9eezPJKvvCPsZwWOzf+fmXmjfEm2Nw70qzeBxfX93G37Gtt3gHaaHPA5wPrL4Sx3zGsC+x3GC9xYNtpjXJf9ez8/a0vpVyhcRxrMuDfnuxHTiNbMPquG8OWFFV1uyw=
+env:
+  secure: mYHBmqfijh9AKD4AXOdB/rnPQ+LxlIY+P/V5zK3BFOXliHXxAEZPmKh1RoSWKUswMipGF1R5E6GIXd1i7C7v9sje9JNPOJAzc9GILdhjxFwndPXXYnqEhByu6t0eSlUUSBNHYOZ/lPpnu1gPCe8eVmG9uauPpr5XsBzTVeLHdXRHg3QD+K0QBYUmf+P2DdqswciECespeP9G5c2LkYPOgJi6js3i3y0Mz/A8ycraJUK1vwKW6+Gqqk7K5oDTv8R6fOY5cK1r7WgOWsuoqmwH9udUQxp3sjwGIgJ5J8Ksr+HfpC5p9VcOfwJSV48rNdRAnJ1uI8gIZXvu51Pa5IYyeTxL5cEvbFskXS+InY3PEdi9frB1LG+SE7qcJ2TESIlKemmhLkYAYx1IKsTQh6+PN603TjUYnKuBdRLEZEsDL9CEXhdUMECfahsiI/bK47UW4o8JqOZ57zgrXfVr5+DWU301IL2S6ulLHlZtHaLOoWPNYrkqTrVDQNc2AAnE/7MHAnKzhymVJlac8q5UxedX4G0OZVAVqf2eCpjIWw2xEW59OgqNX5/qTgQ02quILERD2vgP9mZMk1Cjlsy6+M8EU5c0HbBFPu6WVXQLlvMMwls4mog/PqfwwcIYdaxtgPLWsbZWQMXbjpDOhexzoBOIYHwnu5URtcVbtjHi4b8YOt8=
