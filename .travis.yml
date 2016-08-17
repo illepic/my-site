@@ -13,7 +13,7 @@ script:
 - npm test
 deploy:
   provider: script
-  script: npm run deploy:stage
+  script: rsync -azP -o StrictHostKeyChecking=no --delete dist--prod/ evlove@evanlovely.com:/home/evlove/www/dev.evanlovely.com/public/
   skip_cleanup: true
   on:
     branch: develop
