@@ -1,5 +1,6 @@
 const React = require('react');
 const Link = require('../../atoms/link');
+const sortByWeight = require('../../0-base/util').sortByWeight;
 
 const SiteNav = class extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ const SiteNav = class extends React.Component {
   render() {
     let items = this.props.pages
     .filter(item => item.nav === 'main')
-    .sort((a, b) => a.weight > b.weight)
+    .sort(sortByWeight)
     .map(item => (<Link
       href={item.path}
       key={item.path}
