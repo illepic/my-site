@@ -1,12 +1,18 @@
+$nav-toggle: (
+  size: 42px,
+  lineWidth: 26px,
+  rightOffset: ms(2),
+  bottomOffset: ms(6),
+);
 .nav-toggle {
   position: fixed;
-  bottom: ms(6);
-  right: ms(2);
+  bottom: map-get($nav-toggle, bottomOffset);
+  right: map-get($nav-toggle, rightOffset);
   background: $c-blue;
-  width: 42px;
-  height: 42px;
+  width: map-get($nav-toggle, size);
+  height: map-get($nav-toggle, size);
   cursor: pointer;
-  border-radius: (ms(7) / 2);
+  border-radius: (map-get($nav-toggle, size) / 2);
   transition: right ease-out 0.4s;
   z-index: 101; // @todo improve
   //@media #{$bp--small} {
@@ -24,10 +30,10 @@
     display: inline-block;
     border-radius: 2px;
     height: 2px;
-    width: 26px;
+    width: map-get($nav-toggle, lineWidth);
     background: white;
     position: absolute;
-    left: 8px;
+    left: ( map-get($nav-toggle, size) - map-get($nav-toggle, lineWidth) ) / 2;
     transition: all ease-out 0.4s;
     transform-origin: 6.5px center;
   }
@@ -38,14 +44,14 @@
     bottom: 35%;
   }
   .site-header-toggle:checked ~ & {
-    right: calc(#{ms(2)} + #{$site-header-width-on-side});
+    right: calc(#{map-get($nav-toggle, rightOffset)} + #{$site-header-width-on-side});
     &:before {
       transform: rotate(45deg);
-      left: 10px;
+      left: (( map-get($nav-toggle, size) - map-get($nav-toggle, lineWidth) ) / 2) + 2;
     }
     &:after {
       transform: rotate(-45deg);
-      left: 10px;
+      left: (( map-get($nav-toggle, size) - map-get($nav-toggle, lineWidth) ) / 2) + 2;
     }
   }
 }
