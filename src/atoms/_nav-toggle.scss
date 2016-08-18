@@ -1,0 +1,51 @@
+.nav-toggle {
+  position: fixed;
+  bottom: ms(6);
+  right: ms(2);
+  background: $c-blue;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  border-radius: (ms(7) / 2);
+  transition: right ease-out 0.4s;
+  z-index: 101; // @todo improve
+  //@media #{$bp--small} {
+  //  bottom: auto;
+  //  top: ms(6);
+  //}
+  @media #{$bp--large} {
+    display: none;
+  }
+  &:before,
+  &:after {
+    content: '';
+    color: white;
+    //font-size: 2em;
+    display: inline-block;
+    border-radius: 2px;
+    height: 2px;
+    width: 26px;
+    background: white;
+    position: absolute;
+    left: 8px;
+    transition: all ease-out 0.4s;
+    transform-origin: 6.5px center;
+  }
+  &:before {
+    top: 35%;
+  }
+  &:after {
+    bottom: 35%;
+  }
+  .site-header-toggle:checked ~ & {
+    right: calc(#{ms(2)} + #{$site-header-width-on-side});
+    &:before {
+      transform: rotate(45deg);
+      left: 10px;
+    }
+    &:after {
+      transform: rotate(-45deg);
+      left: 10px;
+    }
+  }
+}

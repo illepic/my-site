@@ -1,12 +1,11 @@
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  overflow: scroll;
+  flex-direction: column;
   justify-content: space-between;
-  @media #{$bp--small} {
-    justify-content: flex-start;
-  }
+  //@media #{$bp--small} {
+  //  justify-content: flex-start;
+  //}
   &__link {
     margin-right: ms(1);
     text-decoration: none;
