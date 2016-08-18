@@ -1,9 +1,14 @@
-/* eslint-disable react/prefer-stateless-function */
 const React = require('react');
 const SiteNav = require('../../molecules/site-nav/site-nav');
 const Branding = require('../../molecules/branding');
 
 const SiteHeader = class extends React.Component {
+  // When an item in the nav is clicked, we want to close it
+  closeNav() {
+    const toggle = document.getElementById('site-nav-toggle');
+    if (toggle.checked) toggle.checked = false;
+  }
+
   render() {
     let toc;
     if (!this.props.hideToc && this.props.toc.length !== 0) {
@@ -11,7 +16,10 @@ const SiteHeader = class extends React.Component {
         key={item.id}
         className={`toc__item toc__item--${item.tagName}`}
       >
-        <a href={`#${item.id}`}>{item.title}</a>
+        <a
+          href={`#${item.id}`}
+          onClick={this.closeNav}
+        >{item.title}</a>
       </li>);
       toc = (<div className="site-header__toc toc small">
         <h6>Table of Contents</h6>
@@ -25,7 +33,11 @@ const SiteHeader = class extends React.Component {
     return (
       <header className={classList.join(' ')}>
         <Branding {...this.props} />
-        <SiteNav pages={this.props.site.pages} currentPage={this.props.path} />
+        <SiteNav
+          pages={this.props.site.pages}
+          currentPage={this.props.path}
+          closeNav={this.closeNav}
+        />
         {toc}
       </header>
     );

@@ -23,6 +23,7 @@ const SiteNav = class extends React.Component {
     .map(item => (<Link
       href={item.path}
       key={item.path}
+      onClick={this.props.closeNav}
       className={this.isActiveSection(item.path)
         ? 'site-nav__link site-nav__link--active'
         : 'site-nav__link'}
