@@ -5,6 +5,7 @@ $nav-toggle: (
   bottomOffset: ms(6),
 );
 .nav-toggle {
+  @include depth(30);
   position: fixed;
   bottom: map-get($nav-toggle, bottomOffset);
   right: map-get($nav-toggle, rightOffset);
@@ -35,7 +36,7 @@ $nav-toggle: (
     position: absolute;
     left: ( map-get($nav-toggle, size) - map-get($nav-toggle, lineWidth) ) / 2;
     transition: all ease-out 0.4s;
-    transform-origin: 6.5px center;
+    transform-origin: (map-get($nav-toggle, lineWidth) / 4) center;
   }
   &:before {
     top: 35%;
