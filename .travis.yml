@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 git:
-  depth: 1
+  depth: 3
 sudo: required
 addons:
   ssh_known_hosts: evanlovely.com
