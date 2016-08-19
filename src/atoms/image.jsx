@@ -11,7 +11,7 @@ const Image = (props) => {
   const alt = props.alt || info.name;
   let srcSet = null;
   let sizes = null;
-  if (config.feat.srcset) {
+  if (config.feat.srcset && props.responsive) {
     if (!isRemotePath) {
       srcSet = util.srcSet(src);
     }
@@ -26,11 +26,16 @@ const Image = (props) => {
   />);
 };
 
+Image.defaultProps = {
+  responsive: true,
+};
+
 Image.propTypes = {
   src: React.PropTypes.string,
   alt: React.PropTypes.string,
   sizes: React.PropTypes.string,
   className: React.PropTypes.string,
+  responsive: React.PropTypes.bool,
 };
 
 module.exports = Image;

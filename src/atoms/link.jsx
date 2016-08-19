@@ -33,6 +33,10 @@ const Link = class extends React.Component {
 
     document.body.classList.add('is-loading');
 
+    // When an item is clicked, we want to close the nav
+    const toggle = document.getElementById('site-nav-toggle');
+    if (toggle.checked) toggle.checked = false;
+
     if (this.props.href) {
       history.push(this.props.href);
     } else {

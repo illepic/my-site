@@ -27,7 +27,7 @@
     "test:links:local": "blc -ro http://localhost:3042",
     "test:links:stage": "blc -ro http://dev.evanlovely.com",
     "test:links:prod": "blc -ro http://evanlovely.com",
-    "test": "mocha src/**/*.test.js"
+    "test": "mocha src/**/*.test.js lib/*.test.js"
   },
   "devDependencies": {
     "async": "^1.5.2",
@@ -70,6 +70,7 @@
     "marked": "^0.3.5",
     "modularscale-sass": "^2.1.1",
     "moment": "^2.14.1",
+    "moment-timezone": "^0.5.5",
     "normalize.scss": "^0.1.0",
     "p2-theme-core": "^8.0.0",
     "path-parse": "^1.0.5",

@@ -67,9 +67,9 @@ const Styleguide = (props) => (
     <Markdown contents={props.contents} />
     <h4 id="metadata">Metadata</h4>
     <h5>Date</h5>
-    <Date date="2015-12-25" />
+    <Date dateStrings={{ year: "2015", month: "12", day: "25"}} />
     <br />
-    <Date date="2015-1-2" />
+    <Date dateStrings={{ year: "2015", month: "1", day: "2"}} />
     <h5>Tags</h5>
     <Tags tags={['Tag 1', 'Tag 2']} />
     <Tags title="Tags with Title" tags={['Tag A', 'Tag B']} />

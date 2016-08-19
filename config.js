@@ -18,7 +18,10 @@ module.exports = {
   site: {
     description: "Evan's Site",
     title: "Evan Lovely's Site",
-    bodyClasses: ['theme--light'],
+    bodyClasses: [
+      'theme--light',
+      (process.env.NODE_ENV === 'production') ? 'env--production' : 'env--development',
+    ],
   },
   /* eslint-disable no-unneeded-ternary */
   feat: {

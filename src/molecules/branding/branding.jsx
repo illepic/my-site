@@ -7,6 +7,7 @@ const Branding = (props) => (<div className="branding">
   <Image
     src={'/assets/molecules/branding/logo.png'}
     alt="Evan Lovely Design logo"
+    responsive={false}
     // sizes="(min-width: 900px) 33vw, 100vw"
     className="branding__logo"
   />
