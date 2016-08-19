@@ -30,6 +30,7 @@ const SiteHeader = class extends React.Component {
       'site__header',
       'site-header',
     ];
+    if (toc) classList.push('site__header--has-toc');
     return (
       <header className={classList.join(' ')}>
         <Branding {...this.props} />

@@ -9,7 +9,11 @@ const Meta = (props) => (<div className={`meta ${props.className || ''}`}>
 </div>);
 
 Meta.propTypes = {
-  date: React.PropTypes.string,
+  dateStrings: React.PropTypes.shape({
+    month: React.PropTypes.string,
+    day: React.PropTypes.string,
+    year: React.PropTypes.string,
+  }),
   tags: React.PropTypes.array,
   className: React.PropTypes.string,
   draft: React.PropTypes.bool,

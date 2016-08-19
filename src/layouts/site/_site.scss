@@ -9,6 +9,21 @@ body {
   &.is-loading * {
     cursor: progress;
   }
+  &.env--development {
+    &:before {
+      display: inline-block;
+      font-size: .8em;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 1000; // @todo use function
+      @each $bp, $name in ($bp--small--down, 'small down'), ($bp--small, 'small'), ($bp--medium, 'medium'), ($bp--large, 'large'), ($bp--xlarge, 'xlarge'), ($bp--xxlarge, 'xxlarge'), ($bp--xxxlarge, 'xxxlarge'), ($bp--xxxxlarge , 'xxxxlarge ') {
+        @media #{$bp} {
+          content: '#{$name}';
+        }
+      }
+    }
+  }
 }
 
 .site {
@@ -18,7 +33,6 @@ body {
   padding-bottom: 120px;
   &__header {
     width: $site-header-width-on-side;
-    height: 50vh;
     overflow: auto;
     position: fixed;
     bottom: 0;
@@ -26,6 +40,9 @@ body {
     transition: right ease-out 0.4s;
     z-index: 100; // @todo improve
     font-size: 1.2rem;
+    &--has-toc {
+      height: 50vh;
+    }
     .site-header-toggle:checked ~ & {
       right: 0;
     }

@@ -12,7 +12,7 @@ Date.propTypes = {
     month: React.PropTypes.string,
     day: React.PropTypes.string,
     year: React.PropTypes.string,
-  }),
+  }).isRequired,
 };
 
 module.exports = Date;
