@@ -2,16 +2,17 @@
   @include depth(30);
   padding: ms(1);
   background: white;
-  &__nav-toggle {
-    @media #{$bp--small} {
-      @include hidden();
-    }
-  }
+  //&__nav-toggle {
+  //  @media #{$bp--small} {
+  //    @include hidden();
+  //  }
+  //}
+
 }
 
 .toc {
   border-top: solid 1px $c-border;
-  display: none;
+  //display: none;
   padding-top: ms(1);
   padding-left: 0;
   @media #{$bp--xlarge} {

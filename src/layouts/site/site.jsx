@@ -129,6 +129,8 @@ const Site = class extends React.Component {
     return (
       <div className="site container">
         {linkTags}
+        <input type="checkbox" id="site-nav-toggle" className="site-header-toggle hidden" />
+        <label htmlFor="site-nav-toggle" className="site__nav-toggle nav-toggle"></label>
         <SiteHeader {...this.props} />
         <main className="site__main page">
           <Branding {...this.props} />
