@@ -67,6 +67,7 @@
     "gray-matter": "^2.0.2",
     "gulp": "^3.9.1",
     "gulp-help": "^1.6.1",
+    "highlight.js": "^9.6.0",
     "history": "^3.0.0",
     "html-entities": "^1.2.0",
     "js-yaml": "^3.5.5",
