@@ -8,6 +8,17 @@ const fs = require('fs-extra');
 const globalData = fs.readJsonSync(join(config.paths.assets, 'data/global.json'));
 const Site = require('../src/layouts/site/site.jsx');
 
+/**
+ * Compile single React component
+ * @param {string} componentPath
+ * @param {object} data
+ * @returns {string} compiled HTML
+ */
+function compileComponent(componentPath, data = {}) {
+  const Tpl = require(componentPath);
+  return render(<Tpl {...data} />);
+}
+
 function compilePage(dataFilePath) {
   const fileData = fs.readJsonSync(dataFilePath); // eslint-disable-line global-require
   fileData.site = globalData;
@@ -32,4 +43,5 @@ function compileSite() {
 module.exports = {
   compileSite,
   compilePage,
+  compileComponent,
 };

@@ -1,6 +1,6 @@
 const util = require('../../0-base/util');
 
-module.exports = props => `<!doctype html>
+module.exports = (props, isomorphic = true) => `<!doctype html>
 <html lang="en-us" class="no-js">
 <head>
   <meta charset="utf-8">
@@ -51,7 +51,7 @@ module.exports = props => `<!doctype html>
       type='text/css'
     >
   </noscript>
-  <script src="${process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'}/assets/bundle--main.js"></script>
+  ${isomorphic ? `<script src="${process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'}/assets/bundle--main.js"></script>` : ''}
   <script>
     if (window.location.hostname === 'www.evanlovely.com') {
       (function () {

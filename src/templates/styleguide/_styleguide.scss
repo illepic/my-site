@@ -1,3 +1,7 @@
+.styleguide {
+  padding: 10px;
+}
+
 .sg-spacing {
   @for $i from 0 through 9 {
     [data-spacing="ms(#{$i})"] {

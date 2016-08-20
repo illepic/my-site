@@ -17,7 +17,7 @@ const SiteNav = class extends React.Component {
   }
 
   render() {
-    let items = this.props.pages
+    let items = this.props.site.pages
     .filter(item => item.nav === 'main')
     .sort(sortByWeight)
     .map(item => (<Link
@@ -34,6 +34,10 @@ const SiteNav = class extends React.Component {
       </nav>
     );
   }
+};
+
+SiteNav.defaultProps = {
+  currentPage: '',
 };
 
 SiteNav.propTypes = {

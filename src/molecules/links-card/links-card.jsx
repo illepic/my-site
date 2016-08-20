@@ -15,7 +15,10 @@ const LinksCard = (props) => {
 };
 
 LinksCard.propTypes = {
-  links: React.PropTypes.array,
+  links: React.PropTypes.arrayOf(React.PropTypes.shape({
+    path: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string.isRequired,
+  })).isRequired,
   className: React.PropTypes.string,
   showSection: React.PropTypes.bool,
 };
