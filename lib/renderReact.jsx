@@ -5,7 +5,7 @@ const join = require('path').join;
 const config = require('./../config');
 const glob = require('glob');
 const fs = require('fs-extra');
-const globalData = fs.readJsonSync(join(config.paths.assets, 'data/global.json'));
+let globalData = {};
 const Site = require('../src/layouts/site/site.jsx');
 
 /**
@@ -31,6 +31,7 @@ function compilePage(dataFilePath) {
 }
 
 function compileSite() {
+  globalData = fs.readJsonSync(join(config.paths.assets, 'data/global.json'));
   glob.sync(
     join(config.paths.dist, '**/*.json'),
     {
@@ -42,6 +43,5 @@ function compileSite() {
 
 module.exports = {
   compileSite,
-  compilePage,
   compileComponent,
 };
