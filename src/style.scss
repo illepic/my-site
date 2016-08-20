@@ -1,6 +1,8 @@
 @import "../node_modules/normalize.scss/normalize";
 @import "../node_modules/modularscale-sass/stylesheets/modular-scale";
 @import "../node_modules/evans-sass-tools/all.scss";
+// this is a hack. it is originally `darcula.css`, but gets renamed to `darcula.scss` in the `postinstall` hook because this allows me to include it's contents in the compiled css.
+@import "../node_modules/highlight.js/styles/darcula.scss";
 $ms-base: .5rem 1rem;
 $ms-ratio: $golden;
 $grid: 24;
