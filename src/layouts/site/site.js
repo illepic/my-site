@@ -1,7 +1,7 @@
 const util = require('../../0-base/util');
 
 module.exports = props => `<!doctype html>
-<html lang="en-us">
+<html lang="en-us" class="no-js">
 <head>
   <meta charset="utf-8">
   <title>${util.docTitle(props)}</title>

@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "babel-loader": "^6.2.4",
+    "clipboard": "^1.5.12",
     "evans-sass-tools": "^1.4.0",
     "fs-extra": "^0.30.0",
     "glob": "^7.0.3",
