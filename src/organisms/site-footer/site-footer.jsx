@@ -13,6 +13,12 @@ const SiteFooter = (props) => {
     className="footer-nav__link"
   >{item.title}</Link>));
 
+  items.push(<a
+    href="/patternlab"
+    target="_blank"
+    className="footer-nav__link"
+  >Site's Pattern Lab</a>);
+
   const postCount = 6;
   let footerBlockCount = 1;
   // let relatedPosts;

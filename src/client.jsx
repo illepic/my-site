@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getJsonData(pathname, cb) {
     const jsonPath = join(pathname, 'index.json');
+    // @todo Add if error, then just go to the page
     fetch(jsonPath).then(res => res.json()).then(pageData => {
       console.info('pageData', pageData);
       cb(null, pageData);
