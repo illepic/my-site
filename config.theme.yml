@@ -63,6 +63,11 @@ patternLab:
       dest: patternlab/source/_patterns/0-base/00-colors/colors.json
       lineStartsWith: $c-
       allowVarValues: false
+    -
+      src: src/0-base/01-typography/_typography.scss
+      dest: patternlab/source/_patterns/0-base/01-typography/fonts.json
+      lineStartsWith: $ff-
+      allowVarValues: false
 
 icons: # https://github.com/nfroidure/gulp-iconfont
   enabled: false

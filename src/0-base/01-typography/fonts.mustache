@@ -1,0 +1,23 @@
+{{# items }}
+  <div>
+    <div style="font-family: {{ value }};">{{ value }}</div>
+    <div>
+      <pre><code>
+.class {
+  font-family: {{ name }};
+}
+      </code></pre>
+    </div>
+
+    <h6>Normal</h6>
+    <div style="font-family: {{ value }}; font-size: 2em;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+    <h6>Bold</h6>
+    <div style="font-family: {{ value }}; font-size: 2em; font-weight: bold;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+    <h6>Italic</h6>
+    <div style="font-family: {{ value }}; font-size: 2em; font-style: italic;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+
+  </div>
+  <hr>
+{{/items}}
