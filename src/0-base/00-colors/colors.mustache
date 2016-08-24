@@ -1,0 +1,12 @@
+<ul class="sg-colors">
+  {{#items}}
+    <li>
+      <div class="sg-swatch" style="background: {{value}};"></div>
+      <div class="sg-info">
+        <span>{{value}}</span> <br/>
+        <code>{{name}}</code>
+        {{# comment }}<div class="comment">{{ . }}</div>{{/comment}}
+      </div>
+    </li>
+  {{/items}}
+</ul>

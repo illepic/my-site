@@ -18,6 +18,7 @@ const buildRss = require('./lib/buildRss');
 const buildRedirects = require('./lib/buildRedirects');
 const buildStyleguide = require('./lib/buildStyleguide').buildAll;
 const buildPatternlab = require('./lib/patternlab').build;
+const scssToJson = require('scsstojson');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 if (process.env.NODE_ENV === 'production') {
@@ -133,8 +134,10 @@ function reload() {
 
 function buildPl(done) {
   buildStyleguide(() => {
-    buildPatternlab(() => {
-      if (typeof done === 'function') done();
+    scssToJson(themeConfig.patternLab.scssToJson, {}, () => {
+      buildPatternlab(() => {
+        if (typeof done === 'function') done();
+      });
     });
   });
 }

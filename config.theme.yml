@@ -57,6 +57,13 @@ patternLab:
   injectFiles:
 #    - bower_components/modernizr/modernizr.js
   injectBower: true
+  scssToJson:
+    -
+      src: src/0-base/00-colors/_colors.scss
+      dest: patternlab/source/_patterns/0-base/00-colors/colors.json
+      lineStartsWith: $c-
+      allowVarValues: false
+
 icons: # https://github.com/nfroidure/gulp-iconfont
   enabled: false
   src: src/images/icons/src/*.svg
@@ -85,7 +92,7 @@ browserSync:
     # - template.php
   # domain: mysite.dev # enable when full CMS is set up
   baseDir: ./dist
-  startPath: 
+  startPath:
   openBrowserAtStart: false
   # requires above to be true; allows non-default browser to open
   browser:

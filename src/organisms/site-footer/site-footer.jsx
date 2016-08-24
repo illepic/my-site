@@ -15,6 +15,7 @@ const SiteFooter = (props) => {
 
   items.push(<a
     href="/patternlab"
+    key="/patternlab"
     target="_blank"
     className="footer-nav__link"
   >Site's Pattern Lab</a>);
