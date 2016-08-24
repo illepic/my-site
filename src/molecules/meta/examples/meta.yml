@@ -1,7 +1,7 @@
 dateStrings:
-  day: 03
+  day: '03'
   month: Jul
-  year: 1996
+  year: '1996'
 tags:
   - test
   - pattern-lab

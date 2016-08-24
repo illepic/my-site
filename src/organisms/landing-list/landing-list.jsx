@@ -16,7 +16,8 @@ const LandingList = class extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    /* eslint-disable react/no-did-mount-set-state */
     this.setState({ mounted: true });
   }
 
@@ -39,11 +40,11 @@ const LandingList = class extends React.Component {
   render() {
     const list = this.props.items
       .filter(item => {
-        if (!this.props.showFilter) return true;
+        if (!this.props.showFilter || !this.state.mounted) return true;
         return item.tags && item.tags.some(tag =>
         tag.toLowerCase().startsWith(this.state.tags.toLowerCase()));
       })
-      .map(item => {
+      .map((item, i) => {
         let contents = '';
         if (this.props.showExcerpts && item.excerpt) {
           const excerpt = item.excerpt;
@@ -55,7 +56,7 @@ const LandingList = class extends React.Component {
         return (<Card
           {...item}
           path={item.path}
-          key={item.path}
+          key={item.path || i}
           className={contents
             ? 'landing-list__item'
             : 'landing-list__item landing-list__item--excerptless'}
