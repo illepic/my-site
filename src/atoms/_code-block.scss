@@ -3,6 +3,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   position: relative;
+  margin: 0 0 ms(3);
   > code {
     background: black;
     color: white;
@@ -18,7 +19,7 @@ code {
 }
 
 .hljs {
-  padding: 0.9em 0.5em;
+  padding: 0.2em 0.5em;
 }
 
 .code-btn {
