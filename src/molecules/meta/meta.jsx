@@ -6,11 +6,11 @@ const Meta = (props) => {
   if (!props.dateStrings && !props.tags && !props.draft) return null;
   return (
     <div className={`meta ${props.className || ''}`}>
-      {props.dateStrings ? <Date dateStrings={props.dateStrings}/> : null}
-      {props.tags ? <Tags tags={props.tags}/> : null}
+      {props.dateStrings ? <Date dateStrings={props.dateStrings} /> : null}
+      {props.tags ? <Tags tags={props.tags} /> : null}
       {props.draft ? <span>Draft</span> : null}
     </div>
-  )
+  );
 };
 
 Meta.propTypes = {

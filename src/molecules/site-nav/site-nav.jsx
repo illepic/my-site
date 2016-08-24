@@ -43,6 +43,10 @@ SiteNav.defaultProps = {
 SiteNav.propTypes = {
   pages: React.PropTypes.arrayOf(React.PropTypes.object),
   currentPage: React.PropTypes.string,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
+  closeNav: React.PropTypes.func,
 };
 
 module.exports = SiteNav;
