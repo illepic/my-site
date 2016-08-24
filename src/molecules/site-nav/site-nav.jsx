@@ -17,7 +17,7 @@ const SiteNav = class extends React.Component {
   }
 
   render() {
-    let items = this.props.pages
+    let items = this.props.site.pages
     .filter(item => item.nav === 'main')
     .sort(sortByWeight)
     .map(item => (<Link
@@ -36,9 +36,17 @@ const SiteNav = class extends React.Component {
   }
 };
 
+SiteNav.defaultProps = {
+  currentPage: '',
+};
+
 SiteNav.propTypes = {
   pages: React.PropTypes.arrayOf(React.PropTypes.object),
   currentPage: React.PropTypes.string,
+  site: React.PropTypes.shape({
+    pages: React.PropTypes.array,
+  }),
+  closeNav: React.PropTypes.func,
 };
 
 module.exports = SiteNav;

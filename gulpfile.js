@@ -16,6 +16,9 @@ const eslint = require('gulp-eslint');
 let buildJson = require('./lib/buildJson');
 const buildRss = require('./lib/buildRss');
 const buildRedirects = require('./lib/buildRedirects');
+const buildStyleguide = require('./lib/buildStyleguide').buildAll;
+const buildPatternlab = require('./lib/patternlab').build;
+const scssToJson = require('scsstojson');
 
 const themeConfig = yaml.safeLoad(fs.readFileSync('./config.theme.yml', 'utf8'));
 if (process.env.NODE_ENV === 'production') {
@@ -129,6 +132,16 @@ function reload() {
   sh(`./node_modules/.bin/browser-sync reload --port=${themeConfig.browserSync.port}`, false);
 }
 
+function buildPl(done) {
+  buildStyleguide(() => {
+    scssToJson(themeConfig.patternLab.scssToJson, {}, () => {
+      buildPatternlab(() => {
+        if (typeof done === 'function') done();
+      });
+    });
+  });
+}
+
 gulp.task('json', (done) => {
   buildJson.buildAll(() => {
     reload();
@@ -173,6 +186,7 @@ gulp.task('watch:templates', () => {
     join(config.paths.src, 'layouts/site/site.js'),
   ], event => {
     console.log(`'${path.relative(process.cwd(), event.path)}' was ${event.type}, compiling...`);
+    buildPl();
     sh('node lib/compile.js', false);
   });
 });
@@ -180,6 +194,9 @@ gulp.task('watch:templates', () => {
 tasks.compile.push('html');
 tasks.default.push('watch:content');
 tasks.default.push('watch:templates');
+
+gulp.task('pl', ['json'], buildPl);
+tasks.compile.push('pl');
 
 gulp.task('img:content', (allDone) => {
   const imgFiles = gulp.src(join(config.paths.content, '**/*.{jpg,jpeg,png}'));

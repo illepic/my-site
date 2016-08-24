@@ -12,4 +12,5 @@ node_modules
 typings
 reports/*.json
 
-
+# These are built from `src/` via `lib/buildStyleguide.js` before PL builds them
+patternlab/source/_patterns/

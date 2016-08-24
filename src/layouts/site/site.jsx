@@ -44,13 +44,22 @@ const Site = class extends React.Component {
   }
 
   newPage() {
+    const Clipboard = require('clipboard'); // eslint-disable-line global-require
+    this.clipboard = new Clipboard('.code-btn', {
+      target: trigger => trigger.nextElementSibling,
+    });
+  }
 
+  componentWillReceiveProps() {
+    this.clipboard.destroy();
   }
 
   componentDidMount() {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
     this.newPage();
   }
 

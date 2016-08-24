@@ -1,7 +1,7 @@
 const util = require('../../0-base/util');
 
-module.exports = props => `<!doctype html>
-<html lang="en-us">
+module.exports = (props, isomorphic = true) => `<!doctype html>
+<html lang="en-us" class="no-js">
 <head>
   <meta charset="utf-8">
   <title>${util.docTitle(props)}</title>
@@ -51,17 +51,7 @@ module.exports = props => `<!doctype html>
       type='text/css'
     >
   </noscript>
-  <script>
-    loadStyleSheet('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/darkula.min.css');
-  </script>
-  <noscript>
-    <link 
-      rel="stylesheet" 
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/darkula.min.css"
-    >
-  </noscript>
-  <script src="${process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'}/assets/bundle--main.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+  ${isomorphic ? `<script src="${process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'}/assets/bundle--main.js"></script>` : ''}
   <script>
     if (window.location.hostname === 'www.evanlovely.com') {
       (function () {

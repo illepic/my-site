@@ -1,0 +1,10 @@
+title: Links Card
+links:
+- path: '#1'
+  title: Link
+- path: '#2'
+  title: Link
+- path: '#3'
+  title: Link
+- path: '#4'
+  title: Link

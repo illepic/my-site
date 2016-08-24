@@ -1,0 +1,33 @@
+pre {
+  border-radius: ms(1);
+  white-space: pre-wrap;
+  word-break: break-all;
+  position: relative;
+  margin: 0 0 ms(3);
+  > code {
+    background: black;
+    color: white;
+    width: 100%;
+    display: block;
+  }
+}
+
+code {
+  background: transparentize($c-gray--lightest, 0.2);
+  padding: 0 3px;
+  border-radius: 4px;
+}
+
+.hljs {
+  padding: 0.2em 0.5em;
+}
+
+.code-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: .75em;
+  .no-js & {
+    display: none;
+  }
+}

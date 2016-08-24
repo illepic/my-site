@@ -11,7 +11,7 @@ const SiteHeader = class extends React.Component {
 
   render() {
     let toc;
-    if (!this.props.hideToc && this.props.toc.length !== 0) {
+    if (!this.props.hideToc && this.props.toc && this.props.toc.length !== 0) {
       const tocItems = this.props.toc.map(item => <li
         key={item.id}
         className={`toc__item toc__item--${item.tagName}`}
@@ -35,7 +35,7 @@ const SiteHeader = class extends React.Component {
       <header className={classList.join(' ')}>
         <Branding {...this.props} />
         <SiteNav
-          pages={this.props.site.pages}
+          {...this.props}
           currentPage={this.props.path}
           closeNav={this.closeNav}
         />

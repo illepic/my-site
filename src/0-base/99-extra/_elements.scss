@@ -33,18 +33,6 @@ hr {
   margin: 0 0 ms(3);
 }
 
-pre {
-  border-radius: ms(1);
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-code {
-  background: transparentize($c-gray--lightest, 0.2);
-  padding: 0 3px;
-  border-radius: 4px;
-}
-
 a {
   .theme--light & {
     color: $c-orange;
