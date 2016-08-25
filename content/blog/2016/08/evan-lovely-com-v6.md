@@ -7,7 +7,7 @@ tags:
   - reactjs
 excerpt: Everything has changed!! The whole site has been re-written from the ground up with a completely different front and back end. 
 ---
-Hello! **Wow**: it's been a *long* time since I posted on my site: nearly a year and a half! Plenty of reasons and excuses why I didn't, but that's not really important. Anyway, one of the primary motivators of changing things around was that the former build system was Jekyll; which it and its plugins are written in Ruby, a language I'm not extremely proficient in. I wanted to be able to more easily manipulate the core of what was going on, I needed it in my strongest languages: JavaScript.
+Hello! **Wow**: it's been a *long* time since I posted on my site: nearly a year and a half! Plenty of reasons and excuses why I didn't, but that's not really important. Anyway, one of the primary motivators of changing things around was that the former build system was Jekyll; which it and its plugins are written in Ruby, a language I'm not extremely proficient in. I wanted to be able to more easily manipulate the core of what was going on, I needed it in my strongest language: JavaScript.
 
 Initially it seemed the clear winner was [Metalsmith][metalsmith], which is a great system, however the more I built it out, the closer to the *metal* I needed to be. Most of the plugins for Metalsmith simply wrapped many of the tried and true best of breed node.js modules... while being a little out of date behind. I wanted more control.
 
@@ -39,7 +39,7 @@ A clean slate. I really liked my [old site's design](http://v5.evanlovely.com/),
 
 ### Isomorphic JavaScript Single Page App
 
-This entire site works with JavaScript disabled (even the mobile menu trigger); however, with JavaScript enabled a much faster experience is had since the site will act like a SPA (Single Page App). When you click a link to another page, it just fetches the content for that page and re-renders the page. This is where those compile json files come into play; try appending `index.json` to any url on this site to see it's data. Super fun!
+This entire site works with JavaScript disabled (even the mobile menu trigger); however, with JavaScript enabled a much faster experience is had since the site will act like a SPA (Single Page App). When you click a link to another page, it just fetches the content for that page and re-renders the page. This is where those compiled json files come into play; try appending `index.json` to any url on this site to see it's data. Super fun!
 
 [metalsmith]: http://www.metalsmith.io/
 [v4]: /blog/2013/02/evan-lovely-4-0/
