@@ -36,5 +36,5 @@ Here's some resources for learning Front End Web Development:
 
 - [CSS Reference - A free visual guide to the most popular CSS properties](http://cssreference.io/)
 - Documentation Viewer:
-  - Web App: [DevDocs API Documentation](http://devdocs.io/)
-  - Mac App: [Dash for macOS - API Documentation Browser, Snippet Manager - Kapeli](https://kapeli.com/dash)
+    - Web App: [DevDocs API Documentation](http://devdocs.io/)
+    - Mac App: [Dash for macOS - API Documentation Browser, Snippet Manager - Kapeli](https://kapeli.com/dash)
