@@ -28,6 +28,9 @@ Here's some resources for learning Front End Web Development:
 
 ## Topics
 
+### Delivery
+- [The Power of Responsive Design Sprints](https://cloudfour.com/thinks/the-power-of-responsive-design-sprints/)
+
 ### Pattern Lab
 
 - [Making And Maintaining Atomic Design Systems With Pattern Lab 2 – Smashing Magazine](https://www.smashingmagazine.com/2016/07/building-maintaining-atomic-design-systems-pattern-lab/)
