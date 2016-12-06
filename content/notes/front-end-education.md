@@ -21,6 +21,10 @@ Here's some resources for learning Front End Web Development:
 
 - [BEM 101 | CSS-Tricks](https://css-tricks.com/bem-101/)
 
+### Organization
+
+- [SMACSS](https://smacss.com/) - Really only use this as a starting point for thinking about the cascading series CSS duties. Moving to more purely component-driven architecture (with the help of build tools), makes this a little obsolete eventually. Still good to know.
+
 ## Techniques
 
 - [That's Real-Life Responsive Web Design: Meet The Brand New Smashing Book 5 – Smashing Magazine](https://www.smashingmagazine.com/2015/03/real-life-responsive-web-design-smashing-book-5/?utm_source=magazine&utm_medium=sidebar-ad&utm_campaign=sb5)
