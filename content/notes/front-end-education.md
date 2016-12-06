@@ -20,6 +20,7 @@ Here's some resources for learning Front End Web Development:
 ### BEM
 
 - [BEM 101 | CSS-Tricks](https://css-tricks.com/bem-101/)
+- [Battling BEM (Extended Edition): 10 Common Problems And How To Avoid Them](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/) - More in depth usage of BEM and the nuance required to wield it effectively
 
 ## Techniques
 
