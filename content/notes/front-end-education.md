@@ -13,6 +13,9 @@ Here's some resources for learning Front End Web Development:
 
 - [Hardboiled Web Design Fifth Anniversary Edition](https://stuffandnonsense.co.uk/buy/hardboiledwebdesign) by Andy Clarke
 
+## Practice
+- [8 simple rules for a robust, scalable CSS architecture](https://github.com/jareware/css-architecture)
+
 ### Atomic Design
 
 - [Atomic Design Book](http://atomicdesign.bradfrost.com) - Thorough book by Brad Frost about the mental model of breaking apart modular components using a biological analogy of Atoms, Molecules, and Organisms.
